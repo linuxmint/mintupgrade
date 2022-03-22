@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+DOMAIN = "mintupgrade"
+PATH = "/usr/share/locale"
+
+import os
+import gettext
+from mintcommon import additionalfiles
+
+os.environ['LANGUAGE'] = "en_US.UTF-8"
+gettext.install(DOMAIN, PATH)
+
+prefix = "[Desktop Entry]\n"
+
+suffix = """Exec=mintupgrade
+Icon=mintupgrade
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=GTK;GNOME;Utility;X-GNOME-Utilities;
+Keywords=project;keywords;
+StartupNotify=false
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/mintupgrade.desktop", prefix, _("MintUpgrade"), _("Upgrade Tool"), suffix)

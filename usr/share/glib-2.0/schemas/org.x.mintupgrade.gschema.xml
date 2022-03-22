@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.x.mintupgrade" path="/org/x/mintupgrade/">
+    <key type="b" name="prefer-dark-mode">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
+  </schema>
+</schemalist>

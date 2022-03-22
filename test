@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo rm -rf /usr/lib/mintupgrade
+sudo rm -rf /usr/share/mintupgrade
+sudo cp -R usr /
+mintupgrade
