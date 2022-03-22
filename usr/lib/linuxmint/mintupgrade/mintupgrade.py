@@ -54,7 +54,7 @@ class MainWindow():
         self.settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
 
         # Main UI
-        gladefile = "/usr/share/mintupgrade/mintupgrade.ui"
+        gladefile = "/usr/share/linuxmint/mintupgrade/mintupgrade.ui"
         self.builder = Gtk.Builder()
         self.builder.set_translation_domain(APP)
         self.builder.add_from_file(gladefile)
@@ -65,7 +65,7 @@ class MainWindow():
 
         # CSS
         provider = Gtk.CssProvider()
-        provider.load_from_path("/usr/share/mintupgrade/mintupgrade.css")
+        provider.load_from_path("/usr/share/linuxmint/mintupgrade/mintupgrade.css")
         screen = Gdk.Display.get_default_screen(Gdk.Display.get_default())
         Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
@@ -159,7 +159,7 @@ class MainWindow():
         dlg.show()
 
     def open_keyboard_shortcuts(self, widget):
-        gladefile = "/usr/share/mintupgrade/shortcuts.ui"
+        gladefile = "/usr/share/linuxmint/mintupgrade/shortcuts.ui"
         builder = Gtk.Builder()
         builder.set_translation_domain(APP)
         builder.add_from_file(gladefile)
