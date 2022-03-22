@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=MintUpgrade
 Comment=Upgrade Tool
-Exec=mintupgrade
+Exec=pkexec mintupgrade
 Icon=mintupgrade
 Terminal=false
 Type=Application

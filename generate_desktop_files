@@ -12,7 +12,7 @@ gettext.install(DOMAIN, PATH)
 
 prefix = "[Desktop Entry]\n"
 
-suffix = """Exec=mintupgrade
+suffix = """Exec=pkexec mintupgrade
 Icon=mintupgrade
 Terminal=false
 Type=Application

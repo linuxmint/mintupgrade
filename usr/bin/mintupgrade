@@ -1,2 +1,12 @@
-#!/bin/sh
-/usr/lib/mintupgrade/mintupgrade.py &
+#!/usr/bin/python3
+
+import os
+import subprocess
+import sys
+
+if os.getuid() != 0:
+    print("mintupgrade needs to be run as root.")
+    sys.exit(1)
+
+subprocess.Popen("/usr/lib/mintupgrade/mintupgrade.py")
+
