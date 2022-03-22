@@ -51,7 +51,7 @@ class MainWindow():
     def __init__(self, application):
 
         self.application = application
-        self.settings = Gio.Settings(schema_id="org.x.mintupgrade")
+        self.settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
 
         # Main UI
         gladefile = "/usr/share/mintupgrade/mintupgrade.ui"
@@ -192,5 +192,5 @@ class MainWindow():
              pass
 
 if __name__ == "__main__":
-    application = MyApplication("org.x.mintupgrade", Gio.ApplicationFlags.FLAGS_NONE)
+    application = MyApplication("com.linuxmint.mintupgrade", Gio.ApplicationFlags.FLAGS_NONE)
     application.run()
