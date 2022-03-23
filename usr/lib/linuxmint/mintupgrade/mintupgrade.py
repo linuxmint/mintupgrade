@@ -17,6 +17,7 @@ gi.require_version('XApp', '1.0')
 from gi.repository import Gtk, Gdk, Gio, XApp
 
 from common import *
+from constants import *
 from checks import *
 
 setproctitle.setproctitle("mintupgrade")
@@ -69,6 +70,8 @@ class MainWindow():
         provider.load_from_path("/usr/share/linuxmint/mintupgrade/mintupgrade.css")
         screen = Gdk.Display.get_default_screen(Gdk.Display.get_default())
         Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self.builder.get_object("label_welcome").set_text(_("Upgrade to %s") % DESTINATION)
 
         # Widget signals
         self.window.connect("key-press-event",self.on_key_press_event)
