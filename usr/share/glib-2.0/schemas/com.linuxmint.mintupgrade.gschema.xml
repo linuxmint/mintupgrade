@@ -2,7 +2,7 @@
 <schemalist>
   <schema id="com.linuxmint.mintupgrade" path="/com/linuxmint/mintupgrade/">
     <key type="b" name="prefer-dark-mode">
-      <default>true</default>
+      <default>false</default>
       <summary></summary>
       <description></description>
     </key>
