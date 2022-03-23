@@ -179,11 +179,12 @@ class MainWindow():
             self.builder.get_object("label_error_text").set_text(check.message)
             self.builder.get_object("error_check_button").set_visible(check.allow_recheck)
             if check.result == RESULT_ERROR:
-                self.builder.get_object("image_error").set_from_icon_name("dialog-error")
-            elif check == RESULT_WARNING:
-                self.builder.get_object("image_error").set_from_icon_name("dialog-warning")
-            elif check == RESULT_INFO:
-                self.builder.get_object("image_error").set_from_icon_name("dialog-info")
+                self.builder.get_object("image_error").set_from_icon_name("dialog-error", Gtk.IconSize.DIALOG)
+            elif check.result == RESULT_WARNING:
+                self.builder.get_object("image_error").set_from_icon_name("dialog-warning", Gtk.IconSize.DIALOG)
+            elif check.result == RESULT_INFO:
+                self.builder.get_object("image_error").set_from_icon_name("dialog-info", Gtk.IconSize.DIALOG)
+
             # Show info if any
             box_info = self.builder.get_object("box_info")
             for child in box_info.get_children():
