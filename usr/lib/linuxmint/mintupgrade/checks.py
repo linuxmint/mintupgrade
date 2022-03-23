@@ -13,6 +13,8 @@ import traceback
 import subprocess
 
 import apt
+import mintcommon.aptdaemon
+
 
 # i18n
 APP = 'mintupgrade'
@@ -151,11 +153,12 @@ class TimeshiftCheck(Check):
 # Check the APT cache
 class APTCacheCheck(Check):
 
-    def __init__(self, callback=None):
+    def __init__(self, window, callback=None):
         super().__init__(_("Package Base"), _("Checking your package base..."), callback)
         self.cache_updated = False
         self.pkgs_to_remove = []
         self.pkgs_to_install = []
+        self.window = window
 
     def do_run(self):
         # Update the cache
@@ -196,7 +199,7 @@ class APTCacheCheck(Check):
                 if pkg_name in cache.keys():
                     pkg = cache[pkg_name]
                     if pkg.is_installed:
-                        self.pkgs_to_remove.append(pkg)
+                        self.pkgs_to_remove.append(pkg.name)
 
             # Check pkgs to install
             self.pkgs_to_install = []
@@ -204,7 +207,7 @@ class APTCacheCheck(Check):
                 if pkg_name in cache.keys():
                     pkg = cache[pkg_name]
                     if not pkg.is_installed:
-                        self.pkgs_to_install.append(pkg)
+                        self.pkgs_to_install.append(pkg.name)
 
             if len(self.pkgs_to_remove) > 0 or len(self.pkgs_to_install) > 0:
                 self.result = RESULT_WARNING
@@ -212,9 +215,9 @@ class APTCacheCheck(Check):
 
                 table_list = TableList([_("Package"), _("Operation")])
                 for pkg in self.pkgs_to_install:
-                    table_list.values.append([pkg.name, _("needs to be installed")])
+                    table_list.values.append([pkg, _("needs to be installed")])
                 for pkg in self.pkgs_to_remove:
-                    table_list.values.append([pkg.name, _("needs to be removed")])
+                    table_list.values.append([pkg, _("needs to be removed")])
 
                 self.info.append(table_list)
                 self.fix = self.install_remove_pkgs
@@ -224,4 +227,19 @@ class APTCacheCheck(Check):
         subprocess.getoutput("mintupdate")
 
     def install_remove_pkgs(self):
-        print("install remove")
+        apt = mintcommon.aptdaemon.APT(self.window)
+        apt.set_finished_callback(self.on_transaction_finished)
+        apt.set_cancelled_callback(self.on_transaction_finished)
+        if len(self.pkgs_to_remove) > 0:
+            self.busy = True
+            apt.remove_packages(self.pkgs_to_remove)
+            while self.busy:
+                time.sleep(0.2)
+        if len(self.pkgs_to_install) > 0:
+            self.busy = True
+            apt.install_packages(self.pkgs_to_install)
+            while self.busy:
+                time.sleep(0.2)
+
+    def on_transaction_finished(self, transaction=None, exit_state=None):
+        self.busy = False
