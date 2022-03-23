@@ -79,6 +79,11 @@ class MainWindow():
         self.builder.get_object("darkmode_switch").set_active(prefer_dark_mode)
         self.builder.get_object("darkmode_switch").connect("notify::active", self.on_darkmode_switch_toggled)
 
+        # preferences
+        self.settings.bind("check-timeshift", self.builder.get_object("timeshift_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("check-updates", self.builder.get_object("updates_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("check-version", self.builder.get_object("version_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
+
         # Menubar
         accel_group = Gtk.AccelGroup()
         self.window.add_accel_group(accel_group)
@@ -122,7 +127,7 @@ class MainWindow():
 
         self.last_check = None # the last check which finished
         self.builder.get_object("error_check_button").connect("clicked", self.check_again)
-
+        self.checks = []
         version_check = VersionCheck(callback=self.process_check_result)
         version_check.run()
 
@@ -131,7 +136,6 @@ class MainWindow():
             self.last_check.run()
 
     def letsgo(self, button):
-        self.checks = []
         power_check = PowerCheck(callback=self.process_check_result)
         self.checks.append(power_check)
         self.run_next_check()

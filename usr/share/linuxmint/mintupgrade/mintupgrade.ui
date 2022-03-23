@@ -584,7 +584,7 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkSwitch" id="release_switch">
+                                      <object class="GtkSwitch" id="version_switch">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                       </object>

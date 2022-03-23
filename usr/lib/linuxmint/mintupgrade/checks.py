@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import gi
 import threading
-from gi.repository import GObject
+from gi.repository import GObject, Gio
 import time
 import os
 from common import *
@@ -124,6 +124,9 @@ class Check():
         if self.callback != None:
             self.callback(self)
 
+    def get_setting(self, key):
+        return Gio.Settings(schema_id="com.linuxmint.mintupgrade").get_boolean(key)
+
 # Check that the OS release/version is upgradable
 class VersionCheck(Check):
 
@@ -132,6 +135,11 @@ class VersionCheck(Check):
         self.allow_recheck = False
 
     def do_run(self):
+        # Check override
+        if not self.get_setting("check-version"):
+            self.result = RESULT_SUCCESS
+            return
+
         # Check the Mint info file
         if not os.path.exists("/etc/linuxmint/info"):
             self.result = RESULT_ERROR

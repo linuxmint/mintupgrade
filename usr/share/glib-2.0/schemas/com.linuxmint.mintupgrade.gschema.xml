@@ -6,5 +6,20 @@
       <summary></summary>
       <description></description>
     </key>
+    <key type="b" name="check-timeshift">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
+    <key type="b" name="check-updates">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
+    <key type="b" name="check-version">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
   </schema>
 </schemalist>
