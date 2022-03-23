@@ -193,6 +193,7 @@ class MainWindow():
                 if isinstance(info, str):
                     widget = Gtk.Label()
                     widget.set_text(info)
+                    widget.set_line_wrap(True)
                 elif isinstance(info, TableList):
                     widget = Gtk.TreeView()
                     index = 0

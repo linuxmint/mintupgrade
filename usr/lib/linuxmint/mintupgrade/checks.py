@@ -137,10 +137,16 @@ class TimeshiftCheck(Check):
         if self.get_setting("check-timeshift"):
             self.result = RESULT_ERROR
             self.message = _("Perform a Timeshift system snapshot before attempting to upgrade.")
+            self.info.append(_("If the upgrade isn't successful, a system snapshot will allow you to go back in time and revert all the changes."))
             if os.path.exists("/usr/bin/timeshift"):
                 today = datetime.datetime.today().strftime('%Y-%m-%d')
                 if today in subprocess.getoutput("timeshift --list"):
                     self.result = RESULT_SUCCESS
+                else:
+                    self.fix = self.run_timeshift
+
+    def run_timeshift(self):
+        subprocess.getoutput("timeshift-gtk")
 
 # Check the APT cache
 class APTCacheCheck(Check):
@@ -215,7 +221,7 @@ class APTCacheCheck(Check):
                 return
 
     def launch_update_manager(self):
-        subprocess.Popen("mintupdate")
+        subprocess.getoutput("mintupdate")
 
     def install_remove_pkgs(self):
         print("install remove")
