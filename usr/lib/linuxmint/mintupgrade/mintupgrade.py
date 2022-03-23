@@ -149,6 +149,7 @@ class MainWindow():
             check.run()
         else:
             print("Finished running them all!")
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_ready")
 
     @idle_function
     def process_check_result(self, check):

@@ -104,7 +104,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEventBox">
+                      <object class="GtkEventBox" id="page_welcome">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
@@ -129,7 +129,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="label_welcome1">
+                              <object class="GtkLabel" id="label_welcome">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Upgrade to %s</property>
@@ -146,7 +146,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="label_welcome2">
+                              <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">This program will ask you some questions and upgrade your operating system.</property>
@@ -398,6 +398,32 @@
                       <packing>
                         <property name="name">page_exception</property>
                         <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="page_ready">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">15</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">All tests passed!</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">page_ready</property>
+                        <property name="position">5</property>
                       </packing>
                     </child>
                   </object>
