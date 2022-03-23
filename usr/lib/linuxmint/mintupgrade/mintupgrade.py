@@ -178,6 +178,35 @@ class MainWindow():
                 self.builder.get_object("image_error").set_icon_from_name("dialog-warning")
             elif check == RESULT_INFO:
                 self.builder.get_object("image_error").set_icon_from_name("dialog-info")
+            # Show info if any
+            box_info = self.builder.get_object("box_info")
+            for child in box_info.get_children():
+                box_info.remove(child)
+            for info in check.info:
+                if isinstance(info, str):
+                    widget = Gtk.Label()
+                    widget.set_text(info)
+                elif isinstance(info, TableList):
+                    widget = Gtk.TreeView()
+                    index = 0
+                    types = []
+                    for name in info.columns:
+                        column = Gtk.TreeViewColumn(name, Gtk.CellRendererText(), text=index)
+                        widget.append_column(column)
+                        index += 1
+                        types.append(str)
+                    model = Gtk.ListStore()
+                    model.set_column_types(types)
+                    for value in info.values:
+                        iter = model.insert_before(None, None)
+                        index = 0
+                        for subval in value:
+                            model.set_value(iter, index, subval)
+                            index += 1
+                    widget.set_model(model)
+                widget.show()
+                box_info.pack_start(widget, False, False, 0)
+                box_info.show_all()
 
     @idle_function
     def navigate_to(self, page, name=""):

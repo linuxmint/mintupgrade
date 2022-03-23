@@ -22,9 +22,10 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
-class UpgradeInfo():
-    def __init__(self):
-        self.toto = None
+class TableList():
+    def __init__(self, columns):
+        self.columns = columns
+        self.values = []
 
 class Check():
     def __init__(self, title, description, callback=None):
@@ -35,10 +36,17 @@ class Check():
         self.message = ""
         self.callback = callback
         self.allow_recheck = True
+        self.fix = None
+        self.info = []
 
     @async_function
     def run(self):
         print("Running check '%s'" % self.title)
+        self.result = RESULT_SUCCESS
+        self.message = ""
+        self.finished = False
+        self.fix = None
+        self.info = []
         try:
             self.do_run()
         except Exception as e:
@@ -48,6 +56,18 @@ class Check():
 
     def do_run(self):
         pass
+
+    @async_function
+    def run_fix(self):
+        if self.fix != None:
+            print("Fixing check '%s'" % self.title)
+            try:
+                self.fix()
+                self.do_run()
+            except Exception as e:
+                self.message = traceback.format_exc()
+                self.result = RESULT_EXCEPTION
+            self.finalize()
 
     def finalize(self):
         self.finished = True
@@ -126,10 +146,15 @@ class APTCacheCheck(Check):
 
     def __init__(self, callback=None):
         super().__init__(_("Package Base"), _("Checking your package base..."), callback)
+        self.cache_updated = False
+        self.pkgs_to_remove = []
+        self.pkgs_to_install = []
 
     def do_run(self):
         # Update the cache
-        os.system("DEBIAN_PRIORITY=critical sudo apt-get update")
+        if not self.cache_updated:
+            os.system("DEBIAN_PRIORITY=critical sudo apt-get update")
+            self.cache_updated = True
         cache = apt.Cache()
 
         # Check broken packages
@@ -155,28 +180,41 @@ class APTCacheCheck(Check):
                         if pkg.is_installed and pkg.installed.version != pkg.candidate.version:
                             self.result = RESULT_ERROR
                             self.message = _("Your operating system is not up to date. Apply available updates before attempting the upgrade.")
-                            break
+                            self.fix = self.launch_update_manager
+                            return
 
             # Check pkgs to remove
-            need_to_remove = []
+            self.pkgs_to_remove = []
             for pkg_name in CHECK_ABSENT:
                 if pkg_name in cache.keys():
                     pkg = cache[pkg_name]
                     if pkg.is_installed:
-                        need_to_remove.append(pkg.name)
-            if len(need_to_remove) > 0:
-                self.result = RESULT_WARNING
-                self.message = _("The following packages create issues with this upgrade. They need to be removed:") + "\n\n    %s\n" % ", ".join(need_to_remove)
-                return
+                        self.pkgs_to_remove.append(pkg)
 
             # Check pkgs to install
-            need_to_install = []
+            self.pkgs_to_install = []
             for pkg_name in CHECK_PRESENT:
                 if pkg_name in cache.keys():
                     pkg = cache[pkg_name]
                     if not pkg.is_installed:
-                        need_to_install.append(pkg.name)
-            if len(need_to_install) > 0:
+                        self.pkgs_to_install.append(pkg)
+
+            if len(self.pkgs_to_remove) > 0 or len(self.pkgs_to_install) > 0:
                 self.result = RESULT_WARNING
-                self.message = _("The following packages are required for a smooth install. They need to be installed:") + "\n\n    %s\n" % ", ".join(need_to_install)
+                self.message = _("The following operations need to be performed:")
+
+                table_list = TableList([_("Package"), _("Operation")])
+                for pkg in self.pkgs_to_install:
+                    table_list.values.append([pkg.name, _("needs to be installed")])
+                for pkg in self.pkgs_to_remove:
+                    table_list.values.append([pkg.name, _("needs to be removed")])
+
+                self.info.append(table_list)
+                self.fix = self.install_remove_pkgs
                 return
+
+    def launch_update_manager(self):
+        subprocess.Popen("mintupdate")
+
+    def install_remove_pkgs(self):
+        print("install remove")
