@@ -179,16 +179,14 @@ class MainWindow():
             self.builder.get_object("label_error_text").set_text(check.message)
             self.builder.get_object("error_check_button").set_visible(check.allow_recheck)
             if check.result == RESULT_ERROR:
-                self.builder.get_object("image_error").set_icon_from_name("dialog-error")
+                self.builder.get_object("image_error").set_from_icon_name("dialog-error")
             elif check == RESULT_WARNING:
-                self.builder.get_object("image_error").set_icon_from_name("dialog-warning")
+                self.builder.get_object("image_error").set_from_icon_name("dialog-warning")
             elif check == RESULT_INFO:
-                self.builder.get_object("image_error").set_icon_from_name("dialog-info")
+                self.builder.get_object("image_error").set_from_icon_name("dialog-info")
             # Show info if any
             box_info = self.builder.get_object("box_info")
             for child in box_info.get_children():
-                print("Found a child!", child)
-                box_info.remove(child)
                 child.destroy()
             for info in check.info:
                 if isinstance(info, str):

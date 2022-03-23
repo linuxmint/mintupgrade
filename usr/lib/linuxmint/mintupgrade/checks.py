@@ -31,22 +31,22 @@ class Check():
     def __init__(self, title, description, callback=None):
         self.title = title
         self.description = description
-        self.result = RESULT_SUCCESS
-        self.finished = False
-        self.message = ""
         self.callback = callback
         self.allow_recheck = True
+        self.clean()
+
+    def clean(self):
+        # clean check state
+        self.result = RESULT_SUCCESS
+        self.message = ""
+        self.finished = False
         self.fix = None
         self.info = []
 
     @async_function
     def run(self):
         print("Running check '%s'" % self.title)
-        self.result = RESULT_SUCCESS
-        self.message = ""
-        self.finished = False
-        self.fix = None
-        self.info = []
+        self.clean()
         try:
             self.do_run()
         except Exception as e:
@@ -63,6 +63,7 @@ class Check():
             print("Fixing check '%s'" % self.title)
             try:
                 self.fix()
+                self.clean()
                 self.do_run()
             except Exception as e:
                 self.message = traceback.format_exc()
