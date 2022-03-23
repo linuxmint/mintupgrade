@@ -130,17 +130,16 @@ class MainWindow():
 
         self.last_check = None # the last check which finished
         self.builder.get_object("error_check_button").connect("clicked", self.check_again)
-        self.checks = []
-        version_check = VersionCheck(callback=self.process_check_result)
-        version_check.run()
+        self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
 
     def check_again(self, button):
         if self.last_check != None:
             self.last_check.run()
 
     def letsgo(self, button):
-        power_check = PowerCheck(callback=self.process_check_result)
-        self.checks.append(power_check)
+        self.checks = []
+        self.checks.append(VersionCheck(callback=self.process_check_result))
+        self.checks.append(PowerCheck(callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):
@@ -159,8 +158,6 @@ class MainWindow():
         self.last_check = check
         if check.result == RESULT_SUCCESS:
             print("Check succeeded: ", check.title)
-            if isinstance(check, VersionCheck):
-                self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
             if check in self.checks:
                 self.checks.remove(check)
                 self.run_next_check()
