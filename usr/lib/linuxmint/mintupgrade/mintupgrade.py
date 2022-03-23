@@ -130,12 +130,18 @@ class MainWindow():
 
         self.last_check = None # the last check which finished
         self.builder.get_object("error_check_button").connect("clicked", self.check_again)
+        self.builder.get_object("error_fix_button").connect("clicked", self.fix_check)
         self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
 
     def check_again(self, button):
         if self.last_check != None:
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
             self.last_check.run()
+
+    def fix_check(self, button):
+        if self.last_check != None:
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
+            self.last_check.run_fix()
 
     def letsgo(self, button):
         self.checks = []
@@ -181,7 +187,9 @@ class MainWindow():
             # Show info if any
             box_info = self.builder.get_object("box_info")
             for child in box_info.get_children():
+                print("Found a child!", child)
                 box_info.remove(child)
+                child.destroy()
             for info in check.info:
                 if isinstance(info, str):
                     widget = Gtk.Label()
@@ -207,6 +215,8 @@ class MainWindow():
                 widget.show()
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
+            # Activate Fix button if appropriate
+            self.builder.get_object("error_fix_button").set_visible(check.fix != None)
 
     @idle_function
     def navigate_to(self, page, name=""):
