@@ -17,6 +17,7 @@ gi.require_version('XApp', '1.0')
 from gi.repository import Gtk, Gdk, Gio, XApp
 
 from common import *
+from checks import *
 
 setproctitle.setproctitle("mintupgrade")
 
@@ -116,6 +117,53 @@ class MainWindow():
 
         self.builder.get_object("go_back_button").hide()
         self.builder.get_object("go_back_button").connect("clicked", self.go_back)
+
+        self.builder.get_object("button_lets_go").connect("clicked", self.letsgo)
+
+        self.last_check = None # the last check which finished
+        self.builder.get_object("error_check_button").connect("clicked", self.check_again)
+
+        version_check = VersionCheck(callback=self.process_check_result)
+        version_check.run()
+
+    def check_again(self, button):
+        if self.last_check != None:
+            self.last_check.run()
+
+    def letsgo(self, button):
+        self.checks = []
+        power_check = PowerCheck(callback=self.process_check_result)
+        self.checks.append(power_check)
+        self.run_next_check()
+
+    def run_next_check(self):
+        if len(self.checks) > 0:
+            check = self.checks[0]
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
+            self.builder.get_object("label_check_title").set_text(check.title)
+            self.builder.get_object("label_check_description").set_text(check.description)
+            check.run()
+        else:
+            print("Finished running them all!")
+
+    @idle_function
+    def process_check_result(self, check):
+        self.last_check = check
+        if check.result == RESULT_SUCCESS:
+            print("Check succeeded: ", check.title)
+            if isinstance(check, VersionCheck):
+                self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
+            if check in self.checks:
+                self.checks.remove(check)
+                self.run_next_check()
+        elif check.result == RESULT_EXCEPTION:
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_exception")
+            self.builder.get_object("label_stacktrace").set_text(check.message)
+        else:
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_error")
+            self.builder.get_object("label_error_title").set_text(check.title)
+            self.builder.get_object("label_error_text").set_text(check.message)
+            self.builder.get_object("error_check_button").set_visible(check.allow_recheck)
 
     @idle_function
     def navigate_to(self, page, name=""):
