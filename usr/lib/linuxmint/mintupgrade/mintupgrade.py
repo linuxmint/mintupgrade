@@ -134,12 +134,14 @@ class MainWindow():
 
     def check_again(self, button):
         if self.last_check != None:
+            self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
             self.last_check.run()
 
     def letsgo(self, button):
         self.checks = []
         self.checks.append(VersionCheck(callback=self.process_check_result))
         self.checks.append(PowerCheck(callback=self.process_check_result))
+        self.checks.append(APTCacheCheck(callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
         self.run_next_check()
 
@@ -170,6 +172,12 @@ class MainWindow():
             self.builder.get_object("label_error_title").set_text(check.title)
             self.builder.get_object("label_error_text").set_text(check.message)
             self.builder.get_object("error_check_button").set_visible(check.allow_recheck)
+            if check.result == RESULT_ERROR:
+                self.builder.get_object("image_error").set_icon_from_name("dialog-error")
+            elif check == RESULT_WARNING:
+                self.builder.get_object("image_error").set_icon_from_name("dialog-warning")
+            elif check == RESULT_INFO:
+                self.builder.get_object("image_error").set_icon_from_name("dialog-info")
 
     @idle_function
     def navigate_to(self, page, name=""):

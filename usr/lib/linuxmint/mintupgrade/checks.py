@@ -12,6 +12,8 @@ import gettext, locale
 import traceback
 import subprocess
 
+import apt
+
 # i18n
 APP = 'mintupgrade'
 LOCALE_DIR = "/usr/share/locale"
@@ -118,3 +120,63 @@ class TimeshiftCheck(Check):
                 today = datetime.datetime.today().strftime('%Y-%m-%d')
                 if today in subprocess.getoutput("timeshift --list"):
                     self.result = RESULT_SUCCESS
+
+# Check the APT cache
+class APTCacheCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Package Base"), _("Checking your package base..."), callback)
+
+    def do_run(self):
+        # Update the cache
+        os.system("DEBIAN_PRIORITY=critical sudo apt-get update")
+        cache = apt.Cache()
+
+        # Check broken packages
+        if cache.broken_count > 0:
+            self.result = RESULT_ERROR
+            self.message = _("Some of your packages are broken. Run 'apt install -f' to fix the issue.")
+            return
+
+        points_to_destination = False
+        if os.path.exists("/etc/apt/sources.list.d/official-package-repositories.list"):
+            with open("/etc/apt/sources.list.d/official-package-repositories.list") as sources:
+                for line in sources:
+                    if DESTINATION_CODENAME in line:
+                        points_to_destination = True
+                        break
+
+        if not points_to_destination:
+            # Check updates
+            if self.get_setting("check-updates"):
+                for pkg in CHECK_UP_TO_DATE:
+                    if pkg in cache:
+                        pkg = cache[pkg]
+                        if pkg.is_installed and pkg.installed.version != pkg.candidate.version:
+                            self.result = RESULT_ERROR
+                            self.message = _("Your operating system is not up to date. Apply available updates before attempting the upgrade.")
+                            break
+
+            # Check pkgs to remove
+            need_to_remove = []
+            for pkg_name in CHECK_ABSENT:
+                if pkg_name in cache.keys():
+                    pkg = cache[pkg_name]
+                    if pkg.is_installed:
+                        need_to_remove.append(pkg.name)
+            if len(need_to_remove) > 0:
+                self.result = RESULT_WARNING
+                self.message = _("The following packages create issues with this upgrade. They need to be removed:") + "\n\n    %s\n" % ", ".join(need_to_remove)
+                return
+
+            # Check pkgs to install
+            need_to_install = []
+            for pkg_name in CHECK_PRESENT:
+                if pkg_name in cache.keys():
+                    pkg = cache[pkg_name]
+                    if not pkg.is_installed:
+                        need_to_install.append(pkg.name)
+            if len(need_to_install) > 0:
+                self.result = RESULT_WARNING
+                self.message = _("The following packages are required for a smooth install. They need to be installed:") + "\n\n    %s\n" % ", ".join(need_to_install)
+                return
