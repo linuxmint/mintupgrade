@@ -4,6 +4,7 @@ import threading
 from gi.repository import GObject, Gio
 import time
 import os
+import datetime
 from common import *
 from constants import *
 
@@ -62,39 +63,35 @@ class VersionCheck(Check):
         self.allow_recheck = False
 
     def do_run(self):
-        # Check override
-        if not self.get_setting("check-version"):
-            self.result = RESULT_SUCCESS
-            return
+        if self.get_setting("check-version"):
+            # Check the Mint info file
+            if not os.path.exists("/etc/linuxmint/info"):
+                self.result = RESULT_ERROR
+                self.message = _("Your version of Linux Mint is unknown. /etc/linuxmint/info is missing.")
+                return
 
-        # Check the Mint info file
-        if not os.path.exists("/etc/linuxmint/info"):
-            self.result = RESULT_ERROR
-            self.message = _("Your version of Linux Mint is unknown. /etc/linuxmint/info is missing.")
-            return
+            # Check the codename/edition
+            codename = None
+            edition = None
+            with open("/etc/linuxmint/info", "r") as info:
+                for line in info:
+                    line = line.strip()
+                    if "EDITION=" in line:
+                        edition = line.split('=')[1].replace('"', '').split()[0]
+                    if "CODENAME=" in line:
+                        codename = line.split('=')[1].replace('"', '').split()[0]
 
-        # Check the codename/edition
-        codename = None
-        edition = None
-        with open("/etc/linuxmint/info", "r") as info:
-            for line in info:
-                line = line.strip()
-                if "EDITION=" in line:
-                    edition = line.split('=')[1].replace('"', '').split()[0]
-                if "CODENAME=" in line:
-                    codename = line.split('=')[1].replace('"', '').split()[0]
+            # Check codename
+            if codename != ORIGIN_CODENAME and codename != DESTINATION_CODENAME:
+                self.result = RESULT_ERROR
+                self.message = _("Your version of Linux Mint is '%s'. Only %s can be upgraded to %s." % (codename.capitalize(), ORIGIN, DESTINATION))
+                return
 
-        # Check codename
-        if codename != ORIGIN_CODENAME and codename != DESTINATION_CODENAME:
-            self.result = RESULT_ERROR
-            self.message = _("Your version of Linux Mint is '%s'. Only %s can be upgraded to %s." % (codename.capitalize(), ORIGIN, DESTINATION))
-            return
-
-        # Check edition
-        if self.mint_edition.lower() not in SUPPORTED_EDITIONS:
-            self.result = RESULT_ERROR
-            self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s." % (edition, DESTINATION))
-            return
+            # Check edition
+            if self.mint_edition.lower() not in SUPPORTED_EDITIONS:
+                self.result = RESULT_ERROR
+                self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s." % (edition, DESTINATION))
+                return
 
 # Check that the computer is plugged in to AC Power
 class PowerCheck(Check):
@@ -107,3 +104,17 @@ class PowerCheck(Check):
             self.result = RESULT_ERROR
             self.message = _("Connect the computer to a power source before attempting to upgrade.")
 
+# Check that the computer has a recent Timeshift snapshot
+class TimeshiftCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Timeshift Snapshot"), _("Checking timeshift snapshots..."), callback)
+
+    def do_run(self):
+        if self.get_setting("check-timeshift"):
+            self.result = RESULT_ERROR
+            self.message = _("Perform a Timeshift system snapshot before attempting to upgrade.")
+            if os.path.exists("/usr/bin/timeshift"):
+                today = datetime.datetime.today().strftime('%Y-%m-%d')
+                if today in subprocess.getoutput("timeshift --list"):
+                    self.result = RESULT_SUCCESS
