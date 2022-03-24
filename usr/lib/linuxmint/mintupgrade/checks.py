@@ -114,7 +114,7 @@ class VersionCheck(Check):
                 return
 
             # Check edition
-            if self.mint_edition.lower() not in SUPPORTED_EDITIONS:
+            if edition.lower() not in SUPPORTED_EDITIONS:
                 self.result = RESULT_ERROR
                 self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s." % (edition, DESTINATION))
                 return
@@ -123,7 +123,7 @@ class VersionCheck(Check):
 class PowerCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Power Source"), _("Checking power source..."), callback)
+        super().__init__(_("Power Source"), _("Checking the power source..."), callback)
 
     def do_run(self):
         if "off-line" in subprocess.getoutput("acpi -a"):
@@ -155,7 +155,7 @@ class TimeshiftCheck(Check):
 class APTCacheCheck(Check):
 
     def __init__(self, window, callback=None):
-        super().__init__(_("Package Base"), _("Checking your package base..."), callback)
+        super().__init__(_("Package Base"), _("Checking the package base..."), callback)
         self.cache_updated = False
         self.pkgs_to_remove = []
         self.pkgs_to_install = []
