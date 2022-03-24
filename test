@@ -2,4 +2,4 @@
 sudo rm -rf /usr/lib/linuxmint/mintupgrade
 sudo rm -rf /usr/share/linuxmint/mintupgrade
 sudo cp -R usr /
-pkexec mintupgrade
+sudo mintupgrade
