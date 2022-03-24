@@ -223,9 +223,6 @@ class APTCacheCheck(Check):
                 self.fix = self.install_remove_pkgs
                 return
 
-    def launch_update_manager(self):
-        subprocess.getoutput("mintupdate")
-
     def install_remove_pkgs(self):
         apt = mintcommon.aptdaemon.APT(self.window)
         apt.set_finished_callback(self.on_transaction_finished)
