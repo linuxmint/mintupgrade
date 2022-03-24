@@ -3,13 +3,13 @@ import os
 
 RESULT_SUCCESS, RESULT_INFO, RESULT_WARNING, RESULT_ERROR, RESULT_EXCEPTION = range(5)
 
-ORIGIN = "Linux Mint 19.3 'Tricia'"
-ORIGIN_CODENAME = "tricia"
-ORIGIN_BASE_CODENAME = "bionic"
+ORIGIN = "Linux Mint 20.3 'Una'"
+ORIGIN_CODENAME = "una"
+ORIGIN_BASE_CODENAME = "focal"
 
-DESTINATION = "Linux Mint 20 'Ulyana'"
-DESTINATION_CODENAME = "ulyana"
-DESTINATION_BASE_CODENAME = "focal"
+DESTINATION = "Linux Mint 21 'Vanessa'"
+DESTINATION_CODENAME = "vanessa"
+DESTINATION_BASE_CODENAME = "jammy"
 
 SUPPORTED_EDITIONS = ["cinnamon", "mate", "xfce"]
 
