@@ -190,7 +190,6 @@ class APTCacheCheck(Check):
                         if pkg.is_installed and pkg.installed.version != pkg.candidate.version:
                             self.result = RESULT_ERROR
                             self.message = _("Your operating system is not up to date. Apply available updates before attempting the upgrade.")
-                            self.fix = self.launch_update_manager
                             return
 
             # Check pkgs to remove
