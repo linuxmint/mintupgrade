@@ -28,6 +28,7 @@ class TableList():
     def __init__(self, columns):
         self.columns = columns
         self.values = []
+        self.show_column_names = True
 
 class Check():
     def __init__(self, title, description, callback=None):

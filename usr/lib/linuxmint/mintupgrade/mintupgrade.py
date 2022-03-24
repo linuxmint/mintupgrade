@@ -195,12 +195,18 @@ class MainWindow():
                     widget.set_text(info)
                     widget.set_line_wrap(True)
                 elif isinstance(info, TableList):
-                    widget = Gtk.TreeView()
+                    widget = Gtk.ScrolledWindow()
+                    widget.set_min_content_width(400)
+                    widget.set_min_content_height(200)
+                    widget.set_shadow_type(Gtk.ShadowType.IN)
+                    treeview = Gtk.TreeView()
+                    treeview.set_headers_visible(info.show_column_names)
+                    widget.add(treeview)
                     index = 0
                     types = []
                     for name in info.columns:
                         column = Gtk.TreeViewColumn(name, Gtk.CellRendererText(), text=index)
-                        widget.append_column(column)
+                        treeview.append_column(column)
                         index += 1
                         types.append(str)
                     model = Gtk.ListStore()
@@ -211,8 +217,7 @@ class MainWindow():
                         for subval in value:
                             model.set_value(iter, index, subval)
                             index += 1
-                    widget.set_model(model)
-                widget.show()
+                    treeview.set_model(model)
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
             # Activate Fix button if appropriate
