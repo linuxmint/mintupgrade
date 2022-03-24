@@ -88,9 +88,6 @@
                     <property name="transition_duration">500</property>
                     <property name="transition_type">under-up</property>
                     <child>
-                      <placeholder/>
-                    </child>
-                    <child>
                       <object class="GtkEventBox" id="page_welcome">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -168,7 +165,6 @@
                       </object>
                       <packing>
                         <property name="name">page_welcome</property>
-                        <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
@@ -178,7 +174,7 @@
                         <property name="halign">center</property>
                         <property name="valign">center</property>
                         <property name="orientation">vertical</property>
-                        <property name="spacing">15</property>
+                        <property name="spacing">12</property>
                         <child>
                           <object class="GtkImage" id="image_error">
                             <property name="visible">True</property>
@@ -221,31 +217,20 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow">
+                          <object class="GtkBox" id="box_info">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="min_content_width">400</property>
-                            <property name="min_content_height">200</property>
+                            <property name="can_focus">False</property>
+                            <property name="valign">start</property>
+                            <property name="border_width">12</property>
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">12</property>
+                            <property name="baseline_position">top</property>
                             <child>
-                              <object class="GtkViewport">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <child>
-                                  <object class="GtkBox" id="box_info">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="border_width">12</property>
-                                    <property name="orientation">vertical</property>
-                                    <child>
-                                      <placeholder/>
-                                    </child>
-                                  </object>
-                                </child>
-                              </object>
+                              <placeholder/>
                             </child>
                           </object>
                           <packing>
-                            <property name="expand">False</property>
+                            <property name="expand">True</property>
                             <property name="fill">True</property>
                             <property name="position">3</property>
                           </packing>
@@ -303,7 +288,7 @@
                       </object>
                       <packing>
                         <property name="name">page_error</property>
-                        <property name="position">2</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
@@ -358,7 +343,7 @@
                       </object>
                       <packing>
                         <property name="name">page_spinner</property>
-                        <property name="position">3</property>
+                        <property name="position">2</property>
                       </packing>
                     </child>
                     <child>
@@ -414,7 +399,7 @@
                       </object>
                       <packing>
                         <property name="name">page_exception</property>
-                        <property name="position">4</property>
+                        <property name="position">3</property>
                       </packing>
                     </child>
                     <child>
@@ -440,7 +425,7 @@
                       </object>
                       <packing>
                         <property name="name">page_ready</property>
-                        <property name="position">5</property>
+                        <property name="position">4</property>
                       </packing>
                     </child>
                   </object>

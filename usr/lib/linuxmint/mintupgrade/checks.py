@@ -13,8 +13,11 @@ import traceback
 import subprocess
 
 import apt
+import apt_pkg
+import aptsources.sourceslist
 import mintcommon.aptdaemon
 
+import pycurl
 
 # i18n
 APP = 'mintupgrade'
@@ -240,3 +243,136 @@ class APTCacheCheck(Check):
 
     def on_transaction_finished(self, transaction=None, exit_state=None):
         self.busy = False
+
+
+# Check that the APT repos are OK
+class APTRepoCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Package Repositories"), _("Checking the package repositories..."), callback)
+
+    def do_run(self):
+        apt_pkg.init_config()
+        self.sources = aptsources.sourceslist.SourcesList()
+        self.mint_repos = []
+        self.base_repos = []
+        self.foreign_repos = []
+        for source in self.sources:
+            if source.disabled:
+                # commented out repos
+                continue
+            if source.uri == "":
+                # repos file entries themselves
+                continue
+            if ORIGIN_CODENAME in source.dist or DESTINATION_CODENAME in source.dist:
+                self.mint_repos.append(source)
+            elif ORIGIN_BASE_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:
+                self.base_repos.append(source)
+            else:
+                self.foreign_repos.append(source)
+
+        # Foreign repositories which codename is not in the origin or the destination (mint or base)
+        if len(self.foreign_repos) > 0:
+            self.result = RESULT_ERROR
+            self.message = _("The following repositories do not explictly support your version of Linux Mint.")
+            self.fix = self.disable_foreign_repos
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            for repo in self.foreign_repos:
+                repo_string = f"{repo.uri} {repo.dist} " + " ".join(repo.comps)
+                table_list.values.append([repo_string])
+            self.info.append(table_list)
+            self.info.append(_("These repositories need to be disabled."))
+            return
+
+        # Check policy
+        mint_layer_found = False
+        output = subprocess.getoutput('apt-cache policy')
+        for line in output.split("\n"):
+            line = line.strip()
+            if line.startswith("700") and line.endswith("Packages") and "/upstream" in line:
+                mint_layer_found = True
+                break
+        if not mint_layer_found:
+            self.result = RESULT_ERROR
+            self.message = _("Your APT policy is incorrect.")
+            self.info.append(_("Reboot your computer."))
+            self.allow_recheck = False
+            return
+
+        # Check up-to-date-ness on Mint mirror
+        problems = []
+        mint_timestamp = self.get_url_last_modified("http://packages.linuxmint.com/db/version")
+        mint_age = None
+        if mint_timestamp != None:
+            mint_date = datetime.datetime.fromtimestamp(mint_timestamp)
+            now = datetime.datetime.now()
+            mint_age = (now - mint_date).days
+            print("Mint repository last modified on", mint_date)
+        for repo in self.mint_repos:
+            if "packages.linuxmint.com" in repo.uri:
+                continue
+            timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
+            if timestamp == None:
+                problems.append(_("%s is unreachable") % repo.uri)
+            elif mint_age > 2:
+                date = datetime.datetime.fromtimestamp(timestamp)
+                offset = (mint_date - date).days
+                if mint_age > 2 and offset > 2:
+                    problems.append(_("%s is not up to date. Switch to a different mirror.") % repo.uri)
+
+        # Check the base repos can handle destination codename
+        for repo in self.base_repos:
+            new_dist = repo.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
+            url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+            timestamp = self.get_url_last_modified(url)
+            if timestamp == None:
+                problems.append(_("%s does not support %s") % (repo.uri, new_dist))
+
+        if len(problems) > 0:
+            self.result = RESULT_ERROR
+            self.message = _("The following problems were found:")
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            for problem in problems:
+                table_list.values.append([problem])
+            self.info.append(table_list)
+            self.fix = self.run_mintsources
+            return
+
+    def get_url_last_modified(self, url):
+        try:
+            c = pycurl.Curl()
+            c.setopt(pycurl.URL, url)
+            c.setopt(pycurl.CONNECTTIMEOUT, 5)
+            c.setopt(pycurl.TIMEOUT, 30)
+            c.setopt(pycurl.FOLLOWLOCATION, 1)
+            c.setopt(pycurl.NOBODY, 1)
+            c.setopt(pycurl.OPT_FILETIME, 1)
+            c.perform()
+            filetime = c.getinfo(pycurl.INFO_FILETIME)
+            if filetime < 0:
+                return None
+            else:
+                return filetime
+        except Exception as e:
+            return None
+
+    def disable_foreign_repos(self):
+        for repo in self.foreign_repos:
+            repo.set_enabled(False)
+        self.sources.save()
+
+    def run_mintsources(self):
+        subprocess.getoutput("mintsources")
+
+
+test = APTRepoCheck()
+test.do_run()
+print (test.message)
+for info in test.info:
+    if isinstance(info, TableList):
+        for value in info.values:
+            print("   ", value)
+    else:
+        print(info)
