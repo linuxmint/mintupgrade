@@ -167,7 +167,11 @@ class APTCacheCheck(Check):
     def do_run(self):
         # Update the cache
         if not self.cache_updated:
-            os.system("DEBIAN_PRIORITY=critical sudo apt-get update")
+            ret = os.system("DEBIAN_PRIORITY=critical apt-get update --error-on=any")
+            if ret != 0:
+                self.result = RESULT_ERROR
+                self.message = _("Your package cache can't refresh correctly. Run 'apt update' and fix the errors it displays.")
+                return
             self.cache_updated = True
         cache = apt.Cache()
 
