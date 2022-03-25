@@ -396,12 +396,13 @@ class APTForeignCheck(Check):
             print(command)
             os.system(command)
 
-test = APTRepoCheck()
-test.do_run()
-print (test.message)
-for info in test.info:
-    if isinstance(info, TableList):
-        for value in info.values:
-            print("   ", value)
-    else:
-        print(info)
+if __name__ == "__main__":
+    test = APTRepoCheck()
+    test.do_run()
+    print (test.message)
+    for info in test.info:
+        if isinstance(info, TableList):
+            for value in info.values:
+                print("   ", value)
+        else:
+            print(info)
