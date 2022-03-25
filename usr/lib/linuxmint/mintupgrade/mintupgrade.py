@@ -87,6 +87,20 @@ class MainWindow():
         self.settings.bind("check-updates", self.builder.get_object("updates_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind("check-version", self.builder.get_object("version_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
 
+        # orphan preferences
+        self.treeview_orphan = self.builder.get_object("treeview_orphan")
+        column = Gtk.TreeViewColumn("", Gtk.CellRendererText(), text=0)
+        column.set_sort_column_id(0)
+        self.treeview_orphan.append_column(column)
+        self.treeview_orphan.show()
+        model = Gtk.TreeStore(str)
+        model.set_sort_column_id(0, Gtk.SortType.ASCENDING)
+        self.treeview_orphan.set_model(model)
+        self.load_orphans()
+        self.builder.get_object("button_orphan_add").connect("clicked", self.add_orphan)
+        self.builder.get_object("button_orphan_remove").connect("clicked", self.remove_orphan)
+        self.settings.connect("changed::orphans-to-keep", self.load_orphans)
+
         # Menubar
         accel_group = Gtk.AccelGroup()
         self.window.add_accel_group(accel_group)
@@ -133,6 +147,42 @@ class MainWindow():
         self.builder.get_object("error_fix_button").connect("clicked", self.fix_check)
         self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
 
+    def load_orphans(self, schema=None, key=None):
+        model = self.treeview_orphan.get_model()
+        model.clear()
+        for orphan in self.settings.get_strv("orphans-to-keep"):
+            iter = model.insert_before(None, None)
+            model.set_value(iter, 0, orphan)
+
+    def add_orphan(self, button):
+        dialog = Gtk.MessageDialog(self.window, Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK, None)
+        dialog.set_markup(_("Please specify the name of the package to keep:"))
+        dialog.set_title(_("Orphan package"))
+        dialog.set_icon_name("mintupgrade")
+        dialog.set_default_response(Gtk.ResponseType.OK)
+        entry = Gtk.Entry()
+        entry.set_activates_default(True)
+        dialog.get_content_area().add(entry)
+        dialog.get_content_area().set_border_width(12)
+        dialog.show_all()
+        if dialog.run() == Gtk.ResponseType.OK:
+            name = entry.get_text().strip()
+            orphans = self.settings.get_strv("orphans-to-keep")
+            if name != None and name != "" and name not in orphans:
+                orphans.append(name)
+                self.settings.set_strv("orphans-to-keep", orphans)
+        dialog.destroy()
+
+    def remove_orphan(self, button):
+        selection = self.treeview_orphan.get_selection()
+        (model, iter) = selection.get_selected()
+        if (iter != None):
+            pkg = model.get_value(iter, 0)
+            orphans = self.settings.get_strv("orphans-to-keep")
+            if pkg in orphans:
+                orphans.remove(pkg)
+                self.settings.set_strv("orphans-to-keep", orphans)
+
     def check_again(self, button):
         if self.last_check != None:
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
@@ -151,6 +201,7 @@ class MainWindow():
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
         self.checks.append(APTForeignCheck(callback=self.process_check_result))
+        self.checks.append(APTOrphanCheck(callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):

@@ -377,7 +377,7 @@ class APTForeignCheck(Check):
         super().__init__(_("Foreign Packages"), _("Checking foreign packages..."), callback)
 
     def do_run(self):
-        self.orphans, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
+        orphans, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
         if len(self.foreigns) > 0:
             self.result = RESULT_ERROR
             self.message = _("The following packages need to be downgraded back to official versions:")
@@ -397,6 +397,43 @@ class APTForeignCheck(Check):
                 installed_pkg, version, official_pkg, archive = foreign
                 pkgs.append("%s=%s" % (installed_pkg.name, official_pkg.version))
             command = '%s apt-get install --allow-downgrades %s %s' % (APT_NONINTERACTIVE, APT_QUIET, " ".join(pkgs))
+            print(command)
+            os.system(command)
+
+# Check APT orphan packages
+class APTOrphanCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Orphan Packages"), _("Checking orphan packages..."), callback)
+
+    def do_run(self):
+        self.orphans_to_remove = []
+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        if len(orphans) > 0:
+            settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
+            to_keep = settings.get_strv("orphans-to-keep")
+            for orphan in orphans:
+                pkg, version = orphan
+                if pkg.name not in to_keep:
+                    self.orphans_to_remove.append(pkg.name)
+
+            if len(self.orphans_to_remove) > 0:
+                self.result = RESULT_ERROR
+                self.message = _("The following packages do not exist in the repositories:")
+                self.fix = self.remove_orphans
+                table_list = TableList([""])
+                table_list.show_column_names = False
+                for orphan in self.orphans_to_remove:
+                    table_list.values.append([orphan])
+                self.info.append(table_list)
+                self.info.append(_("They can create issues during the upgrade."))
+                self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
+                self.info.append(_("Then press 'Fix' to remove the packages listed above."))
+                return
+
+    def remove_orphans(self):
+        if len(self.orphans_to_remove) > 0:
+            command = '%s apt-get remove --purge %s %s' % (APT_NONINTERACTIVE, APT_QUIET, " ".join(self.orphans_to_remove))
             print(command)
             os.system(command)
 
