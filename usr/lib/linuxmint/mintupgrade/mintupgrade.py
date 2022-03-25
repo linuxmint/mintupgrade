@@ -148,8 +148,9 @@ class MainWindow():
         self.checks.append(VersionCheck(callback=self.process_check_result))
         self.checks.append(PowerCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
-        self.checks.append(APTRepoCheck(callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
+        self.checks.append(APTRepoCheck(callback=self.process_check_result))
+        self.checks.append(APTForeignCheck(callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):

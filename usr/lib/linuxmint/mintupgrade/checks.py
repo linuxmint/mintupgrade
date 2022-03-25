@@ -7,7 +7,7 @@ import os
 import datetime
 from common import *
 from constants import *
-
+from apt_utils import *
 import gettext, locale
 import traceback
 import subprocess
@@ -366,6 +366,35 @@ class APTRepoCheck(Check):
     def run_mintsources(self):
         subprocess.getoutput("mintsources")
 
+# Check APT foreign packages
+class APTForeignCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Foreign Packages"), _("Checking foreign packages..."), callback)
+
+    def do_run(self):
+        self.orphans, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
+        if len(self.foreigns) > 0:
+            self.result = RESULT_ERROR
+            self.message = _("The following packages need to be downgraded back to official versions:")
+            self.fix = self.downgrade_foreign_packages
+            table_list = TableList([_("Package"), _("Installed Version"), _("Official version"), _("Archive")])
+            for foreign in self.foreigns:
+                installed_pkg, version, official_pkg, archive = foreign
+                table_list.values.append([installed_pkg.name, version, official_pkg.version, archive])
+            self.info.append(table_list)
+            self.info.append(_("Otherwise these packages can break the upgrade and create conflicts."))
+            return
+
+    def downgrade_foreign_packages(self):
+        if len(self.foreigns) > 0:
+            pkgs = []
+            for foreign in self.foreigns:
+                installed_pkg, version, official_pkg, archive = foreign
+                pkgs.append("%s=%s" % (installed_pkg.name, official_pkg.version))
+            command = '%s apt-get install --allow-downgrades %s %s' % (APT_NONINTERACTIVE, APT_QUIET, " ".join(pkgs))
+            print(command)
+            os.system(command)
 
 test = APTRepoCheck()
 test.do_run()
