@@ -327,7 +327,11 @@ class APTRepoCheck(Check):
 
         # Check the base repos can handle destination codename
         for repo in self.base_repos:
-            new_dist = repo.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
+            if dist == "buster/updates":
+                # special case, the repo syntax changed between LMDE 4 and LMDE 5
+                new_dist = "bullseye-security"
+            else:
+                new_dist = repo.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
             url = "%s/dists/%s/Release" % (repo.uri, new_dist)
             timestamp = self.get_url_last_modified(url)
             if timestamp == None:
