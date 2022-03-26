@@ -167,10 +167,10 @@ class APTCacheCheck(Check):
     def do_run(self):
         # Update the cache
         if not self.cache_updated:
-            # detect success using python-apt (apt-get doesn't return proper error codes)
-            cache = apt.Cache()
-            cache.open()
+            # detect cache errors using python-apt (apt-get doesn't return proper error codes)
             try:
+                cache = apt.Cache()
+                cache.open()
                 cache.update()
             except:
                 self.result = RESULT_ERROR
