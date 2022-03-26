@@ -13,7 +13,7 @@ DESTINATION_BASE_CODENAME = "jammy"
 
 SUPPORTED_EDITIONS = ["cinnamon", "mate", "xfce"]
 
-CHECK_ABSENT = []
+CHECK_ABSENT = ["ippusbxd"]
 
 CHECK_PRESENT = ["default-jre", "os-prober"]
 CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-keyring", "mintsystem"]
