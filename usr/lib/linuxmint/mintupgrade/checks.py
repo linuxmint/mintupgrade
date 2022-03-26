@@ -167,12 +167,19 @@ class APTCacheCheck(Check):
     def do_run(self):
         # Update the cache
         if not self.cache_updated:
-            ret = os.system("DEBIAN_PRIORITY=critical apt-get update --error-on=any")
-            if ret != 0:
+            # detect success using python-apt (apt-get doesn't return proper error codes)
+            cache = apt.Cache()
+            cache.open()
+            try:
+                cache.update()
+            except:
                 self.result = RESULT_ERROR
                 self.message = _("Your package cache can't refresh correctly. Run 'apt update' and fix the errors it displays.")
                 return
+            # if successfull, call apt-get to get a trace in stdout anyway
+            os.system("DEBIAN_PRIORITY=critical apt-get update")
             self.cache_updated = True
+
         cache = apt.Cache()
 
         # Check broken packages
