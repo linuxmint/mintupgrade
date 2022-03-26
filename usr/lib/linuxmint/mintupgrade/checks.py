@@ -334,7 +334,7 @@ class APTRepoCheck(Check):
 
         # Check the base repos can handle destination codename
         for repo in self.base_repos:
-            if dist == "buster/updates":
+            if repo.dist == "buster/updates":
                 # special case, the repo syntax changed between LMDE 4 and LMDE 5
                 new_dist = "bullseye-security"
             else:
