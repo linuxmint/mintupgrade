@@ -39,15 +39,17 @@ class Check():
         self.description = description
         self.callback = callback
         self.allow_recheck = True
+        self.result = RESULT_SUCCESS
         self.clean()
 
     def clean(self):
         # clean check state
-        self.result = RESULT_SUCCESS
-        self.message = ""
-        self.finished = False
-        self.fix = None
-        self.info = []
+        if self.result != RESULT_INFO:
+            self.result = RESULT_SUCCESS
+            self.message = ""
+            self.finished = False
+            self.fix = None
+            self.info = []
 
     @async_function
     def run(self):
@@ -83,6 +85,19 @@ class Check():
 
     def get_setting(self, key):
         return Gio.Settings(schema_id="com.linuxmint.mintupgrade").get_boolean(key)
+
+# Info just shows an info page
+class ShowInfoCheck(Check):
+
+    def __init__(self, title, callback=None):
+        super().__init__(title, "", callback)
+        self.result = RESULT_INFO
+        self.icon_name = "dialog-info"
+        self.allow_recheck = False
+        self.allow_continue = True
+
+    def do_run(self):
+        pass
 
 # Check that the OS release/version is upgradable
 class VersionCheck(Check):

@@ -145,6 +145,7 @@ class MainWindow():
         self.last_check = None # the last check which finished
         self.builder.get_object("error_check_button").connect("clicked", self.check_again)
         self.builder.get_object("error_fix_button").connect("clicked", self.fix_check)
+        self.builder.get_object("error_ok_button").connect("clicked", self.check_ok)
         self.builder.get_object("upgrade_stack").set_visible_child_name("page_welcome")
 
     def load_orphans(self, schema=None, key=None):
@@ -193,12 +194,22 @@ class MainWindow():
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_spinner")
             self.last_check.run_fix()
 
+    def check_ok(self, button):
+        if self.last_check != None:
+            self.run_next_check()
+
     def letsgo(self, button):
         self.checks = []
         self.checks.append(VersionCheck(callback=self.process_check_result))
-        self.checks.append(PowerCheck(callback=self.process_check_result))
+        # self.checks.append(PowerCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
+
+        info = ShowInfoCheck("Some title", callback=self.process_check_result)
+        info.icon_name = "dialog-ok-symbolic"
+        info.message = "Some message"
+        info.info.append("some string")
+        self.checks.append(info)
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
         self.checks.append(APTForeignCheck(callback=self.process_check_result))
         self.checks.append(APTOrphanCheck(callback=self.process_check_result))
@@ -231,12 +242,16 @@ class MainWindow():
             self.builder.get_object("label_error_title").set_text(check.title)
             self.builder.get_object("label_error_text").set_text(check.message)
             self.builder.get_object("error_check_button").set_visible(check.allow_recheck)
+            self.builder.get_object("error_ok_button").set_visible(False)
             if check.result == RESULT_ERROR:
                 self.builder.get_object("image_error").set_from_icon_name("dialog-error", Gtk.IconSize.DIALOG)
             elif check.result == RESULT_WARNING:
                 self.builder.get_object("image_error").set_from_icon_name("dialog-warning", Gtk.IconSize.DIALOG)
             elif check.result == RESULT_INFO:
-                self.builder.get_object("image_error").set_from_icon_name("dialog-info", Gtk.IconSize.DIALOG)
+                self.builder.get_object("error_ok_button").set_visible(True)
+                self.builder.get_object("image_error").set_from_icon_name(check.icon_name, Gtk.IconSize.DIALOG)
+                if check in self.checks:
+                    self.checks.remove(check)
 
             # Show info if any
             box_info = self.builder.get_object("box_info")
