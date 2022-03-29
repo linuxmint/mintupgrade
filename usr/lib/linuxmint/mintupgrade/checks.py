@@ -374,7 +374,7 @@ class APTRepoCheck(Check):
         try:
             c = pycurl.Curl()
             c.setopt(pycurl.URL, url)
-            c.setopt(pycurl.CONNECTTIMEOUT, 5)
+            c.setopt(pycurl.CONNECTTIMEOUT, 30)
             c.setopt(pycurl.TIMEOUT, 30)
             c.setopt(pycurl.FOLLOWLOCATION, 1)
             c.setopt(pycurl.NOBODY, 1)
