@@ -86,6 +86,7 @@ class MainWindow():
         self.settings.bind("check-timeshift", self.builder.get_object("timeshift_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind("check-updates", self.builder.get_object("updates_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind("check-version", self.builder.get_object("version_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind("check-orphans", self.builder.get_object("orphans_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
 
         # orphan preferences
         self.treeview_orphan = self.builder.get_object("treeview_orphan")

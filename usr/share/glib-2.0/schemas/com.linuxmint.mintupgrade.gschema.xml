@@ -21,6 +21,11 @@
       <summary></summary>
       <description></description>
     </key>
+    <key type="b" name="check-orphans">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
     <key type="as" name="orphans-to-keep">
       <default>[]</default>
       <summary></summary>

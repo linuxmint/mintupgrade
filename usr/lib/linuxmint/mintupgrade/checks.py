@@ -433,29 +433,30 @@ class APTOrphanCheck(Check):
         super().__init__(_("Orphan Packages"), _("Checking orphan packages..."), callback)
 
     def do_run(self):
-        self.orphans_to_remove = []
-        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
-        if len(orphans) > 0:
-            settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
-            to_keep = settings.get_strv("orphans-to-keep")
-            for orphan in orphans:
-                pkg, version = orphan
-                if pkg.name not in to_keep:
-                    self.orphans_to_remove.append(pkg.name)
+        if self.get_setting("check-orphans"):
+            self.orphans_to_remove = []
+            orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+            if len(orphans) > 0:
+                settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
+                to_keep = settings.get_strv("orphans-to-keep")
+                for orphan in orphans:
+                    pkg, version = orphan
+                    if pkg.name not in to_keep:
+                        self.orphans_to_remove.append(pkg.name)
 
-            if len(self.orphans_to_remove) > 0:
-                self.result = RESULT_ERROR
-                self.message = _("The following packages do not exist in the repositories:")
-                self.fix = self.remove_orphans
-                table_list = TableList([""])
-                table_list.show_column_names = False
-                for orphan in self.orphans_to_remove:
-                    table_list.values.append([orphan])
-                self.info.append(table_list)
-                self.info.append(_("They can create issues during the upgrade."))
-                self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
-                self.info.append(_("Then press 'Fix' to remove the packages listed above."))
-                return
+                if len(self.orphans_to_remove) > 0:
+                    self.result = RESULT_ERROR
+                    self.message = _("The following packages do not exist in the repositories:")
+                    self.fix = self.remove_orphans
+                    table_list = TableList([""])
+                    table_list.show_column_names = False
+                    for orphan in self.orphans_to_remove:
+                        table_list.values.append([orphan])
+                    self.info.append(table_list)
+                    self.info.append(_("They can create issues during the upgrade."))
+                    self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
+                    self.info.append(_("Then press 'Fix' to remove the packages listed above."))
+                    return
 
     def remove_orphans(self):
         if len(self.orphans_to_remove) > 0:
