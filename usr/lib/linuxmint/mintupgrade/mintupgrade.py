@@ -201,19 +201,22 @@ class MainWindow():
 
     def letsgo(self, button):
         self.checks = []
+        info = ShowInfoCheck(_("Phase 1: Preparation"), callback=self.process_check_result)
+        info.icon_name = "dialog-info"
+        info.message = _("A series of tests will now be performed to prepare the computer for the upgrade.")
+        self.checks.append(info)
         self.checks.append(VersionCheck(callback=self.process_check_result))
-        # self.checks.append(PowerCheck(callback=self.process_check_result))
+        self.checks.append(PowerCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
-
-        info = ShowInfoCheck("Some title", callback=self.process_check_result)
-        info.icon_name = "dialog-ok-symbolic"
-        info.message = "Some message"
-        info.info.append("some string")
-        self.checks.append(info)
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
         self.checks.append(APTForeignCheck(callback=self.process_check_result))
         self.checks.append(APTOrphanCheck(callback=self.process_check_result))
+        info = ShowInfoCheck(_("Phase 2: Simulation and download"), callback=self.process_check_result)
+        info.icon_name = "dialog-info"
+        info.message = _("Your package repositories will now point towards the new release.")
+        info.message = _("A few more tests will be run and package updates will be downloaded.")
+        self.checks.append(info)
         self.run_next_check()
 
     def run_next_check(self):

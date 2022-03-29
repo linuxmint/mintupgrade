@@ -141,7 +141,7 @@ class VersionCheck(Check):
 class PowerCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Power Source"), _("Checking the power source..."), callback)
+        super().__init__(_("Power source"), _("Checking the power source..."), callback)
 
     def do_run(self):
         if "off-line" in subprocess.getoutput("acpi -a"):
@@ -152,7 +152,7 @@ class PowerCheck(Check):
 class TimeshiftCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Timeshift Snapshot"), _("Checking timeshift snapshots..."), callback)
+        super().__init__(_("Timeshift snapshot"), _("Checking timeshift snapshots..."), callback)
 
     def do_run(self):
         if self.get_setting("check-timeshift"):
@@ -173,7 +173,7 @@ class TimeshiftCheck(Check):
 class APTCacheCheck(Check):
 
     def __init__(self, window, callback=None):
-        super().__init__(_("Package Base"), _("Checking the package base..."), callback)
+        super().__init__(_("Package base"), _("Checking the package base..."), callback)
         self.cache_updated = False
         self.pkgs_to_remove = []
         self.pkgs_to_install = []
@@ -275,7 +275,7 @@ class APTCacheCheck(Check):
 class APTRepoCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Package Repositories"), _("Checking the package repositories..."), callback)
+        super().__init__(_("Package repositories"), _("Checking package repositories..."), callback)
 
     def do_run(self):
         apt_pkg.init_config()
@@ -400,7 +400,7 @@ class APTRepoCheck(Check):
 class APTForeignCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Foreign Packages"), _("Checking foreign packages..."), callback)
+        super().__init__(_("Foreign packages"), _("Looking for foreign packages..."), callback)
 
     def do_run(self):
         orphans, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
@@ -430,7 +430,7 @@ class APTForeignCheck(Check):
 class APTOrphanCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Orphan Packages"), _("Checking orphan packages..."), callback)
+        super().__init__(_("Orphan packages"), _("Looking for orphan packages..."), callback)
 
     def do_run(self):
         if self.get_setting("check-orphans"):
