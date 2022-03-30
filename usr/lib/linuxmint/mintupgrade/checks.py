@@ -464,6 +464,40 @@ class APTOrphanCheck(Check):
             print(command)
             os.system(command)
 
+
+# Switch to the target repositories
+class UpdateReposCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Package repositories"), _("Pointing to the new release..."), callback)
+
+    def do_run(self):
+        apt_pkg.init_config()
+        self.sources = aptsources.sourceslist.SourcesList()
+        for source in self.sources:
+            if source.disabled:
+                # commented out repos
+                continue
+            if source.uri == "":
+                # repos file entries themselves
+                continue
+            if DESTINATION_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:
+                # already points to target
+                print("%s already points to %s" % (source.uri, source.dist))
+            elif ORIGIN_CODENAME in source.dist:
+                # Mint repo
+                source.dist = source.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
+                print("Switching %s to %s" % (source.uri, source.dist))
+            elif ORIGIN_BASE_CODENAME in source.dist:
+                # Base repo
+                if source.dist == "buster/updates":
+                    # special case, the repo syntax changed between LMDE 4 and LMDE 5
+                    source.dist = "bullseye-security"
+                else:
+                    source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
+                print("Switching %s to %s" % (source.uri, source.dist))
+        self.sources.save()
+
 if __name__ == "__main__":
     test = APTRepoCheck()
     test.do_run()

@@ -217,6 +217,8 @@ class MainWindow():
         info.message = _("Your package repositories will now point towards the new release.")
         info.message = _("A few more tests will be run and package updates will be downloaded.")
         self.checks.append(info)
+        self.checks.append(UpdateReposCheck(callback=self.process_check_result))
+        self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):
