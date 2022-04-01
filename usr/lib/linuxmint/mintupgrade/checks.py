@@ -536,8 +536,6 @@ class SimulateUpgradeCheck(Check):
         num_new = len(new_packages)
         num_updated = cache.install_count - num_new
 
-        unwanted_removals = []
-
         if len(unwanted_removals) > 0:
             self.result = RESULT_ERROR
             self.info.append(_("The simulation was not successful."))
