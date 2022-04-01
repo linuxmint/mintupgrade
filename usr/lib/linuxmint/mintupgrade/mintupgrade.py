@@ -61,9 +61,10 @@ class MainWindow():
         self.builder.set_translation_domain(APP)
         self.builder.add_from_file(gladefile)
         self.window = self.builder.get_object("main_window")
-        self.window.set_title(_("MintUpgrade"))
+        self.window.set_title(_("Upgrade Tool"))
         self.window.set_icon_name("mintupgrade")
         self.stack = self.builder.get_object("stack")
+        self.builder.get_object("headerbar").set_subtitle(DESTINATION)
 
         # CSS
         provider = Gtk.CssProvider()
@@ -288,6 +289,7 @@ class MainWindow():
                         types.append(str)
                     model = Gtk.ListStore()
                     model.set_column_types(types)
+                    model.set_sort_column_id(0, Gtk.SortType.ASCENDING)
                     for value in info.values:
                         iter = model.insert_before(None, None)
                         index = 0
@@ -297,6 +299,14 @@ class MainWindow():
                     treeview.set_model(model)
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
+            if len(check.info) > 0:
+                self.builder.get_object("scroll_info").show_all()
+            else:
+                self.builder.get_object("scroll_info").hide()
+            if check.message == "":
+                self.builder.get_object("label_error_text").hide()
+            else:
+                self.builder.get_object("label_error_text").show()
             # Activate Fix button if appropriate
             self.builder.get_object("error_fix_button").set_visible(check.fix != None)
 
@@ -347,7 +357,7 @@ class MainWindow():
         builder.set_translation_domain(APP)
         builder.add_from_file(gladefile)
         window = builder.get_object("shortcuts")
-        window.set_title(_("MintUpgrade"))
+        window.set_title(_("Upgrade Tool"))
         window.show()
 
     def on_darkmode_switch_toggled(self, widget, key):

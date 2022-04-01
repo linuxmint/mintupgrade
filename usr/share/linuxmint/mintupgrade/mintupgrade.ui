@@ -28,8 +28,7 @@
       <object class="GtkHeaderBar" id="headerbar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="title" translatable="yes">MintUpgrade</property>
-        <property name="subtitle" translatable="yes">Upgrade Tool</property>
+        <property name="title" translatable="yes">Upgrade Tool</property>
         <property name="show_close_button">True</property>
         <child>
           <object class="GtkButton" id="go_back_button">
@@ -160,6 +159,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <property name="margin_top">10</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -181,8 +181,7 @@
                       <object class="GtkBox" id="page_error">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
+                        <property name="margin_top">20</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">12</property>
                         <child>
@@ -227,16 +226,29 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="box_info">
+                          <object class="GtkScrolledWindow" id="scroll_info">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="valign">start</property>
-                            <property name="border_width">12</property>
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">12</property>
-                            <property name="baseline_position">top</property>
+                            <property name="can_focus">True</property>
+                            <property name="min_content_width">500</property>
+                            <property name="min_content_height">350</property>
                             <child>
-                              <placeholder/>
+                              <object class="GtkViewport">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <child>
+                                  <object class="GtkBox" id="box_info">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="margin_left">30</property>
+                                    <property name="margin_right">30</property>
+                                    <property name="orientation">vertical</property>
+                                    <property name="spacing">12</property>
+                                    <child>
+                                      <placeholder/>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
                             </child>
                           </object>
                           <packing>
@@ -249,6 +261,9 @@
                           <object class="GtkButtonBox">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_left">30</property>
+                            <property name="margin_right">30</property>
+                            <property name="margin_top">10</property>
                             <property name="homogeneous">True</property>
                             <property name="layout_style">expand</property>
                             <child>
