@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import gi
 import threading
-from gi.repository import GObject, Gio
+from gi.repository import GObject, Gio, GLib
 import time
 import os
 import datetime
@@ -497,6 +497,189 @@ class UpdateReposCheck(Check):
                     source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
                 print("Switching %s to %s" % (source.uri, source.dist))
         self.sources.save()
+
+# Check conflicts and HDD space
+class SimulateUpgradeCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Upgrade simulation"), _("Simulating upgrade to check hard disk space and potential issues..."), callback)
+
+    def do_run(self):
+        cache = apt.Cache()
+        cache.upgrade(True)
+        changes = cache.get_changes()
+        incorrect_removals = []
+        kept_packages = []
+        new_packages = []
+        removed_packages = []
+        unwanted_removals = []
+        for pkg in changes:
+            if pkg.is_installed:
+                if pkg.marked_delete:
+                    if pkg.name in IMPORTANT_PACKAGES:
+                        unwanted_removals.append(pkg.name)
+                    else:
+                        removed_packages.append(pkg.name)
+            elif pkg.marked_install:
+                new_packages.append(pkg.name)
+
+        if cache.keep_count > 0:
+            # kept packages are not part of the changes...
+            num_found = 0
+            for pkg in cache:
+                if pkg.marked_keep:
+                    kept_packages.append(pkg.name)
+                    num_found += 1
+                if num_found == cache.keep_count:
+                    break
+
+        num_new = len(new_packages)
+        num_updated = cache.install_count - num_new
+
+        unwanted_removals = []
+
+        if len(unwanted_removals) > 0:
+            self.result = RESULT_ERROR
+            self.info.append(_("The simulation was not successful."))
+            self.info.append(_("Upgrading would remove the following important packages:"))
+            table_list = TableList([_("Unwanted removals")])
+            for pkg in unwanted_removals:
+                table_list.values.append([pkg])
+            self.info.append(table_list)
+            self.info.append(_("This is a sign that something is wrong and needs to be fixed before going further."))
+            self.info.append("---")
+            self.info.append("<b>%s</b>" % _("Recommended solution"))
+            self.info.append(_("Use apt-get in a terminal to troubleshoot and solve the issue."))
+            self.info.append(_("Don't hesitate to seek help on the forums and the chat room."))
+            self.info.append("---")
+            self.info.append("<b>%s</b>" % _("Additional information"))
+            self.info.append(_("The information below might help solve the issue."))
+            self.show_list(_("Kept packages"), kept_packages)
+            self.show_list(_("Removed packages"), removed_packages)
+            self.show_list(_("Added packages"), new_packages)
+            self.info.append("Packages updated: %d, added: %d , kept: %d, deleted: %d" % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            return
+
+        self.info.append(_("Upgrading will perform the following changes."))
+
+        self.check_disk_space_requirements(cache)
+        if self.result != RESULT_ERROR:
+            self.result = RESULT_INFO
+            self.icon_name = "dialog-info"
+            self.info.append("Packages updated: %d, added: %d , kept: %d, deleted: %d" % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            self.show_list(_("Kept packages"), kept_packages)
+            if len(kept_packages) > 0:
+                self.info.append(_("Note: Ideally, no packages should be kept. This might indicate an issue."))
+            self.show_list(_("Added packages"), new_packages)
+            self.show_list(_("Removed packages"), removed_packages)
+            if len(removed_packages) > 0:
+                self.info.append(_("Go through the list above and make sure you are happy with the removals before going further with the upgrade."))
+
+    def show_list(self, col_name, l):
+        if len(l) > 0:
+            table_list = TableList([col_name])
+            for i in l:
+                table_list.values.append([i])
+            self.info.append(table_list)
+
+    def check_disk_space_requirements(self, cache):
+        download_size = 0.0
+        additional_space_needed = 0.0
+
+        # get download size
+        pm = apt_pkg.PackageManager(cache._depcache)
+        fetcher = apt_pkg.Acquire()
+
+        # this may fail, but you'll still get the download size, vs cache.required_download
+        try:
+            pm.get_archives(fetcher, cache._list, cache._records)
+        except:
+            pass
+
+        download_size = fetcher.fetch_needed
+        # additional space needed when all finished
+        additional_space_needed = cache._depcache.usr_size
+
+        # gather mount info so we calculate free space correctly.
+        mounted = []
+        mnt_map = {}
+        fs_free = {}
+        with open("/proc/mounts") as mounts:
+            for line in mounts:
+                try:
+                    (what, where, fs, options, a, b) = line.split()
+                except ValueError as e:
+                    # print("line '%s' in /proc/mounts not understood (%s)" % (line, e))
+                    continue
+                if not where in mounted:
+                    mounted.append(where)
+        # make sure mounted is sorted by longest path
+        mounted.sort(key=len, reverse=True)
+
+        class FreeSpace(object):
+            " helper class that represents the free space on each mounted fs "
+            def __init__(self, initialFree):
+                self.initial_free = initialFree
+                self.free = initialFree
+                self.need = 0
+
+        def make_fs_id(d):
+            """ return 'id' of a directory so that directories on the
+                same filesystem get the same id (simply the mount_point)
+            """
+            for mount_point in mounted:
+                if d.startswith(mount_point):
+                    return mount_point
+            return "/"
+
+        archivedir = apt_pkg.config.find_dir("Dir::Cache::archives")
+
+        for d in ["/", "/usr", "/boot", archivedir, "/tmp/"]:
+            d = os.path.realpath(d)
+            fs_id = make_fs_id(d)
+            if os.path.exists(d):
+                st = os.statvfs(d)
+                free = st.f_bavail * st.f_frsize
+            else:
+                # print("directory '%s' does not exists" % d)
+                free = 0
+            if fs_id in mnt_map:
+                # print("Dir %s mounted on %s" % (d, mnt_map[fs_id]))
+                fs_free[d] = fs_free[mnt_map[fs_id]]
+            else:
+                # print("Free space on %s: %s" % (d, free))
+                mnt_map[fs_id] = d
+                fs_free[d] = FreeSpace(free)
+
+        # sum up space requirements
+        for (dir, size) in [
+            (archivedir, download_size),
+            ("/usr", additional_space_needed),
+            # plus 50M safety buffer in /usr
+            ("/usr", 50 * 1024 * 1024), # buffer
+            ("/boot", 50 * 1024 * 1024), # buffer - should we calculate real kernel/initramfs space required?
+            ("/tmp", 5 * 1024 * 1024),   # /tmp for dkms LP: #427035
+            ("/", 10 * 1024 * 1024),     # more buffer /
+        ]:
+            # we are ensuring we have more than enough free space not less
+            if size < 0:
+                continue
+            dir = os.path.realpath(dir)
+            # print("dir '%s' needs '%s' of '%s' (%f)" % (dir, size, fs_free[dir], fs_free[dir].free))
+            fs_free[dir].free -= size
+            fs_free[dir].need += size
+
+        for dir in fs_free:
+            free_needed_str = GLib.format_size(fs_free[dir].need)
+            initial_free_str = GLib.format_size(fs_free[dir].initial_free)
+            if fs_free[dir].free < 0:
+                free_at_least_str = GLib.format_size(abs(fs_free[dir].free) + 1024 * 1024 * 10)
+                self.result = RESULT_ERROR
+                self.info.append(_("You need %s on '%s' but only have %s. You must free an additional %s.") \
+                    % (free_needed_str, make_fs_id(dir), initial_free_str, free_at_least_str))
+                return
+
+        self.info.append(_("Download size: %s. Additional space needed: %s.") % (GLib.format_size(download_size), GLib.format_size(additional_space_needed)))
 
 if __name__ == "__main__":
     test = APTRepoCheck()

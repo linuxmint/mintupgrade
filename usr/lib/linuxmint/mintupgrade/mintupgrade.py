@@ -220,6 +220,7 @@ class MainWindow():
         self.checks.append(info)
         self.checks.append(UpdateReposCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
+        self.checks.append(SimulateUpgradeCheck(callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):
