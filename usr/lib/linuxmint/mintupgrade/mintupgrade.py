@@ -265,9 +265,12 @@ class MainWindow():
                 child.destroy()
             for info in check.info:
                 if isinstance(info, str):
-                    widget = Gtk.Label()
-                    widget.set_text(info)
-                    widget.set_line_wrap(True)
+                    if info == "---":
+                        widget = Gtk.Separator()
+                    else:
+                        widget = Gtk.Label()
+                        widget.set_markup(info)
+                        widget.set_line_wrap(True)
                 elif isinstance(info, TableList):
                     widget = Gtk.ScrolledWindow()
                     widget.set_min_content_width(400)
