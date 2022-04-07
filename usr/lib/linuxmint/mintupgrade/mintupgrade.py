@@ -210,6 +210,7 @@ class MainWindow():
         self.checks.append(PowerCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
+        self.checks.append(APTHeldCheck(callback=self.process_check_result))
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
         self.checks.append(APTForeignCheck(callback=self.process_check_result))
         self.checks.append(APTOrphanCheck(callback=self.process_check_result))

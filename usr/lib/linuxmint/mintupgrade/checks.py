@@ -396,6 +396,35 @@ class APTRepoCheck(Check):
     def run_mintsources(self):
         subprocess.getoutput("mintsources")
 
+# Check APT held packages
+class APTHeldCheck(Check):
+
+    def __init__(self, callback=None):
+        super().__init__(_("Held packages"), _("Looking for held packages..."), callback)
+
+    def do_run(self):
+        self.held = get_held_packages()
+        if len(self.held) > 0:
+            self.result = RESULT_ERROR
+            self.message = _("The following packages are held:")
+            self.fix = self.unhold_packages
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            for pkg in self.held:
+                table_list.values.append([pkg.name])
+            self.info.append(table_list)
+            self.info.append(_("Held packages can break the upgrade."))
+            return
+
+    def unhold_packages(self):
+        if len(self.held) > 0:
+            pkgs = []
+            for pkg in self.held:
+                pkgs.append(pkg.name)
+            command = 'apt-mark unhold %s' % " ".join(pkgs)
+            print(command)
+            os.system(command)
+
 # Check APT foreign packages
 class APTForeignCheck(Check):
 

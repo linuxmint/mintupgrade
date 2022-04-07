@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import apt
+import apt_pkg
 import subprocess
 
 APT_NONINTERACTIVE = 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical'
@@ -57,13 +58,29 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
 
     return (orphan_packages, downgradable_packages)
 
+# Returns a list of held packages
+def get_held_packages():
+    held_packages = []
+    cache = apt.Cache()
+    for key in cache.keys():
+        pkg = cache[key]
+        if pkg._pkg.selected_state == apt_pkg.SELSTATE_HOLD:
+            held_packages.append(pkg)
+    return (held_packages)
+
 if __name__ == "__main__":
-    orphans, foreign = get_foreign_packages()
-    if len(orphans) > 0:
-        print("Orphan packages:")
-        for pkg in orphans:
-            print("  ", pkg)
-    if len(foreign) > 0:
-        print ("Foreign packages:")
-        for pkg in foreign:
-            print("  ", pkg)
+    # orphans, foreign = get_foreign_packages()
+    # if len(orphans) > 0:
+    #     print("Orphan packages:")
+    #     for pkg in orphans:
+    #         print("  ", pkg)
+    # if len(foreign) > 0:
+    #     print ("Foreign packages:")
+    #     for pkg in foreign:
+    #         print("  ", pkg)
+
+    held = get_held_packages()
+    if len(held) > 0:
+        print("Held packages:")
+        for pkg in held:
+            print("  ", pkg.name)
