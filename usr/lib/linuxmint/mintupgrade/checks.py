@@ -28,6 +28,27 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
+class bcolors:
+    MAGENTA = '\033[95m' # Magenta
+    BLUE = '\033[94m' # Light Blue
+    GREEN = '\033[92m' # Light Green
+    ORANGE = '\033[38;5;202m' # Orange
+    RED = '\033[91m' # Light Red
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def run_command(command):
+    print(f"{bcolors.ORANGE}{command}{bcolors.ENDC}", flush=True)
+    ret = os.system(command)
+    return ret
+
+def print_error(string):
+    print_output(string, bcolors.RED)
+
+def print_output(string, color=bcolors.MAGENTA):
+    print(f"{color}{string}{bcolors.ENDC}", flush=True)
+
 class TableList():
     def __init__(self, columns):
         self.columns = columns
@@ -54,7 +75,7 @@ class Check():
 
     @async_function
     def run(self):
-        print("Running check '%s'" % self.title)
+        print_output("\nRunning check '%s'" % self.title, bcolors.BLUE)
         self.clean()
         try:
             self.do_run()
@@ -69,7 +90,7 @@ class Check():
     @async_function
     def run_fix(self):
         if self.fix != None:
-            print("Fixing check '%s'" % self.title)
+            print_output("\nFixing check '%s'" % self.title, bcolors.BLUE)
             try:
                 self.fix()
                 self.clean()
@@ -193,7 +214,7 @@ class APTCacheCheck(Check):
                 self.message = _("Your package cache can't refresh correctly. Run 'apt update' and fix the errors it displays.")
                 return
             # if successfull, call apt-get to get a trace in stdout anyway
-            os.system("DEBIAN_PRIORITY=critical apt-get update")
+            run_command("DEBIAN_PRIORITY=critical apt-get update")
             self.cache_updated = True
 
         cache = apt.Cache()
@@ -335,7 +356,7 @@ class APTRepoCheck(Check):
             mint_date = datetime.datetime.fromtimestamp(mint_timestamp)
             now = datetime.datetime.now()
             mint_age = (now - mint_date).days
-            print("Mint repository last modified on", mint_date)
+            print_output(f"Mint repository last modified on {mint_date}")
         for repo in self.mint_repos:
             if "packages.linuxmint.com" in repo.uri:
                 continue
@@ -422,9 +443,7 @@ class APTHeldCheck(Check):
             pkgs = []
             for pkg in self.held:
                 pkgs.append(pkg.name)
-            command = 'apt-mark unhold %s' % " ".join(pkgs)
-            print(command)
-            os.system(command)
+            run_command('apt-mark unhold %s' % " ".join(pkgs))
 
 # Check APT foreign packages
 class APTForeignCheck(Check):
@@ -452,9 +471,7 @@ class APTForeignCheck(Check):
             for foreign in self.foreigns:
                 installed_pkg, version, official_pkg, archive = foreign
                 pkgs.append("%s=%s" % (installed_pkg.name, official_pkg.version))
-            command = '%s install --allow-downgrades %s %s' % (APT_GET, APT_QUIET, " ".join(pkgs))
-            print(command)
-            os.system(command)
+            run_command('%s install --allow-downgrades %s %s' % (APT_GET, APT_QUIET, " ".join(pkgs)))
 
 # Check APT orphan packages
 class APTOrphanCheck(Check):
@@ -490,9 +507,7 @@ class APTOrphanCheck(Check):
 
     def remove_orphans(self):
         if len(self.orphans_to_remove) > 0:
-            command = '%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove))
-            print(command)
-            os.system(command)
+            run_command('%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove)))
 
 
 # Switch to the target repositories
@@ -513,11 +528,11 @@ class UpdateReposCheck(Check):
                 continue
             if DESTINATION_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:
                 # already points to target
-                print("%s already points to %s" % (source.uri, source.dist))
+                print_output("%s already points to %s" % (source.uri, source.dist))
             elif ORIGIN_CODENAME in source.dist:
                 # Mint repo
                 source.dist = source.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
-                print("Switching %s to %s" % (source.uri, source.dist))
+                print_output("Switching %s to %s" % (source.uri, source.dist))
             elif ORIGIN_BASE_CODENAME in source.dist:
                 # Base repo
                 if source.dist == "buster/updates":
@@ -525,9 +540,9 @@ class UpdateReposCheck(Check):
                     source.dist = "bullseye-security"
                 else:
                     source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
-                print("Switching %s to %s" % (source.uri, source.dist))
+                print_output("Switching %s to %s" % (source.uri, source.dist))
             if DESTINATION_BASE_CODENAME in source.dist and "partner" in source.comps:
-                print("Disabling partner repo (discontinued).")
+                print_output("Disabling partner repo (discontinued).")
                 source.set_enabled(False)
         self.sources.save()
 
@@ -640,7 +655,6 @@ class SimulateUpgradeCheck(Check):
                 try:
                     (what, where, fs, options, a, b) = line.split()
                 except ValueError as e:
-                    # print("line '%s' in /proc/mounts not understood (%s)" % (line, e))
                     continue
                 if not where in mounted:
                     mounted.append(where)
@@ -672,13 +686,10 @@ class SimulateUpgradeCheck(Check):
                 st = os.statvfs(d)
                 free = st.f_bavail * st.f_frsize
             else:
-                # print("directory '%s' does not exists" % d)
                 free = 0
             if fs_id in mnt_map:
-                # print("Dir %s mounted on %s" % (d, mnt_map[fs_id]))
                 fs_free[d] = fs_free[mnt_map[fs_id]]
             else:
-                # print("Free space on %s: %s" % (d, free))
                 mnt_map[fs_id] = d
                 fs_free[d] = FreeSpace(free)
 
@@ -696,7 +707,6 @@ class SimulateUpgradeCheck(Check):
             if size < 0:
                 continue
             dir = os.path.realpath(dir)
-            # print("dir '%s' needs '%s' of '%s' (%f)" % (dir, size, fs_free[dir], fs_free[dir].free))
             fs_free[dir].free -= size
             fs_free[dir].need += size
 
@@ -720,7 +730,7 @@ class DownloadCheck(Check):
         self.window = window
 
     def do_run(self):
-        ret = os.system("%s dist-upgrade --download-only --yes" % APT_GET)
+        ret = run_command("%s dist-upgrade --download-only --yes" % APT_GET)
         if ret:
             self.message = _("An error occurred while downloading the packages.")
             self.result = RESULT_ERROR
@@ -751,13 +761,13 @@ class PreUpgradeCheck(Check):
 
     def do_run(self):
         if not os.path.exists(BACKUP_FSTAB):
-            print("Saving /etc/fstab")
+            print_output("Saving /etc/fstab")
             os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
 
-        print("Removing blacklisted packages")
+        print_output("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
-            os.system('%s remove --yes %s' % (APT_GET, removal))
+            run_command('%s remove --yes %s' % (APT_GET, removal))
 
         # Disable mintsystem during the upgrade
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
@@ -786,15 +796,14 @@ class DistUpgradeCheck(Check):
 
     def try_command(self, num_times, command, fallback_commands):
         for i in range(num_times):
-            ret = os.system(command)
+            ret = run_command(command)
             if ret == 0:
                 return True
-            print("Error detected on try #%d..." % (i+1))
+            print_error("Error detected on try #%d..." % (i+1))
             if (i+1) < num_times:
-                print("Retrying...")
+                print_output("Retrying...")
             for fallback_command in fallback_commands:
-                print("Running fallback command '%s'" % fallback_command)
-                os.system(fallback_command)
+                run_command(fallback_command)
         return False
 
     def get_status(self):
@@ -815,22 +824,22 @@ class PostUpgradeCheck(Check):
         mint_meta = "mint-meta-%s" % edition
 
         # Install meta-package
-        print("Re-installing the meta-package")
-        if not os.system('%s install --yes %s' % (APT_GET, mint_meta)):
+        print_output("Re-installing the meta-package")
+        if not run_command('%s install --yes %s' % (APT_GET, mint_meta)):
             self.result = RESULT_ERROR
             self.message = _("%s could not be installed.") % mint_meta
             return
 
         # Install codecs
-        print("Re-installing the multimedia codecs")
-        if not os.sytem('%s install --yes mint-meta-codecs' % APT_GET):
+        print_output("Re-installing the multimedia codecs")
+        if not run_command('%s install --yes mint-meta-codecs' % APT_GET):
             self.result = RESULT_ERROR
             self.message = _("mint-meta-codecs could not be installed.")
             return
 
         # Install new packages
-        print("Installing new packages")
-        if not os.system('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+        print_output("Installing new packages")
+        if not run_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
             self.result = RESULT_ERROR
             self.message = _("The following packages could not be installed:")
             table_list = TableList([""])
@@ -847,13 +856,13 @@ class PostUpgradeCheck(Check):
             return
 
         # Remove packages
-        print("Removing obsolete packages")
+        print_output("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
-            os.system('%s purge --yes %s' % (APT_GET, removal))
+            run_command('%s purge --yes %s' % (APT_GET, removal))
 
         # Autoremove packages
-        print("Running autoclean to remove unused packages")
+        print_output("Running autoclean to remove unused packages")
         os.sytem("%s --purge autoremove --yes" % APT_GET)
 
         # Adjust Grub title

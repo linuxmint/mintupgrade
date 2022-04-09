@@ -228,7 +228,7 @@ class MainWindow():
         info.message = _("The packages will now be upgraded.")
         self.checks.append(InhibitCheck(callback=self.process_check_result))
         self.checks.append(PreUpgradeCheck(callback=self.process_check_result))
-        self.checks.append(DistUpgradeCheck(self.window, callback=self.process_check_result))
+        self.checks.append(DistUpgradeCheck(callback=self.process_check_result))
         self.checks.append(PostUpgradeCheck(callback=self.process_check_result))
         self.run_next_check()
 
