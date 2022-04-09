@@ -749,10 +749,10 @@ class PreUpgradeCheck(Check):
         super().__init__(_("Preparing the upgrade"), _("Preparing the upgrade..."), callback)
 
     def do_run(self):
-        self.progress("Saving /etc/fstab")
+        print("Saving /etc/fstab")
         os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
 
-        self.progress("Removing blacklisted packages")
+        print("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
             os.system('apt-get remove --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
 
@@ -771,12 +771,12 @@ class DistUpgradeCheck(Check):
 
         result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
         if not result:
-            self.progress("An issue was detected during the upgrade, running the upgrade in manual mode.")
+            print("An issue was detected during the upgrade, running the upgrade in manual mode.")
             self.check_command('apt-get upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
         result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
         if not result:
-            self.progress("An issue was detected during the upgrade, running dist-upgrade in manual mode.")
+            print("An issue was detected during the upgrade, running dist-upgrade in manual mode.")
             self.check_command('apt-get dist-upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
 class PostUpgradeCheck(Check):
@@ -785,23 +785,23 @@ class PostUpgradeCheck(Check):
         super().__init__(_("Finalizing the upgrade"), _("Finalizing the upgrade..."), callback)
 
     def do_run(self):
-        self.progress("Re-installing the meta-package for your edition of Linux Mint")
+        print("Re-installing the meta-package for your edition of Linux Mint")
         self.check_command('apt-get install --yes %s' % self.mint_meta, "Failed to install %s" % self.mint_meta)
 
-        self.progress("Re-installing the multimedia codecs")
+        print("Re-installing the multimedia codecs")
         self.check_command('apt-get install --yes mint-meta-codecs', "Failed to install mint-meta-codecs")
 
-        self.progress("Installing new packages")
+        print("Installing new packages")
         self.check_command('apt-get install --yes %s' % " ".join(PACKAGES_ADDITIONS), "Failed to install additional packages.")
 
-        self.progress("Removing obsolete packages")
+        print("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
             os.system('apt-get purge --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
 
-        self.progress("Running autoclean to remove unused packages")
+        print("Running autoclean to remove unused packages")
         self.check_command("apt-get --purge autoremove --yes", "Failed to autoremove unused packages.")
 
-        self.progress("Performing system adjustments")
+        print("Performing system adjustments")
         os.system("rm -f /etc/systemd/logind.conf")
         os.system("apt install --reinstall -o Dpkg::Options::=\"--force-confmiss\" systemd")
         os.system("rm -f /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla")
