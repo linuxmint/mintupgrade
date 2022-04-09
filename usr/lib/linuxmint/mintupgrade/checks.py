@@ -451,7 +451,7 @@ class APTForeignCheck(Check):
             for foreign in self.foreigns:
                 installed_pkg, version, official_pkg, archive = foreign
                 pkgs.append("%s=%s" % (installed_pkg.name, official_pkg.version))
-            command = '%s apt-get install --allow-downgrades %s %s' % (APT_NONINTERACTIVE, APT_QUIET, " ".join(pkgs))
+            command = '%s install --allow-downgrades %s %s' % (APT_GET, APT_QUIET, " ".join(pkgs))
             print(command)
             os.system(command)
 
@@ -489,7 +489,7 @@ class APTOrphanCheck(Check):
 
     def remove_orphans(self):
         if len(self.orphans_to_remove) > 0:
-            command = '%s apt-get remove --purge %s %s' % (APT_NONINTERACTIVE, APT_QUIET, " ".join(self.orphans_to_remove))
+            command = '%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove))
             print(command)
             os.system(command)
 
@@ -719,7 +719,7 @@ class DownloadCheck(Check):
         self.window = window
 
     def do_run(self):
-        ret = os.system("DEBIAN_PRIORITY=critical apt-get dist-upgrade --download-only --yes")
+        ret = os.system("%s dist-upgrade --download-only --yes" % APT_GET)
         if ret:
             self.message = _("An error occurred while downloading the packages.")
             self.result = RESULT_ERROR
@@ -755,7 +755,7 @@ class PreUpgradeCheck(Check):
         print("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
-            os.system('apt-get remove --yes %s' % removal)
+            os.system('%s remove --yes %s' % (APT_GET, removal))
 
         # Disable mintsystem during the upgrade
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
@@ -768,17 +768,17 @@ class DistUpgradeCheck(Check):
     def do_run(self):
         fallback_commands = []
         fallback_commands.append("dpkg --configure -a")
-        fallback_commands.append("apt-get install -fyq")
+        fallback_commands.append("%s install -fyq" % APT_GET)
 
-        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
+        result = self.try_command(5, '%s upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, fallback_commands)
         if not result:
             print("An issue was detected during the upgrade, running the upgrade in manual mode.")
-            self.check_command('apt-get upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+            self.check_command('%s upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
-        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
+        result = self.try_command(5, '%s dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, fallback_commands)
         if not result:
             print("An issue was detected during the upgrade, running dist-upgrade in manual mode.")
-            self.check_command('apt-get dist-upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+            self.check_command('%s -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
 class PostUpgradeCheck(Check):
 
@@ -787,24 +787,24 @@ class PostUpgradeCheck(Check):
 
     def do_run(self):
         print("Re-installing the meta-package for your edition of Linux Mint")
-        self.check_command('apt-get install --yes %s' % self.mint_meta, "Failed to install %s" % self.mint_meta)
+        self.check_command('%s install --yes %s' % (APT_GET, self.mint_meta), "Failed to install %s" % self.mint_meta)
 
         print("Re-installing the multimedia codecs")
-        self.check_command('apt-get install --yes mint-meta-codecs', "Failed to install mint-meta-codecs")
+        self.check_command('%s install --yes mint-meta-codecs' % APT_GET, "Failed to install mint-meta-codecs")
 
         print("Installing new packages")
-        self.check_command('apt-get install --yes %s' % " ".join(PACKAGES_ADDITIONS), "Failed to install additional packages.")
+        self.check_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS)), "Failed to install additional packages.")
 
         print("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
-            os.system('apt-get purge --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
+            os.system('%s purge --yes %s' % (APT_GET, removal)) # The return code indicates a failure if some packages were not found, so ignore it.
 
         print("Running autoclean to remove unused packages")
-        self.check_command("apt-get --purge autoremove --yes", "Failed to autoremove unused packages.")
+        self.check_command("%s --purge autoremove --yes" % APT_GET, "Failed to autoremove unused packages.")
 
         print("Performing system adjustments")
         os.system("rm -f /etc/systemd/logind.conf")
-        os.system("apt install --reinstall -o Dpkg::Options::=\"--force-confmiss\" systemd")
+        os.system("%s install --reinstall -o Dpkg::Options::=\"--force-confmiss\" systemd" % APT_GET)
         os.system("rm -f /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla")
 
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
