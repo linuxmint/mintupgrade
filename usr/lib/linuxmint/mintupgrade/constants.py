@@ -9,7 +9,4 @@ if IS_LMDE:
 else:
     from constants_mint import *
 
-BACKUP_DIR = os.path.expanduser("~/Upgrade-Backup-%s" % ORIGIN_CODENAME)
-BACKUP_APT_SOURCES = os.path.join(BACKUP_DIR, "APT")
-BACKUP_FSTAB = os.path.join(BACKUP_DIR, "fstab")
-BACKUP_CRYPTTAB = os.path.join(BACKUP_DIR, "crypttab")
+BACKUP_FSTAB = os.path.expanduser("~/.fstab.bk")

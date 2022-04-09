@@ -750,8 +750,9 @@ class PreUpgradeCheck(Check):
         super().__init__(_("Preparing the upgrade"), _("Preparing the upgrade..."), callback)
 
     def do_run(self):
-        print("Saving /etc/fstab")
-        os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
+        if not os.path.exists(BACKUP_FSTAB):
+            print("Saving /etc/fstab")
+            os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
 
         print("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
@@ -770,16 +771,37 @@ class DistUpgradeCheck(Check):
         fallback_commands = []
         fallback_commands.append("dpkg --configure -a")
         fallback_commands.append("%s install -fyq" % APT_GET)
+        # Upgrade
+        if not self.try_command(5, '%s upgrade %s' % (APT_GET, APT_QUIET), fallback_commands):
+            self.result = RESULT_ERROR
+            self.message = _("An issue was detected during the upgrade.")
+            self.info.append(self.get_status())
+            return
+        # Dist-upgrade
+        if not self.try_command(5, '%s dist-upgrade %s' % (APT_GET, APT_QUIET), fallback_commands)
+            self.result = RESULT_ERROR
+            self.message = _("An issue was detected during the dist-upgrade.")
+            self.info.append(self.get_status())
+            return
 
-        result = self.try_command(5, '%s upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, fallback_commands)
-        if not result:
-            print("An issue was detected during the upgrade, running the upgrade in manual mode.")
-            self.check_command('%s upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+    def try_command(self, num_times, command, fallback_commands):
+        for i in range(num_times):
+            ret = os.system(command)
+            if ret == 0:
+                return True
+            print("Error detected on try #%d..." % (i+1))
+            if (i+1) < num_times:
+                print("Retrying...")
+            for fallback_command in fallback_commands:
+                print("Running fallback command '%s'" % fallback_command)
+                os.system(fallback_command)
+        return False
 
-        result = self.try_command(5, '%s dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, fallback_commands)
-        if not result:
-            print("An issue was detected during the upgrade, running dist-upgrade in manual mode.")
-            self.check_command('%s -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"' % APT_GET, "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+    def get_status(self):
+        cache = apt.Cache()
+        cache.upgrade(True)
+        message = _("%d packages still need to be updated (%d kept, %d deleted)") % (cache.install_count, cache.keep_count, cache.delete_count)
+        return message
 
 class PostUpgradeCheck(Check):
 
@@ -787,27 +809,54 @@ class PostUpgradeCheck(Check):
         super().__init__(_("Finalizing the upgrade"), _("Finalizing the upgrade..."), callback)
 
     def do_run(self):
-        print("Re-installing the meta-package for your edition of Linux Mint")
-        self.check_command('%s install --yes %s' % (APT_GET, self.mint_meta), "Failed to install %s" % self.mint_meta)
 
+        edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
+        edition = edition.lower().replace('"', '')
+        mint_meta = "mint-meta-%s" % edition
+
+        # Install meta-package
+        print("Re-installing the meta-package")
+        if not os.system('%s install --yes %s' % (APT_GET, mint_meta)):
+            self.result = RESULT_ERROR
+            self.message = _("%s could not be installed.") % mint_meta
+            return
+
+        # Install codecs
         print("Re-installing the multimedia codecs")
-        self.check_command('%s install --yes mint-meta-codecs' % APT_GET, "Failed to install mint-meta-codecs")
+        if not os.sytem('%s install --yes mint-meta-codecs' % APT_GET):
+            self.result = RESULT_ERROR
+            self.message = _("mint-meta-codecs could not be installed.")
+            return
 
+        # Install new packages
         print("Installing new packages")
-        self.check_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS)), "Failed to install additional packages.")
+        if not os.system('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+            self.result = RESULT_ERROR
+            self.message = _("The following packages could not be installed:")
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            cache = apt.Cache()
+            for name in PACKAGES_ADDITIONS:
+                if name in cache:
+                    pkg = cache[name]
+                    if not pkg.is_installed:
+                        table_list.append([name])
+                else:
+                    table_list.append([name])
+            self.info.append(table_list)
+            return
 
+        # Remove packages
         print("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
-            os.system('%s purge --yes %s' % (APT_GET, removal)) # The return code indicates a failure if some packages were not found, so ignore it.
+            # The return code indicates a failure if some packages were not found, so ignore it.
+            os.system('%s purge --yes %s' % (APT_GET, removal))
 
+        # Autoremove packages
         print("Running autoclean to remove unused packages")
-        self.check_command("%s --purge autoremove --yes" % APT_GET, "Failed to autoremove unused packages.")
+        os.sytem("%s --purge autoremove --yes" % APT_GET)
 
-        print("Performing system adjustments")
-        os.system("rm -f /etc/systemd/logind.conf")
-        os.system("%s install --reinstall -o Dpkg::Options::=\"--force-confmiss\" systemd" % APT_GET)
-        os.system("rm -f /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla")
-
+        # Adjust Grub title
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
             os.system("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title")
         elif os.path.exists("/usr/share/debian-system-adjustments/systemd/adjust-grub-title"):
@@ -819,11 +868,14 @@ class PostUpgradeCheck(Check):
 
         # Restore /etc/fstab if it was changed
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
-            os.system("cp /etc/fstab %s.upgraded" % BACKUP_FSTAB)
+            os.system("cp /etc/fstab /etc/fstab.upgraded")
             os.system("cp %s /etc/fstab" % BACKUP_FSTAB)
-            print("A package modified /etc/fstab during the upgrade. To ensure a successful boot, the\n"
-                      "    upgrader restored your original /etc/fstab and saved the modified file in \n"
-                      "    %s.upgraded." % BACKUP_FSTAB)
+            self.result = RESULT_INFO
+            self.message = _("/etc/fstab was modified during the upgrade.")
+            self.info.append(_("To ensure a successful boot, the upgrade tool restored your original /etc/fstab"))
+            self.info.append(_("A copy of the modified file was saved as /etc/fstab.upgraded"))
+        else:
+            os.unlink(BACKUP_FSTAB)
 
 if __name__ == "__main__":
     test = APTRepoCheck()
