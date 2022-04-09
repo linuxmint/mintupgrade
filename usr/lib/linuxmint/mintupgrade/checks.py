@@ -525,6 +525,9 @@ class UpdateReposCheck(Check):
                 else:
                     source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
                 print("Switching %s to %s" % (source.uri, source.dist))
+            if DESTINATION_BASE_CODENAME in source.dist and "partner" in source.comps:
+                print("Disabling partner repo (discontinued).")
+                source.set_enabled(False)
         self.sources.save()
 
 # Check conflicts and HDD space
