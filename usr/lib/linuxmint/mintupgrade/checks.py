@@ -754,10 +754,10 @@ class PreUpgradeCheck(Check):
 
         self.progress("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
-            os.system('sudo apt-get remove --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
+            os.system('apt-get remove --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
 
         # Disable mintsystem during the upgrade
-        os.system("sudo crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
+        os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
 
 class DistUpgradeCheck(Check):
 
@@ -766,18 +766,18 @@ class DistUpgradeCheck(Check):
 
     def do_run(self):
         fallback_commands = []
-        fallback_commands.append("sudo dpkg --configure -a")
-        fallback_commands.append("sudo apt-get install -fyq")
+        fallback_commands.append("dpkg --configure -a")
+        fallback_commands.append("apt-get install -fyq")
 
-        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical sudo apt-get upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
+        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
         if not result:
             self.progress("An issue was detected during the upgrade, running the upgrade in manual mode.")
-            self.check_command('sudo apt-get upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+            self.check_command('apt-get upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
-        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical sudo apt-get dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
+        result = self.try_command(5, 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get dist-upgrade -fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', fallback_commands)
         if not result:
             self.progress("An issue was detected during the upgrade, running dist-upgrade in manual mode.")
-            self.check_command('sudo apt-get dist-upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
+            self.check_command('apt-get dist-upgrade -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"', "Failed to dist-upgrade some of the packages. Please review the error message, use APT to fix the situation and try again.")
 
 class PostUpgradeCheck(Check):
 
@@ -786,39 +786,39 @@ class PostUpgradeCheck(Check):
 
     def do_run(self):
         self.progress("Re-installing the meta-package for your edition of Linux Mint")
-        self.check_command('sudo apt-get install --yes %s' % self.mint_meta, "Failed to install %s" % self.mint_meta)
+        self.check_command('apt-get install --yes %s' % self.mint_meta, "Failed to install %s" % self.mint_meta)
 
         self.progress("Re-installing the multimedia codecs")
-        self.check_command('sudo apt-get install --yes mint-meta-codecs', "Failed to install mint-meta-codecs")
+        self.check_command('apt-get install --yes mint-meta-codecs', "Failed to install mint-meta-codecs")
 
         self.progress("Installing new packages")
-        self.check_command('sudo apt-get install --yes %s' % " ".join(PACKAGES_ADDITIONS), "Failed to install additional packages.")
+        self.check_command('apt-get install --yes %s' % " ".join(PACKAGES_ADDITIONS), "Failed to install additional packages.")
 
         self.progress("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
-            os.system('sudo apt-get purge --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
+            os.system('apt-get purge --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
 
         self.progress("Running autoclean to remove unused packages")
-        self.check_command("sudo apt-get --purge autoremove --yes", "Failed to autoremove unused packages.")
+        self.check_command("apt-get --purge autoremove --yes", "Failed to autoremove unused packages.")
 
         self.progress("Performing system adjustments")
-        os.system("sudo rm -f /etc/systemd/logind.conf")
+        os.system("rm -f /etc/systemd/logind.conf")
         os.system("apt install --reinstall -o Dpkg::Options::=\"--force-confmiss\" systemd")
-        os.system("sudo rm -f /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla")
+        os.system("rm -f /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla")
 
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
-            os.system("sudo /usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title")
+            os.system("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title")
         elif os.path.exists("/usr/share/debian-system-adjustments/systemd/adjust-grub-title"):
-            os.system("sudo /usr/share/debian-system-adjustments/systemd/adjust-grub-title")
+            os.system("/usr/share/debian-system-adjustments/systemd/adjust-grub-title")
 
         # Re-enable mintsystem
-        os.system("sudo crudini --set /etc/linuxmint/mintSystem.conf global enabled True")
-        os.system("sudo /usr/lib/linuxmint/mintsystem/mint-adjust.py")
+        os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled True")
+        os.system("/usr/lib/linuxmint/mintsystem/mint-adjust.py")
 
         # Restore /etc/fstab if it was changed
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
             os.system("cp /etc/fstab %s.upgraded" % BACKUP_FSTAB)
-            os.system("sudo cp %s /etc/fstab" % BACKUP_FSTAB)
+            os.system("cp %s /etc/fstab" % BACKUP_FSTAB)
             self.warn("A package modified /etc/fstab during the upgrade. To ensure a successful boot, the\n"
                       "    upgrader restored your original /etc/fstab and saved the modified file in \n"
                       "    %s.upgraded." % BACKUP_FSTAB)
