@@ -11,6 +11,7 @@ from apt_utils import *
 import gettext, locale
 import traceback
 import subprocess
+import filecmp
 
 import apt
 import apt_pkg
