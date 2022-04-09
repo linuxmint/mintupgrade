@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=MintUpgrade
+Name=Upgrade Tool
 Comment=Upgrade Tool
 Exec=pkexec mintupgrade
 Icon=mintupgrade
@@ -9,3 +9,4 @@ Encoding=UTF-8
 Categories=GTK;GNOME;Utility;X-GNOME-Utilities;
 Keywords=project;keywords;
 StartupNotify=false
+NoDisplay=true

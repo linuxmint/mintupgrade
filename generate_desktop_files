@@ -20,6 +20,7 @@ Encoding=UTF-8
 Categories=GTK;GNOME;Utility;X-GNOME-Utilities;
 Keywords=project;keywords;
 StartupNotify=false
+NoDisplay=true
 """
 
-additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/mintupgrade.desktop", prefix, _("MintUpgrade"), _("Upgrade Tool"), suffix)
+additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/mintupgrade.desktop", prefix, _("Upgrade Tool"), _("Upgrade Tool"), suffix)
