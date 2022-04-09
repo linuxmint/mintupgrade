@@ -778,7 +778,7 @@ class DistUpgradeCheck(Check):
             self.info.append(self.get_status())
             return
         # Dist-upgrade
-        if not self.try_command(5, '%s dist-upgrade %s' % (APT_GET, APT_QUIET), fallback_commands)
+        if not self.try_command(5, '%s dist-upgrade %s' % (APT_GET, APT_QUIET), fallback_commands):
             self.result = RESULT_ERROR
             self.message = _("An issue was detected during the dist-upgrade.")
             self.info.append(self.get_status())
