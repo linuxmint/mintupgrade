@@ -16,7 +16,7 @@ Depends: gir1.2-xapp-1.0 (>= 1.4),
          xapps-common,
          mintsources,
          mintupdate,
-         crudini
+         crudini,
          ${misc:Depends}
 Description: Upgrade Tool
  Upgrade your Operating System to a new version.
