@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+import sys
+import psutil
+import time
+
+from gi.repository import GLib, Gio
+
+bus = Gio.bus_get_sync(Gio.BusType.SESSION)
+
+    # 1: Inhibit logging out
+    # 2: Inhibit user switching
+    # 4: Inhibit suspending the session or computer
+    # 8: Inhibit the session being marked as idle
+
+FLAGS = 1 | 2 | 4 | 8
+
+# This doesn't work on xfce.  Their session manager doesn't
+# appear to support Inhibit.
+try:
+    bus.call_sync("org.gnome.SessionManager",
+                  "/org/gnome/SessionManager",
+                  "org.gnome.SessionManager",
+                  "Inhibit",
+                  GLib.Variant("(susu)",
+                               ("mintupgrade", 0, "Performing a system upgrade", FLAGS)),
+                  None,
+                  Gio.DBusCallFlags.NONE,
+                  2000,
+                  None)
+except:
+    pass
+
+while psutil.pid_exists(int(sys.argv[1])):
+    time.sleep(1)
+
+exit(0)
