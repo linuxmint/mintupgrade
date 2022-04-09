@@ -754,7 +754,8 @@ class PreUpgradeCheck(Check):
 
         print("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
-            os.system('apt-get remove --yes %s' % removal) # The return code indicates a failure if some packages were not found, so ignore it.
+            # The return code indicates a failure if some packages were not found, so ignore it.
+            os.system('apt-get remove --yes %s' % removal)
 
         # Disable mintsystem during the upgrade
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
@@ -819,7 +820,7 @@ class PostUpgradeCheck(Check):
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
             os.system("cp /etc/fstab %s.upgraded" % BACKUP_FSTAB)
             os.system("cp %s /etc/fstab" % BACKUP_FSTAB)
-            self.warn("A package modified /etc/fstab during the upgrade. To ensure a successful boot, the\n"
+            print("A package modified /etc/fstab during the upgrade. To ensure a successful boot, the\n"
                       "    upgrader restored your original /etc/fstab and saved the modified file in \n"
                       "    %s.upgraded." % BACKUP_FSTAB)
 
