@@ -711,6 +711,19 @@ class SimulateUpgradeCheck(Check):
 
         self.info.append(_("Download size: %s. Additional space needed: %s.") % (GLib.format_size(download_size), GLib.format_size(additional_space_needed)))
 
+# Download updates
+class DownloadCheck(Check):
+
+    def __init__(self, window, callback=None):
+        super().__init__(_("Download packages"), _("Downloading packages..."), callback)
+        self.window = window
+
+    def do_run(self):
+        ret = os.system("DEBIAN_PRIORITY=critical apt-get dist-upgrade --download-only --yes")
+        if ret:
+            self.message = _("An error occurred while downloading the packages.")
+            self.result = RESULT_ERROR
+
 if __name__ == "__main__":
     test = APTRepoCheck()
     test.do_run()

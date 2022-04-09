@@ -222,6 +222,10 @@ class MainWindow():
         self.checks.append(UpdateReposCheck(callback=self.process_check_result))
         self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.checks.append(SimulateUpgradeCheck(callback=self.process_check_result))
+        self.checks.append(DownloadCheck(self.window, callback=self.process_check_result))
+        info = ShowInfoCheck(_("Phase 3: Upgrade"), callback=self.process_check_result)
+        info.icon_name = "dialog-info"
+        info.message = _("The packages will now be upgraded.")
         self.run_next_check()
 
     def run_next_check(self):
