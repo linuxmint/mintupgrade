@@ -839,21 +839,22 @@ class PostUpgradeCheck(Check):
 
         # Install new packages
         print_output("Installing new packages")
-        if not run_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
-            self.result = RESULT_ERROR
-            self.message = _("The following packages could not be installed:")
-            table_list = TableList([""])
-            table_list.show_column_names = False
-            cache = apt.Cache()
-            for name in PACKAGES_ADDITIONS:
-                if name in cache:
-                    pkg = cache[name]
-                    if not pkg.is_installed:
+        if len(PACKAGES_ADDITIONS) > 0:
+            if not run_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+                self.result = RESULT_ERROR
+                self.message = _("The following packages could not be installed:")
+                table_list = TableList([""])
+                table_list.show_column_names = False
+                cache = apt.Cache()
+                for name in PACKAGES_ADDITIONS:
+                    if name in cache:
+                        pkg = cache[name]
+                        if not pkg.is_installed:
+                            table_list.append([name])
+                    else:
                         table_list.append([name])
-                else:
-                    table_list.append([name])
-            self.info.append(table_list)
-            return
+                self.info.append(table_list)
+                return
 
         # Remove packages
         print_output("Removing obsolete packages")
