@@ -226,6 +226,10 @@ class MainWindow():
         info = ShowInfoCheck(_("Phase 3: Upgrade"), callback=self.process_check_result)
         info.icon_name = "dialog-info"
         info.message = _("The packages will now be upgraded.")
+        self.checks.append(InhibitCheck(callback=self.process_check_result))
+        self.checks.append(PreUpgradeCheck(callback=self.process_check_result))
+        self.checks.append(DistUpgradeCheck(self.window, callback=self.process_check_result))
+        self.checks.append(PostUpgradeCheck(callback=self.process_check_result))
         self.run_next_check()
 
     def run_next_check(self):
