@@ -431,7 +431,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="page_info">
+                      <object class="GtkBox" id="page_ready">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">center</property>
@@ -442,7 +442,7 @@
                           <object class="GtkImage" id="image_error1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon_name">dialog-ok-symbolic</property>
+                            <property name="icon_name">face-smile-symbolic</property>
                             <property name="icon_size">6</property>
                           </object>
                           <packing>
@@ -455,7 +455,7 @@
                           <object class="GtkLabel" id="label_error_title1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">All tests passed successfully</property>
+                            <property name="label" translatable="yes">The upgrade was successful.</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
@@ -470,19 +470,14 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">All tests passed!</property>
+                            <property name="label" translatable="yes">Reboot the computer for all changes to take effect.</property>
+                            <property name="wrap">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">2</property>
                           </packing>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
                         </child>
                       </object>
                       <packing>
