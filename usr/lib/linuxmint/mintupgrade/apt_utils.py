@@ -2,7 +2,7 @@
 import apt
 import apt_pkg
 import subprocess
-APT_GET = 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical  apt-get'
+APT_GET = 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get'
 APT_QUIET = '-fyq -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-overwrite"'
 
 # Returns a tuple containing two lists
