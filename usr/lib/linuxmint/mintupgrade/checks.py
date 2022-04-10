@@ -853,9 +853,9 @@ class PostUpgradeCheck(Check):
                     if name in cache:
                         pkg = cache[name]
                         if not pkg.is_installed:
-                            table_list.append([name])
+                            table_list.values.append([name])
                     else:
-                        table_list.append([name])
+                        table_list.values.append([name])
                 self.info.append(table_list)
                 return
 
