@@ -40,9 +40,14 @@ class bcolors:
 
 def run_command(command):
     print(f"{bcolors.ORANGE}{command}{bcolors.ENDC}", flush=True)
-    ret = os.system(command)
-    os.system("stty onlcr")
-    return ret
+    try:
+        subprocess.check_call(command, shell=True)
+    except subprocess.CalledProcessError as e:
+        print_error("Error - Return code: %s" % e.returncode)
+        return False
+    return True
+    # ret = os.system(command)
+    # return ret
 
 def print_error(string):
     print_output(string, bcolors.RED)
@@ -734,7 +739,7 @@ class DownloadCheck(Check):
 
     def do_run(self):
         ret = run_command("%s dist-upgrade --download-only --yes" % APT_GET)
-        if ret:
+        if not ret:
             self.message = _("An error occurred while downloading the packages.")
             self.result = RESULT_ERROR
 
@@ -800,7 +805,7 @@ class DistUpgradeCheck(Check):
     def try_command(self, num_times, command, fallback_commands):
         for i in range(num_times):
             ret = run_command(command)
-            if ret == 0:
+            if ret == True:
                 return True
             print_error("Error detected on try #%d..." % (i+1))
             if (i+1) < num_times:
