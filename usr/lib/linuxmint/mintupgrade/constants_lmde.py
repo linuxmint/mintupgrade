@@ -17,7 +17,7 @@ PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
     "gnote",
-    "ippusb"
+    "ipp-usb"
 ]
 
 PACKAGES_ADDITIONS = [
