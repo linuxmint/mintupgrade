@@ -36,7 +36,6 @@ PACKAGES_ADDITIONS = [
     "celluloid",
     "drawing",
     "gnote",
-    "adwaita-icon-theme-full", # 19.3->20
     "warpinator", #
     "alsa-topology-conf", #
     "alsa-ucm-conf", #
