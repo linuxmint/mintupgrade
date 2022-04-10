@@ -210,6 +210,8 @@ class APTCacheCheck(Check):
     def do_run(self):
         # Update the cache
         if not self.cache_updated:
+            run_command("rm -rf /var/lib/apt/lists/*")
+            run_command("DEBIAN_PRIORITY=critical apt-get update")
             # detect cache errors using python-apt (apt-get doesn't return proper error codes)
             try:
                 cache = apt.Cache()
@@ -219,8 +221,6 @@ class APTCacheCheck(Check):
                 self.result = RESULT_ERROR
                 self.message = _("Your package cache can't refresh correctly. Run 'apt update' and fix the errors it displays.")
                 return
-            # if successfull, call apt-get to get a trace in stdout anyway
-            run_command("DEBIAN_PRIORITY=critical apt-get update")
             self.cache_updated = True
 
         cache = apt.Cache()
