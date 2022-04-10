@@ -21,11 +21,8 @@ PACKAGES_REMOVALS = [
     "xplayer-common",
     "gksu",
     "memtest86+",
-    "*hwe-18.04*",
-    "linux-hwe*",
     "python3-tinycss", #
-    "indicator-application",
-    "grub2-theme-mint"
+    "indicator-application"
 ]
 
 PACKAGES_ADDITIONS = [
