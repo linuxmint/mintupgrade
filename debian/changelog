@@ -1,3 +1,93 @@
+mintupgrade (1.0.1) elsie; urgency=medium
+
+  * Run as root
+  * Domain: Move from org.x to com.linuxmint
+  * Domain: Move files to /usr/lib/linuxmint/mintupgrade and /usr/share/linuxmint/mintupgrade
+  * Change icon
+  * Start adding checks
+  * Add checks override in preferences
+  * Add a page to show after tests have completed.
+  * Move constants to a separate file
+  * Treat VersionCheck like other checks
+  * Add a Timeshift check
+  * Add APT checks
+  * Let checks provide information and lists to be displayed in the UI
+  * Let checks provide a fix action
+  * Clean check state before runs
+  * Fix icon in error page
+  * Add a fix for timeshift
+  * Add a fix for pkgs install/remove
+  * UI: Don't prefer dark mode by default
+  * Test: use sudo
+  * Add some dependencies
+  * Make checks.py executable
+  * Change constants to simulate a Mint 21 upgrade
+  * Don't run mintupdate as root.
+  * same
+  * Improve table lists
+  * Small fixes
+  * Add AptRepoCheck
+  * Add APTForeignCheck
+  * Fix test code running all the time
+  * Fail if apt-get update fails
+  * Add APTOrphanCheck
+  * Remove ippusbxd prior to upgrade
+  * Repos: Handle syntax change for Debian bullseye security
+  * APT: Don't rely on --error-on=any, it doesn't exist in Debian buster.
+  * Apt cache: handle exceptions on opening and creating the cache also
+  * Fix typo
+  * Provide constants for both LMDE and Mint
+  * Add the ability to show info pages
+  * Add a preference to skip orphans check
+  * Increase HTTP connection timeout from 5s to 30s
+  * Add more info, rephrase a few things..
+  * Implement APT repos switch
+  * Add support for separators and markups
+  * UI info improvements
+  * Add a check for upgrade simulation and free-space
+  * Remove debug line
+  * Add a check for held packages
+  * Disable Ubuntu partner repository
+  * Implement the download of packages
+  * Hide menu item
+  * Add upgrade code from mintupgrade
+  * Remove sudo calls
+  * Remove progress calls
+  * Depend on crudini
+  * Remove warn call
+  * Add items to todo
+  * Use non-interactive variables for all apt-get calls
+  * Add missing dependency
+  * Fix upgrade checks
+  * Add mintupgrade-inhibit-power
+  * Fix typo
+  * Wrap print and system calls
+  * Fix case when PACKAGE_ADDITIONS is empty
+  * Fix typo
+  * Don't consider mintupgrade itself an orphan
+  * Try to fix the staircase effect output in terminal
+  * Don't require default-jre
+  * Check Foreign/Orphan pkgs post-upgrade
+  * Fix typo
+  * Use subprocess in run_command
+  * LMDE: Remove adwaita-icon-theme-full
+  * Fix typo
+  * Adjust constants
+  * Fix typo
+  * LMDE: Update constants
+  * Try to fix staircase and I/O issues between apt and tty
+  * Update TODO
+  * Update TODO
+  * Adjust messages in foreign/orphan steps
+  * UI: Update success page
+  * Update TODO
+  * Fix typo
+  * Fix typo
+  * Use run_command instead of os.system
+  * Completely reset cache before updating it
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 10 Apr 2022 20:27:16 +0100
+
 mintupgrade (1.0.0) una; urgency=low
 
   * Initial release
