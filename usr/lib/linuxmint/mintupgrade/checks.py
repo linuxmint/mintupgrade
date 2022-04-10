@@ -468,7 +468,7 @@ class APTForeignCheck(Check):
                 installed_pkg, version, official_pkg, archive = foreign
                 table_list.values.append([installed_pkg.name, version, official_pkg.version, archive])
             self.info.append(table_list)
-            self.info.append(_("Otherwise these packages can break the upgrade and create conflicts."))
+            self.info.append(_("Otherwise these packages can create conflicts."))
             return
 
     def downgrade_foreign_packages(self):
@@ -508,7 +508,6 @@ class APTOrphanCheck(Check):
                     for orphan in self.orphans_to_remove:
                         table_list.values.append([orphan])
                     self.info.append(table_list)
-                    self.info.append(_("They can create issues during the upgrade."))
                     self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
                     self.info.append(_("Then press 'Fix' to remove the packages listed above."))
                     return
