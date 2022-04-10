@@ -488,6 +488,8 @@ class APTOrphanCheck(Check):
                 to_keep = settings.get_strv("orphans-to-keep")
                 for orphan in orphans:
                     pkg, version = orphan
+                    if pkg.name == "mintupgrade":
+                        continue
                     if pkg.name not in to_keep:
                         self.orphans_to_remove.append(pkg.name)
 
