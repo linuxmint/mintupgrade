@@ -229,6 +229,8 @@ class MainWindow():
         self.checks.append(InhibitCheck(callback=self.process_check_result))
         self.checks.append(PreUpgradeCheck(callback=self.process_check_result))
         self.checks.append(DistUpgradeCheck(callback=self.process_check_result))
+        self.checks.append(APTForeignCheck(callback=self.process_check_result))
+        self.checks.append(APTOrphanCheck(callback=self.process_check_result))
         self.checks.append(PostUpgradeCheck(callback=self.process_check_result))
         self.run_next_check()
 
