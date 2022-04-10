@@ -41,7 +41,7 @@ class bcolors:
 def run_command(command):
     print(f"{bcolors.ORANGE}{command}{bcolors.ENDC}", flush=True)
     try:
-        subprocess.check_call(command, shell=True)
+        subprocess.check_call(command, shell=True, start_new_session=True)
     except subprocess.CalledProcessError as e:
         print_error("Error - Return code: %s" % e.returncode)
         return False
