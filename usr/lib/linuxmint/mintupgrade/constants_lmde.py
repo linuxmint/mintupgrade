@@ -16,32 +16,35 @@ CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-k
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
-    "tomboy",
-    "libxplayer-plparser18",
-    "xplayer-common",
-    "gksu",
-    "memtest86+",
-    "python3-tinycss", #
-    "indicator-application"
+    "gnote",
+    "ippusb"
 ]
 
 PACKAGES_ADDITIONS = [
-    "neofetch",
-    "ffmpegthumbnailer",
-    "amd64-microcode",
-    "intel-microcode",
-    "celluloid",
-    "drawing",
-    "gnote",
-    "warpinator", #
-    "alsa-topology-conf", #
-    "alsa-ucm-conf", #
-    "mesa-vdpau-drivers", #
-    "mesa-vulkan-drivers", #
+    "alsa-topology-conf",
+    "alsa-ucm-conf",
+    "bulky",
     "cryptsetup-initramfs",
     "cryptsetup-run",
-    "libreoffice-gtk3",
     "gamemode"
+    "hypnotix",
+    "libgdk-pixbuf2.0-bin",
+    "libreoffice-gtk3",
+    "mesa-vdpau-drivers",
+    "mesa-vulkan-drivers",
+    "mintreport",
+    "neofetch",
+    "seahorse",
+    "sticky",
+    "system-config-printer",
+    "thingy",
+    "warpinator",
+    "webapp-manager",
+    "xapp-appimage-thumbnailer",
+    "xapp-epub-thumbnailer",
+    "xapp-mp3-thumbnailer",
+    "xapp-raw-thumbnailer",
+    "youtube-dl"
 ]
 
 IMPORTANT_PACKAGES = [
