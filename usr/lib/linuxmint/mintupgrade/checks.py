@@ -41,6 +41,7 @@ class bcolors:
 def run_command(command):
     print(f"{bcolors.ORANGE}{command}{bcolors.ENDC}", flush=True)
     ret = os.system(command)
+    os.system("stty onlcr")
     return ret
 
 def print_error(string):
