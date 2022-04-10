@@ -470,7 +470,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Reboot the computer for all changes to take effect.</property>
+                            <property name="label" translatable="yes">Reboot the computer for all the changes to take effect.</property>
                             <property name="wrap">True</property>
                           </object>
                           <packing>
