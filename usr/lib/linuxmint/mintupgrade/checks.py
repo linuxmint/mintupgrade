@@ -872,7 +872,7 @@ class PostUpgradeCheck(Check):
 
         # Autoremove packages
         print_output("Running autoclean to remove unused packages")
-        os.sytem("%s --purge autoremove --yes" % APT_GET)
+        os.system("%s --purge autoremove --yes" % APT_GET)
 
         # Adjust Grub title
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
