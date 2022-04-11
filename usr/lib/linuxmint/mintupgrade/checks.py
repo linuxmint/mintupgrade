@@ -749,16 +749,8 @@ class InhibitCheck(Check):
         super().__init__(_("Session inhibition"), _("Inhibiting session..."), callback)
 
     def do_run(self):
-        os.system("killall mate-screensaver")
-        os.system("killall light-locker")
-        edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
-        edition = edition.lower().replace('"', '')
-        if edition == "xfce":
-            self.result = RESULT_INFO
-            self.message = _("Disable your screensaver and power management. Do not log out or switch users during the upgrade.")
-        else:
-            cmd = "mintupgrade-inhibit-power %s %d" % (os.getenv("SUDO_UID"), os.getpid())
-            subprocess.Popen(cmd, shell=True)
+        cmd = "mintupgrade-inhibit-power %s %d" % (os.getenv("SUDO_UID"), os.getpid())
+        subprocess.Popen(cmd, shell=True)
 
 class PreUpgradeCheck(Check):
 

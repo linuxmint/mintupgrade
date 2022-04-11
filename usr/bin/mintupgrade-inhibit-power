@@ -3,6 +3,7 @@ import sys
 import psutil
 import time
 import os
+import subprocess
 
 from gi.repository import GLib, Gio
 
@@ -19,21 +20,35 @@ bus = Gio.DBusConnection.new_for_address_sync("unix:path=/run/user/%d/bus" % uid
 
 FLAGS = 1 | 2 | 4 | 8
 
-# This doesn't work on xfce.  Their session manager doesn't
-# appear to support Inhibit.
+os.system("killall mate-screensaver")
+os.system("killall light-locker")
+edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
+edition = edition.lower().replace('"', '')
+
+if edition == "xfce":
+    name = "org.freedesktop.PowerManagement"
+    path = "/org/freedesktop/PowerManagement/Inhibit"
+    iface = "org.freedesktop.PowerManagement.Inhibit"
+    args = GLib.Variant("(ss)", ("mintupgrade", "Performing a system upgrade"))
+else:
+    name = "org.gnome.SessionManager"
+    path = "/org/gnome/SessionManager"
+    iface = "org.gnome.SessionManager"
+    args = GLib.Variant("(susu)", ("mintupgrade", 0, "Performing a system upgrade", FLAGS))
+
 try:
-    bus.call_sync("org.gnome.SessionManager",
-                  "/org/gnome/SessionManager",
-                  "org.gnome.SessionManager",
+    bus.call_sync(name,
+                  path,
+                  iface,
                   "Inhibit",
-                  GLib.Variant("(susu)",
-                               ("mintupgrade", 0, "Performing a system upgrade", FLAGS)),
+                  args,
                   None,
                   Gio.DBusCallFlags.NONE,
                   2000,
                   None)
-except:
-    pass
+except Exception as e:
+    print(e)
+    exit(1)
 
 while psutil.pid_exists(pid):
     time.sleep(1)
