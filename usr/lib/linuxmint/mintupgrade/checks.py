@@ -749,17 +749,16 @@ class InhibitCheck(Check):
         super().__init__(_("Inhibit session"), _("Inhibiting session..."), callback)
 
     def do_run(self):
-        os.system("killall cinnamon-screensaver")
         os.system("killall mate-screensaver")
         os.system("killall light-locker")
-        current_desktop = os.getenv("XDG_CURRENT_DESKTOP")
-        if current_desktop != None:
-            current_desktop = current_desktop.lower().replace("x-", "") # X-Cinnamon
-            if current_desktop == "xfce":
-                self.result = RESULT_INFO
-                self.message = _("We recommend you disable your power management and do not log out or switch users during the upgrade.")
-            else:
-                subprocess.Popen(["mintupgrade-inhibit-power", str(os.getpid())])
+        edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
+        edition = edition.lower().replace('"', '')
+        if edition == "xfce":
+            self.result = RESULT_INFO
+            self.message = _("We recommend you disable your power management and do not log out or switch users during the upgrade.")
+        else:
+            cmd = "mintupgrade-inhibit-power %s %d" % (os.getenv("SUDO_UID"), os.getpid())
+            subprocess.Popen(cmd, shell=True)
 
 class PreUpgradeCheck(Check):
 

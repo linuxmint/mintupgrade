@@ -2,10 +2,15 @@
 import sys
 import psutil
 import time
+import os
 
 from gi.repository import GLib, Gio
 
-bus = Gio.bus_get_sync(Gio.BusType.SESSION)
+uid = int(sys.argv[1])
+pid = int(sys.argv[2])
+os.seteuid(uid)
+
+bus = Gio.DBusConnection.new_for_address_sync("unix:path=/run/user/%d/bus" % uid, Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT | Gio.DBusConnectionFlags.MESSAGE_BUS_CONNECTION, None, None)
 
     # 1: Inhibit logging out
     # 2: Inhibit user switching
@@ -30,7 +35,7 @@ try:
 except:
     pass
 
-while psutil.pid_exists(int(sys.argv[1])):
+while psutil.pid_exists(pid):
     time.sleep(1)
 
 exit(0)
