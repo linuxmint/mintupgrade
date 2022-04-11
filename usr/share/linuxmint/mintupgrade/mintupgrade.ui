@@ -542,49 +542,6 @@
                                     <property name="row_spacing">12</property>
                                     <property name="column_spacing">12</property>
                                     <child>
-                                      <object class="GtkLabel">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
-                                        <property name="halign">start</property>
-                                        <property name="valign">center</property>
-                                        <property name="label" translatable="yes">Prefer dark mode</property>
-                                        <attributes>
-                                          <attribute name="weight" value="bold"/>
-                                        </attributes>
-                                      </object>
-                                      <packing>
-                                        <property name="left_attach">0</property>
-                                        <property name="top_attach">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkSwitch" id="darkmode_switch">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
-                                      </object>
-                                      <packing>
-                                        <property name="left_attach">1</property>
-                                        <property name="top_attach">0</property>
-                                      </packing>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="title" translatable="yes">Preferences</property>
-                                    <property name="icon_name">preferences-other-symbolic</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkGrid">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="valign">start</property>
-                                    <property name="margin_top">20</property>
-                                    <property name="margin_bottom">20</property>
-                                    <property name="row_spacing">12</property>
-                                    <property name="column_spacing">12</property>
-                                    <child>
                                       <object class="GtkSwitch" id="timeshift_switch">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
@@ -598,10 +555,9 @@
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
                                         <property name="halign">start</property>
                                         <property name="valign">center</property>
-                                        <property name="label" translatable="yes">Recent timeshift snapshot</property>
+                                        <property name="label" translatable="yes">Recent Timeshift snapshot</property>
                                         <attributes>
                                           <attribute name="weight" value="bold"/>
                                         </attributes>
@@ -615,7 +571,6 @@
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
                                         <property name="halign">start</property>
                                         <property name="valign">center</property>
                                         <property name="label" translatable="yes">Applied software updates</property>
@@ -655,7 +610,6 @@
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
                                         <property name="halign">start</property>
                                         <property name="valign">center</property>
                                         <property name="label" translatable="yes">Supported Linux Mint version</property>
@@ -682,7 +636,6 @@
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="tooltip_text" translatable="yes">This option only works when used with light desktop themes which support dark mode.</property>
                                         <property name="halign">start</property>
                                         <property name="valign">center</property>
                                         <property name="label" translatable="yes">Orphan packages</property>
@@ -710,7 +663,6 @@
                                     <property name="name">page_requirements</property>
                                     <property name="title" translatable="yes">Requirements</property>
                                     <property name="icon_name">dialog-warning-symbolic</property>
-                                    <property name="position">1</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -826,7 +778,7 @@
                                     <property name="name">page_orphans</property>
                                     <property name="title" translatable="yes">Orphan packages</property>
                                     <property name="icon_name">emblem-favorite-symbolic</property>
-                                    <property name="position">2</property>
+                                    <property name="position">1</property>
                                   </packing>
                                 </child>
                               </object>

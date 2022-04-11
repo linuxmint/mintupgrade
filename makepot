@@ -1,5 +1,4 @@
 #!/bin/bash
 intltool-extract --type=gettext/glade usr/share/linuxmint/mintupgrade/mintupgrade.ui
-intltool-extract --type=gettext/glade usr/share/linuxmint/mintupgrade/shortcuts.ui
-xgettext --language=Python --keyword=_ --keyword=N_ --output=mintupgrade.pot usr/lib/linuxmint/mintupgrade/*.py generate_desktop_files usr/share/linuxmint/mintupgrade/mintupgrade.ui.h usr/share/linuxmint/mintupgrade/shortcuts.ui.h
+xgettext --language=Python --keyword=_ --keyword=N_ --output=mintupgrade.pot usr/lib/linuxmint/mintupgrade/*.py generate_desktop_files usr/share/linuxmint/mintupgrade/mintupgrade.ui.h
 rm -f usr/share/linuxmint/mintupgrade/*.ui.h

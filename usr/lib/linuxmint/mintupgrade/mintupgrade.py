@@ -77,12 +77,6 @@ class MainWindow():
         # Widget signals
         self.window.connect("key-press-event",self.on_key_press_event)
 
-        #dark mode
-        prefer_dark_mode = self.settings.get_boolean("prefer-dark-mode")
-        Gtk.Settings.get_default().set_property("gtk-application-prefer-dark-theme", prefer_dark_mode)
-        self.builder.get_object("darkmode_switch").set_active(prefer_dark_mode)
-        self.builder.get_object("darkmode_switch").connect("notify::active", self.on_darkmode_switch_toggled)
-
         # preferences
         self.settings.bind("check-timeshift", self.builder.get_object("timeshift_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind("check-updates", self.builder.get_object("updates_switch"), "active", Gio.SettingsBindFlags.DEFAULT)
@@ -108,16 +102,9 @@ class MainWindow():
         self.window.add_accel_group(accel_group)
         menu = self.builder.get_object("main_menu")
         item = Gtk.ImageMenuItem()
-        item.set_image(Gtk.Image.new_from_icon_name("preferences-desktop-keyboard-shortcuts-symbolic", Gtk.IconSize.MENU))
+        item.set_image(Gtk.Image.new_from_icon_name("preferences-system-symbolic", Gtk.IconSize.MENU))
         item.set_label(_("Preferences"))
         item.connect("activate", self.open_preferences)
-        menu.append(item)
-        item = Gtk.ImageMenuItem()
-        item.set_image(Gtk.Image.new_from_icon_name("preferences-desktop-keyboard-shortcuts-symbolic", Gtk.IconSize.MENU))
-        item.set_label(_("Keyboard Shortcuts"))
-        item.connect("activate", self.open_keyboard_shortcuts)
-        key, mod = Gtk.accelerator_parse("<Control>K")
-        item.add_accelerator("activate", accel_group, key, mod, Gtk.AccelFlags.VISIBLE)
         menu.append(item)
         item = Gtk.ImageMenuItem()
         item.set_image(Gtk.Image.new_from_icon_name("help-about-symbolic", Gtk.IconSize.MENU))
@@ -340,8 +327,8 @@ class MainWindow():
         dlg = Gtk.AboutDialog()
         dlg.set_transient_for(self.window)
         dlg.set_title(_("About"))
-        dlg.set_program_name(_("MintUpgrade"))
-        dlg.set_comments(_("Upgrade Tool"))
+        dlg.set_program_name(_("Upgrade Tool"))
+        dlg.set_comments("mintupgrade")
         try:
             h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
             s = h.readlines()
@@ -356,26 +343,11 @@ class MainWindow():
         dlg.set_version("__DEB_VERSION__")
         dlg.set_icon_name("mintupgrade")
         dlg.set_logo_icon_name("mintupgrade")
-        dlg.set_website("https://www.github.com/linuxmint/mintupgrade")
         def close(w, res):
             if res == Gtk.ResponseType.CANCEL or res == Gtk.ResponseType.DELETE_EVENT:
                 w.destroy()
         dlg.connect("response", close)
         dlg.show()
-
-    def open_keyboard_shortcuts(self, widget):
-        gladefile = "/usr/share/linuxmint/mintupgrade/shortcuts.ui"
-        builder = Gtk.Builder()
-        builder.set_translation_domain(APP)
-        builder.add_from_file(gladefile)
-        window = builder.get_object("shortcuts")
-        window.set_title(_("Upgrade Tool"))
-        window.show()
-
-    def on_darkmode_switch_toggled(self, widget, key):
-        prefer_dark_mode = widget.get_active()
-        self.settings.set_boolean("prefer-dark-mode", prefer_dark_mode)
-        Gtk.Settings.get_default().set_property("gtk-application-prefer-dark-theme", prefer_dark_mode)
 
     def on_menu_quit(self, widget):
         self.application.quit()

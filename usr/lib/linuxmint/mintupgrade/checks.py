@@ -156,13 +156,13 @@ class VersionCheck(Check):
             # Check codename
             if codename != ORIGIN_CODENAME and codename != DESTINATION_CODENAME:
                 self.result = RESULT_ERROR
-                self.message = _("Your version of Linux Mint is '%s'. Only %s can be upgraded to %s." % (codename.capitalize(), ORIGIN, DESTINATION))
+                self.message = _("Your version of Linux Mint is '%s'. Only %s can be upgraded to %s.") % (codename.capitalize(), ORIGIN, DESTINATION)
                 return
 
             # Check edition
             if edition.lower() not in SUPPORTED_EDITIONS:
                 self.result = RESULT_ERROR
-                self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s." % (edition, DESTINATION))
+                self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s.") % (edition, DESTINATION)
                 return
 
 # Check that the computer is plugged in to AC Power
@@ -180,7 +180,7 @@ class PowerCheck(Check):
 class TimeshiftCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Timeshift snapshot"), _("Checking timeshift snapshots..."), callback)
+        super().__init__(_("System snapshots"), _("Checking system snapshots..."), callback)
 
     def do_run(self):
         if self.get_setting("check-timeshift"):
@@ -201,7 +201,7 @@ class TimeshiftCheck(Check):
 class APTCacheCheck(Check):
 
     def __init__(self, window, callback=None):
-        super().__init__(_("Package base"), _("Checking the package base..."), callback)
+        super().__init__(_("APT cache"), _("Checking the APT cache..."), callback)
         self.cache_updated = False
         self.pkgs_to_remove = []
         self.pkgs_to_install = []
@@ -610,7 +610,7 @@ class SimulateUpgradeCheck(Check):
             self.show_list(_("Kept packages"), kept_packages)
             self.show_list(_("Removed packages"), removed_packages)
             self.show_list(_("Added packages"), new_packages)
-            self.info.append("Packages updated: %d, added: %d , kept: %d, deleted: %d" % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            self.info.append(_("Packages updated: %d, added: %d , kept: %d, deleted: %d") % (num_updated, num_new, len(kept_packages), len(removed_packages)))
             return
 
         self.info.append(_("Upgrading will perform the following changes."))
@@ -619,7 +619,7 @@ class SimulateUpgradeCheck(Check):
         if self.result != RESULT_ERROR:
             self.result = RESULT_INFO
             self.icon_name = "dialog-info"
-            self.info.append("Packages updated: %d, added: %d , kept: %d, deleted: %d" % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            self.info.append(_("Packages updated: %d, added: %d , kept: %d, deleted: %d") % (num_updated, num_new, len(kept_packages), len(removed_packages)))
             self.show_list(_("Kept packages"), kept_packages)
             if len(kept_packages) > 0:
                 self.info.append(_("Note: Ideally, no packages should be kept. This might indicate an issue."))
@@ -733,7 +733,7 @@ class SimulateUpgradeCheck(Check):
 class DownloadCheck(Check):
 
     def __init__(self, window, callback=None):
-        super().__init__(_("Download packages"), _("Downloading packages..."), callback)
+        super().__init__(_("Package download"), _("Downloading packages..."), callback)
         self.window = window
 
     def do_run(self):
@@ -746,7 +746,7 @@ class DownloadCheck(Check):
 class InhibitCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Inhibit session"), _("Inhibiting session..."), callback)
+        super().__init__(_("Session inhibition"), _("Inhibiting session..."), callback)
 
     def do_run(self):
         os.system("killall mate-screensaver")
@@ -755,7 +755,7 @@ class InhibitCheck(Check):
         edition = edition.lower().replace('"', '')
         if edition == "xfce":
             self.result = RESULT_INFO
-            self.message = _("We recommend you disable your power management and do not log out or switch users during the upgrade.")
+            self.message = _("Disable your screensaver and power management. Do not log out or switch users during the upgrade.")
         else:
             cmd = "mintupgrade-inhibit-power %s %d" % (os.getenv("SUDO_UID"), os.getpid())
             subprocess.Popen(cmd, shell=True)
@@ -763,7 +763,7 @@ class InhibitCheck(Check):
 class PreUpgradeCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Preparing the upgrade"), _("Preparing the upgrade..."), callback)
+        super().__init__(_("Upgrade preparation"), _("Preparing the upgrade..."), callback)
 
     def do_run(self):
         if not os.path.exists(BACKUP_FSTAB):
@@ -781,7 +781,7 @@ class PreUpgradeCheck(Check):
 class DistUpgradeCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Upgrading the system"), _("Upgrading the system..."), callback)
+        super().__init__(_("Upgrade phase"), _("Upgrading the system..."), callback)
 
     def do_run(self):
         fallback_commands = []
@@ -796,7 +796,7 @@ class DistUpgradeCheck(Check):
         # Dist-upgrade
         if not self.try_command(5, '%s dist-upgrade %s' % (APT_GET, APT_QUIET), fallback_commands):
             self.result = RESULT_ERROR
-            self.message = _("An issue was detected during the dist-upgrade.")
+            self.message = _("An issue was detected during the upgrade.")
             self.info.append(self.get_status())
             return
 
@@ -821,7 +821,7 @@ class DistUpgradeCheck(Check):
 class PostUpgradeCheck(Check):
 
     def __init__(self, callback=None):
-        super().__init__(_("Finalizing the upgrade"), _("Finalizing the upgrade..."), callback)
+        super().__init__(_("Final phase"), _("Finalizing the upgrade..."), callback)
 
     def do_run(self):
 
