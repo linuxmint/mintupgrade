@@ -14,4 +14,4 @@ show prefs by clicking a button
 usrmerge
 not detected as foreign packages http://termbin.com/sih4
 change version to be superior to previous mintupgrade tool
-
+kept packages aren't detected correctly
