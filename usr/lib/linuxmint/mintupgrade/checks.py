@@ -318,6 +318,9 @@ class APTRepoCheck(Check):
             if source.uri == "":
                 # repos file entries themselves
                 continue
+            if source.dist == "stable":
+                # 3rd party repository which target Debian stable
+                continue
             if ORIGIN_CODENAME in source.dist or DESTINATION_CODENAME in source.dist:
                 self.mint_repos.append(source)
             elif ORIGIN_BASE_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:
