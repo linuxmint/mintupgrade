@@ -4,14 +4,17 @@ Upgrade your Operating System to a new version
 
 # TODO
 
-don't disable repositories that have 'stable' as distribution
-fuse3
 debconf
-plymouthd.conf -> lose theme
-remove brltty
-add plymouth-label
 show prefs by clicking a button
-usrmerge
-not detected as foreign packages http://termbin.com/sih4
-change version to be superior to previous mintupgrade tool
-kept packages aren't detected correctly
+add translations
+
+# Fixed - to be tested
+
+* kept packages aren't detected correctly
+* not detected as foreign packages http://termbin.com/sih4
+* plymouthd.conf -> lose theme
+* don't disable repositories that have 'stable' as distribution
+* fuse3
+* remove brltty
+* add plymouth-label
+* usrmerge

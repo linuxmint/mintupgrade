@@ -1,3 +1,27 @@
+mintupgrade (2022.04.14) elsie; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Switch to English when calling commands
+  * Fix session inhibitor
+  * l10n: Update POT and msgids
+  * Mint: Don't support any editions just yet.
+
+  [ Michael Webster ]
+  * mintupgrade-inhibit-power: Add xfce inhibitor.
+
+  [ Clement Lefebvre ]
+  * Remove brltty
+  * Add missing packages
+  * Add fuse3
+  * Allow 3rd party repositories if their dist is "stable"
+  * Remove desktop-base
+  * Don't install recommends when adding packages
+  * Fix plymouth theme
+  * Fix foreign package detection
+  * Fix kept packages list
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 14 Apr 2022 11:59:29 +0100
+
 mintupgrade (1.0.1) elsie; urgency=medium
 
   * Run as root
