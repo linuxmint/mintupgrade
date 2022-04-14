@@ -27,6 +27,7 @@ PACKAGES_ADDITIONS = [
     "bulky",
     "cryptsetup-initramfs",
     "cryptsetup-run",
+    "fuse3",
     "gamemode",
     "hypnotix",
     "libgdk-pixbuf2.0-bin",
