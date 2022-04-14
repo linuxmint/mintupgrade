@@ -583,13 +583,9 @@ class SimulateUpgradeCheck(Check):
 
         if cache.keep_count > 0:
             # kept packages are not part of the changes...
-            num_found = 0
-            for pkg in cache:
-                if pkg.marked_keep:
-                    kept_packages.append(pkg.name)
-                    num_found += 1
-                if num_found == cache.keep_count:
-                    break
+            upgradable_cache_packages = [pkg.name for pkg in cache if pkg.is_upgradable]
+            upgradable_changes_packages = [pkg.name for pkg in changes if pkg.is_upgradable]
+            kept_packages = list(set(upgradable_cache_packages).difference(set(upgradable_changes_packages)))
 
         num_new = len(new_packages)
         num_updated = cache.install_count - num_new
