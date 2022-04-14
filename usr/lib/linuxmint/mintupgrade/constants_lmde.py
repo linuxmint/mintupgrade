@@ -16,6 +16,7 @@ CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-k
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
+    "brltty",
     "gnote",
     "ipp-usb"
 ]
