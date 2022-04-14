@@ -826,14 +826,14 @@ class PostUpgradeCheck(Check):
 
         # Install meta-package
         print_output("Re-installing the meta-package")
-        if not run_command('%s install --yes %s' % (APT_GET, mint_meta)):
+        if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, mint_meta)):
             self.result = RESULT_ERROR
             self.message = _("%s could not be installed.") % mint_meta
             return
 
         # Install codecs
         print_output("Re-installing the multimedia codecs")
-        if not run_command('%s install --yes mint-meta-codecs' % APT_GET):
+        if not run_command('%s install --yes --no-install-recommends mint-meta-codecs' % APT_GET):
             self.result = RESULT_ERROR
             self.message = _("mint-meta-codecs could not be installed.")
             return
@@ -841,7 +841,7 @@ class PostUpgradeCheck(Check):
         # Install new packages
         print_output("Installing new packages")
         if len(PACKAGES_ADDITIONS) > 0:
-            if not run_command('%s install --yes %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
                 self.result = RESULT_ERROR
                 self.message = _("The following packages could not be installed:")
                 table_list = TableList([""])
