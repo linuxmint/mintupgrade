@@ -17,6 +17,7 @@ PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
     "brltty",
+    "desktop-base",
     "gnote",
     "ipp-usb"
 ]
