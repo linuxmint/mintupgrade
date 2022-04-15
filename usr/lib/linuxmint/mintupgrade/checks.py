@@ -873,12 +873,6 @@ class PostUpgradeCheck(Check):
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled True")
         os.system("/usr/lib/linuxmint/mintsystem/mint-adjust.py")
 
-        # Restore plymouth.conf
-        if IS_LMDE:
-            if os.path.exists("/etc/plymouth/plymouthd.conf.dpkg-old"):
-                os.system("mv /etc/plymouth/plymouthd.conf.dpkg-old /etc/plymouth/plymouthd.conf")
-                os.system("update-initramfs -u")
-
         # Restore /etc/fstab if it was changed
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
             os.system("cp /etc/fstab /etc/fstab.upgraded")
