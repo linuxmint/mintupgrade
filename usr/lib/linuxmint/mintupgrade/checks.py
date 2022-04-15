@@ -331,7 +331,7 @@ class APTRepoCheck(Check):
         # Foreign repositories which codename is not in the origin or the destination (mint or base)
         if len(self.foreign_repos) > 0:
             self.result = RESULT_ERROR
-            self.message = _("The following repositories do not explictly support your version of Linux Mint.")
+            self.message = _("The following repositories do not explicitly support your version of Linux Mint.")
             self.fix = self.disable_foreign_repos
             table_list = TableList([""])
             table_list.show_column_names = False
