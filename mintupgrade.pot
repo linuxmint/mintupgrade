@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-11 16:26+0100\n"
+"POT-Creation-Date: 2022-04-15 16:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgid "The following operations need to be performed:"
 msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
-#: usr/lib/linuxmint/mintupgrade/checks.py:466
+#: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Package"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgid "needs to be removed"
 msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
-#: usr/lib/linuxmint/mintupgrade/checks.py:524
+#: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
 msgstr ""
 
@@ -124,295 +124,289 @@ msgstr ""
 msgid "Checking package repositories..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:331
+#: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
-"The following repositories do not explictly support your version of Linux "
+"The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:339
+#: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:352
+#: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:353
+#: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:371
+#: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
 msgid "%s is unreachable"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:376
+#: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:388
+#: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
 msgid "%s does not support %s"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:392
+#: usr/lib/linuxmint/mintupgrade/checks.py:395
 msgid "The following problems were found:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:431
+#: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:431
+#: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:437
+#: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:444
+#: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:458
+#: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:458
+#: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:464
+#: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid "The following packages need to be downgraded back to official versions:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:466
+#: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:466
+#: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Official version"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:466
+#: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Archive"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:471
+#: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:486
+#: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:486
+#: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:504
+#: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:511
+#: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:512
+#: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:524
+#: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:560
+#: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:560
+#: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:596
+#: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:597
+#: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:598
+#: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:602
+#: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:604
+#: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:605
+#: usr/lib/linuxmint/mintupgrade/checks.py:604
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:606
+#: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:608
+#: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:609
+#: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:610
-#: usr/lib/linuxmint/mintupgrade/checks.py:623
+#: usr/lib/linuxmint/mintupgrade/checks.py:609
+#: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:611
-#: usr/lib/linuxmint/mintupgrade/checks.py:627
+#: usr/lib/linuxmint/mintupgrade/checks.py:610
+#: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:612
-#: usr/lib/linuxmint/mintupgrade/checks.py:626
+#: usr/lib/linuxmint/mintupgrade/checks.py:611
+#: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:613
-#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:612
+#: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:616
+#: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:625
+#: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:629
+#: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:726
+#: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:730
+#: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:736
+#: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:736
+#: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:742
+#: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:749
+#: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:749
+#: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:758
-msgid ""
-"Disable your screensaver and power management. Do not log out or switch "
-"users during the upgrade."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:766
+#: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:766
+#: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:784
+#: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:784
+#: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:793
-#: usr/lib/linuxmint/mintupgrade/checks.py:799
+#: usr/lib/linuxmint/mintupgrade/checks.py:784
+#: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:818
+#: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:824
+#: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:824
+#: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:836
+#: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:843
+#: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:851
+#: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:890
+#: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:891
+#: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original /etc/"
 "fstab"
 msgstr ""
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:892
+#: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330 generate_desktop_files:26
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
 msgstr ""
@@ -428,7 +422,7 @@ msgid "Preferences"
 msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:329
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
 msgid "About"
 msgstr ""
 
