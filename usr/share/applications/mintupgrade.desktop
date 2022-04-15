@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Upgrade Tool
 Comment=Upgrade Tool
-Exec=pkexec mintupgrade
+Exec=bash -c 'sudo mintupgrade;$SHELL'
 Icon=mintupgrade
-Terminal=false
+Terminal=true
 Type=Application
 Encoding=UTF-8
 Categories=GTK;GNOME;Utility;X-GNOME-Utilities;
