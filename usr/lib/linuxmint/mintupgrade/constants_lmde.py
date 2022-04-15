@@ -30,6 +30,7 @@ PACKAGES_ADDITIONS = [
     "cryptsetup-run",
     "fuse3",
     "gamemode",
+    "gvfs-fuse",
     "hypnotix",
     "libgdk-pixbuf2.0-bin",
     "libreoffice-gtk3",
