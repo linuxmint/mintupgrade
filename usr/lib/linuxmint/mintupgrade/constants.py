@@ -10,3 +10,4 @@ else:
     from constants_mint import *
 
 BACKUP_FSTAB = os.path.expanduser("~/.fstab.bk")
+BACKUP_LOCALEDEF = os.path.expanduser("~/.localedef.bk")

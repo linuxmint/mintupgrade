@@ -761,6 +761,10 @@ class PreUpgradeCheck(Check):
             print_output("Saving /etc/fstab")
             os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
 
+        if IS_LMDE and not os.path.exists(BACKUP_LOCALEDEF):
+            print_output("Saving locales definition")
+            os.system("localedef --list-archive > %s" % BACKUP_LOCALEDEF)
+
         print_output("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
@@ -872,6 +876,22 @@ class PostUpgradeCheck(Check):
         # Re-enable mintsystem
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled True")
         os.system("/usr/lib/linuxmint/mintsystem/mint-adjust.py")
+
+        # Re-define localedef locales
+        if IS_LMDE and os.path.exists(BACKUP_LOCALEDEF):
+            with open(BACKUP_LOCALEDEF) as defs_file:
+                for line in defs_file:
+                    line = line.strip().replace("utf8", "UTF-8")
+                    if line == "":
+                        continue
+                    locale = line.split(" ")[0]
+                    if "." in locale:
+                        short_locale, charmap = locale.split(".")
+                        cmd = f"localedef -f {charmap} -i {short_locale} {locale}"
+                        run_command(cmd)
+                    else:
+                        cmd = f"localedef -i {locale} {locale}"
+                        run_command(cmd)
 
         # Restore /etc/fstab if it was changed
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
