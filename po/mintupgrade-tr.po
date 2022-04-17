@@ -1,4 +1,4 @@
-# French translation for linuxmint
+# Turkish translation for linuxmint
 # Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-15 15:36+0000\n"
-"Last-Translator: Clement Lefebvre <root@linuxmint.com>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2022-04-16 00:48+0000\n"
+"Last-Translator: Butterfly <Unknown>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,562 +19,546 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
-msgstr "Version de Linux MInt"
+msgstr "Linux Mint sürümü"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "Vérification de votre version de Linux Mint..."
+msgstr "Linux Mint sürümünüz denetleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr ""
-"Votre version de Linux Mint est inconnue. Le fichier /etc/linuxmint/info est "
-"introuvable."
+msgstr "Linux Mint sürümünüz bilinmiyor. /etc/linuxmint/info dosyası eksik."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
-"Votre version de Linux Mint est '%s'. Seulement %s peut être mise à niveau "
-"vers %s."
+"Linux Mint sürümünüz '%s'. Sadece %s sürümü %s sürümüne yükseltilebilir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr ""
-"Votre édition de Linux Mint est '%s'. Elle ne peut pas être mise à niveau "
-"vers %s."
+msgstr "Linux Mint sürümünüz '%s'. Bu %s sürümüne yükseltilemez."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
-msgstr "Source d'alimentation"
+msgstr "Güç kaynağı"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Checking the power source..."
-msgstr "Vérification de la source d'alimentation..."
+msgstr "Güç kaynağı denetleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "Branchez vous sur secteur avant de procéder à la mise a niveau."
+msgstr ""
+"Yükseltmeye başlamadan önce bilgisayarı bir güç kaynağına bağlayınız."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
-msgstr "Instantanés système"
+msgstr "Sistem anlık görüntüleri"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "Vérification des instantanés système..."
+msgstr "Sistem anlık görüntüleri denetleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
 msgstr ""
-"Créez un instantané système Timeshift avant de procéder à la mise à niveau."
+"Yükseltmeye başlamadan önce Timeshift sistem anlık görüntüsü oluşturunuz."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
-"Si la mise à niveau ne réussit pas, un instantané système vous permettra de "
-"revenir en arrière et d'annuler les changements."
+"Eğer yükseltme başarılı olmazsa, bir sistem anlık görüntüsü eski ana geri "
+"dönmenizi ve tüm değişiklikleri geri almanızı sağlar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
-msgstr "Cache APT"
+msgstr "APT önbelleği"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Checking the APT cache..."
-msgstr "Vérification du cache APT..."
+msgstr "APT önbelleği denetleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:222
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Votre cache de paquets ne s'actualise pas correctement. Lancez la commande "
-"'apt update' et réparez les erreurs qu'elle affiche."
+"Paket önbelleği doğru şekilde yenilenemiyor. 'apt update' komutunu "
+"çalıştırın ve gösterdiği hataları düzeltmeyi deneyin."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:231
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Certains de vos paquets sont cassés. Lancez 'apt install -f' pour réparer le "
-"problème."
+"Bazı paketler bozuk. 'apt install -f' komutunu çalıştırarak sorunu "
+"düzeltmeyi deneyin."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-"Votre système d'exploitation n'est pas à jour. Appliquez les mises à jour "
-"avant de procéder à la mise à niveau."
+"İşletim sisteminiz güncel değil. Yükseltmeyi denemeden önce mevcut "
+"güncellemeleri uygulayınız."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
-msgstr "Les opérations suivantes doivent être effectuées :"
+msgstr "Aşağıdaki işlemlerin gerçekleştirilmesi gerekiyor:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Package"
-msgstr "Paquet"
+msgstr "Paket"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "Operation"
-msgstr "Opération"
+msgstr "İşlem"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "needs to be installed"
-msgstr "doit être installé"
+msgstr "kurulması gerekiyor"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be removed"
-msgstr "doit être retiré"
+msgstr "silinmesi gerekiyor"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
-msgstr "Dépôts de paquets"
+msgstr "Paket depoları"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr "Vérification des dépôts de paquets..."
+msgstr "Paket depoları denetleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr ""
-"Les dépôts suivants ne supportent pas de façon explicite votre version de "
-"Linux Mint."
+msgstr "Aşağıdaki depoların Linux Mint sürümünüze desteği belirsiz."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
-msgstr "Ces dépôts doivent être désactivés."
+msgstr "Bu depoların devre pasifleştirilmesi gerekiyor."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
-msgstr "Votre épinglage APT est incorrect."
+msgstr "APT politika yapılandırmanız hatalı."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr "Redémarrez votre ordinateur."
+msgstr "Bilgisayarınızı yeniden başlatın."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
 msgid "%s is unreachable"
-msgstr "%s est injoignable"
+msgstr "%s ulaşılabilir değil"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s n'est pas à jour. Choisissez un mirroir différent."
+msgstr "%s güncel değil. Farklı bir yansıya geçiş yapın."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
 msgid "%s does not support %s"
-msgstr "%s ne supporte pas %s"
+msgstr "%s için %s desteği bulunmuyor"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:395
 msgid "The following problems were found:"
-msgstr "Les problèmes suivants ont été trouvés :"
+msgstr "Aşağıdaki sorunlar bulundu:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
-msgstr "Paquets maintenus"
+msgstr "Tutulan paketler:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr "Vérification des paquets maintenus"
+msgstr "Tutulan paketler aranıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
-msgstr "Les paquets suivants sont maintenus :"
+msgstr "Aşağıdaki paketler tutuluyor:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
-msgstr "Les paquets maintenus peuvent casser la mise à niveau."
+msgstr "Tutulan paketler yükseltmeyi bozabilir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
-msgstr "Paquets étrangers"
+msgstr "Dış paketler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr "Vérification des paquets étrangers..."
+msgstr "Dış paketler aranıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr ""
-"Les paquets suivants doivent être rabaissés vers les versions officielles :"
+"Aşağıdaki paketlerin resmi depodaki sürümlerine düşürülmesi gerekiyor:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
-msgstr "Version installée"
+msgstr "Kurulu Sürüm"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Official version"
-msgstr "Version officielle"
+msgstr "Resmi sürüm"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Archive"
-msgstr "Archive"
+msgstr "Arşiv"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr "Sinon ces paquets peuvent créer des conflits."
+msgstr "Aksi takdirde bu paketler çakışmalara neden olabilir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr "Paquets orphelins"
+msgstr "Sahipsiz paketler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr "Vérification des paquets orphelins..."
+msgstr "Sahipsiz paketler aranıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
-msgstr "Les paquets suivants n'existent pas dans les dépôts :"
+msgstr "Aşağıdaki paketler depolarda mevcut değil:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
-"Ajoutez les paquets que vous souhaitez garder en utilisant les préférences, "
-"puis appuyez sur 'Revérifier'."
+"Tercihleri kullanarak tutmak istediğiniz paketleri ekleyebilirsiniz, "
+"ardından 'Yeniden denetle'ye basın."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr ""
-"Puis appuyez sur \"Réparer\" pour retirer les paquets listés ci-dessus."
+"Ardından yukarıda listelenen paketleri silmek için 'Düzelt' düğmesine "
+"basınız."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr "Pointage vers la nouvelle version..."
+msgstr "Yeni sürüm noktasına geçiş yapılıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
-msgstr "Simulation de mise à niveau"
+msgstr "Yükseltme simülasyonu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simulation de mise à niveau pour vérifier l'espace disque et les problèmes "
-"potentiels..."
+"Sabit disk alanı ve olası sorunları denetlemek için yükseltme simülasyonu "
+"yapılıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr "La simulation a échoué."
+msgstr "Simülasyon başarısız."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
-"La mise à niveau entrainerait la suppression des paquets importants suivants "
-":"
+msgstr "Yükseltme, aşağıdaki önemli paketleri kaldıracak:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr "Suppressions non-désirées"
+msgstr "Silinmesi istenmeyenler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
-"Ceci est un signe que quelque chose ne va pas et a besoin d'être réparé "
-"avant d'aller plus loin."
+"Bu, bir şeylerin yanlış olduğunun ve daha ileri aşamalara geçmeden önce "
+"düzeltilmesi gerektiğinin bir işaretidir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
-msgstr "Solution recommandée"
+msgstr "Önerilen çözüm"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:604
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr ""
-"Utilisez apt-get dans un terminal pour identifier les problèmes et trouver "
-"une solution."
+msgstr "Sorunu gidermek ve çözmek için bir uçbirimde apt-get kullanın."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
-"N'hésitez pas à demander de l'aide sur les forums et la salle de discussion."
+msgstr "Forumlarda ve sohbet odasında yardım aramaktan çekinmeyin."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
-msgstr "Info supplémentaire"
+msgstr "Ek bilgi"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
-msgstr "Les informations ci-dessous peuvent aider a trouver des solutions."
+msgstr "Aşağıdaki bilgiler sorunun çözülmesine yardımcı olabilir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr "Paquets non mis a jour"
+msgstr "Korunan paketler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
-msgstr "Paquets retirés"
+msgstr "Silinen paketler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:611
 #: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
-msgstr "Paquets nouvellement installés"
+msgstr "Eklenen paketler"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr ""
-"Paquets mis à jour : %d, nouvellement installés : %d , non mis à jour : %d, "
-"enlevés : %d"
+"Paketler; güncellenecek: %d, eklenecek: %d, korunacak: %d, silinecek: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr "La mise à niveau entraînera les changements suivants."
+msgstr "Yükseltme işlemi aşağıdaki değişiklikleri gerçekleştirecek."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Note : Le fait que des paquets soient non mis à jour peut indiquer des "
-"problèmes."
+"Not: İdeal olarak, tutulan hiç bir paket olmamalıdır. Bu bir soruna işaret "
+"ediyor olabilir."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
-"Vérifiez la liste ci-dessus et assurez vous d'approuver les suppressions "
-"avant d'aller plus loin avec la mise à niveau."
+"Yukarıdaki listeyi gözden geçirin ve yükseltme için daha ileri aşamaya "
+"gitmeden önce, kaldırma işlemlerinden memnun olduğunuzdan emin olun."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Vous avez besoin de %s sur '%s' mais vous n'avez que %s. Vous devez libérer "
-"%s."
+"%s alana ihtiyaç var, fakat '%s' üstünde %s alan mevcut. %s ek alan "
+"boşaltmanız gerekiyor."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr ""
-"Taille du téléchargement : %s. Espace disque additionnel nécessaire : %s."
+msgstr "İndirme boyutu: %s. İhtiyaç olan ek alan: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
-msgstr "Téléchargement de paquets"
+msgstr "Paket indirme"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr "Téléchargement des paquets...."
+msgstr "Paketler indiriliyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr "Une erreur est survenue pendant le téléchargement des paquets."
+msgstr "Paketler indirilirken bir hata oluştu."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr "Inhibition de la session"
+msgstr "Oturum engelleme"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr "Inhibition de la session..."
+msgstr "Oturum engelleniyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
-msgstr "Préparation de la mise à niveau"
+msgstr "Yükseltme hazırlığı"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
-msgstr "Préparation de la mise à niveau..."
+msgstr "Yükseltmeye hazırlanıyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
-msgstr "Phase de mise à niveau"
+msgstr "Yükseltme aşaması"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr "Mise à niveau..."
+msgstr "Sistem yükseltiliyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
-msgstr "Une erreur a été détectée pendant la mise à niveau."
+msgstr "Yükseltme sırasında bir sorun algılandı."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
-"%d paquets ont toujours besoin d'être mis à jour (%d non mis a jour, %d "
-"enlevés)"
+msgstr "%d paketin hâlâ güncellenmesi gerekiyor (%d korundu, %d silindi)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
-msgstr "Phase finale"
+msgstr "Son aşama"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Finalisation de la mise à niveau..."
+msgstr "Yükseltme bitiriliyor..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
-msgstr "%s n'a pas pu être installé."
+msgstr "%s kurulamadı."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-codecs n'a pas pu être installé."
+msgstr "mint-meta-codecs yüklenemedi."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
-msgstr "Les paquets suivants n'ont pas pu être installés :"
+msgstr "Aşağıdaki paketler kurulamadı:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab a été modifié pendant la mise à niveau."
+msgstr "/etc/fstab dosyası yükseltme sırasında değiştirildi."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
-"Pour garantir un bon démarrage, l'outil de mise à niveau a restauré votre "
-"fichier /etc/fstab d'origine."
+"Başarılı bir önyükleme sağlamak için, yükseltme aracı asıl /etc/fstab "
+"dosyanızı geri yükledi"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr "Une copie du fichier modifié a été sauvée sous /etc/fstab.upgraded"
+msgstr ""
+"Değiştirilen dosyanın bir kopyası /etc/fstab.upgraded olarak kaydedildi"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr "Outil de mise à niveau"
+msgstr "Yükseltme Aracı"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr "Mettre à niveau vers %s"
+msgstr "%s sürümüne yükselt"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
 msgid "Preferences"
-msgstr "Préférences"
+msgstr "Tercihler"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
 msgid "About"
-msgstr "À propos"
+msgstr "Hakkında"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
 msgid "Quit"
-msgstr "Quitter"
+msgstr "Kapat"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Veuillez spécifier le nom du paquet à garder :"
+msgstr "Lütfen korunacak paket adını belirtiniz:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr "Paquets orphelins"
+msgstr "Sahipsiz paket"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
-msgstr "Phase 1 : Préparation"
+msgstr "Aşama 1: Hazırlık"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
-"Une batterie de tests va être effectuée pour préparer l'ordinateur à la mise "
-"à niveau."
+"Şimdi bilgisayarı yükseltmeye hazırlamak için bir dizi kontrol "
+"gerçekleştirilecek."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "Phase 2 : Simulation et téléchargement"
+msgstr "Aşama 2: Simülasyon ve indirme"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr "Vos dépôts de paquets pointeront désormais vers la nouvelle version."
+msgstr "Paket depolarınız artık yeni sürüme göre ayarlanacak."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr ""
-"Quelques vérifications additionnelles vont être effectuées et les mises à "
-"jours vont être téléchargées."
+msgstr "Birkaç test daha yürütülecek ve paket güncellemeleri indirilecek."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
-msgstr "Phase 3 : Mise à niveau"
+msgstr "Aşama 3: Yükseltme"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr "Les paquets vont maintenant être mis à niveau."
+msgstr "Şimdi paketler yükseltilecek."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
-"Ce programme va vous demander des questions et mettre à niveau votre système "
-"d'exploitation."
+"Bu program size bazı sorular soracak ve işletim sisteminizi yükseltecektir."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
-msgstr "C'est parti !"
+msgstr "Haydi başlatın!"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr "OK"
+msgstr "Tamam"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr "Réparer"
+msgstr "Düzelt"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Revérifier"
+msgstr "Yeniden denetle"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
-msgstr "L'erreur suivante s'est produite :"
+msgstr "Aşağıdaki hata oluştu:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr "La mise à niveau a réussi."
+msgstr "Yükseltme başarılı."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "Redémarrez l'ordinateur pour appliquer tous les changements."
+msgstr "Tüm değişikliklerin etkili olması için bilgisayarı yeniden başlatın."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "Instantané Timeshift récent"
+msgstr "Son Timeshift anlık görüntüsü"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr "Mise à jour appliquées"
+msgstr "Yazılım güncellemelerinin uygulanması"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
-"Ces conditions sont là pour garantir une mise à niveau sûre. Ne les "
-"désactivez que si vous savez ce que vous faites."
+"Bu gereklilikler, güvenli bir yükseltmeyi garanti etmek içindir. Bunları "
+"sadece ne yaptığınızı biliyorsanız devre dışı bırakınız."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr "Version de Linux Mint supportée"
+msgstr "Desteklenen Linux Mint sürümü"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr "Conditions"
+msgstr "Gereklilikler"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
@@ -582,6 +566,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Les paquets orphelins sont les paquets qui ne sont pas présents dans les "
-"dépôts. Ils sont retirés pendant la mise à niveau. Si vous souhaitez en "
-"garder, ajoutez les dans la liste ci-dessous :"
+"Sahipsiz paketler, depolarda bulunmayan paketlerdir. Yükseltme sırasında "
+"kaldırılırlar. Bazılarını korumak istiyorsanız, bunları aşağıdaki listeye "
+"ekleyiniz:"
