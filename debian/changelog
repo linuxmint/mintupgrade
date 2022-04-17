@@ -1,3 +1,11 @@
+mintupgrade (2022.04.17) elsie; urgency=medium
+
+  * Preserve localedef locales in LMDE
+  * Add translations
+  * UI: Wrap welcome message label
+
+ -- Clement Lefebvre <clem@macbook>  Sun, 17 Apr 2022 10:48:01 +0100
+
 mintupgrade (2022.04.15) elsie; urgency=medium
 
   [ Clement Lefebvre ]
