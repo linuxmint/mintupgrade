@@ -230,7 +230,7 @@ class MainWindow():
             self.builder.get_object("label_check_description").set_text(check.description)
             check.run()
         else:
-            print("Finished running them all!")
+            print("Upgrade successful! You can now close this terminal and reboot your computer.")
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_ready")
 
     @idle_function
