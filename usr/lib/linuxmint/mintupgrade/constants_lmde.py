@@ -19,7 +19,8 @@ PACKAGES_REMOVALS = [
     "brltty",
     "desktop-base",
     "gnote",
-    "ipp-usb"
+    "ipp-usb",
+    "usrmerge"
 ]
 
 PACKAGES_ADDITIONS = [
