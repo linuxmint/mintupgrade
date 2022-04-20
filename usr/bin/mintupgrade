@@ -22,6 +22,8 @@ if os.getuid() != 0:
     print("mintupgrade needs to be run as root.")
     sys.exit(1)
 
+os.system("touch mintupgrade.log && chmod 666 mintupgrade.log")
+
 sub = subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, text=True)
 
 with open("mintupgrade.log", mode="w", buffering=1) as f:
