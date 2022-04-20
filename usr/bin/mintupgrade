@@ -4,9 +4,37 @@ import os
 import subprocess
 import sys
 
+color_array = [
+    b'\033[95m'.decode(), # Magenta
+    b'\033[94m'.decode(),# Light Blue
+    b'\033[92m'.decode(), # Light Green
+    b'\033[38;5;202m'.decode(), # Orange
+    b'\033[91m'.decode(), # Light Red
+    b'\033[0m'.decode(),
+    b'\033[1m'.decode(),
+    b'\033[4m'.decode()
+]
+
+# Makes sure stderr and stdout stay in order
+os.environ["PYTHONUNBUFFERED"] = "1"
+
 if os.getuid() != 0:
     print("mintupgrade needs to be run as root.")
     sys.exit(1)
 
-subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py")
+sub = subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, text=True)
 
+with open("mintupgrade.log", mode="w", buffering=1) as f:
+    while True:
+        line = sub.stdout.readline()
+        if not line:
+            break
+
+        print(line, end="")
+
+        for color in color_array:
+            line = line.replace(color, "")
+
+        f.write(line)
+
+sys.exit(0)
