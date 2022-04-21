@@ -6,14 +6,14 @@ import sys
 import datetime
 
 color_array = [
-    b'\033[95m'.decode(), # Magenta
-    b'\033[94m'.decode(),# Light Blue
-    b'\033[92m'.decode(), # Light Green
-    b'\033[38;5;202m'.decode(), # Orange
-    b'\033[91m'.decode(), # Light Red
-    b'\033[0m'.decode(),
-    b'\033[1m'.decode(),
-    b'\033[4m'.decode()
+    b'\033[95m', # Magenta
+    b'\033[94m',# Light Blue
+    b'\033[92m', # Light Green
+    b'\033[38;5;202m', # Orange
+    b'\033[91m', # Light Red
+    b'\033[0m',
+    b'\033[1m',
+    b'\033[4m'
 ]
 
 # Makes sure stderr and stdout stay in order
@@ -28,19 +28,33 @@ logfile = "mintupgrade-%s.log" % datetime.datetime.now().strftime("%Y-%m-%dT%H%M
 os.system("touch %s" % logfile)
 os.chmod(logfile, 0o666)
 
-sub = subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, text=True)
+with subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=0) as sub:
+    with open(logfile, mode="wb", buffering=0) as f:
+        buffer = b""
 
-with open(logfile, mode="w", buffering=1) as f:
-    while True:
-        line = sub.stdout.readline()
-        if not line:
-            break
+        while True:
+            b = sub.stdout.read(32)
+            if not b:
+                break
 
-        sys.stdout.write(line)
+            sys.stdout.buffer.write(b)
+            sys.stdout.buffer.flush()
 
-        for color in color_array:
-            line = line.replace(color, "")
+            # Collect a line at a time so colors can be stripped reliably.
+            # Look for a newline before writing.
+            buffer += b
 
-        f.write(line)
+            try:
+                newline = buffer.find(b"\n")
+            except:
+                continue
+
+            to_write = buffer[:newline + 1]
+            buffer = buffer[newline + 1:]
+
+            for color in color_array:
+                to_write = to_write.replace(color, b"")
+
+            f.write(to_write)
 
 sys.exit(0)
