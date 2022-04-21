@@ -3,6 +3,7 @@
 import os
 import subprocess
 import sys
+import datetime
 
 color_array = [
     b'\033[95m'.decode(), # Magenta
@@ -22,17 +23,20 @@ if os.getuid() != 0:
     print("mintupgrade needs to be run as root.")
     sys.exit(1)
 
-os.system("touch mintupgrade.log && chmod 666 mintupgrade.log")
+logfile = "mintupgrade-%s.log" % datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S")
+
+os.system("touch %s" % logfile)
+os.chmod(logfile, 0o666)
 
 sub = subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, text=True)
 
-with open("mintupgrade.log", mode="w", buffering=1) as f:
+with open(logfile, mode="w", buffering=1) as f:
     while True:
         line = sub.stdout.readline()
         if not line:
             break
 
-        print(line, end="")
+        sys.stdout.write(line)
 
         for color in color_array:
             line = line.replace(color, "")
