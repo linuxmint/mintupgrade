@@ -18,6 +18,7 @@ Depends: gir1.2-xapp-1.0 (>= 1.4),
          mintupdate,
          acpi,
          crudini,
+         debian-system-adjustments | ubuntu-system-adjustments,
          ${misc:Depends}
 Description: Upgrade Tool
  Upgrade your Operating System to a new version.
