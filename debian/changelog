@@ -1,3 +1,23 @@
+mintupgrade (2022.05.05) elsie; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Make final terminal output a little bit clearer.
+  * Add a dependency on acpi
+  * Final phase: Clean APT cache
+  * Remove usrmerge
+
+  [ Michael Webster ]
+  * Log the upgrade to a file.
+  * Make the logfile deletable by the user.
+  * Add a timestamp to the logfiles, forward output to real stdout instead of printing, to preserve console formatting.
+  * Handle logging/stdout in byte mode, this seems to prevent the stairstep effect in the terminal.
+
+  [ Clement Lefebvre ]
+  * Add linux-generic in additions
+  * Depend on system adjustment package
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 May 2022 12:05:19 +0100
+
 mintupgrade (2022.04.17) elsie; urgency=medium
 
   * Preserve localedef locales in LMDE
