@@ -35,6 +35,7 @@ PACKAGES_ADDITIONS = [
     "hypnotix",
     "libgdk-pixbuf2.0-bin",
     "libreoffice-gtk3",
+    "linux-generic",
     "mesa-vdpau-drivers",
     "mesa-vulkan-drivers",
     "mintreport",
