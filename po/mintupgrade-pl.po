@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-11 18:51+0000\n"
-"Last-Translator: Marek Adamski <Unknown>\n"
+"PO-Revision-Date: 2022-04-24 19:34+0000\n"
+"Last-Translator: Paweł Pańczyk <pawelppanczyk@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 "Language: pl\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
@@ -29,7 +29,8 @@ msgstr "Sprawdzanie wersji Linux Mint..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr "Twoja wersja Linux Mint jest nieznana. Brak /etc/linuxmint/info."
+msgstr ""
+"Twoja wersja Linux Mint jest nieznana. Brak pliku /etc/linuxmint/info."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
@@ -72,7 +73,7 @@ msgid ""
 "in time and revert all the changes."
 msgstr ""
 "Jeśli aktualizacja się nie powiedzie, migawka systemu pozwoli Ci cofnąć się "
-"w czasie i cofnąć wszystkie zmiany."
+"w czasie i odwrócić wszystkie zmiany."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
@@ -140,6 +141,7 @@ msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"Poniższe repozytoria nie obsługują konkretnie Twojej wersji Linux Mint."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
@@ -151,7 +153,7 @@ msgstr "Twoja polityka APT jest nieprawidłowa."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr "Uruchom ponownie swój komputer."
+msgstr "Uruchom ponownie komputer."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
@@ -215,7 +217,7 @@ msgstr "Archiwum"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr "W przeciwnym razie te pakiety mogą powodować konflikty."
+msgstr "W przeciwnym razie pakiety te mogą powodować konflikty."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
@@ -235,8 +237,8 @@ msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
-"Dodaj pakiety, które chcesz zachować, korzystając z preferencji, a następnie "
-"naciśnij 'Sprawdź ponownie'."
+"Dodaj pakiety, które chcesz zatrzymać, korzystając z preferencji, a "
+"następnie naciśnij 'Sprawdź ponownie'."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
@@ -298,7 +300,7 @@ msgstr "Poniższe informacje mogą pomóc w rozwiązaniu problemu."
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr "Zachowane pakiety"
+msgstr "Zatrzymane pakiety"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
@@ -314,7 +316,7 @@ msgstr "Dodane pakiety"
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "Pakiety zaktualizowane: %d, dodane: %d , zachowane: %d, usunięte: %d"
+msgstr "Pakiety zaktualizowane: %d, dodane: %d, zatrzymane: %d, usunięte: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
@@ -324,8 +326,8 @@ msgstr "Aktualizacja spowoduje następujące zmiany."
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Uwaga: w idealnym przypadku żaden pakiet nie powinien być zachowany. Może to "
-"wskazywać na problem."
+"Uwaga: w idealnym przypadku żaden pakiet nie powinien być zatrzymany. Może "
+"to wskazywać na problem."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
@@ -391,15 +393,15 @@ msgstr "Podczas aktualizacji wykryto problem."
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr ""
-"%d pakiety(-ów) nadal wymaga(ją) aktualizacji (%d zachowane, %d usunięte)"
+"%d pakiety(-ów) nadal wymaga(ją) aktualizacji (%d zatrzymano, %d usunięto)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
-msgstr "Faza finalizowania"
+msgstr "Faza końcowa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Finalizowanie aktualizacji..."
+msgstr "Kończenie aktualizacji..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
@@ -458,11 +460,11 @@ msgstr "Zakończ"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Proszę podać nazwę pakietu do zachowania:"
+msgstr "Proszę podać nazwę pakietu do zatrzymania:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr "Osierocony pakiet"
+msgstr "Pakiet osierocony"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
@@ -562,5 +564,5 @@ msgid ""
 "to the list below:"
 msgstr ""
 "Osierocone pakiety to pakiety, których nie ma w repozytoriach. Zostają "
-"usunięte podczas aktualizacji. Jeśli chcesz zachować niektóre z nich, dodaj "
+"usunięte podczas aktualizacji. Jeśli chcesz zatrzymać niektóre z nich, dodaj "
 "je do poniższej listy:"

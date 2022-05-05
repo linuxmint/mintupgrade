@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-16 04:49+0000\n"
+"PO-Revision-Date: 2022-04-21 19:19+0000\n"
 "Last-Translator: vega m57 <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -224,11 +224,11 @@ msgstr "次のパッケージはリポジトリに存在しません:"
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
-msgstr "その設定を引き続き使用するパッケージを追加し、'再度確認' を押します。"
+msgstr "引き続き使用するパッケージを設定で追加し、'再度確認' を押します。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
-msgstr "次に、'修正' を押して上記のパッケージを削除します。"
+msgstr "次に、'修正実行' を押して上記のパッケージリストから除外します。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
@@ -274,7 +274,7 @@ msgstr "フォーラムやチャットルームで助けを求めることを躊
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
-msgstr "追加情報"
+msgstr "補足情報"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
@@ -283,23 +283,23 @@ msgstr "以下の情報は問題の解決に役立つ場合があります。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr "保持されたパッケージ"
+msgstr "保持されるパッケージ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
-msgstr "削除されたパッケージ"
+msgstr "削除されるパッケージ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:611
 #: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
-msgstr "追加されたパッケージ"
+msgstr "追加されるパッケージ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "Packages アップデート済み: %d, 追加済み: %d , 保持済み: %d, 削除済み: %d"
+msgstr "パッケージ アップデート: %d, 追加: %d , 保持: %d, 削除: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
@@ -370,7 +370,7 @@ msgstr "アップグレード中に問題が検出されました。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "%dパッケージはまだ更新する必要があります（%d は保持され、%dは削除されます）"
+msgstr "%d パッケージはまだ更新する必要があります（%d は保持され、%dは削除されます）"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
@@ -485,7 +485,7 @@ msgstr "OK"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr "修正"
+msgstr "修正実行"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
@@ -501,11 +501,11 @@ msgstr "アップグレードに成功しました。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "すべての変更を有効にするためにコンピューターを再起動します。"
+msgstr "すべての変更を有効にするためにコンピューターを再起動してください。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "最近のタイムシフトのスナップショット"
+msgstr "タイムシフトでの最近のスナップショット"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
@@ -515,7 +515,7 @@ msgstr "適用されたソフトウェアアップデート"
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
-msgstr "これらの要件は安全なアップグレードをするためのものです。 自分が何をしているのかがわかっている場合にのみ、それらを無効にしてください。"
+msgstr "これらの要件は安全なアップグレードをするためのものです。 何が起きるかがわかっている場合にのみ、それらを無効にしてください。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"

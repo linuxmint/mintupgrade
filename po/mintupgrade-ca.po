@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-13 09:17+0000\n"
+"PO-Revision-Date: 2022-04-21 08:39+0000\n"
 "Last-Translator: Isidro Pisa <isidro@utils.info>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -34,11 +34,12 @@ msgstr "Versió de Linux Mint desconeguda. Falta /etc/linuxmint/info."
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
+"La vostra versió de Linux Mint és '%s'. Només %s es pot actualitzar a %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr ""
+msgstr "La vostra edició de Linux Mint és '%s'. No es pot actualitzar a %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
@@ -65,12 +66,15 @@ msgstr "Comprovant les instantànies del sistema..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
 msgstr ""
+"Feu una instantània del sistema Timeshift abans d'intentar l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
+"Si l'actualització no té èxit, una instantània del sistema us permetrà "
+"retrocedir en el temps i revertir tots els canvis."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
@@ -85,21 +89,27 @@ msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
+"La memòria cau del paquet no es pot actualitzar correctament. Executeu \"apt "
+"update\" i corregiu els errors que mostri."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:231
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
+"Alguns dels paquets estan trencats. Executeu \"apt install -f\" per "
+"solucionar el problema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
+"El sistema operatiu no està actualitzat. Apliqueu les actualitzacions "
+"disponibles abans d'intentar l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
-msgstr ""
+msgstr "S'han de realitzar les operacions següents:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
@@ -112,48 +122,50 @@ msgstr "Operació"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "needs to be installed"
-msgstr ""
+msgstr "s'ha d'instal·lar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be removed"
-msgstr ""
+msgstr "s'ha d'eliminar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
-msgstr ""
+msgstr "Repositoris de paquets"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr ""
+msgstr "Comprovant els dipòsits de paquets..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"Els dipòsits següents no admeten explícitament la vostra versió de Linux "
+"Mint."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
-msgstr ""
+msgstr "Aquests dipòsits s'han de desactivar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
-msgstr ""
+msgstr "La vostra política d'APT és incorrecta."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr ""
+msgstr "Reinicieu l'ordinador."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
 msgid "%s is unreachable"
-msgstr ""
+msgstr "%s no és accessible"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr ""
+msgstr "%s no està actualitzat. Canvieu a un mirall diferent."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
@@ -162,23 +174,23 @@ msgstr "%s no té suport per a %s"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:395
 msgid "The following problems were found:"
-msgstr ""
+msgstr "S'han trobat els següents problemes:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
-msgstr ""
+msgstr "Paquets retinguts"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr ""
+msgstr "Buscant paquets retinguts..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
-msgstr ""
+msgstr "Es retenen els següents paquets:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
-msgstr ""
+msgstr "Els paquets retinguts poden espatllar l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
@@ -186,12 +198,12 @@ msgstr "Paquets externs"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr ""
+msgstr "Buscant paquets externs..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr ""
+msgstr "Els paquets següents s'han de tornar a versions oficials anteriors:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
@@ -207,72 +219,78 @@ msgstr "Arxiu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "En cas contrari, aquests paquets poden crear conflictes."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr ""
+msgstr "Paquets orfes"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Buscant paquets orfes..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
-msgstr ""
+msgstr "Els paquets següents no existeixen als repositoris:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
+"Afegiu els paquets que voleu seguir, utilitzant les preferències. A "
+"continuació, premeu \"Comprova de nou\"."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
-msgstr ""
+msgstr "Després, premeu \"Arregla\" per eliminar els paquets llistats abans."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr ""
+msgstr "Apuntant a la nova versió..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
-msgstr ""
+msgstr "Simulació d'actualització"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
+"Simulant l'actualització per comprovar l'espai del disc dur i possibles "
+"problemes..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr ""
+msgstr "La simulació ha fallat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
+msgstr "L'actualització eliminaria els paquets importants següents:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr ""
+msgstr "Eliminacions no desitjades"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
+"Aquest és un senyal que alguna cosa no funciona i s'ha de solucionar abans "
+"de continuar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
-msgstr ""
+msgstr "Solució recomanada"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:604
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr ""
+msgstr "Utilitzeu apt-get en un terminal per resoldre el problema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
+msgstr "No dubteu a buscar ajuda als fòrums i a la sala de xat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
@@ -280,12 +298,12 @@ msgstr "Informació addicional"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
-msgstr ""
+msgstr "La informació següent pot ajudar a resoldre el problema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr ""
+msgstr "Paquets conservats"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
@@ -301,32 +319,37 @@ msgstr "Paquets afegits"
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr ""
+msgstr "Paquets actualitzats: %d, afegits: %d, conservats: %d, suprimits: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr ""
+msgstr "L'actualització realitzarà els canvis següents."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
+"Nota: L'ideal és que no s'hagin de conservar paquets. El contrari pot "
+"indicar un problema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"Reviseu la llista anterior i assegureu-vos que esteu d'acord amb les "
+"eliminacions abans de continuar amb l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
+"Es necessita %s a '%s' però només hi ha %s. Cal alliberar un %s addicional."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr ""
+msgstr "Mida de la descàrrega: %s. Espai addicional necessari: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
@@ -334,45 +357,45 @@ msgstr "Descàrrega de paquets"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr ""
+msgstr "Descarregant paquets..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr ""
+msgstr "S'ha produït un error descarregant els paquets."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr ""
+msgstr "Inhibició de sessió"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "Inhibint la sessió..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
-msgstr ""
+msgstr "Preparació de l'actualització"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
-msgstr ""
+msgstr "Preparant l'actualització..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
-msgstr ""
+msgstr "Fase d'actualització"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr ""
+msgstr "Actualitzant el sistema..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
-msgstr ""
+msgstr "S'ha detectat un problema durant l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
+msgstr "%d paquets encara s'han d'actualitzar (%d conservats, %d suprimits)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
@@ -380,34 +403,36 @@ msgstr "Fase final"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr ""
+msgstr "Finalitzant l'actualització..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
-msgstr ""
+msgstr "%s no s'han pogut instal·lar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
-msgstr ""
+msgstr "No s'han pogut instal·lar els mint-meta-codecs."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
-msgstr ""
+msgstr "No s'han pogut instal·lar els paquets següents:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
-msgstr ""
+msgstr "S'ha modificat /etc/fstab durant l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
+"Per garantir un arrencada correcta, l'eina d'actualització ha restaurat el "
+"/etc/fstab original"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
+msgstr "S'ha desat una còpia del fitxer modificat com a /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
@@ -436,46 +461,51 @@ msgstr "Surt"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr ""
+msgstr "Especifiqueu el nom del paquet que cal conservar:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr ""
+msgstr "Paquet orfe"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
-msgstr ""
+msgstr "Fase 1: Preparació"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
+"Ara es realitzaran una sèrie de proves per preparar l'equip per a "
+"l'actualització."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr ""
+msgstr "Fase 2: Simulació i descàrrega"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
+msgstr "Els dipòsits de paquets apuntaran ara cap a la nova versió."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
+"Es faran algunes proves més i es descarregaran les actualitzacions de "
+"paquets."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
-msgstr ""
+msgstr "Fase 3: Actualització"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr ""
+msgstr "Ara s'actualitzaran els paquets."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
+"El programa us farà algunes preguntes i actualitzarà el sistema operatiu."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
@@ -503,25 +533,27 @@ msgstr "L'actualització ha tingut èxit."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr ""
+msgstr "Reinicieu l'equip perquè tots els canvis tinguin efecte."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "Imatge recent de Timeshift"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr ""
+msgstr "Actualitzacions de programari aplicades"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"Aquests requisits hi són per garantir una actualització segura. Desactiveu-"
+"los només si sabeu el que feu."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr ""
+msgstr "Versió compatible de Linux Mint"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
@@ -533,3 +565,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
+"Els paquets orfes són paquets que no estan presents als dipòsits, i "
+"s'eliminen durant l'actualització. Si en voleu conservar alguns, afegiu-los "
+"a la llista següent:"

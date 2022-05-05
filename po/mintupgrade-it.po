@@ -8,22 +8,22 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-11 18:27+0000\n"
-"Last-Translator: Dragone2 <Unknown>\n"
+"PO-Revision-Date: 2022-04-16 13:45+0000\n"
+"Last-Translator: lang-it <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
-msgstr "Linux Mint versione"
+msgstr "Versione di Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "Controllando la tua versione di Linux Mint..."
+msgstr "Sto controllando la tua versione di Linux Mint..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
@@ -36,13 +36,13 @@ msgstr ""
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
-"La tua versione di Linux Mint è '%s'. Solo %s può essere aggiornato alla %s."
+"La tua versione di Linux Mint è '%s'. Solo %s può essere aggiornata alla %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
 msgstr ""
-"La tua edizione di Linux Mint è '%s'. Non può essere aggiornato a %s."
+"La tua edizione di Linux Mint è '%s'. Non può essere aggiornata a %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
@@ -50,7 +50,7 @@ msgstr "Alimentazione"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Checking the power source..."
-msgstr "Controllando l'alimentazione..."
+msgstr "Controllo l'alimentazione..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
@@ -64,7 +64,7 @@ msgstr "Istantanee (snapshot) del sistema"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "Controllando le istantanee del sistema..."
+msgstr "Controllo le istantanee del sistema..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
@@ -86,7 +86,7 @@ msgstr "Cache APT"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Checking the APT cache..."
-msgstr "Controllando la cache APT..."
+msgstr "Controllo la cache APT..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:222
 msgid ""
@@ -100,8 +100,8 @@ msgstr ""
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Alcuni dei tuoi pacchetti sono rotti. Esegui 'apt install -f' per risolvere "
-"il problema."
+"Alcuni dei tuoi pacchetti sono danneggiati. Esegui 'apt install -f' per "
+"risolvere il problema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
 msgid ""
@@ -139,13 +139,15 @@ msgstr "Repository di pacchetti"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr "Controllando i repository dei pacchetti..."
+msgstr "Controllo i repository dei pacchetti..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"I seguenti repository non supportano esplicitamente la tua versione di Linux "
+"Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
@@ -180,19 +182,19 @@ msgstr "Sono stati rilevati i seguenti problemi:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
-msgstr "Pacchetti trattenuti"
+msgstr "Pacchetti mantenuti"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr "Cercando i pacchetti trattenuti..."
+msgstr "Ricerco i pacchetti mantenuti..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
-msgstr "I seguenti pacchetti sono stati trattenuti:"
+msgstr "I seguenti pacchetti sono stati mantenuti:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
-msgstr "I pacchetti trattenuti possono interrompere l'aggiornamento."
+msgstr "I pacchetti mantenuti possono interrompere l'aggiornamento."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
@@ -200,7 +202,7 @@ msgstr "Pacchetti estranei"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr "Cercando i pacchetti estranei..."
+msgstr "Cerco i pacchetti estranei..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
@@ -232,7 +234,7 @@ msgstr "Pacchetti orfani"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr "Cercando i pacchetti orfani..."
+msgstr "Cerco i pacchetti orfani..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
@@ -243,8 +245,8 @@ msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
-"Aggiungi i pacchetti che desideri continuare a utilizzare nelle preferenze, "
-"quindi clicca su \"Verifica di nuovo\"."
+"Aggiungi i pacchetti che desideri mantenere nelle preferenze, quindi clicca "
+"su \"Ricontrolla\"."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
@@ -252,7 +254,7 @@ msgstr "Quindi clicca \"Correggi\" per rimuovere i pacchetti sopra elencati."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr "Puntando alla nuova release..."
+msgstr "Punto alla nuova release..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
@@ -261,7 +263,7 @@ msgstr "Simulazione di aggiornamento"
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simulazione dell'aggiornamento per controllare lo spazio su disco rigido e "
+"Simulazione dell'aggiornamento per controllare lo spazio su disco e "
 "potenziali problemi..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
@@ -295,7 +297,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "Non esitate a cercare aiuto sui forum e sulla chat room."
+msgstr "Non esitate a cercare aiuto sui forum e nella chat room."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
@@ -328,7 +330,7 @@ msgstr "Pacchetti aggiornati: %d, aggiunti: %d , mantenuti: %d, rimossi: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr "L'aggiornamento eseguirà le seguenti modifiche."
+msgstr "L'aggiornamento causerà le seguenti modifiche."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
@@ -348,7 +350,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr "Ti servono %s su '%s' ma hai solo %s. Devi liberare un ulteriore %s."
+msgstr "Ti servono %s su '%s' ma hai solo %s. Devi liberare ulteriori %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
@@ -357,15 +359,15 @@ msgstr "Dimensione download: %s. Spazio aggiuntivo richiesto: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
-msgstr "Download dei pacchetti"
+msgstr "Scaricamento dei pacchetti"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr "Download dei pacchetti..."
+msgstr "Scaricamento dei pacchetti..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr "Si è verificato un errore durante il download dei pacchetti."
+msgstr "Si è verificato un errore durante lo scaricamento dei pacchetti."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
@@ -408,7 +410,7 @@ msgstr "Fase finale"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Finalizzando l'aggiornamento..."
+msgstr "Finalizzazione dell'aggiornamento..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
@@ -467,7 +469,7 @@ msgstr "Esci"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Perfavore digita il nome del pacchetto da mantenere:"
+msgstr "Perfavore specifica il nome del pacchetto da mantenere:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
@@ -487,12 +489,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "Fase 2: Simulazione e download"
+msgstr "Fase 2: Simulazione e scaricamento"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
-"I repository dei tuoi pacchetti ora punteranno verso la nuova versione."
+msgstr "I tuoi repository dei pacchetti ora punteranno alla nuova versione."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
@@ -506,7 +507,7 @@ msgstr "Fase 3: Aggiornamento"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr "I pacchetti verranno aggiornati."
+msgstr "I pacchetti verranno ora aggiornati."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
@@ -529,7 +530,7 @@ msgstr "Correggi"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Verifica di nuovo"
+msgstr "Ricontrolla"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"

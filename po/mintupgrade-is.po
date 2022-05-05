@@ -1,566 +1,568 @@
-# Uzbek translation for linuxmint
+# Icelandic translation for linuxmint
 # Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
 # This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Sveinn í Felli <sv1@fellsnet.is>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-18 05:04+0000\n"
-"Last-Translator: Umidjon Almasov <umidjon@almasov.uz>\n"
-"Language-Team: Uzbek <uz@li.org>\n"
+"PO-Revision-Date: 2022-04-19 15:11+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
 "X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
-"Language: uz\n"
+"Language: is\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
-msgstr "Linux Mint versiyasi"
+msgstr "Linux Mint útgáfa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "Linux Mint versiyasi tekshirilmoqda..."
+msgstr "Athuga hvaða útgáfu af Linux Mint þú ert með..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr "Linux Mint versiyasi noma'lum. /etc/linuxmint/info yo‘q."
+msgstr ""
+"Útgáfan þín af Linux Mint er ekki þekkt. Það vantar /etc/linuxmint/info."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "Linux Mint versiyasi '%s'.. Faqat %s ni %s ga yangilash mumkin."
+msgstr "Útgáfan þín af Linux Mint er '%s' Aðeins er hægt að uppfæra %s í %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Linux Mint nashri “%s”. Uni %s ga yangilab bo‘lmaydi."
+msgstr ""
+"Útgáfan þín af Linux Mint er '%s'. Ekki er hægt að uppfæra hana í %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
-msgstr "Quvvat manbai"
+msgstr "Rafmagnstenging"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Checking the power source..."
-msgstr "Quvvat manbai tekshirilmoqda..."
+msgstr "Athuga rafmagnstengingu..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "Yangilashdan oldin kompyuterni quvvat manbaiga ulang."
+msgstr ""
+"Öruggara er að tengja tölvuna í rafmagnsinnstungu áður en reynt er að "
+"uppfæra."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
-msgstr "Tizim snapshotlari"
+msgstr "Skyndiafrit kerfisins"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "Tizim snapshotlari tekshirilmoqda..."
+msgstr "Athuga skyndiafrit kerfisins..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
-msgstr "Yangilashga urinishdan oldin Timeshift tizim snapshotini oling."
+msgstr ""
+"Taktu skyndiafrit af kerfinu með Timeshift áður en reynt er að uppfæra."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
-"Yangilash muvaffaqiyatli bo‘lmasa, tizim snapshoti vaqtni orqaga qaytarish "
-"va barcha o‘zgarishlarni qaytarish imkonini beradi."
+"Ef uppfærslan tekst ekki, getur skyndiafrit af kerfinu gert þér kleift að "
+"fara til baka og afturkalla allar breytingar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
-msgstr "APT keshi"
+msgstr "APT-skyndiminni"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Checking the APT cache..."
-msgstr "APT keshi tekshirilmoqda..."
+msgstr "Athuga APT-skyndiminnið..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:222
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Paketingiz keshi to‘g‘ri yangilana olmadi. 'apt update' ni ishga tushiring "
-"va u ko‘rsatadigan xatolarni tuzating."
+"Ekki er hægt að endurlesa pakkaskyndiminnið þitt rétt. Keyrðu 'apt update' "
+"og lagaðu þær villur sem birtast."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:231
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Ba'zi paketlaringiz buzilgan. Muammoni hal qilish uchun 'apt install -f' "
-"ishga tushiring."
+"Sumir pakkarnir þínir eru bilaðir. Keyrðu 'apt install -f' til að laga "
+"vandamálið."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-"Sizning operatsion tizimingiz yangilanmagan. Yangilashga urinishdan oldin "
-"mavjud yangilanishlarni qo‘llang."
+"Stýrikerfið þitt er ekki uppfært í nýjustu gerð. Virkjaðu tiltækar "
+"uppfærslur fyrir það áður en þú reynir að uppfæra í næstu útgáfu."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
-msgstr "Quyidagi operatsiyalarni bajarish kerak:"
+msgstr "Eftirfarandi aðgerðir þarf að framkvæma:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Package"
-msgstr "Paket"
+msgstr "Pakki"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "Operation"
-msgstr "Operatsiya"
+msgstr "Aðgerð"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "needs to be installed"
-msgstr "o‘rnatish kerak"
+msgstr "verður að setja upp"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be removed"
-msgstr "olib tashlash kerak"
+msgstr "verður að fjarlægja"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
-msgstr "Paket repozitoriylari"
+msgstr "Pakkasöfn"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr "Paket repozitoriylari tekshirilmoqda..."
+msgstr "Athuga pakkasöfn..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
-"Quyidagi repozitoriylar Linux Mint versiyasini aniq qo‘llab-quvvatlamaydi."
+"Eftirfarandi hugbúnaðarsöfn eru ekki sérstaklega gerð til að styðja þína "
+"útgáfu af Linux Mint."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
-msgstr "Ushbu repozitoriylarni o‘chirib qo‘yish kerak."
+msgstr "Þessi hugbúnaðarsöfn þarf að gera óvirk."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
-msgstr "APT siyosati noto‘g‘ri."
+msgstr "APT-reglur þínar eru ekki réttar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr "Kompyuteringizni qayta yuklang."
+msgstr "Endurræstu tölvuna."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
 msgid "%s is unreachable"
-msgstr "%s bilan bog‘lanib bo‘lmaydi"
+msgstr "Ekki er hægt að nálgast %s"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s yangilanmagan. Boshqa ko‘zguga o‘ting."
+msgstr "%s er ekki með nýjustu pökkunum. Skiptu yfir á annan pakkaspegil."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
 msgid "%s does not support %s"
-msgstr "%s %s ni qo‘llab-quvvatlamaydi"
+msgstr "%s styður ekki %s"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:395
 msgid "The following problems were found:"
-msgstr "Quyidagi muammolar aniqlandi:"
+msgstr "Eftirfarandi vandamál fundust:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
-msgstr "Saqlangan paketlar"
+msgstr "Pakkar sem er haldið eftir"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr "Saqlangan paketlar qidirilmoqda..."
+msgstr "Leita að pökkum sem er haldið..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
-msgstr "Quyidagi paketlar saqlangan:"
+msgstr "Eftirfarandi pökkum er haldið:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
-msgstr "Saqlangan paketlar yangilanishni buzishi mumkin."
+msgstr "Pakkar sem er haldið geta skemmt uppfærsluna."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
-msgstr "Begona paketlar"
+msgstr "Utanaðkomandi pakkar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr "Begona paketlar qidirilmoqda..."
+msgstr "Leita að utanaðkomandi pökkum..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "Quyidagi paketlar qayta rasmiy versiyalarga tushirilishi kerak:"
+msgstr "Eftirfarandi pakka þarf að niðurfæra í opinberar útgáfur:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
-msgstr "O‘rnatilgan versiya"
+msgstr "Uppsett útgáfa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Official version"
-msgstr "Rasmiy versiya"
+msgstr "Opinber útgáfa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Archive"
-msgstr "Arxiv"
+msgstr "Safn"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr "Aks holda bu paketlar nizolarni keltirib chiqarishi mumkin."
+msgstr "Annars geta þessir pakkar valdið árekstrum."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr "Yetim paketlari"
+msgstr "Einstæðir pakkar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr "Yetim paketlar qidirilmoqda..."
+msgstr "Leita að einstæðum pökkum..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
-msgstr "Quyidagi paketlar repozitoriylarda mavjud emas:"
+msgstr "Eftirfarandi pakkar eru ekki til staðar í hugbúnaðarsöfnunum:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
-"Parametrlardan foydalanib qoldirmoqchi bo‘lgan paketlarni qo‘shing, so‘ng "
-"'Yana tekshirish' tugmasini bosing."
+"Veldu í kjörstillingunum pakkana sem þú vilt halda eftir og ýttu síðan á "
+"'Athuga aftur'."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr ""
-"Keyin yuqorida sanab o‘tilgan paketlarni olib tashlash uchun 'Tuzatish' "
-"tugmasini bosing."
+"Ýttu síðan á 'Laga' til að fjarlægja pakkana sem taldir eru upp hér að ofan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr "Yangi nashrga ishora qilmoqda..."
+msgstr "Beini í nýju útgáfuna..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
-msgstr "Yangilash simulyatsiyasi"
+msgstr "Herming eftir uppfærslu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Qattiq diskdagi bo‘sh joy va yuzaga kelishi mumkin bo‘lgan muammolarni "
-"tekshirish uchun yangilanish taqlid qilinmoqda..."
+"Líki eftir uppfærslunni til að athuga með diskapláss og möguleg vandamál..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr "Simulyatsiya muvaffaqiyatli bo‘lmadi."
+msgstr "Hermingin tókst ekki."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
-msgstr "Yangilash quyidagi muhim paketlarni olib tashlaydi:"
+msgstr "Uppfærsla mun fjarlægja eftirfarandi mikilvæga pakka:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr "Keraksiz olib tashlashlar"
+msgstr "Óæskilegar fjarlægingar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
-"Bu biror narsa noto‘g‘ri ekanligini va oldinga borishdan oldin tuzatish "
-"kerakligini ko‘rsatadigan belgidir."
+"Þetta er merki um að eitthvað sé ekki í lagi og þurfi að laga áður en lengra "
+"er haldið."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
-msgstr "Tavsiya etilgan yechim"
+msgstr "Lausn sem mælt er með"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:604
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
-"Muammoni bartaraf etish va hal qilish uchun terminalda apt-get dan "
-"foydalaning."
+"Notaðu 'apt-get' í skjáhermi (terminal) til að villuleita og leysa "
+"vandamálið."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "Forumlar va chat xonasida yordam so‘rashdan tortinmang."
+msgstr "Ekki hika við að biðja um aðstoð á vefspjallinu og spjallsrásunum."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
-msgstr "Qo‘shimcha ma'lumot"
+msgstr "Viðbótarupplýsingar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
-msgstr "Quyidagi ma'lumotlar muammoni hal qilishga yordam beradi."
+msgstr "Upplýsingarnar hér að neðan gætu hjálpað við að leysa vandamálið."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr "Qoldirilgan paketlar"
+msgstr "Pakkar sem er haldið"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
-msgstr "Olib tashlangan paketlar"
+msgstr "Fjarlægðir pakkar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:611
 #: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
-msgstr "Qo‘shilgan paketlar"
+msgstr "Viðbættir pakkar"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr ""
-"Paketlar yangilandi: %d, qo‘shildi: %d , qoldirilgan: %d, o‘chirildi: %d"
+msgstr "Uppfærðir pakkar: %d, bætt við: %d , haldið: %d, eytt: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr "Yangilash quyidagi o‘zgarishlarni amalga oshiradi."
+msgstr "Uppfærslan mun framkvæma eftirfarandi breytingar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Eslatma: Ideal holda, hech qanday paket saqlanmasligi kerak. Bu muammoni "
-"ko‘rsatishi mumkin."
+"Athugaðu: Helst ætti ekki að halda neinum pökkum. Slíkt gæti bent til "
+"vandamála."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
-"Yuqoridagi roʻyxatni koʻrib chiqing va yangilanishni davom ettirishdan oldin "
-"olib tashlashlardan mamnun ekanligingizga ishonch hosil qiling."
+"Farðu yfir listann hér fyrir ofan og gakktu úr skugga um að þú samþykkir það "
+"sem verður fjarlægt áður en þú heldur áfram með uppfærsluna."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Sizga %s '%s' kerak, lekin faqat %s bor. Qoʻshimcha %s joy boʻshatish kerak."
+"Þú þarft %s á '%s' en ert bara með %s laus. Þú þarft að losa %s til viðbótar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Yuklab olish hajmi: %s. Qoʻshimcha joy kerak: %s."
+msgstr "Stærð niðurhals: %s. Nauðsynlegt viðbótarpláss: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
-msgstr "Paket yuklab olish"
+msgstr "Niðurhal pakka"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr "Paketlar yuklab olinmoqda..."
+msgstr "Sæki pakka..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr "Paketlarni yuklab olishda xatolik yuz berdi."
+msgstr "Villa kom upp við að sækja pakkana."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr "Sessiyani taqiqlash"
+msgstr "Hindrun setu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr "Sessiya taqiqlanmoqda..."
+msgstr "Hindra setu..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
-msgstr "Yangilanishga tayyorgarlik"
+msgstr "Undirbúningur fyrir uppfærslu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
-msgstr "Yangilanish tayyorlanmoqda..."
+msgstr "Undirbý uppfærsluna..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
-msgstr "Yangilash bosqichi"
+msgstr "Uppfærslustig"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr "Tizim yangilanmoqda..."
+msgstr "Uppfæri kerfið..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
-msgstr "Yangilash vaqtida muammo aniqlandi."
+msgstr "Vandamál fannst á meðan uppfærslunni stóð."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
-"%d ta paket hali ham yangilanishi kerak (%d ta qoldirilgan, %d ta "
-"oʻchirilgan)"
+msgstr "%d pakka þarf ennþá að uppfæra (%d haldið, %d eytt)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
-msgstr "Yakuniy bosqich"
+msgstr "Lokastig"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Yangilash yakunlanmoqda..."
+msgstr "Geng frá uppfærslunni..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
-msgstr "%s o‘rnatib bo‘lmadi."
+msgstr "Ekki tókst að setja upp %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-kodeklarni o‘rnatib bo‘lmadi."
+msgstr "Ekki var hægt að setja upp mint-meta kóðunarlyklana (codecs)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
-msgstr "Quyidagi paketlarni oʻrnatib boʻlmadi:"
+msgstr "Ekki var hægt að setja upp eftirfarandi pakka:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab yangilash vaqtida o‘zgartirildi."
+msgstr "/etc/fstab var breytt á meðan uppfærslunni stóð."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
-"Muvaffaqiyatli yuklashni ta'minlash uchun yangilash vositasi asl /etc/fstab "
-"faylini tikladi"
+"Til að tryggja að hægt sé að ræsa tölvuna, hefur uppfærsluforritið "
+"endurheimt upprunalegu /etc/fstab skrána"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
-"O‘zgartirilgan faylning nusxasi /etc/fstab.upgraded sifatida saqlangan"
+msgstr "Afrit af breyttu skránni var vistað sem /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr "Yangilash vositasi"
+msgstr "Uppfærsluforrit"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr "%s ga yangilash"
+msgstr "Uppfæra í %s"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
 msgid "Preferences"
-msgstr "Parametrlar"
+msgstr "Kjörstillingar"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
 msgid "About"
-msgstr "Haqida"
+msgstr "Um hugbúnaðinn"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
 msgid "Quit"
-msgstr "Chiqish"
+msgstr "Hætta"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Iltimos, qoldiriladigan paket nomini belgilang:"
+msgstr "Tilgreindu heiti pakkans sem á að halda:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr "Yetim paketi"
+msgstr "Einstæður pakki"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
-msgstr "1-bosqich: Tayyorgarlik"
+msgstr "Stig 1: Undirbúningur"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
-"Endi kompyuterni yangilashga tayyorlash uchun bir qator sinovlar o‘tkaziladi."
+"Nokkur próf verða núna framkvæmd til að undirbúa tölvuna fyrir uppfærsluna."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "2-bosqich: Simulyatsiya va yuklab olish"
+msgstr "Stig 2: Herming og niðurhal"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr "Paket repozitoriylari endi yangi nashrga ishora qiladi."
+msgstr ""
+"Hugbúnaðarsöfnunum þínum mun núna vera beint að pökkum fyrir nýju útgáfuna."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
-"Yana bir nechta sinovlar o‘tkaziladi va paket yangilanishlari yuklab olinadi."
+"Nokkrar fleiri prófanir verða keyrðar og uppfærslur pakka verða sóttar."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
-msgstr "3-bosqich: Yangilash"
+msgstr "Stig 3: Uppfærsla"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr "Endi paketlar yangilanadi."
+msgstr "Pakkarnir verða núna uppfærðir."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
-"Ushbu dastur sizga ba'zi savollar beradi va operatsion tizimingizni "
-"yangilaydi."
+"Þetta forrit mun spyrja þig nokkurra spurninga og uppfæra síðan stýrikerfið "
+"á tölvunni þinni."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
-msgstr "Qani ketdik!"
+msgstr "Hefjumst handa!"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr "OK"
+msgstr "Í lagi"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr "Tuzatish"
+msgstr "Laga"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Yana tekshirish"
+msgstr "Athuga aftur"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
-msgstr "Quyidagi xatolik yuz berdi:"
+msgstr "Eftirfarandi villa kom upp:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr "Yangilash muvaffaqiyatli bo‘ldi."
+msgstr "Vel gekk að uppfæra stýrikerfið þitt."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "Barcha o‘zgarishlar kuchga kirishi uchun kompyuterni qayta yuklang."
+msgstr "Endurræstu tölvuna svo að allar breytingar öðlist gildi."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "Oxirgi Timeshift snapshoti"
+msgstr "Nýlegt Timeshift-skyndiafrit"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr "Qo‘llanilgan dasturiy ta'minot yangilanishlari"
+msgstr "Setti inn hugbúnaðaruppfærslur"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
-"Bu talablar xavfsiz yangilashni kafolatlash uchun mavjud. Agar nima "
-"qilayotganingizni bilsangizgina ularni o‘chirib qo‘ying."
+"Þessar kerfiskröfur eru þarna til að tryggja örugga uppfærslu. Ekki gera þær "
+"óvirkar nema að þú vitir hvað þú ert að gera."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr "Qo‘llab-quvvatlanadigan Linux Mint versiyasi"
+msgstr "Studd Linux Mint útgáfa"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr "Talablar"
+msgstr "Kerfiskröfur"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
@@ -568,6 +570,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Yetim paketlar - bu repozitoriylarda mavjud bo‘lmagan paketlar. Yangilash "
-"paytida ular o‘chiriladi. Agar ulardan ba'zilarini saqlamoqchi bo‘lsangiz, "
-"ularni quyidagi ro‘yxatga qo‘shing:"
+"Einstæðir pakkar eru hugbúnaðarpakkar sem ekki finnast í hugbúnaðarsöfnunum. "
+"Þeir verða fjarlægðir á meðan uppfærslu stendur. Ef þú vilt halda í "
+"einhverja þeirra, ættirðu að bæta þeim á listann hér fyrir neðan:"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-14 08:49+0000\n"
+"PO-Revision-Date: 2022-04-21 06:39+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -97,6 +97,7 @@ msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
+"מערכת ההפעלה אינה עדכנית. נא להחיל עדכונים זמינים לפני ניסיון לשדרוג."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
@@ -132,7 +133,7 @@ msgstr "בדיקת מאגרי חבילות..."
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr ""
+msgstr "המאגרים הבאים אינם תומכים במפורש בגרסת לינוקס מינט המותקנת."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
@@ -192,7 +193,7 @@ msgstr "חיפוש חבילות זרות..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr ""
+msgstr "נא לשנמך את החבילות הבאות לגרסאות רשמיות:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
@@ -228,6 +229,8 @@ msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
+"שימוש בהעדפות להוספת החבילות בהם יש עיניין להשתמש בעתיד, לאחר מכן ללחוץ על "
+"'בדיקה חוזרת'."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
@@ -319,11 +322,12 @@ msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"נא לעבור על הרשימה מעלה ולוודא תקינות  'רשימת ההסרות' לפני המשך השדרוג."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr ""
+msgstr "נדרש  %s ב־'%s' אך רק %s נמצא. נא לפנות %s נוספים."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
@@ -477,7 +481,7 @@ msgstr "החבילות ישודרגו כעת."
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
-msgstr ""
+msgstr "התוכנית תשאל מספר שאלות ותשדרג את מערכת ההפעלה."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
@@ -520,6 +524,8 @@ msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"הדרישות הללו קיימות כדי להבטיח שדרוג בטוח. ניתן להשבית אותן אך רק במידה "
+"וההשלכות ברורות."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
@@ -535,3 +541,5 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
+"חבילות יתומות הן חבילות שלא נוכחות במאגרים. הן מוסרות במהלך השדרוג. על מנת "
+"לשמראת חלק מהם, נא להוסיף אותו לרשימה מטה:"

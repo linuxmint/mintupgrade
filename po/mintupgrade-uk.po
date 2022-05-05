@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-15 09:29+0000\n"
-"Last-Translator: Rostyslav Haitkulov <Unknown>\n"
+"PO-Revision-Date: 2022-04-22 18:25+0000\n"
+"Last-Translator: Артем Тутов <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-04-16 10:20+0000\n"
-"X-Generator: Launchpad (build 5cc3bd61c85a328825183f316ddd801c0f7d7ef2)\n"
+"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
+"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -54,11 +54,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
-msgstr ""
+msgstr "Системні знімки"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr ""
+msgstr "Перевірка на наявність системних знімків..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
