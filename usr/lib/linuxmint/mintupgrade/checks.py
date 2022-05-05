@@ -12,6 +12,7 @@ import gettext, locale
 import traceback
 import subprocess
 import filecmp
+import platform
 
 import apt
 import apt_pkg
