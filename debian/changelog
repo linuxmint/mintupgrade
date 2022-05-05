@@ -1,3 +1,9 @@
+mintupgrade (2022.05.05.2) elsie; urgency=medium
+
+  * Fix missing import
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 May 2022 16:23:06 +0100
+
 mintupgrade (2022.05.05.1) elsie; urgency=medium
 
   * Adapt to the different kernel meta names in Ubuntu/Debian and 32 vs 64bit
