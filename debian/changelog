@@ -1,3 +1,10 @@
+mintupgrade (2022.05.05.1) elsie; urgency=medium
+
+  * Adapt to the different kernel meta names in Ubuntu/Debian and 32 vs 64bit
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 May 2022 16:18:46 +0100
+
 mintupgrade (2022.05.05) elsie; urgency=medium
 
   [ Clement Lefebvre ]
