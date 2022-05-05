@@ -13,6 +13,9 @@ CHECK_ABSENT = ["ippusbxd"]
 CHECK_PRESENT = ["os-prober"]
 CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-keyring", "mintsystem"]
 
+KERNEL_META_32 = ["linux-image-686", "linux-headers-686"]
+KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
+
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
@@ -35,7 +38,6 @@ PACKAGES_ADDITIONS = [
     "hypnotix",
     "libgdk-pixbuf2.0-bin",
     "libreoffice-gtk3",
-    "linux-generic",
     "mesa-vdpau-drivers",
     "mesa-vulkan-drivers",
     "mintreport",

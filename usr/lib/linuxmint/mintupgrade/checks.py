@@ -857,6 +857,29 @@ class PostUpgradeCheck(Check):
                 self.info.append(table_list)
                 return
 
+        # Install kernel meta
+        print_output("Installing kernel meta")
+        if platform.machine() == "x86_64":
+            KERNEL_META = KERNEL_META_64
+        else:
+            KERNEL_META = KERNEL_META_32
+        if len(KERNEL_META) > 0:
+            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(KERNEL_META))):
+                self.result = RESULT_ERROR
+                self.message = _("The following packages could not be installed:")
+                table_list = TableList([""])
+                table_list.show_column_names = False
+                cache = apt.Cache()
+                for name in KERNEL_META:
+                    if name in cache:
+                        pkg = cache[name]
+                        if not pkg.is_installed:
+                            table_list.values.append([name])
+                    else:
+                        table_list.values.append([name])
+                self.info.append(table_list)
+                return
+
         # Remove packages
         print_output("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
