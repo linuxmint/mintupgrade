@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-21 06:39+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"PO-Revision-Date: 2022-05-25 15:04+0000\n"
+"Last-Translator: Omer I.S. <Unknown>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
-"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
+"X-Launchpad-Export-Date: 2022-06-26 11:30+0000\n"
+"X-Generator: Launchpad (build 51a2e4fa2e9b8e45f00904ad7f53546f45ac48a5)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -23,7 +23,7 @@ msgstr "גרסת לינוקס מינט"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "בדיקת גרסאת לינוקס מינט"
+msgstr "גרסת לינוקס מינט שלך נבדקת..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
@@ -33,12 +33,13 @@ msgstr "גרסת לינוקס מינט המותקנת אינה ידועה. חס�
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "גרסת לינוקס מינט המותקנת היא '%s'. ניתן לשדרג לגרסה %s רק מגרסה %s."
+msgstr ""
+"גרסת לינוקס מינט המותקנת היא \"%s\". ניתן לשדרג לגרסה %s רק מגרסה %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "מהדורת לינוקס מינט המותקנת היא  '%s'. לא ניתן לשדרגה ל־%s."
+msgstr "מהדורת לינוקס מינט המותקנת היא  \"%s\". לא ניתן לשדרג אותה ל־%s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
@@ -50,15 +51,15 @@ msgstr "בדיקת מקור מתח"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "נא לחבר את המחשב למקור מתח לפני ניסיוןשדרוג."
+msgstr "נא לחבר את המחשב למקור מתח לפני ניסיון שדרוג."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
-msgstr "תמונת־חטף  מערכת"
+msgstr "תמונות מערכת"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "בדיקת תמונת־חטף  מערכת"
+msgstr "תמונות המערכת נבדקות..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."

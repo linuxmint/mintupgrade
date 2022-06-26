@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-05-05 10:14+0000\n"
-"Last-Translator: vaba <Unknown>\n"
+"PO-Revision-Date: 2022-06-23 06:59+0000\n"
+"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-05-05 15:07+0000\n"
-"X-Generator: Launchpad (build 3e6ca301c25bad9ef395a0234df16d711b3dff61)\n"
+"X-Launchpad-Export-Date: 2022-06-26 11:30+0000\n"
+"X-Generator: Launchpad (build 51a2e4fa2e9b8e45f00904ad7f53546f45ac48a5)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -221,11 +221,11 @@ msgstr "Vastasel juhul võivad need paketid tekitada konflikte."
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr ""
+msgstr "Orvuks muutunud paketid"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Orvuks muutunud pakettide otsimine."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
@@ -236,26 +236,31 @@ msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
+"Lisa paketid, mida soovid eelistustes kasutada, seejärel vajuta 'Kontrolli "
+"uuesti'."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr ""
+"Seejärel vajutage ülalloetletud pakettide eemaldamiseks nuppu \"Paranda\"."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr ""
+msgstr "Osutades uuele väljaandele..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
-msgstr ""
+msgstr "Uuenduse simulatsioon"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
+"Uuenduse simuleerimine kõvakettaruumi ja võimalike probleemide "
+"kontrollimiseks..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr ""
+msgstr "Simulatsioon ei õnnestunud."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
@@ -263,7 +268,7 @@ msgstr "Uuendamine eemaldaks järgmised olulised paketid:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr ""
+msgstr "Soovimatud eemaldamised"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
@@ -285,7 +290,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
+msgstr "Ärge kartke otsida abi foorumitest ja jututoast."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
@@ -298,17 +303,17 @@ msgstr "Allolev teave võib aidata probleemi lahendada."
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr ""
+msgstr "Hoitud paketid"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
-msgstr "Eemaldatud pakettid"
+msgstr "Eemaldatud paketid"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:611
 #: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
-msgstr ""
+msgstr "Lisatud paketid"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
@@ -319,23 +324,28 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr ""
+msgstr "Uuendamine viib läbi järgmised muudatused."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
+"Märkus: Ideaalis ei tohiks pakette alles hoida. See võib viidata probleemile."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"Vaadake ülaltoodud loend läbi ja veenduge, et olete eemaldamisega rahul, "
+"enne kui jätkate versiooniuuendusega."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
+"Teil on '%s' jaoks vaja %s, kuid teil on ainult %s. Peate vabastama "
+"täiendava %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
@@ -344,23 +354,23 @@ msgstr "Allalaadimise suurus: %s. Vajalik lisaruum: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
-msgstr ""
+msgstr "Paketi allalaadimine"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr ""
+msgstr "Pakettide allalaadimine..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr ""
+msgstr "Pakettide allalaadimisel ilmnes viga."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr ""
+msgstr "Seansi pärssimine"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "Seansi peatamine..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
@@ -372,38 +382,38 @@ msgstr "Uuenduse ettevalmistamine..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
-msgstr ""
+msgstr "Uuendamise faas"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr ""
+msgstr "Süsteemi uuendamine..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
-msgstr ""
+msgstr "Uuendamisel tuvastati probleem."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
+msgstr "%d paketti tuleb veel värskendada (%d säilinud, %d kustutatud)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
-msgstr ""
+msgstr "Lõplik faas"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr ""
+msgstr "Uuendamise lõpetamine..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
-msgstr ""
+msgstr "%s ei saanud paigaldada."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
-msgstr ""
+msgstr "mint-meta-codecs paketti pole võimalik paigaldada."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
@@ -411,29 +421,31 @@ msgstr "Järgmisi pakette ei saadud paigaldada:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
-msgstr ""
+msgstr "/etc/fstab faili muudeti uuendamise käigus."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
+"Et tagada edukas alglaadimine, taastas uuendamise tööriist esialgse "
+"/etc/fstab faili"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
+msgstr "Muudetud faili koopia salvestati nimega /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr ""
+msgstr "Uuendamise tööriist"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr ""
+msgstr "Uuenda versioonile %s"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
 msgid "Preferences"
@@ -450,11 +462,11 @@ msgstr "Välju"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr ""
+msgstr "Palun määra paketi nimi, mida säilitada:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr ""
+msgstr "Orvuks muutunud pakett"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
@@ -464,19 +476,20 @@ msgstr "1. etapp: Ettevalmistus"
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
-msgstr ""
+msgstr "Arvuti uuenduse jaoks ettevalmistamiseks tehakse nüüd rida teste."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "2. etapp: Eeltestimine ja allalaadimine"
+msgstr "2. etapp: Simulatsioon ja allalaadimine"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
+msgstr "Sinu tarkvaraallikad viitavad nüüd uuele väljalaskele."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
+"Käivitatakse veel mõned testid ja paketivärskendused laaditakse alla."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
@@ -484,12 +497,14 @@ msgstr "3. etapp: uuendamine"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr ""
+msgstr "Nüüd uuendatakse pakette."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
+"See programm esitab teile mõned küsimused ja uuendab teie "
+"operatsioonisüsteemi."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
@@ -505,41 +520,43 @@ msgstr "Paranda"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr ""
+msgstr "Kontrolli uuesti"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
-msgstr ""
+msgstr "Ilmnes järgmine viga:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr ""
+msgstr "Uuendamine õnnestus."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr ""
+msgstr "Kõigi muudatuste jõustumiseks taaskäivitage arvuti."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "Hiljutine Timeshifti hetktõmmis"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr ""
+msgstr "Rakendatud tarkvarauuendused"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"Need nõuded on mõeldud turvalise uuendamise tagamiseks. Keelake need ainult "
+"siis, kui teate, mida teete."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr ""
+msgstr "Toetatud Linux Mint versioon"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr ""
+msgstr "Nõuded"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
@@ -547,3 +564,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
+"Orvuks muutunud paketid on sellised, mis ei ole tarkvaraallikas saadaval. "
+"Need eemaldatakse uuenduse käigus. Kui tahad mõned neist säilitada, lisa "
+"need alla loetelusse:"

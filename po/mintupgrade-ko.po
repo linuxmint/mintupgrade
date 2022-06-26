@@ -1,568 +1,529 @@
-# Icelandic translation for linuxmint
+# Korean translation for linuxmint
 # Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
 # This file is distributed under the same license as the linuxmint package.
-#
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
-# Sveinn í Felli <sv1@fellsnet.is>, 2022.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-19 15:11+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2022-05-24 08:27+0000\n"
+"Last-Translator: Juwon Jeong <Unknown>\n"
+"Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2022-06-26 11:30+0000\n"
 "X-Generator: Launchpad (build 51a2e4fa2e9b8e45f00904ad7f53546f45ac48a5)\n"
-"Language: is\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
-msgstr "Linux Mint útgáfa"
+msgstr "리눅스 민트 버전"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "Athuga hvaða útgáfu af Linux Mint þú ert með..."
+msgstr "리눅스 민트 버전을 확인중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr ""
-"Útgáfan þín af Linux Mint er ekki þekkt. Það vantar /etc/linuxmint/info."
+msgstr "귀하의 리눅스 민트 버전을 알 수 없습니다. /etc/linuxmint/info를 찾을 수 없습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "Útgáfan þín af Linux Mint er '%s' Aðeins er hægt að uppfæra %s í %s."
+msgstr "현재 리눅스 민트 버전은 '%s'입니다. %s 만 %s로 업그레이드 할 수 있습니다.'"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr ""
-"Útgáfan þín af Linux Mint er '%s'. Ekki er hægt að uppfæra hana í %s."
+msgstr "현재 리눅스 민트 버전은 '%s'입니다. 이 버전은 %s로 업그레이드 할 수 없습니다.'"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Power source"
-msgstr "Rafmagnstenging"
+msgstr "전원 공급"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Checking the power source..."
-msgstr "Athuga rafmagnstengingu..."
+msgstr "전원 공급을 확인중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr ""
-"Öruggara er að tengja tölvuna í rafmagnsinnstungu áður en reynt er að "
-"uppfæra."
+msgstr "업그레이드를 시도하기 전에 전원을 연결해주십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
-msgstr "Skyndiafrit kerfisins"
+msgstr "시스템 스냅샷"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "Athuga skyndiafrit kerfisins..."
+msgstr "시스템 스냅샷을 확인중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
-msgstr ""
-"Taktu skyndiafrit af kerfinu með Timeshift áður en reynt er að uppfæra."
+msgstr "업그레이드를 시도하기 전에 Timeshift 시스템 스냅샷 만들기 작업을 수행하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
-msgstr ""
-"Ef uppfærslan tekst ekki, getur skyndiafrit af kerfinu gert þér kleift að "
-"fara til baka og afturkalla allar breytingar."
+msgstr "업그레이드를 성공하지 못한 경우 시스템 스냅샷이 복원할 것입니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
-msgstr "APT-skyndiminni"
+msgstr "APT 캐시"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Checking the APT cache..."
-msgstr "Athuga APT-skyndiminnið..."
+msgstr "APT 캐시를 확인중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:222
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
-msgstr ""
-"Ekki er hægt að endurlesa pakkaskyndiminnið þitt rétt. Keyrðu 'apt update' "
-"og lagaðu þær villur sem birtast."
+msgstr "패키지 캐시가 올바르게 새로 고칠 수 없습니다. 'app update'를 실행하고 화면에 출력되는 오류를 고치십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:231
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
-msgstr ""
-"Sumir pakkarnir þínir eru bilaðir. Keyrðu 'apt install -f' til að laga "
-"vandamálið."
+msgstr "패키지 중 일부가 손상되었습니다. 'apt install -f'를 실행하여 문제를 해결하십시오.'"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
-msgstr ""
-"Stýrikerfið þitt er ekki uppfært í nýjustu gerð. Virkjaðu tiltækar "
-"uppfærslur fyrir það áður en þú reynir að uppfæra í næstu útgáfu."
+msgstr "운영체제가 최신이 아닙니다. 업그레이드를 시도하기 전에 업데이트를 적용하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
-msgstr "Eftirfarandi aðgerðir þarf að framkvæma:"
+msgstr "다음 지시를 따르십시오:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Package"
-msgstr "Pakki"
+msgstr "패키지"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "Operation"
-msgstr "Aðgerð"
+msgstr "명령"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "needs to be installed"
-msgstr "verður að setja upp"
+msgstr "설치 필요"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be removed"
-msgstr "verður að fjarlægja"
+msgstr "제거되어야 함"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
-msgstr "Pakkasöfn"
+msgstr "패키지 저장소"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr "Athuga pakkasöfn..."
+msgstr "패키지 저장소 확인중..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr ""
-"Eftirfarandi hugbúnaðarsöfn eru ekki sérstaklega gerð til að styðja þína "
-"útgáfu af Linux Mint."
+msgstr "다음 저장소는 현재 버전의 리눅스민트를 공식적으로 지원하지 않습니다"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
-msgstr "Þessi hugbúnaðarsöfn þarf að gera óvirk."
+msgstr "다음 저장소는 비활성화 되어야 합니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
-msgstr "APT-reglur þínar eru ekki réttar."
+msgstr "APT 정책이 올바르지 않습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr "Endurræstu tölvuna."
+msgstr "컴퓨터를 재부팅하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
 msgid "%s is unreachable"
-msgstr "Ekki er hægt að nálgast %s"
+msgstr "%s에 접근할 수 없습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s er ekki með nýjustu pökkunum. Skiptu yfir á annan pakkaspegil."
+msgstr "%s가 최신상태가 아닙니다. 다른 미러로 전환하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
 msgid "%s does not support %s"
-msgstr "%s styður ekki %s"
+msgstr "%s는 %s를(을) 지원하지 않습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:395
 msgid "The following problems were found:"
-msgstr "Eftirfarandi vandamál fundust:"
+msgstr "다음의 문제가 발견되었습니다:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Held packages"
-msgstr "Pakkar sem er haldið eftir"
+msgstr "패키지 동결(업데이트 하지 않음)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr "Leita að pökkum sem er haldið..."
+msgstr "동결될 패키지를 찾는중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
-msgstr "Eftirfarandi pökkum er haldið:"
+msgstr "다음의 패키지가 동결되었습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:447
 msgid "Held packages can break the upgrade."
-msgstr "Pakkar sem er haldið geta skemmt uppfærsluna."
+msgstr "동결된 패키지는 업그레이드를 중단할 수 있습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Foreign packages"
-msgstr "Utanaðkomandi pakkar"
+msgstr "외부 패키지"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr "Leita að utanaðkomandi pökkum..."
+msgstr "외부 패키지를 찾는중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "Eftirfarandi pakka þarf að niðurfæra í opinberar útgáfur:"
+msgstr "다음 패키지는 공식 버전으로 다운그레이드되어야 합니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
-msgstr "Uppsett útgáfa"
+msgstr "설치된 버전"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Official version"
-msgstr "Opinber útgáfa"
+msgstr "공식 버전"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Archive"
-msgstr "Safn"
+msgstr "아카이브"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr "Annars geta þessir pakkar valdið árekstrum."
+msgstr "이들 패키지들은 충돌을 일으킬 수 있습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr "Einstæðir pakkar"
+msgstr "유리된 패키지"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr "Leita að einstæðum pökkum..."
+msgstr "유리된 패키지를 찾는 중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
-msgstr "Eftirfarandi pakkar eru ekki til staðar í hugbúnaðarsöfnunum:"
+msgstr "다음 패키지가 저장소에 존재하지 않습니다:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
-msgstr ""
-"Veldu í kjörstillingunum pakkana sem þú vilt halda eftir og ýttu síðan á "
-"'Athuga aftur'."
+msgstr "설정을 계속 사용하기 위해 패키지를 추가한 후, '다시확인' 버튼을 눌러주십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
-msgstr ""
-"Ýttu síðan á 'Laga' til að fjarlægja pakkana sem taldir eru upp hér að ofan."
+msgstr "그 다음 '수정'을 눌러 위 목록에 있는 패키지를 제거하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr "Beini í nýju útgáfuna..."
+msgstr "새 릴리즈를 포인트중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
-msgstr "Herming eftir uppfærslu"
+msgstr "업그레이드 시뮬레이션"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
-msgstr ""
-"Líki eftir uppfærslunni til að athuga með diskapláss og möguleg vandamál..."
+msgstr "디스크의 여유 공간과 잠재적인 문제를 점검하기 위해업그레이드를 시뮬레이션하는 중입니다..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr "Hermingin tókst ekki."
+msgstr "시뮬레이션이 성공적으로 진행되지 않았습니다.."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
-msgstr "Uppfærsla mun fjarlægja eftirfarandi mikilvæga pakka:"
+msgstr "업그레이드를 진행하면 다음의 중요한 패키지가 제거됩니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr "Óæskilegar fjarlægingar"
+msgstr "의도하지 않은 제거"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
-msgstr ""
-"Þetta er merki um að eitthvað sé ekki í lagi og þurfi að laga áður en lengra "
-"er haldið."
+msgstr "이는 어떠한 문제가 있다는 신호이며 더 진행하기 위해서는 이를 수정해야 합니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
-msgstr "Lausn sem mælt er með"
+msgstr "권장하는 해결방법"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:604
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr ""
-"Notaðu 'apt-get' í skjáhermi (terminal) til að villuleita og leysa "
-"vandamálið."
+msgstr "터미널에서 apt-get을 실행하여 문제를 해결하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "Ekki hika við að biðja um aðstoð á vefspjallinu og spjallsrásunum."
+msgstr "포럼과 채팅방에서 도움을 구하는 것을 주저하지 마십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
-msgstr "Viðbótarupplýsingar"
+msgstr "더 많은 정보"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "The information below might help solve the issue."
-msgstr "Upplýsingarnar hér að neðan gætu hjálpað við að leysa vandamálið."
+msgstr "아래의 내용이 문제를 해결하는 데 도움이 될 수 있습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:609
 #: usr/lib/linuxmint/mintupgrade/checks.py:622
 msgid "Kept packages"
-msgstr "Pakkar sem er haldið"
+msgstr "패키지 유지됨"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:610
 #: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Removed packages"
-msgstr "Fjarlægðir pakkar"
+msgstr "패키지 제거됨"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:611
 #: usr/lib/linuxmint/mintupgrade/checks.py:625
 msgid "Added packages"
-msgstr "Viðbættir pakkar"
+msgstr "패키지 추가됨"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 #: usr/lib/linuxmint/mintupgrade/checks.py:621
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "Uppfærðir pakkar: %d, bætt við: %d , haldið: %d, eytt: %d"
+msgstr "업데이트된 패키지: %d, 추가된 패키지 %d, 유지된 패키지: %d, 삭제된 패키지: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Upgrading will perform the following changes."
-msgstr "Uppfærslan mun framkvæma eftirfarandi breytingar."
+msgstr "업그레이드가 다음 변경을 수행합니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:624
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
-msgstr ""
-"Athugaðu: Helst ætti ekki að halda neinum pökkum. Slíkt gæti bent til "
-"vandamála."
+msgstr "참고: 이상적인 경우 어떠한 패키지도 유지 되지 않습니다. 이는 문제가 있음을 가리킵니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
-msgstr ""
-"Farðu yfir listann hér fyrir ofan og gakktu úr skugga um að þú samþykkir það "
-"sem verður fjarlægt áður en þú heldur áfram með uppfærsluna."
+msgstr "업그레이드를 더 진행하기 이전에 위의 항목들이 제거되어도 괜찮은지 확인하십시오."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr ""
-"Þú þarft %s á '%s' en ert bara með %s laus. Þú þarft að losa %s til viðbótar."
+msgstr "%s에 %s가 필요하지만, %s의 빈공간이 있습니다.. %s의 빈 공간이 추가로 필요합니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Stærð niðurhals: %s. Nauðsynlegt viðbótarpláss: %s."
+msgstr "다운로드 크기: %s 추가로 필요한 빈 공간: %s"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
-msgstr "Niðurhal pakka"
+msgstr "패키지 다운로드"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr "Sæki pakka..."
+msgstr "패키지 다운로드중..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr "Villa kom upp við að sækja pakkana."
+msgstr "패키지를 다운로드하는 도중 문제가 발생했습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr "Hindrun setu"
+msgstr "세션 중단"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr "Hindra setu..."
+msgstr "세션 중단중..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
-msgstr "Undirbúningur fyrir uppfærslu"
+msgstr "업그레이드 준비"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
-msgstr "Undirbý uppfærsluna..."
+msgstr "업그레이드 준비중..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
-msgstr "Uppfærslustig"
+msgstr "업그레이드 단계"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr "Uppfæri kerfið..."
+msgstr "시스템 업그레이드중..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
 msgid "An issue was detected during the upgrade."
-msgstr "Vandamál fannst á meðan uppfærslunni stóð."
+msgstr "업그레이드 과정에서 문제가 발견되었습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:809
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "%d pakka þarf ennþá að uppfæra (%d haldið, %d eytt)"
+msgstr "아직 %d개의 패키지가 업데이트되어야 합니다(%d개 유지, %d 제거됨)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Final phase"
-msgstr "Lokastig"
+msgstr "완료 단계"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Geng frá uppfærslunni..."
+msgstr "업그레이드를 마무리 하는중...."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
 msgid "%s could not be installed."
-msgstr "Ekki tókst að setja upp %s."
+msgstr "%s를 설치할 수 없습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "mint-meta-codecs could not be installed."
-msgstr "Ekki var hægt að setja upp mint-meta kóðunarlyklana (codecs)."
+msgstr "mint-meta-codecs를 설치할 수 없습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:842
 msgid "The following packages could not be installed:"
-msgstr "Ekki var hægt að setja upp eftirfarandi pakka:"
+msgstr "다음 패키지를 설치할 수 없습니다:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:887
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab var breytt á meðan uppfærslunni stóð."
+msgstr "업그레이드 과정에서 /etc/fstab이 수정되었습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:888
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
-msgstr ""
-"Til að tryggja að hægt sé að ræsa tölvuna, hefur uppfærsluforritið "
-"endurheimt upprunalegu /etc/fstab skrána"
+msgstr "성공적인 부팅을 위해 업그레이드 도구가 /etc/fstab을 복구했습니다."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:889
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr "Afrit af breyttu skránni var vistað sem /etc/fstab.upgraded"
+msgstr "수정된 파일의 사본이 /etc/fstab.upgraded로 저장되었습니다."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr "Uppfærsluforrit"
+msgstr "업그레이드 도구"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr "Uppfæra í %s"
+msgstr "%s로 업그레이드"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
 msgid "Preferences"
-msgstr "Kjörstillingar"
+msgstr "설정"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
 msgid "About"
-msgstr "Um hugbúnaðinn"
+msgstr "정보"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
 msgid "Quit"
-msgstr "Hætta"
+msgstr "나가기"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Tilgreindu heiti pakkans sem á að halda:"
+msgstr "유지할 패키지의 이름을 정해주십시오:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr "Einstæður pakki"
+msgstr "유리된 패키지"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
-msgstr "Stig 1: Undirbúningur"
+msgstr "1단계: 준비"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
-msgstr ""
-"Nokkur próf verða núna framkvæmd til að undirbúa tölvuna fyrir uppfærsluna."
+msgstr "업그레이드를 준비하기 위해 일련의 테스트가 수행됩니다."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "Stig 2: Herming og niðurhal"
+msgstr "2단계: 시뮬레이션 및 다운로드"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
-"Hugbúnaðarsöfnunum þínum mun núna vera beint að pökkum fyrir nýju útgáfuna."
+msgstr "패키지 저장소가 새 릴리즈를 가리킬 것입니다."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr ""
-"Nokkrar fleiri prófanir verða keyrðar og uppfærslur pakka verða sóttar."
+msgstr "몇몇 테스트가 더 진행되고, 패키지 업데이트가 다운로드될 것입니다."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
-msgstr "Stig 3: Uppfærsla"
+msgstr "3단계: 업그레이드"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr "Pakkarnir verða núna uppfærðir."
+msgstr "패키지가 업그레이드될 것입니다."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
-msgstr ""
-"Þetta forrit mun spyrja þig nokkurra spurninga og uppfæra síðan stýrikerfið "
-"á tölvunni þinni."
+msgstr "몇 가지 질문을 한 뒤에 운영체제의 업그레이드를 진행할 것입니다."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
-msgstr "Hefjumst handa!"
+msgstr "출발합시다"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr "Í lagi"
+msgstr "예"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr "Laga"
+msgstr "수정하기"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Athuga aftur"
+msgstr "다시 확인"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
-msgstr "Eftirfarandi villa kom upp:"
+msgstr "다음 에러가 발생했습니다:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr "Vel gekk að uppfæra stýrikerfið þitt."
+msgstr "업그레이드에 성공했습니다."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "Endurræstu tölvuna svo að allar breytingar öðlist gildi."
+msgstr "모든 변경사항을 적용하기 위해 컴퓨터를 재시작하십시오."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "Nýlegt Timeshift-skyndiafrit"
+msgstr "최근 Timeshift 스냅샷"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr "Setti inn hugbúnaðaruppfærslur"
+msgstr "적용된 소프트웨어 업데이트"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
-msgstr ""
-"Þessar kerfiskröfur eru þarna til að tryggja örugga uppfærslu. Ekki gera þær "
-"óvirkar nema að þú vitir hvað þú ert að gera."
+msgstr "이 요구사항들은 안전한 업그레이드를 보장하기 위한 것입니다.어떤 작업을 하는지 숙지한 경우에만 비활성화 하십시오."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr "Studd Linux Mint útgáfa"
+msgstr "지원되는 Linux Mint 버전"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr "Kerfiskröfur"
+msgstr "요구사항"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
@@ -570,6 +531,5 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Einstæðir pakkar eru hugbúnaðarpakkar sem ekki finnast í hugbúnaðarsöfnunum. "
-"Þeir verða fjarlægðir á meðan uppfærslu stendur. Ef þú vilt halda í "
-"einhverja þeirra, ættirðu að bæta þeim á listann hér fyrir neðan:"
+"유리된 패키지들은 저장소에 더이상 존재하지 않는 패키지입니다.그것들은 업그레이드 과정에서 제거됩니다. 이것들(혹은 일부)유지하기 바라는 "
+"경우아래 목록에 추가하십시오:"
