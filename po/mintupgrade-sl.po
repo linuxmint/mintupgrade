@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-06-25 16:59+0000\n"
-"Last-Translator: Miha Markovič <Unknown>\n"
+"PO-Revision-Date: 2022-07-14 07:13+0000\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-06-26 11:30+0000\n"
-"X-Generator: Launchpad (build 51a2e4fa2e9b8e45f00904ad7f53546f45ac48a5)\n"
+"X-Launchpad-Export-Date: 2022-07-24 09:43+0000\n"
+"X-Generator: Launchpad (build 025a39fd866a641b6ae33074cda0d02a2c712d38)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Linux Mint version"
@@ -23,18 +23,18 @@ msgstr "Različica Linux Minta"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:134
 msgid "Checking your version of Linux Mint..."
-msgstr "Pregledovanje vaše različice Linux Minta..."
+msgstr "Preverjanje vaše različice Linux Minta ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:142
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr "Vaša različica Linux Minta je neznana. /etc/linuxmint/info manjka."
+msgstr "Vaša različica Linux Minta ni znana. Manjka /etc/linuxmint/info"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:159
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
-"Vaša različica Linux Minta je '%s'. Samo %s je lahko nadgrajena na %s."
+"Vaša različica Linux Minta je '%s'. Samo različico %s lahko nadgradite na %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:165
 #, python-format
@@ -47,11 +47,11 @@ msgstr "Vir napajanja"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:172
 msgid "Checking the power source..."
-msgstr "Pregledovanje vira napajanja..."
+msgstr "Preverjanje vira napajanja ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "Povežite računalnik na vir napajanja preden zaženete nadgradnjo."
+msgstr "Povežite računalnik na vir napajanja, preden zaženete nadgradnjo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "System snapshots"
@@ -59,11 +59,11 @@ msgstr "Posnetki sistema"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:183
 msgid "Checking system snapshots..."
-msgstr "Pregledovanje posnetkov sistema..."
+msgstr "Pregledovanje posnetkov sistema ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:188
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
-msgstr "Izvedi posnetek sistema Timeshift pred zagonom posodobitve."
+msgstr "Izvedite posnetek sistema Timeshift pred zagonom posodobitve."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid ""
@@ -75,25 +75,25 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "APT cache"
-msgstr "predpomnilnik APT"
+msgstr "Predpomnilnik APT"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Checking the APT cache..."
-msgstr "Pregledovanje predpomnilnika APT..."
+msgstr "Pregledovanje predpomnilnika APT ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:222
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Vaš predpomnilnik paketa ni bilo mogoče pravilno osvežiti. Zaženite 'apt "
-"update' in popravite napako ki jo pokaže."
+"Vašega predpomnilnika paketov ni bilo mogoče pravilno osvežiti. Zaženite "
+"'apt update' in popravite napako, ki jo pokaže."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:231
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Nekateri vaši paketi so pokvarjeni. Zaženite 'apt install -f' da odpravite "
+"Nekateri vaši paketi so okvarjeni. Zaženite 'apt install -f', da odpravite "
 "napako."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:250
@@ -101,12 +101,12 @@ msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-"Poganjate zastarelo verzijo operacijskega sistema. Uveljavite zahtevane "
-"posodobitve preden zaženete nadgradnjo."
+"Vaš operacijski sistem ni posodobljen. Uveljavite posodobitve, ki so na "
+"voljo, preden zaženete nadgradnjo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:271
 msgid "The following operations need to be performed:"
-msgstr "Naslednje operacije morajo biti izvedene:"
+msgstr "Izvesti je potrebno naslednje operacije:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
@@ -128,29 +128,29 @@ msgstr "je potrebno odstraniti"
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Package repositories"
-msgstr "Zapakiraj repozitorije"
+msgstr "Skladišča paketov"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:306
 msgid "Checking package repositories..."
-msgstr "Pregledovanje paketnih repozitorijev..."
+msgstr "Preverjanje skladišč paketov ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr "Naslednji repozitoriji uradno ne podpirajo vaše verzije Linux Minta."
+msgstr "Naslednja skladišča izrecno ne podpirajo vaše različice Linux Minta."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:342
 msgid "These repositories need to be disabled."
-msgstr "Ti repozitoriji morajo biti onemogočeni."
+msgstr "Ta skladišča je potrebno onemogočiti."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:355
 msgid "Your APT policy is incorrect."
-msgstr "Vaša APT politika je nepravilna."
+msgstr "Vaša politika APT ni pravilna."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid "Reboot your computer."
-msgstr "Vnovično zaženite vaš računalnik."
+msgstr "Vnovično zaženite računalnik."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:374
 #, python-format
@@ -160,7 +160,7 @@ msgstr "%s je nedosegljiv"
 #: usr/lib/linuxmint/mintupgrade/checks.py:379
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s ni posodobljen. Preklopite na drugo zrcalo."
+msgstr "%s ni posodobljen. Preklopite na drug zrcalni strežnik."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:391
 #, python-format
@@ -177,7 +177,7 @@ msgstr "Pridržani paketi"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:434
 msgid "Looking for held packages..."
-msgstr "Iskanje pridržanih paketov..."
+msgstr "Iskanje pridržanih paketov ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:440
 msgid "The following packages are held:"
@@ -193,16 +193,16 @@ msgstr "Tuji paketi"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:461
 msgid "Looking for foreign packages..."
-msgstr "Iskanje tujih paketov..."
+msgstr "Iskanje tujih paketov ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:467
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "Naslednji paketi morajo biti degradirani nazaj na uradne verzije:"
+msgstr "Naslednji paketi morajo biti povrnjeni nazaj na uradne verzije:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Installed Version"
-msgstr "Nameščena Različica"
+msgstr "Nameščena različica"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Official version"
@@ -210,24 +210,24 @@ msgstr "Uradna različica"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:469
 msgid "Archive"
-msgstr "Arhiv"
+msgstr "Arhiviraj"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "Otherwise these packages can create conflicts."
-msgstr "V nasprotnem primeru lahko ti paketi povzročijo konflikte."
+msgstr "V nasprotnem primeru lahko ti paketi povzročijo spore."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr "Paketi sirote"
+msgstr "Osiroteli paketi"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:489
 msgid "Looking for orphan packages..."
-msgstr "Iskanje paketov sirot..."
+msgstr "Iskanje osirotelih paketov ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:507
 msgid "The following packages do not exist in the repositories:"
-msgstr "Naslednji paketi ne obstajajo v repozitoriju:"
+msgstr "Naslednji paketi v skladišču ne obstajajo:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:514
 msgid ""
@@ -235,15 +235,15 @@ msgid ""
 "again'."
 msgstr ""
 "Dodajte pakete, katerih nastavitve želite še naprej uporabljati, nato "
-"pritisnite 'Preglej ponovno'."
+"pritisnite 'Znova preveri'."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:515
 msgid "Then press 'Fix' to remove the packages listed above."
-msgstr "Nato pritisnite 'Popravi' da odstranite pakete navedene zgoraj."
+msgstr "Nato pritisnite 'Popravi', da odstranite pakete, navedene zgoraj."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:527
 msgid "Pointing to the new release..."
-msgstr "Kazanje na novo izdajo..."
+msgstr "Kazanje na novo izdajo ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Upgrade simulation"
@@ -252,12 +252,12 @@ msgstr "Simulacija nadgradnje"
 #: usr/lib/linuxmint/mintupgrade/checks.py:563
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simuliranje nadgradnje da pregledamo prostor na trdem disku in možne "
-"napake..."
+"Simuliranje nadgradnjem da preverite prostor na trdem disku in možne napake "
+"..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:595
 msgid "The simulation was not successful."
-msgstr "Simulacija ni bila uspešna."
+msgstr "Simulacija ni uspela."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:596
 msgid "Upgrading would remove the following important packages:"
@@ -265,14 +265,15 @@ msgstr "Nadgradnja bi odstranila naslednje pomembne pakete:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:597
 msgid "Unwanted removals"
-msgstr "Neželjene odstranitve"
+msgstr "Neželene odstranitve"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:601
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
-"To je znak da je nekaj narobe in je potrebno popravilo pred nadaljevanjem."
+"To je znak, da je nekaj narobe in da je pred nadaljevanjem potrebno "
+"popravilo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Recommended solution"
@@ -284,7 +285,7 @@ msgstr "Uporabite apt-get v terminalu, ki vam bo pomagal odpraviti težavo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:605
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "Ne oklevajte pri iskanju pomoči na forumih in v pogovornih sobah."
+msgstr "Ne oklevajte pri iskanju pomoči na forumih in v klepetalnicah."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Additional information"
@@ -323,8 +324,8 @@ msgstr "Nadgradnja bo izvedla naslednje spremembe."
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Opomba: V najboljšem primeru se ne bi smel obdržati noben paket. To lahko "
-"kaže na napako."
+"Opomba: v najboljšem primeru ne bi smel ostati noben paket. To lahko kaže na "
+"napako."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:628
 msgid ""
@@ -332,18 +333,18 @@ msgid ""
 "before going further with the upgrade."
 msgstr ""
 "Temeljito preglejte zgornji seznam in se prepričajte, da ste zadovoljni z "
-"odstranitvijo preden nadaljujete s posodobitvijo."
+"odstranitvijo, preden nadaljujete s posodobitvijo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:725
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Potrebujete %s na %s, a vi imate le %s. Morate sprostiti dodatnih %s."
+"Potrebujete %s na %s, na voljo pa imate le %s. Sprostiti morate dodatnih %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:729
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Velikost prenosa: %s. Zahtevan dodatni prostor: %s."
+msgstr "Velikost prenosa: %s. Potreben dodatni prostor: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Package download"
@@ -351,19 +352,19 @@ msgstr "Prenos paketa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 msgid "Downloading packages..."
-msgstr "Prenašanje paketov..."
+msgstr "Prenašanje paketov ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:741
 msgid "An error occurred while downloading the packages."
-msgstr "Pojavila se je napaka pri prenosu paketov."
+msgstr "Prišlo je do napake pri prenosu paketov."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Session inhibition"
-msgstr "Inhibicija seje"
+msgstr "Preprečena seja"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:748
 msgid "Inhibiting session..."
-msgstr "Inhibiranje seje..."
+msgstr "Preprečevanje seje ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Upgrade preparation"
@@ -371,7 +372,7 @@ msgstr "Priprave na nadgradnjo"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "Preparing the upgrade..."
-msgstr "Pripravljanje nadgradnje..."
+msgstr "Pripravljanje nadgradnje ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrade phase"
@@ -379,7 +380,7 @@ msgstr "Faza nadgradnje"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:775
 msgid "Upgrading the system..."
-msgstr "Nadgrajevanje sistema..."
+msgstr "Nadgrajevanje sistema ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:784
 #: usr/lib/linuxmint/mintupgrade/checks.py:790
@@ -398,7 +399,7 @@ msgstr "Zaključna faza"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:815
 msgid "Finalizing the upgrade..."
-msgstr "Zaključevanje nadgradnje..."
+msgstr "Zaključevanje nadgradnje ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:827
 #, python-format
@@ -434,7 +435,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr "Nadgradno Orodje"
+msgstr "Orodje za nadgradnjo"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
@@ -444,7 +445,7 @@ msgstr "Nadgradi na %s"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
 msgid "Preferences"
-msgstr "Nastavitve"
+msgstr "Možnosti"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
@@ -457,42 +458,43 @@ msgstr "Izhod"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
 msgid "Please specify the name of the package to keep:"
-msgstr "Prosimo da izrecno navedete ime paketa, katerega želite obdržati:"
+msgstr "Izrecno navedite ime paketa, ki ga želite obdržati:"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
 msgid "Orphan package"
-msgstr "Paket sirota"
+msgstr "Osiroteli paket"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
 msgid "Phase 1: Preparation"
-msgstr "Prva faza: Priprava"
+msgstr "Prva faza: priprava"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
-"Izvedena bo serija testov da pripravimo vaš računalnik na nadgradnjo."
+"Izveden bo niz preizkusov, da bo vaš računalnik pripravljen na nadgradnjo."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
 msgid "Phase 2: Simulation and download"
-msgstr "Druga faza: Simulacija in prenos"
+msgstr "Druga faza: simulacija in prenos"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
 msgid "Your package repositories will now point towards the new release."
-msgstr "Vaši paketni repozitoriji bodo sedaj kazali na novo izdajo."
+msgstr "Vaša skladišča paketov bodo sedaj kazala na novo izdajo."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr "Izvedli bomo še nekaj testov in nadgradnje paketov bodo prenesene."
+msgstr ""
+"Izvedenih bo še nekaj preizkusov in nadgradnje paketov bodo prenesene."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
 msgid "Phase 3: Upgrade"
-msgstr "Tretja faza: Nadgradnja"
+msgstr "Tretja faza: nadgradnja"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
 msgid "The packages will now be upgraded."
-msgstr "Paketi bodo sedaj preneseni."
+msgstr "Paketi bodo sedaj nadgrajeni."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
@@ -506,7 +508,7 @@ msgstr "Pa pojdimo!"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr "OK"
+msgstr "V redu"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
@@ -514,7 +516,7 @@ msgstr "Popravi"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Preveri ponovno"
+msgstr "Znova preveri"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
@@ -531,19 +533,19 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "Nedavni Timeshift posnetki"
+msgstr "Nedavni posnetki Timeshift"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr "Uveljavljene programske nadgradnje."
+msgstr "Uveljavljene programske nadgradnje"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
-"Te zahteve so postavljene, zato da zagotovimo varno nadgradnjo. Onemogočite "
-"jih le če veste kaj počnete."
+"Te zahteve zagotavljajo, da bo nadgradnja varna. Onemogočite jih le, če "
+"veste, kaj počnete."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
@@ -559,5 +561,5 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Paketi sirote so paketi, ki niso prisotni v repozitorijih. Z nadgradnjo so "
-"odstranjeni. Če jih želite obdržati, jih dodajte na spodnji seznam:"
+"Osiroteli paketi  so paketi, ki niso prisotni v skladiščih. Z nadgradnjo se "
+"odstranijo. Če jih želite obdržati, jih dodajte na spodnji seznam:"
