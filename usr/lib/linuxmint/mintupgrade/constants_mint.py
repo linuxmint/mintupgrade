@@ -47,7 +47,12 @@ PACKAGES_ADDITIONS = [
     "cryptsetup-run",
     "libreoffice-gtk3",
     "gamemode",
-    "blueman"
+    "blueman",
+    "webp-pixbuf-loader",
+    "xapp-appimage-thumbnailer",
+    "xapp-epub-thumbnailer",
+    "xapp-mp3-thumbnailer",
+    "xapp-raw-thumbnailer"
 ]
 
 IMPORTANT_PACKAGES = [
