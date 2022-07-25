@@ -25,7 +25,8 @@ PACKAGES_REMOVALS = [
     "gksu",
     "memtest86+",
     "python3-tinycss",
-    "indicator-application"
+    "indicator-application",
+    "blueberry"
 ]
 
 PACKAGES_ADDITIONS = [
@@ -45,7 +46,8 @@ PACKAGES_ADDITIONS = [
     "cryptsetup-initramfs",
     "cryptsetup-run",
     "libreoffice-gtk3",
-    "gamemode"
+    "gamemode",
+    "blueman"
 ]
 
 IMPORTANT_PACKAGES = [
