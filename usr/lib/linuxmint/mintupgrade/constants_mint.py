@@ -23,6 +23,7 @@ PACKAGES_REMOVALS = [
     "libxplayer-plparser18",
     "xplayer-common",
     "gksu",
+    "gnote",
     "memtest86+",
     "python3-tinycss",
     "indicator-application",
@@ -36,7 +37,6 @@ PACKAGES_ADDITIONS = [
     "intel-microcode",
     "celluloid",
     "drawing",
-    "gnote",
     "adwaita-icon-theme-full", # 19.3->20
     "warpinator", #
     "alsa-topology-conf", #
@@ -48,6 +48,7 @@ PACKAGES_ADDITIONS = [
     "libreoffice-gtk3",
     "gamemode",
     "blueman",
+    "sticky",
     "webp-pixbuf-loader",
     "xapp-appimage-thumbnailer",
     "xapp-epub-thumbnailer",
