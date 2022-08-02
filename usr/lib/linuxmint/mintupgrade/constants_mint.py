@@ -47,6 +47,8 @@ PACKAGES_ADDITIONS = [
     "cryptsetup-run",
     "libreoffice-gtk3",
     "gamemode",
+    "gstreamer1.0-gtk3",
+    "gstreamer1.0-pipewire",
     "blueman",
     "sticky",
     "webp-pixbuf-loader",
