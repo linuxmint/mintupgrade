@@ -27,7 +27,12 @@ PACKAGES_REMOVALS = [
     "memtest86+",
     "python3-tinycss",
     "indicator-application",
-    "blueberry"
+    "blueberry",
+    "gnome-bluetooth",
+    "gnome-bluetooth-common",
+    "libgnome-bluetooth13",
+    "gnome-session-bin",
+    "gnome-settings-daemon"
 ]
 
 PACKAGES_ADDITIONS = [
