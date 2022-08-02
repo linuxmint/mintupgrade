@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 import apt
 import apt_pkg
+import aptsources.sourceslist
 import subprocess
+
+from constants import *
+
 APT_GET = 'DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get'
 APT_QUIET = '-fyq -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-overwrite"'
 
@@ -66,6 +70,29 @@ def get_held_packages():
         if pkg._pkg.selected_state == apt_pkg.SELSTATE_HOLD:
             held_packages.append(pkg)
     return (held_packages)
+
+# Returns True if and only if
+# APT points to the Mint and base destination codenames
+def apt_points_to_destination():
+    apt_pkg.init_config()
+    sources = aptsources.sourceslist.SourcesList()
+    mint_points_to_dest = False
+    base_points_to_dest = False
+    for source in sources:
+        if source.disabled:
+            # commented out repos
+            continue
+        if source.uri == "":
+            # repos file entries themselves
+            continue
+        if DESTINATION_CODENAME in source.dist:
+            mint_points_to_dest = True
+        elif DESTINATION_BASE_CODENAME in source.dist:
+            base_points_to_dest = True
+    if mint_points_to_dest and base_points_to_dest:
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     # orphans, foreign = get_foreign_packages()
