@@ -233,15 +233,7 @@ class APTCacheCheck(Check):
             self.message = _("Some of your packages are broken. Run 'apt install -f' to fix the issue.")
             return
 
-        points_to_destination = False
-        if os.path.exists("/etc/apt/sources.list.d/official-package-repositories.list"):
-            with open("/etc/apt/sources.list.d/official-package-repositories.list") as sources:
-                for line in sources:
-                    if DESTINATION_CODENAME in line:
-                        points_to_destination = True
-                        break
-
-        if not points_to_destination:
+        if not apt_points_to_destination():
             # Check updates
             if self.get_setting("check-updates"):
                 for pkg in CHECK_UP_TO_DATE:

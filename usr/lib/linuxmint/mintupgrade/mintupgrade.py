@@ -19,6 +19,7 @@ from gi.repository import Gtk, Gdk, Gio, XApp
 from common import *
 from constants import *
 from checks import *
+from apt_utils import *
 
 setproctitle.setproctitle("mintupgrade")
 
@@ -190,18 +191,21 @@ class MainWindow():
 
     def letsgo(self, button):
         self.checks = []
+        skip = apt_points_to_destination()
         info = ShowInfoCheck(_("Phase 1: Preparation"), callback=self.process_check_result)
         info.icon_name = "dialog-info"
         info.message = _("A series of tests will now be performed to prepare the computer for the upgrade.")
         self.checks.append(info)
         self.checks.append(VersionCheck(callback=self.process_check_result))
         self.checks.append(PowerCheck(callback=self.process_check_result))
-        self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
+        if not skip:
+            self.checks.append(APTCacheCheck(self.window, callback=self.process_check_result))
         self.checks.append(TimeshiftCheck(callback=self.process_check_result))
         self.checks.append(APTHeldCheck(callback=self.process_check_result))
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
-        self.checks.append(APTForeignCheck(callback=self.process_check_result))
-        self.checks.append(APTOrphanCheck(callback=self.process_check_result))
+        if not skip:
+            self.checks.append(APTForeignCheck(callback=self.process_check_result))
+            self.checks.append(APTOrphanCheck(callback=self.process_check_result))
         info = ShowInfoCheck(_("Phase 2: Simulation and download"), callback=self.process_check_result)
         info.icon_name = "dialog-info"
         info.message = _("Your package repositories will now point towards the new release.")
