@@ -352,9 +352,13 @@ class MainWindow():
         dlg.show()
 
     def on_window_close(self, widget, event):
-        self.application.quit()
+        self.cleanup_and_exit()
 
     def on_menu_quit(self, widget):
+        self.cleanup_and_exit()
+
+    def cleanup_and_exit(self):
+        os.system("killall mintupgrade-inhibit-power")
         self.application.quit()
 
     def on_key_press_event(self, widget, event):

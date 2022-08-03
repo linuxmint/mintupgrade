@@ -750,8 +750,8 @@ class InhibitCheck(Check):
         super().__init__(_("Session inhibition"), _("Inhibiting session..."), callback)
 
     def do_run(self):
-        cmd = "mintupgrade-inhibit-power %s %d" % (os.getenv("SUDO_UID"), os.getpid())
-        subprocess.Popen(cmd, shell=True)
+        cmd = ["mintupgrade-inhibit-power", os.getenv("SUDO_UID")]
+        subprocess.Popen(cmd)
 
 class PreUpgradeCheck(Check):
 
