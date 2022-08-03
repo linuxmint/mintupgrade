@@ -61,6 +61,7 @@ class MainWindow():
         self.builder.set_translation_domain(APP)
         self.builder.add_from_file(gladefile)
         self.window = self.builder.get_object("main_window")
+        self.window.connect("delete-event", self.on_window_close)
         self.window.set_title(_("Upgrade Tool"))
         self.window.set_icon_name("mintupgrade")
         self.stack = self.builder.get_object("stack")
@@ -349,6 +350,9 @@ class MainWindow():
                 w.destroy()
         dlg.connect("response", close)
         dlg.show()
+
+    def on_window_close(self, widget, event):
+        self.application.quit()
 
     def on_menu_quit(self, widget):
         self.application.quit()
