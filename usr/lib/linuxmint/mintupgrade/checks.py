@@ -13,6 +13,7 @@ import traceback
 import subprocess
 import filecmp
 import platform
+from pathlib import Path
 
 import apt
 import apt_pkg
@@ -931,6 +932,12 @@ class PostUpgradeCheck(Check):
             self.info.append(_("A copy of the modified file was saved as /etc/fstab.upgraded"))
         else:
             os.unlink(BACKUP_FSTAB)
+
+        # Sync new mintupdate automation flags with systemd timers
+        if os.path.exists("/etc/systemd/system/timers.target.wants/mintupdate-automation-upgrade.timer"):
+            Path("/var/lib/linuxmint/mintupdate-automatic-upgrades-enabled").touch()
+        if os.path.exists("/etc/systemd/system/timers.target.wants/mintupdate-automation-autoremove.timer"):
+            Path("/var/lib/linuxmint/mintupdate-automatic-removals-enabled").touch()
 
 if __name__ == "__main__":
     test = APTRepoCheck()
