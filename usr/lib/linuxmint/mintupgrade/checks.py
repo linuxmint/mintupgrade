@@ -926,6 +926,8 @@ class PostUpgradeCheck(Check):
             os.unlink(BACKUP_FSTAB)
 
         # Sync new mintupdate automation flags with systemd timers
+        Path("/var/lib/linuxmint").mkdir(parents=True, exist_ok=True)
+
         if os.path.exists("/etc/systemd/system/timers.target.wants/mintupdate-automation-upgrade.timer"):
             Path("/var/lib/linuxmint/mintupdate-automatic-upgrades-enabled").touch()
         if os.path.exists("/etc/systemd/system/timers.target.wants/mintupdate-automation-autoremove.timer"):
