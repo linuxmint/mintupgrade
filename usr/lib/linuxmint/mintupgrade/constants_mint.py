@@ -6,7 +6,7 @@ DESTINATION = "Linux Mint 21 'Vanessa'"
 DESTINATION_CODENAME = "vanessa"
 DESTINATION_BASE_CODENAME = "jammy"
 
-SUPPORTED_EDITIONS = []
+SUPPORTED_EDITIONS = ["cinnamon", "mate", "xfce"]
 
 CHECK_ABSENT = ["ippusbxd"]
 
