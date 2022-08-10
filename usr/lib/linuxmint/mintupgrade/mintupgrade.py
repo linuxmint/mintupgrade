@@ -193,7 +193,6 @@ class MainWindow():
         self.checks = []
         skip = apt_points_to_destination()
         info = ShowInfoCheck(_("Phase 1: Preparation"), callback=self.process_check_result)
-        info.icon_name = "dialog-info"
         info.message = _("A series of tests will now be performed to prepare the computer for the upgrade.")
         self.checks.append(info)
         self.checks.append(VersionCheck(callback=self.process_check_result))
@@ -207,7 +206,6 @@ class MainWindow():
             self.checks.append(APTForeignCheck(callback=self.process_check_result))
             self.checks.append(APTOrphanCheck(callback=self.process_check_result))
         info = ShowInfoCheck(_("Phase 2: Simulation and download"), callback=self.process_check_result)
-        info.icon_name = "dialog-info"
         info.message = _("Your package repositories will now point towards the new release.")
         info.message = _("A few more tests will be run and package updates will be downloaded.")
         self.checks.append(info)
@@ -216,7 +214,6 @@ class MainWindow():
         self.checks.append(SimulateUpgradeCheck(callback=self.process_check_result))
         self.checks.append(DownloadCheck(self.window, callback=self.process_check_result))
         info = ShowInfoCheck(_("Phase 3: Upgrade"), callback=self.process_check_result)
-        info.icon_name = "dialog-info"
         info.message = _("The packages will now be upgraded.")
         self.checks.append(info)
         self.checks.append(InhibitCheck(callback=self.process_check_result))
@@ -261,7 +258,7 @@ class MainWindow():
                 self.builder.get_object("image_error").set_from_icon_name("dialog-warning", Gtk.IconSize.DIALOG)
             elif check.result == RESULT_INFO:
                 self.builder.get_object("error_ok_button").set_visible(True)
-                self.builder.get_object("image_error").set_from_icon_name(check.icon_name, Gtk.IconSize.DIALOG)
+                self.builder.get_object("image_error").set_from_icon_name("dialog-info", Gtk.IconSize.DIALOG)
                 if check in self.checks:
                     self.checks.remove(check)
 

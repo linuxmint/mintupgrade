@@ -122,7 +122,6 @@ class ShowInfoCheck(Check):
     def __init__(self, title, callback=None):
         super().__init__(title, "", callback)
         self.result = RESULT_INFO
-        self.icon_name = "dialog-info"
         self.allow_recheck = False
         self.allow_continue = True
 
@@ -611,7 +610,6 @@ class SimulateUpgradeCheck(Check):
         self.check_disk_space_requirements(cache)
         if self.result != RESULT_ERROR:
             self.result = RESULT_INFO
-            self.icon_name = "dialog-info"
             self.info.append(_("Packages updated: %d, added: %d , kept: %d, deleted: %d") % (num_updated, num_new, len(kept_packages), len(removed_packages)))
             self.show_list(_("Kept packages"), kept_packages)
             if len(kept_packages) > 0:
