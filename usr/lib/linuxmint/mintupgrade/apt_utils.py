@@ -75,7 +75,7 @@ def get_held_packages():
 # APT points to the Mint and base destination codenames
 def apt_points_to_destination():
     apt_pkg.init_config()
-    sources = aptsources.sourceslist.SourcesList()
+    sources = aptsources.sourceslist.SourcesList(withMatcher=False)
     mint_points_to_dest = False
     base_points_to_dest = False
     for source in sources:

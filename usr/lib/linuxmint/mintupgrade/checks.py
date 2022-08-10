@@ -300,7 +300,7 @@ class APTRepoCheck(Check):
 
     def do_run(self):
         apt_pkg.init_config()
-        self.sources = aptsources.sourceslist.SourcesList()
+        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False)
         self.mint_repos = []
         self.base_repos = []
         self.foreign_repos = []
@@ -521,7 +521,7 @@ class UpdateReposCheck(Check):
 
     def do_run(self):
         apt_pkg.init_config()
-        self.sources = aptsources.sourceslist.SourcesList()
+        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False)
         for source in self.sources:
             if source.disabled:
                 # commented out repos
