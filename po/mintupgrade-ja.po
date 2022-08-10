@@ -527,7 +527,7 @@ msgstr "要件"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
-"Orphan packages are packages who are not present in the repositories. They "
+"Orphan packages are packages that are not present in the repositories. They "
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
