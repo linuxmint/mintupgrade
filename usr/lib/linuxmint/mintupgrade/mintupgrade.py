@@ -192,6 +192,8 @@ class MainWindow():
     def letsgo(self, button):
         self.checks = []
         skip = apt_points_to_destination()
+        if skip:
+            print("Note: The APT repositories point towards the destination.")
         info = ShowInfoCheck(_("Phase 1: Preparation"), callback=self.process_check_result)
         info.message = _("A series of tests will now be performed to prepare the computer for the upgrade.")
         self.checks.append(info)

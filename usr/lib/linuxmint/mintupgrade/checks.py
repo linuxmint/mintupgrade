@@ -126,7 +126,11 @@ class ShowInfoCheck(Check):
         self.allow_continue = True
 
     def do_run(self):
-        pass
+        print("=================")
+        print("APT Repositories:")
+        print("=================")
+        subprocess.call("inxi -r", shell=True)
+        print("=================")
 
 # Check that the OS release/version is upgradable
 class VersionCheck(Check):
