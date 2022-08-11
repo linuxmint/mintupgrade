@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import gi
 import threading
 from gi.repository import GObject
 
