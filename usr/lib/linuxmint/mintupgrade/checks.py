@@ -30,6 +30,13 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
+ERROR_APT_DESTINATION = []
+ERROR_APT_DESTINATION.append(_("The package repositories need to point towards the new release (%s/%s).") \
+    % (DESTINATION_BASE_CODENAME, DESTINATION_CODENAME))
+ERROR_APT_DESTINATION.append(_("This should have be done by the Upgrade Tool already."))
+ERROR_APT_DESTINATION.append(_("Were the repositories modified since?"))
+ERROR_APT_DESTINATION.append(_("Re-run the Upgrade tool so that it migrates the repositories again."))
+
 class bcolors:
     MAGENTA = '\033[95m' # Magenta
     BLUE = '\033[94m' # Light Blue
@@ -560,6 +567,13 @@ class SimulateUpgradeCheck(Check):
         super().__init__(_("Upgrade simulation"), _("Simulating upgrade to check hard disk space and potential issues..."), callback)
 
     def do_run(self):
+        if not apt_points_to_destination():
+            self.result = RESULT_ERROR
+            self.allow_recheck = False
+            for line in ERROR_APT_DESTINATION:
+                self.info.append(line)
+            return
+
         cache = apt.Cache()
         cache.upgrade(True)
         changes = cache.get_changes()
@@ -732,6 +746,12 @@ class DownloadCheck(Check):
         self.window = window
 
     def do_run(self):
+        if not apt_points_to_destination():
+            self.result = RESULT_ERROR
+            self.allow_recheck = False
+            for line in ERROR_APT_DESTINATION:
+                self.info.append(line)
+            return
         ret = run_command("%s dist-upgrade --download-only --yes" % APT_GET)
         if not ret:
             self.message = _("An error occurred while downloading the packages.")
@@ -753,6 +773,13 @@ class PreUpgradeCheck(Check):
         super().__init__(_("Upgrade preparation"), _("Preparing the upgrade..."), callback)
 
     def do_run(self):
+        if not apt_points_to_destination():
+            self.result = RESULT_ERROR
+            self.allow_recheck = False
+            for line in ERROR_APT_DESTINATION:
+                self.info.append(line)
+            return
+
         if not os.path.exists(BACKUP_FSTAB):
             print_output("Saving /etc/fstab")
             os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
@@ -775,6 +802,14 @@ class DistUpgradeCheck(Check):
         super().__init__(_("Upgrade phase"), _("Upgrading the system..."), callback)
 
     def do_run(self):
+
+        if not apt_points_to_destination():
+            self.result = RESULT_ERROR
+            self.allow_recheck = False
+            for line in ERROR_APT_DESTINATION:
+                self.info.append(line)
+            return
+
         fallback_commands = []
         fallback_commands.append("dpkg --configure -a")
         fallback_commands.append("%s install -fyq" % APT_GET)
@@ -815,6 +850,13 @@ class PostUpgradeCheck(Check):
         super().__init__(_("Final phase"), _("Finalizing the upgrade..."), callback)
 
     def do_run(self):
+
+        if not apt_points_to_destination():
+            self.result = RESULT_ERROR
+            self.allow_recheck = False
+            for line in ERROR_APT_DESTINATION:
+                self.info.append(line)
+            return
 
         edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
         edition = edition.lower().replace('"', '')
