@@ -4,17 +4,14 @@ import gi
 import locale
 import os
 import setproctitle
-import subprocess
 import warnings
-import sys
-import traceback
 
 # Suppress GTK deprecation warnings
 warnings.filterwarnings("ignore")
 
 gi.require_version("Gtk", "3.0")
 gi.require_version('XApp', '1.0')
-from gi.repository import Gtk, Gdk, Gio, XApp
+from gi.repository import Gtk, Gdk, Gio
 
 from common import *
 from constants import *
@@ -74,7 +71,7 @@ class MainWindow():
         screen = Gdk.Display.get_default_screen(Gdk.Display.get_default())
         Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        self.builder.get_object("label_welcome").set_text(_("Upgrade to %s") % DESTINATION)
+        self.builder.get_object("label_welcome").set_text(_(f"Upgrade to {DESTINATION}"))
 
         # Widget signals
         self.window.connect("key-press-event",self.on_key_press_event)
@@ -365,6 +362,16 @@ class MainWindow():
         modifier = event.get_state() & persistant_modifiers
         ctrl = modifier == Gdk.ModifierType.CONTROL_MASK
         shift = modifier == Gdk.ModifierType.SHIFT_MASK
+
+        if ctrl and event.keyval == Gdk.KEY_r:
+            # Ctrl + R
+            pass
+        elif ctrl and event.keyval == Gdk.KEY_f:
+            # Ctrl + F
+            pass
+        elif event.keyval == Gdk.KEY_F11:
+            # F11..
+            pass
 
 if __name__ == "__main__":
     application = MyApplication("com.linuxmint.mintupgrade", Gio.ApplicationFlags.FLAGS_NONE)
