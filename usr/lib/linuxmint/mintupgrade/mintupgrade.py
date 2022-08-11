@@ -284,22 +284,18 @@ class MainWindow():
                     treeview = Gtk.TreeView()
                     treeview.set_headers_visible(info.show_column_names)
                     widget.add(treeview)
-                    index = 0
                     types = []
-                    for name in info.columns:
+                    for index, name in enumerate(info.columns):
                         column = Gtk.TreeViewColumn(name, Gtk.CellRendererText(), text=index)
                         treeview.append_column(column)
-                        index += 1
                         types.append(str)
                     model = Gtk.ListStore()
                     model.set_column_types(types)
                     model.set_sort_column_id(0, Gtk.SortType.ASCENDING)
                     for value in info.values:
                         iter = model.insert_before(None, None)
-                        index = 0
-                        for subval in value:
+                        for index, subval in enumerate(value):
                             model.set_value(iter, index, subval)
-                            index += 1
                     treeview.set_model(model)
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
@@ -335,22 +331,22 @@ class MainWindow():
         dlg.set_program_name(_("Upgrade Tool"))
         dlg.set_comments("mintupgrade")
         try:
-            h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
-            s = h.readlines()
-            gpl = ""
-            for line in s:
-                gpl += line
+            with open('/usr/share/common-licenses/GPL', encoding="utf-8") as h:
+                s = h.readlines()
+                gpl = ""
+                for line in s:
+                    gpl += line
             h.close()
             dlg.set_license(gpl)
         except Exception as e:
-            print (e)
-
+            print(e)
         dlg.set_version("__DEB_VERSION__")
         dlg.set_icon_name("mintupgrade")
         dlg.set_logo_icon_name("mintupgrade")
         def close(w, res):
-            if res == Gtk.ResponseType.CANCEL or res == Gtk.ResponseType.DELETE_EVENT:
+            if res in [Gtk.ResponseType.CANCEL, Gtk.ResponseType.DELETE_EVENT]:
                 w.destroy()
+
         dlg.connect("response", close)
         dlg.show()
 
@@ -369,16 +365,6 @@ class MainWindow():
         modifier = event.get_state() & persistant_modifiers
         ctrl = modifier == Gdk.ModifierType.CONTROL_MASK
         shift = modifier == Gdk.ModifierType.SHIFT_MASK
-
-        if ctrl and event.keyval == Gdk.KEY_r:
-            # Ctrl + R
-            pass
-        elif ctrl and event.keyval == Gdk.KEY_f:
-            # Ctrl + F
-            pass
-        elif event.keyval == Gdk.KEY_F11:
-             # F11..
-             pass
 
 if __name__ == "__main__":
     application = MyApplication("com.linuxmint.mintupgrade", Gio.ApplicationFlags.FLAGS_NONE)
