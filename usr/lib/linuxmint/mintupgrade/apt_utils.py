@@ -25,7 +25,7 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
             installed_version = pkg.installed.version
 
             # Find packages which aren't downloadable
-            if (pkg.candidate == None) or (not pkg.candidate.downloadable):
+            if (pkg.candidate is None) or (not pkg.candidate.downloadable):
                 if find_orphans:
                     downloadable = False
                     for version in pkg.versions:
@@ -89,10 +89,7 @@ def apt_points_to_destination():
             mint_points_to_dest = True
         elif DESTINATION_BASE_CODENAME in source.dist:
             base_points_to_dest = True
-    if mint_points_to_dest and base_points_to_dest:
-        return True
-    else:
-        return False
+    return bool(mint_points_to_dest and base_points_to_dest)
 
 if __name__ == "__main__":
     # orphans, foreign = get_foreign_packages()
