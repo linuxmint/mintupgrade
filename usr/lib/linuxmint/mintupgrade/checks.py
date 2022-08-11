@@ -643,7 +643,7 @@ class SimulateUpgradeCheck(Check):
         # this may fail, but you'll still get the download size, vs cache.required_download
         try:
             pm.get_archives(fetcher, cache._list, cache._records)
-        except:
+        except Exception:
             pass
 
         download_size = fetcher.fetch_needed
