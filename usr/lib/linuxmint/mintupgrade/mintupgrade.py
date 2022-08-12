@@ -333,7 +333,6 @@ class MainWindow():
                 gpl = ""
                 for line in s:
                     gpl += line
-            h.close()
             dlg.set_license(gpl)
         except Exception as e:
             print(e)
