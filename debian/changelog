@@ -1,3 +1,18 @@
+mintupgrade (2022.08.13) vanessa; urgency=medium
+
+  [ Corey Wetherington ]
+  * fix minor grammar issue (#37)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+  * Always use dialog-info for RESULT_INFO
+  * aptsources: Don't use any matching templates
+  * debug: Print out repositories at the start of each phase
+  * Phase 2 and 3: Ensure the repositories point to the new release
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 13 Aug 2022 12:05:51 +0200
+
 mintupgrade (2022.08.05) vanessa; urgency=medium
 
   [ Clement Lefebvre ]
