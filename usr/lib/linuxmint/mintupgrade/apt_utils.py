@@ -21,40 +21,35 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
 
     for key in cache.keys():
         pkg = cache[key]
-        if (pkg.is_installed):
+        if pkg.is_installed:
             installed_version = pkg.installed.version
 
             # Find packages which aren't downloadable
-            if (pkg.candidate is None) or (not pkg.candidate.downloadable):
-                if find_orphans:
-                    downloadable = False
-                    for version in pkg.versions:
-                        if version.downloadable:
-                            downloadable = True
-                    if not downloadable:
-                        orphan_packages.append([pkg, installed_version])
-            if (pkg.candidate != None):
-                if find_downgradable_packages:
-                    best_version = None
-                    archive = None
-                    for version in pkg.versions:
-                        if not version.downloadable:
-                            continue
-                        for origin in version.origins:
-                            if origin.origin != None and origin.origin.lower() in ("ubuntu", "canonical", "debian", "linuxmint"):
-                                if best_version is None:
+            if (pkg.candidate is None or not pkg.candidate.downloadable) and find_orphans:
+                downloadable = any(version.downloadable for version in pkg.versions)
+                if not downloadable:
+                    orphan_packages.append([pkg, installed_version])
+            if pkg.candidate != None and find_downgradable_packages:
+                best_version = None
+                archive = None
+                for version in pkg.versions:
+                    if not version.downloadable:
+                        continue
+                    for origin in version.origins:
+                        if origin.origin != None and origin.origin.lower() in ("ubuntu", "canonical", "debian", "linuxmint"):
+                            if best_version is None:
+                                best_version = version
+                                archive = origin.archive
+                            else:
+                                if version.policy_priority > best_version.policy_priority:
                                     best_version = version
                                     archive = origin.archive
-                                else:
-                                    if version.policy_priority > best_version.policy_priority:
+                                elif version.policy_priority == best_version.policy_priority:
+                                    # same priorities, compare version
+                                    return_code = subprocess.call(["dpkg", "--compare-versions", version.version, "gt", best_version.version])
+                                    if return_code == 0:
                                         best_version = version
                                         archive = origin.archive
-                                    elif version.policy_priority == best_version.policy_priority:
-                                        # same priorities, compare version
-                                        return_code = subprocess.call(["dpkg", "--compare-versions", version.version, "gt", best_version.version])
-                                        if return_code == 0:
-                                            best_version = version
-                                            archive = origin.archive
 
                     if best_version != None and installed_version != best_version and pkg.candidate.version != best_version.version:
                         downgradable_packages.append([pkg, installed_version, best_version, archive])
