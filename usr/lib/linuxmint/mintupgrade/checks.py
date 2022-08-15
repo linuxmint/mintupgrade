@@ -3,6 +3,7 @@ from gi.repository import Gio, GLib
 import time
 import os
 import datetime
+import contextlib
 from common import *
 from constants import *
 from apt_utils import *
@@ -143,35 +144,34 @@ class VersionCheck(Check):
         self.allow_recheck = False
 
     def do_run(self):
-        if self.get_setting("check-version"):
+        if not self.get_setting("check-version"):
+            return
+        if not os.path.exists("/etc/linuxmint/info"):
             # Check the Mint info file
-            if not os.path.exists("/etc/linuxmint/info"):
-                self.result = RESULT_ERROR
-                self.message = _("Your version of Linux Mint is unknown. /etc/linuxmint/info is missing.")
-                return
+            return
 
-            # Check the codename/edition
-            codename = None
-            edition = None
-            with open("/etc/linuxmint/info", "r") as info:
-                for line in info:
-                    line = line.strip()
-                    if "EDITION=" in line:
-                        edition = line.split('=')[1].replace('"', '').split()[0]
-                    if "CODENAME=" in line:
-                        codename = line.split('=')[1].replace('"', '').split()[0]
+        # Check the codename/edition
+        codename = None
+        edition = None
+        with open("/etc/linuxmint/info", "r") as info:
+            for line in info:
+                line = line.strip()
+                if "EDITION=" in line:
+                    edition = line.split('=')[1].replace('"', '').split()[0]
+                if "CODENAME=" in line:
+                    codename = line.split('=')[1].replace('"', '').split()[0]
 
-            # Check codename
-            if codename != ORIGIN_CODENAME and codename != DESTINATION_CODENAME:
-                self.result = RESULT_ERROR
-                self.message = _(f"Your version of Linux Mint is '{codename.capitalize()}'. Only {ORIGIN} can be upgraded to {DESTINATION}.")
-                return
+        # Check codename
+        if codename not in [ORIGIN_CODENAME, DESTINATION_CODENAME]:
+            self.result = RESULT_ERROR
+            self.message = _(f"Your version of Linux Mint is '{codename.capitalize()}'. Only {ORIGIN} can be upgraded to {DESTINATION}.")
+            return
 
-            # Check edition
-            if edition.lower() not in SUPPORTED_EDITIONS:
-                self.result = RESULT_ERROR
-                self.message = _(f"Your edition of Linux Mint is '{edition}'. It cannot be upgraded to {DESTINATION}.")
-                return
+        # Check edition
+        if edition.lower() not in SUPPORTED_EDITIONS:
+            self.result = RESULT_ERROR
+            self.message = _(f"Your edition of Linux Mint is '{edition}'. It cannot be upgraded to {DESTINATION}.")
+            return
 
 # Check that the computer is plugged in to AC Power
 class PowerCheck(Check):
@@ -485,9 +485,9 @@ class APTOrphanCheck(Check):
 
     def do_run(self):
         if not self.get_setting("check-orphans"):
-+            return
-+        self.orphans_to_remove = []
-+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+            return
+        self.orphans_to_remove = []
+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
         if len(orphans) > 0:
             settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
             to_keep = settings.get_strv("orphans-to-keep")
@@ -498,7 +498,7 @@ class APTOrphanCheck(Check):
                 if pkg.name not in to_keep:
                     self.orphans_to_remove.append(pkg.name)
 
-            if len(self.orphans_to_remove) > 0:
+            if self.orphans_to_remove:
                 self.result = RESULT_ERROR
                 self.message = _("The following packages do not exist in the repositories:")
                 self.fix = self.remove_orphans
@@ -641,10 +641,8 @@ class SimulateUpgradeCheck(Check):
         fetcher = apt_pkg.Acquire()
 
         # this may fail, but you'll still get the download size, vs cache.required_download
-        try:
+        with contextlib.suppress(Exception):
             pm.get_archives(fetcher, cache._list, cache._records)
-        except Exception:
-            pass
 
         download_size = fetcher.fetch_needed
         # additional space needed when all finished
