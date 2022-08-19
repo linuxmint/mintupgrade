@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-import gi
-import threading
-from gi.repository import GObject, Gio, GLib
+from gi.repository import Gio, GLib
 import time
 import os
 import datetime
+import contextlib
 from common import *
 from constants import *
 from apt_utils import *
@@ -30,9 +29,7 @@ gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
 
-ERROR_APT_DESTINATION = []
-ERROR_APT_DESTINATION.append(_("The package repositories need to point towards the new release (%s/%s).") \
-    % (DESTINATION_BASE_CODENAME, DESTINATION_CODENAME))
+ERROR_APT_DESTINATION = [_(f"The package repositories need to point towards the new release ({DESTINATION_BASE_CODENAME}/{DESTINATION_CODENAME}).")]
 ERROR_APT_DESTINATION.append(_("This should have be done by the Upgrade Tool already."))
 ERROR_APT_DESTINATION.append(_("Were the repositories modified since?"))
 ERROR_APT_DESTINATION.append(_("Re-run the Upgrade tool so that it migrates the repositories again."))
@@ -50,9 +47,9 @@ class bcolors:
 def run_command(command):
     print(f"{bcolors.ORANGE}{command}{bcolors.ENDC}", flush=True)
     try:
-        subprocess.check_call("LANGUAGE=C LANG=C " + command, shell=True, start_new_session=True)
+        subprocess.check_call(f"LANGUAGE=C LANG=C {command}", shell=True, start_new_session=True)
     except subprocess.CalledProcessError as e:
-        print_error("Error - Return code: %s" % e.returncode)
+        print_error(f"Error - Return code: {e.returncode}")
         return False
     return True
     # ret = os.system(command)
@@ -90,7 +87,7 @@ class Check():
 
     @async_function
     def run(self):
-        print_output("\nRunning check '%s'" % self.title, bcolors.BLUE)
+        print_output(f"\nRunning check '{self.title}'{bcolors.BLUE}")
         self.clean()
         try:
             self.do_run()
@@ -105,7 +102,7 @@ class Check():
     @async_function
     def run_fix(self):
         if self.fix != None:
-            print_output("\nFixing check '%s'" % self.title, bcolors.BLUE)
+            print_output(f"\nFixing check '{self.title}'{bcolors.BLUE}")
             try:
                 self.fix()
                 self.clean()
@@ -147,35 +144,34 @@ class VersionCheck(Check):
         self.allow_recheck = False
 
     def do_run(self):
-        if self.get_setting("check-version"):
+        if not self.get_setting("check-version"):
+            return
+        if not os.path.exists("/etc/linuxmint/info"):
             # Check the Mint info file
-            if not os.path.exists("/etc/linuxmint/info"):
-                self.result = RESULT_ERROR
-                self.message = _("Your version of Linux Mint is unknown. /etc/linuxmint/info is missing.")
-                return
+            return
 
-            # Check the codename/edition
-            codename = None
-            edition = None
-            with open("/etc/linuxmint/info", "r") as info:
-                for line in info:
-                    line = line.strip()
-                    if "EDITION=" in line:
-                        edition = line.split('=')[1].replace('"', '').split()[0]
-                    if "CODENAME=" in line:
-                        codename = line.split('=')[1].replace('"', '').split()[0]
+        # Check the codename/edition
+        codename = None
+        edition = None
+        with open("/etc/linuxmint/info", "r") as info:
+            for line in info:
+                line = line.strip()
+                if "EDITION=" in line:
+                    edition = line.split('=')[1].replace('"', '').split()[0]
+                if "CODENAME=" in line:
+                    codename = line.split('=')[1].replace('"', '').split()[0]
 
-            # Check codename
-            if codename != ORIGIN_CODENAME and codename != DESTINATION_CODENAME:
-                self.result = RESULT_ERROR
-                self.message = _("Your version of Linux Mint is '%s'. Only %s can be upgraded to %s.") % (codename.capitalize(), ORIGIN, DESTINATION)
-                return
+        # Check codename
+        if codename not in [ORIGIN_CODENAME, DESTINATION_CODENAME]:
+            self.result = RESULT_ERROR
+            self.message = _(f"Your version of Linux Mint is '{codename.capitalize()}'. Only {ORIGIN} can be upgraded to {DESTINATION}.")
+            return
 
-            # Check edition
-            if edition.lower() not in SUPPORTED_EDITIONS:
-                self.result = RESULT_ERROR
-                self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s.") % (edition, DESTINATION)
-                return
+        # Check edition
+        if edition.lower() not in SUPPORTED_EDITIONS:
+            self.result = RESULT_ERROR
+            self.message = _(f"Your edition of Linux Mint is '{edition}'. It cannot be upgraded to {DESTINATION}.")
+            return
 
 # Check that the computer is plugged in to AC Power
 class PowerCheck(Check):
@@ -270,7 +266,7 @@ class APTCacheCheck(Check):
                     if not pkg.is_installed:
                         self.pkgs_to_install.append(pkg.name)
 
-            if len(self.pkgs_to_remove) > 0 or len(self.pkgs_to_install) > 0:
+            if self.pkgs_to_remove or self.pkgs_to_install:
                 self.result = RESULT_WARNING
                 self.message = _("The following operations need to be performed:")
 
@@ -333,7 +329,7 @@ class APTRepoCheck(Check):
                 self.foreign_repos.append(source)
 
         # Foreign repositories which codename is not in the origin or the destination (mint or base)
-        if len(self.foreign_repos) > 0:
+        if self.foreign_repos:
             self.result = RESULT_ERROR
             self.message = _("The following repositories do not explicitly support your version of Linux Mint.")
             self.fix = self.disable_foreign_repos
@@ -373,14 +369,14 @@ class APTRepoCheck(Check):
         for repo in self.mint_repos:
             if "packages.linuxmint.com" in repo.uri:
                 continue
-            timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
-            if timestamp == None:
-                problems.append(_("%s is unreachable") % repo.uri)
+            timestamp = self.get_url_last_modified(f"{repo.uri}/db/version")
+            if timestamp is None:
+                problems.append(_(f"{repo.uri} is unreachable"))
             elif mint_age > 2:
                 date = datetime.datetime.fromtimestamp(timestamp)
                 offset = (mint_date - date).days
-                if mint_age > 2 and offset > 2:
-                    problems.append(_("%s is not up to date. Switch to a different mirror.") % repo.uri)
+                if offset > 2:
+                    problems.append(_(f"{repo.uri} is not up to date. Switch to a different mirror."))
 
         # Check the base repos can handle destination codename
         for repo in self.base_repos:
@@ -389,12 +385,12 @@ class APTRepoCheck(Check):
                 new_dist = "bullseye-security"
             else:
                 new_dist = repo.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
-            url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+            url = f"{repo.uri}/dists/{new_dist}/Release"
             timestamp = self.get_url_last_modified(url)
-            if timestamp == None:
-                problems.append(_("%s does not support %s") % (repo.uri, new_dist))
+            if timestamp is None:
+                problems.append(_(f"{repo.uri} does not support {new_dist}"))
 
-        if len(problems) > 0:
+        if problems:
             self.result = RESULT_ERROR
             self.message = _("The following problems were found:")
             table_list = TableList([""])
@@ -416,10 +412,7 @@ class APTRepoCheck(Check):
             c.setopt(pycurl.OPT_FILETIME, 1)
             c.perform()
             filetime = c.getinfo(pycurl.INFO_FILETIME)
-            if filetime < 0:
-                return None
-            else:
-                return filetime
+            return None if filetime < 0 else filetime
         except Exception as e:
             return None
 
@@ -453,10 +446,8 @@ class APTHeldCheck(Check):
 
     def unhold_packages(self):
         if len(self.held) > 0:
-            pkgs = []
-            for pkg in self.held:
-                pkgs.append(pkg.name)
-            run_command('apt-mark unhold %s' % " ".join(pkgs))
+            pkgs = [pkg.name for pkg in self.held]
+            run_command(f'apt-mark unhold {" ".join(pkgs)}')
 
 # Check APT foreign packages
 class APTForeignCheck(Check):
@@ -483,8 +474,8 @@ class APTForeignCheck(Check):
             pkgs = []
             for foreign in self.foreigns:
                 installed_pkg, version, official_pkg, archive = foreign
-                pkgs.append("%s=%s" % (installed_pkg.name, official_pkg.version))
-            run_command('%s install --allow-downgrades %s %s' % (APT_GET, APT_QUIET, " ".join(pkgs)))
+                pkgs.append(f"{installed_pkg.name}={official_pkg.version}")
+            run_command(f'{APT_GET} install --allow-downgrades {APT_QUIET} {" ".join(pkgs)}')
 
 # Check APT orphan packages
 class APTOrphanCheck(Check):
@@ -493,35 +484,36 @@ class APTOrphanCheck(Check):
         super().__init__(_("Orphan packages"), _("Looking for orphan packages..."), callback)
 
     def do_run(self):
-        if self.get_setting("check-orphans"):
-            self.orphans_to_remove = []
-            orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
-            if len(orphans) > 0:
-                settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
-                to_keep = settings.get_strv("orphans-to-keep")
-                for orphan in orphans:
-                    pkg, version = orphan
-                    if pkg.name == "mintupgrade":
-                        continue
-                    if pkg.name not in to_keep:
-                        self.orphans_to_remove.append(pkg.name)
+        if not self.get_setting("check-orphans"):
+            return
+        self.orphans_to_remove = []
+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        if len(orphans) > 0:
+            settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
+            to_keep = settings.get_strv("orphans-to-keep")
+            for orphan in orphans:
+                pkg, version = orphan
+                if pkg.name == "mintupgrade":
+                    continue
+                if pkg.name not in to_keep:
+                    self.orphans_to_remove.append(pkg.name)
 
-                if len(self.orphans_to_remove) > 0:
-                    self.result = RESULT_ERROR
-                    self.message = _("The following packages do not exist in the repositories:")
-                    self.fix = self.remove_orphans
-                    table_list = TableList([""])
-                    table_list.show_column_names = False
-                    for orphan in self.orphans_to_remove:
-                        table_list.values.append([orphan])
-                    self.info.append(table_list)
-                    self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
-                    self.info.append(_("Then press 'Fix' to remove the packages listed above."))
-                    return
+            if self.orphans_to_remove:
+                self.result = RESULT_ERROR
+                self.message = _("The following packages do not exist in the repositories:")
+                self.fix = self.remove_orphans
+                table_list = TableList([""])
+                table_list.show_column_names = False
+                for orphan in self.orphans_to_remove:
+                    table_list.values.append([orphan])
+                self.info.append(table_list)
+                self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
+                self.info.append(_("Then press 'Fix' to remove the packages listed above."))
+                return
 
     def remove_orphans(self):
         if len(self.orphans_to_remove) > 0:
-            run_command('%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove)))
+            run_command(f'{APT_GET} remove --purge {APT_QUIET} {" ".join(self.orphans_to_remove)}')
 
 
 # Switch to the target repositories
@@ -542,11 +534,11 @@ class UpdateReposCheck(Check):
                 continue
             if DESTINATION_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:
                 # already points to target
-                print_output("%s already points to %s" % (source.uri, source.dist))
+                print_output(f"{source.uri} already points to {source.dist}")
             elif ORIGIN_CODENAME in source.dist:
                 # Mint repo
                 source.dist = source.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
-                print_output("Switching %s to %s" % (source.uri, source.dist))
+                print_output(f"Switching {source.uri} to {source.dist}")
             elif ORIGIN_BASE_CODENAME in source.dist:
                 # Base repo
                 if source.dist == "buster/updates":
@@ -554,7 +546,7 @@ class UpdateReposCheck(Check):
                     source.dist = "bullseye-security"
                 else:
                     source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
-                print_output("Switching %s to %s" % (source.uri, source.dist))
+                print_output(f"Switching {source.uri} to {source.dist}")
             if DESTINATION_BASE_CODENAME in source.dist and "partner" in source.comps:
                 print_output("Disabling partner repo (discontinued).")
                 source.set_enabled(False)
@@ -577,7 +569,6 @@ class SimulateUpgradeCheck(Check):
         cache = apt.Cache()
         cache.upgrade(True)
         changes = cache.get_changes()
-        incorrect_removals = []
         kept_packages = []
         new_packages = []
         removed_packages = []
@@ -601,7 +592,7 @@ class SimulateUpgradeCheck(Check):
         num_new = len(new_packages)
         num_updated = cache.install_count - num_new
 
-        if len(unwanted_removals) > 0:
+        if unwanted_removals:
             self.result = RESULT_ERROR
             self.info.append(_("The simulation was not successful."))
             self.info.append(_("Upgrading would remove the following important packages:"))
@@ -611,16 +602,16 @@ class SimulateUpgradeCheck(Check):
             self.info.append(table_list)
             self.info.append(_("This is a sign that something is wrong and needs to be fixed before going further."))
             self.info.append("---")
-            self.info.append("<b>%s</b>" % _("Recommended solution"))
+            self.info.append(f'<b>{_("Recommended solution")}</b>')
             self.info.append(_("Use apt-get in a terminal to troubleshoot and solve the issue."))
             self.info.append(_("Don't hesitate to seek help on the forums and the chat room."))
             self.info.append("---")
-            self.info.append("<b>%s</b>" % _("Additional information"))
+            self.info.append(f'<b>{_("Additional information")}</b>')
             self.info.append(_("The information below might help solve the issue."))
             self.show_list(_("Kept packages"), kept_packages)
             self.show_list(_("Removed packages"), removed_packages)
             self.show_list(_("Added packages"), new_packages)
-            self.info.append(_("Packages updated: %d, added: %d , kept: %d, deleted: %d") % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            self.info.append(_(f"Packages updated: {num_updated}, added: {num_new} , kept: {len(kept_packages)}, deleted: {len(removed_packages)}"))
             return
 
         self.info.append(_("Upgrading will perform the following changes."))
@@ -628,13 +619,13 @@ class SimulateUpgradeCheck(Check):
         self.check_disk_space_requirements(cache)
         if self.result != RESULT_ERROR:
             self.result = RESULT_INFO
-            self.info.append(_("Packages updated: %d, added: %d , kept: %d, deleted: %d") % (num_updated, num_new, len(kept_packages), len(removed_packages)))
+            self.info.append(_(f"Packages updated: {num_updated}, added: {num_new} , kept: {len(kept_packages)}, deleted: {len(removed_packages)}"))
             self.show_list(_("Kept packages"), kept_packages)
-            if len(kept_packages) > 0:
+            if kept_packages:
                 self.info.append(_("Note: Ideally, no packages should be kept. This might indicate an issue."))
             self.show_list(_("Added packages"), new_packages)
             self.show_list(_("Removed packages"), removed_packages)
-            if len(removed_packages) > 0:
+            if removed_packages:
                 self.info.append(_("Go through the list above and make sure you are happy with the removals before going further with the upgrade."))
 
     def show_list(self, col_name, l):
@@ -645,18 +636,13 @@ class SimulateUpgradeCheck(Check):
             self.info.append(table_list)
 
     def check_disk_space_requirements(self, cache):
-        download_size = 0.0
-        additional_space_needed = 0.0
-
         # get download size
         pm = apt_pkg.PackageManager(cache._depcache)
         fetcher = apt_pkg.Acquire()
 
         # this may fail, but you'll still get the download size, vs cache.required_download
-        try:
+        with contextlib.suppress(Exception):
             pm.get_archives(fetcher, cache._list, cache._records)
-        except:
-            pass
 
         download_size = fetcher.fetch_needed
         # additional space needed when all finished
@@ -672,7 +658,7 @@ class SimulateUpgradeCheck(Check):
                     (what, where, fs, options, a, b) = line.split()
                 except ValueError as e:
                     continue
-                if not where in mounted:
+                if where not in mounted:
                     mounted.append(where)
         # make sure mounted is sorted by longest path
         mounted.sort(key=len, reverse=True)
@@ -732,11 +718,10 @@ class SimulateUpgradeCheck(Check):
             if fs_free[dir].free < 0:
                 free_at_least_str = GLib.format_size(abs(fs_free[dir].free) + 1024 * 1024 * 10)
                 self.result = RESULT_ERROR
-                self.info.append(_("You need %s on '%s' but only have %s. You must free an additional %s.") \
-                    % (free_needed_str, make_fs_id(dir), initial_free_str, free_at_least_str))
+                self.info.append(_(f"You need {free_needed_str} on '{make_fs_id(dir)}' but only have {initial_free_str}. You must free an additional {free_at_least_str}."))
                 return
 
-        self.info.append(_("Download size: %s. Additional space needed: %s.") % (GLib.format_size(download_size), GLib.format_size(additional_space_needed)))
+        self.info.append(_(f"Download size: {GLib.format_size(download_size)}. Additional space needed: {GLib.format_size(additional_space_needed)}."))
 
 # Download updates
 class DownloadCheck(Check):
@@ -752,7 +737,7 @@ class DownloadCheck(Check):
             for line in ERROR_APT_DESTINATION:
                 self.info.append(line)
             return
-        ret = run_command("%s dist-upgrade --download-only --yes" % APT_GET)
+        ret = run_command(f"{APT_GET} dist-upgrade --download-only --yes")
         if not ret:
             self.message = _("An error occurred while downloading the packages.")
             self.result = RESULT_ERROR
@@ -782,16 +767,16 @@ class PreUpgradeCheck(Check):
 
         if not os.path.exists(BACKUP_FSTAB):
             print_output("Saving /etc/fstab")
-            os.system("cp /etc/fstab %s" % BACKUP_FSTAB)
+            os.system(f"cp /etc/fstab {BACKUP_FSTAB}")
 
         if IS_LMDE and not os.path.exists(BACKUP_LOCALEDEF):
             print_output("Saving locales definition")
-            os.system("localedef --list-archive > %s" % BACKUP_LOCALEDEF)
+            os.system(f"localedef --list-archive > {BACKUP_LOCALEDEF}")
 
         print_output("Removing blacklisted packages")
         for removal in PACKAGES_PRE_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
-            run_command('%s remove --yes %s' % (APT_GET, removal))
+            run_command(f'{APT_GET} remove --yes {removal}')
 
         # Disable mintsystem during the upgrade
         os.system("crudini --set /etc/linuxmint/mintSystem.conf global enabled False")
@@ -810,17 +795,15 @@ class DistUpgradeCheck(Check):
                 self.info.append(line)
             return
 
-        fallback_commands = []
-        fallback_commands.append("dpkg --configure -a")
-        fallback_commands.append("%s install -fyq" % APT_GET)
+        fallback_commands = ["dpkg --configure -a", f"{APT_GET} install -fyq"]
         # Upgrade
-        if not self.try_command(5, '%s upgrade %s' % (APT_GET, APT_QUIET), fallback_commands):
+        if not self.try_command(5, f'{APT_GET} upgrade {APT_QUIET}', fallback_commands):
             self.result = RESULT_ERROR
             self.message = _("An issue was detected during the upgrade.")
             self.info.append(self.get_status())
             return
         # Dist-upgrade
-        if not self.try_command(5, '%s dist-upgrade %s' % (APT_GET, APT_QUIET), fallback_commands):
+        if not self.try_command(5, f'{APT_GET} dist-upgrade {APT_QUIET}', fallback_commands):
             self.result = RESULT_ERROR
             self.message = _("An issue was detected during the upgrade.")
             self.info.append(self.get_status())
@@ -831,7 +814,7 @@ class DistUpgradeCheck(Check):
             ret = run_command(command)
             if ret == True:
                 return True
-            print_error("Error detected on try #%d..." % (i+1))
+            print_error(f"Error detected on try #{(i+1)}...")
             if (i+1) < num_times:
                 print_output("Retrying...")
             for fallback_command in fallback_commands:
@@ -841,8 +824,7 @@ class DistUpgradeCheck(Check):
     def get_status(self):
         cache = apt.Cache()
         cache.upgrade(True)
-        message = _("%d packages still need to be updated (%d kept, %d deleted)") % (cache.install_count, cache.keep_count, cache.delete_count)
-        return message
+        return _(f"{cache.install_count} packages still need to be updated ({cache.keep_count} kept, {cache.delete_count} deleted)")
 
 class PostUpgradeCheck(Check):
 
@@ -850,7 +832,6 @@ class PostUpgradeCheck(Check):
         super().__init__(_("Final phase"), _("Finalizing the upgrade..."), callback)
 
     def do_run(self):
-
         if not apt_points_to_destination():
             self.result = RESULT_ERROR
             self.allow_recheck = False
@@ -860,18 +841,18 @@ class PostUpgradeCheck(Check):
 
         edition = subprocess.getoutput("crudini --get /etc/linuxmint/info DEFAULT EDITION")
         edition = edition.lower().replace('"', '')
-        mint_meta = "mint-meta-%s" % edition
+        mint_meta = f"mint-meta-{edition}"
 
         # Install meta-package
         print_output("Re-installing the meta-package")
-        if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, mint_meta)):
+        if not run_command(f'{APT_GET} install --yes --no-install-recommends {mint_meta}'):
             self.result = RESULT_ERROR
-            self.message = _("%s could not be installed.") % mint_meta
+            self.message = _(f"{mint_meta} could not be installed.")
             return
 
         # Install codecs
         print_output("Re-installing the multimedia codecs")
-        if not run_command('%s install --yes --no-install-recommends mint-meta-codecs' % APT_GET):
+        if not run_command(f'{APT_GET} install --yes --no-install-recommends mint-meta-codecs'):
             self.result = RESULT_ERROR
             self.message = _("mint-meta-codecs could not be installed.")
             return
@@ -879,7 +860,7 @@ class PostUpgradeCheck(Check):
         # Install new packages
         print_output("Installing new packages")
         if len(PACKAGES_ADDITIONS) > 0:
-            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+            if not run_command(f'{APT_GET} install --yes --no-install-recommends {" ".join(PACKAGES_ADDITIONS)}'):
                 self.result = RESULT_ERROR
                 self.message = _("The following packages could not be installed:")
                 table_list = TableList([""])
@@ -897,12 +878,9 @@ class PostUpgradeCheck(Check):
 
         # Install kernel meta
         print_output("Installing kernel meta")
-        if platform.machine() == "x86_64":
-            KERNEL_META = KERNEL_META_64
-        else:
-            KERNEL_META = KERNEL_META_32
+        KERNEL_META = KERNEL_META_64 if platform.machine() == "x86_64" else KERNEL_META_32
         if len(KERNEL_META) > 0:
-            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(KERNEL_META))):
+            if not run_command(f'{APT_GET} install --yes --no-install-recommends {" ".join(KERNEL_META)}'):
                 self.result = RESULT_ERROR
                 self.message = _("The following packages could not be installed:")
                 table_list = TableList([""])
@@ -922,15 +900,15 @@ class PostUpgradeCheck(Check):
         print_output("Removing obsolete packages")
         for removal in PACKAGES_REMOVALS:
             # The return code indicates a failure if some packages were not found, so ignore it.
-            run_command('%s purge --yes %s' % (APT_GET, removal))
+            run_command(f'{APT_GET} purge --yes {removal}')
 
         # Autoremove packages
         print_output("Running autoremove to remove unused packages")
-        run_command("%s --purge autoremove --yes" % APT_GET)
+        run_command(f"{APT_GET} --purge autoremove --yes")
 
         # Clean cache (frees space)
         print_output("Running apt-get clean")
-        run_command("%s clean" % APT_GET)
+        run_command(f"{APT_GET} clean")
 
         # Adjust Grub title
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
@@ -953,15 +931,14 @@ class PostUpgradeCheck(Check):
                     if "." in locale:
                         short_locale, charmap = locale.split(".")
                         cmd = f"localedef -f {charmap} -i {short_locale} {locale}"
-                        run_command(cmd)
                     else:
                         cmd = f"localedef -i {locale} {locale}"
-                        run_command(cmd)
+                    run_command(cmd)
 
         # Restore /etc/fstab if it was changed
         if not filecmp.cmp('/etc/fstab', BACKUP_FSTAB):
             os.system("cp /etc/fstab /etc/fstab.upgraded")
-            os.system("cp %s /etc/fstab" % BACKUP_FSTAB)
+            os.system(f"cp {BACKUP_FSTAB} /etc/fstab")
             self.result = RESULT_INFO
             self.message = _("/etc/fstab was modified during the upgrade.")
             self.info.append(_("To ensure a successful boot, the upgrade tool restored your original /etc/fstab"))

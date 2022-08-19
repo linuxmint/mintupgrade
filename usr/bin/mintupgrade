@@ -19,13 +19,13 @@ color_array = [
 # Makes sure stderr and stdout stay in order
 os.environ["PYTHONUNBUFFERED"] = "1"
 
-if os.getuid() != 0:
+if os.getpid() != 0:
     print("mintupgrade needs to be run as root.")
     sys.exit(1)
 
-logfile = "mintupgrade-%s.log" % datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S")
+logfile = f'mintupgrade-{datetime.datetime.now().strftime("%Y-%m-%dT%H%M%S")}.log'
 
-os.system("touch %s" % logfile)
+os.system(f"touch {logfile}")
 os.chmod(logfile, 0o666)
 
 with subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=0) as sub:

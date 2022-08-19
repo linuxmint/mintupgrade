@@ -4,17 +4,14 @@ import gi
 import locale
 import os
 import setproctitle
-import subprocess
 import warnings
-import sys
-import traceback
 
 # Suppress GTK deprecation warnings
 warnings.filterwarnings("ignore")
 
 gi.require_version("Gtk", "3.0")
 gi.require_version('XApp', '1.0')
-from gi.repository import Gtk, Gdk, Gio, XApp
+from gi.repository import Gtk, Gdk, Gio
 
 from common import *
 from constants import *
@@ -74,7 +71,7 @@ class MainWindow():
         screen = Gdk.Display.get_default_screen(Gdk.Display.get_default())
         Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        self.builder.get_object("label_welcome").set_text(_("Upgrade to %s") % DESTINATION)
+        self.builder.get_object("label_welcome").set_text(_(f"Upgrade to {DESTINATION}"))
 
         # Widget signals
         self.window.connect("key-press-event",self.on_key_press_event)
@@ -284,22 +281,18 @@ class MainWindow():
                     treeview = Gtk.TreeView()
                     treeview.set_headers_visible(info.show_column_names)
                     widget.add(treeview)
-                    index = 0
                     types = []
-                    for name in info.columns:
+                    for index, name in enumerate(info.columns):
                         column = Gtk.TreeViewColumn(name, Gtk.CellRendererText(), text=index)
                         treeview.append_column(column)
-                        index += 1
                         types.append(str)
                     model = Gtk.ListStore()
                     model.set_column_types(types)
                     model.set_sort_column_id(0, Gtk.SortType.ASCENDING)
                     for value in info.values:
                         iter = model.insert_before(None, None)
-                        index = 0
-                        for subval in value:
+                        for index, subval in enumerate(value):
                             model.set_value(iter, index, subval)
-                            index += 1
                     treeview.set_model(model)
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
@@ -335,22 +328,21 @@ class MainWindow():
         dlg.set_program_name(_("Upgrade Tool"))
         dlg.set_comments("mintupgrade")
         try:
-            h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
-            s = h.readlines()
-            gpl = ""
-            for line in s:
-                gpl += line
-            h.close()
+            with open('/usr/share/common-licenses/GPL', encoding="utf-8") as h:
+                s = h.readlines()
+                gpl = ""
+                for line in s:
+                    gpl += line
             dlg.set_license(gpl)
         except Exception as e:
-            print (e)
-
+            print(e)
         dlg.set_version("__DEB_VERSION__")
         dlg.set_icon_name("mintupgrade")
         dlg.set_logo_icon_name("mintupgrade")
         def close(w, res):
-            if res == Gtk.ResponseType.CANCEL or res == Gtk.ResponseType.DELETE_EVENT:
+            if res in [Gtk.ResponseType.CANCEL, Gtk.ResponseType.DELETE_EVENT]:
                 w.destroy()
+
         dlg.connect("response", close)
         dlg.show()
 
@@ -377,8 +369,8 @@ class MainWindow():
             # Ctrl + F
             pass
         elif event.keyval == Gdk.KEY_F11:
-             # F11..
-             pass
+            # F11..
+            pass
 
 if __name__ == "__main__":
     application = MyApplication("com.linuxmint.mintupgrade", Gio.ApplicationFlags.FLAGS_NONE)
