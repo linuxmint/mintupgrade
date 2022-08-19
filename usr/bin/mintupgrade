@@ -46,7 +46,7 @@ with subprocess.Popen("/usr/lib/linuxmint/mintupgrade/mintupgrade.py", stderr=su
 
             try:
                 newline = buffer.find(b"\n")
-            except Exception:
+            except:
                 continue
 
             to_write = buffer[:newline + 1]
