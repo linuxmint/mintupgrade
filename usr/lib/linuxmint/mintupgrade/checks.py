@@ -375,6 +375,11 @@ class APTRepoCheck(Check):
                 continue
             timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
             if timestamp == None:
+                # Retry with standard repo layout (for repos which use the mint codenames)
+                new_dist = repo.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
+                url = "%s/dists/%s/Release" % (repo.uri, new_dist)                
+                timestamp = self.get_url_last_modified(url)           
+            if timestamp == None:
                 problems.append(_("%s is unreachable") % repo.uri)
             elif mint_age > 2:
                 date = datetime.datetime.fromtimestamp(timestamp)
