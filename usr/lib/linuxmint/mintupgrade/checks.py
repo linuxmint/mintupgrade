@@ -412,6 +412,9 @@ class APTRepoCheck(Check):
 
     def get_url_last_modified(self, url):
         try:
+            if (url.startswith(APT_CACHER_NG_HTTPS)):
+                url = 'https://' + url[len(APT_CACHER_NG_HTTPS):]
+
             c = pycurl.Curl()
             c.setopt(pycurl.URL, url)
             c.setopt(pycurl.CONNECTTIMEOUT, 30)

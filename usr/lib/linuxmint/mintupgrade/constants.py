@@ -11,3 +11,5 @@ else:
 
 BACKUP_FSTAB = os.path.expanduser("~/.fstab.bk")
 BACKUP_LOCALEDEF = os.path.expanduser("~/.localedef.bk")
+
+APT_CACHER_NG_HTTPS = 'http://HTTPS///'
