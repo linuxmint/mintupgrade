@@ -193,7 +193,7 @@ class MainWindow():
         self.checks = []
         skip = apt_points_to_destination()
         if skip:
-            print("Note: The APT repositories point towards the destination.")
+            print(_("Note: The APT repositories point towards the destination."))
         info = ShowInfoCheck(_("Phase 1: Preparation"), callback=self.process_check_result)
         info.message = _("A series of tests will now be performed to prepare the computer for the upgrade.")
         self.checks.append(info)
@@ -234,14 +234,14 @@ class MainWindow():
             self.builder.get_object("label_check_description").set_text(check.description)
             check.run()
         else:
-            print("Upgrade successful! You can now close this terminal and reboot your computer.")
+            print(_("Upgrade successful! You can now close this terminal and reboot your computer."))
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_ready")
 
     @idle_function
     def process_check_result(self, check):
         self.last_check = check
         if check.result == RESULT_SUCCESS:
-            print("Check succeeded: ", check.title)
+            print(_("Check succeeded: %s") % check.title)
             if check in self.checks:
                 self.checks.remove(check)
                 self.run_next_check()
