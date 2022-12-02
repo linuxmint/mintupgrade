@@ -7,466 +7,485 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-05-24 08:27+0000\n"
-"Last-Translator: Juwon Jeong <Unknown>\n"
+"POT-Creation-Date: 2022-08-11 13:55+0200\n"
+"PO-Revision-Date: 2022-08-13 16:16+0000\n"
+"Last-Translator: Jung-Kyu Park <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-07-24 09:43+0000\n"
-"X-Generator: Launchpad (build 025a39fd866a641b6ae33074cda0d02a2c712d38)\n"
+"X-Launchpad-Export-Date: 2022-12-02 13:40+0000\n"
+"X-Generator: Launchpad (build 51cef3d08dff1e227b5ada709bd67280c567d4be)\n"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:34
+#, python-format
+msgid ""
+"The package repositories need to point towards the new release (%s/%s)."
+msgstr "패키지 저장소는 (%s/%s) 새로 출시되는 버전을 가리켜야 합니다."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:36
+msgid "This should have be done by the Upgrade Tool already."
+msgstr "이런 작업은 업그레이드 도구에서 이미 이뤄졌어야 합니다."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:37
+msgid "Were the repositories modified since?"
+msgstr "저장소가 수정된 적이 있나요?"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:38
+msgid "Re-run the Upgrade tool so that it migrates the repositories again."
+msgstr "업그레이드 도구를 다시 실행해서 저장소를 다시 불러옵니다."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
 msgstr "리눅스 민트 버전"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Checking your version of Linux Mint..."
 msgstr "리눅스 민트 버전을 확인중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:142
+#: usr/lib/linuxmint/mintupgrade/checks.py:154
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr "귀하의 리눅스 민트 버전을 알 수 없습니다. /etc/linuxmint/info를 찾을 수 없습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:159
+#: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr "현재 리눅스 민트 버전은 '%s'입니다. %s 만 %s로 업그레이드 할 수 있습니다.'"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:165
+#: usr/lib/linuxmint/mintupgrade/checks.py:177
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
 msgstr "현재 리눅스 민트 버전은 '%s'입니다. 이 버전은 %s로 업그레이드 할 수 없습니다.'"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Power source"
 msgstr "전원 공급"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Checking the power source..."
 msgstr "전원 공급을 확인중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:177
+#: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid "Connect the computer to a power source before attempting to upgrade."
 msgstr "업그레이드를 시도하기 전에 전원을 연결해주십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "System snapshots"
 msgstr "시스템 스냅샷"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "Checking system snapshots..."
 msgstr "시스템 스냅샷을 확인중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:188
+#: usr/lib/linuxmint/mintupgrade/checks.py:200
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
 msgstr "업그레이드를 시도하기 전에 Timeshift 시스템 스냅샷 만들기 작업을 수행하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:189
+#: usr/lib/linuxmint/mintupgrade/checks.py:201
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr "업그레이드를 성공하지 못한 경우 시스템 스냅샷이 복원할 것입니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "APT cache"
 msgstr "APT 캐시"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "Checking the APT cache..."
 msgstr "APT 캐시를 확인중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:222
+#: usr/lib/linuxmint/mintupgrade/checks.py:234
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr "패키지 캐시가 올바르게 새로 고칠 수 없습니다. 'app update'를 실행하고 화면에 출력되는 오류를 고치십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:231
+#: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr "패키지 중 일부가 손상되었습니다. 'apt install -f'를 실행하여 문제를 해결하십시오.'"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:250
+#: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr "운영체제가 최신이 아닙니다. 업그레이드를 시도하기 전에 업데이트를 적용하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:271
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "The following operations need to be performed:"
 msgstr "다음 지시를 따르십시오:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Package"
 msgstr "패키지"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "Operation"
 msgstr "명령"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:275
+#: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be installed"
 msgstr "설치 필요"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:281
 msgid "needs to be removed"
 msgstr "제거되어야 함"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Package repositories"
 msgstr "패키지 저장소"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
 msgid "Checking package repositories..."
 msgstr "패키지 저장소 확인중..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:334
+#: usr/lib/linuxmint/mintupgrade/checks.py:338
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr "다음 저장소는 현재 버전의 리눅스민트를 공식적으로 지원하지 않습니다"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:342
+#: usr/lib/linuxmint/mintupgrade/checks.py:346
 msgid "These repositories need to be disabled."
 msgstr "다음 저장소는 비활성화 되어야 합니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:355
+#: usr/lib/linuxmint/mintupgrade/checks.py:359
 msgid "Your APT policy is incorrect."
 msgstr "APT 정책이 올바르지 않습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:356
+#: usr/lib/linuxmint/mintupgrade/checks.py:360
 msgid "Reboot your computer."
 msgstr "컴퓨터를 재부팅하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:374
+#: usr/lib/linuxmint/mintupgrade/checks.py:378
 #, python-format
 msgid "%s is unreachable"
 msgstr "%s에 접근할 수 없습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:379
+#: usr/lib/linuxmint/mintupgrade/checks.py:383
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
 msgstr "%s가 최신상태가 아닙니다. 다른 미러로 전환하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:391
+#: usr/lib/linuxmint/mintupgrade/checks.py:395
 #, python-format
 msgid "%s does not support %s"
 msgstr "%s는 %s를(을) 지원하지 않습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:395
+#: usr/lib/linuxmint/mintupgrade/checks.py:399
 msgid "The following problems were found:"
 msgstr "다음의 문제가 발견되었습니다:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Held packages"
 msgstr "패키지 동결(업데이트 하지 않음)"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Looking for held packages..."
 msgstr "동결될 패키지를 찾는중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:440
+#: usr/lib/linuxmint/mintupgrade/checks.py:444
 msgid "The following packages are held:"
 msgstr "다음의 패키지가 동결되었습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:447
+#: usr/lib/linuxmint/mintupgrade/checks.py:451
 msgid "Held packages can break the upgrade."
 msgstr "동결된 패키지는 업그레이드를 중단할 수 있습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Foreign packages"
 msgstr "외부 패키지"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Looking for foreign packages..."
 msgstr "외부 패키지를 찾는중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:467
+#: usr/lib/linuxmint/mintupgrade/checks.py:471
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr "다음 패키지는 공식 버전으로 다운그레이드되어야 합니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Installed Version"
 msgstr "설치된 버전"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Official version"
 msgstr "공식 버전"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Archive"
 msgstr "아카이브"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:474
+#: usr/lib/linuxmint/mintupgrade/checks.py:478
 msgid "Otherwise these packages can create conflicts."
 msgstr "이들 패키지들은 충돌을 일으킬 수 있습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
 msgstr "유리된 패키지"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 msgid "Looking for orphan packages..."
 msgstr "유리된 패키지를 찾는 중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:507
+#: usr/lib/linuxmint/mintupgrade/checks.py:511
 msgid "The following packages do not exist in the repositories:"
 msgstr "다음 패키지가 저장소에 존재하지 않습니다:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:514
+#: usr/lib/linuxmint/mintupgrade/checks.py:518
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr "설정을 계속 사용하기 위해 패키지를 추가한 후, '다시확인' 버튼을 눌러주십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:515
+#: usr/lib/linuxmint/mintupgrade/checks.py:519
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr "그 다음 '수정'을 눌러 위 목록에 있는 패키지를 제거하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Pointing to the new release..."
 msgstr "새 릴리즈를 포인트중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Upgrade simulation"
 msgstr "업그레이드 시뮬레이션"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr "디스크의 여유 공간과 잠재적인 문제를 점검하기 위해업그레이드를 시뮬레이션하는 중입니다..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:595
+#: usr/lib/linuxmint/mintupgrade/checks.py:606
 msgid "The simulation was not successful."
 msgstr "시뮬레이션이 성공적으로 진행되지 않았습니다.."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:596
+#: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Upgrading would remove the following important packages:"
 msgstr "업그레이드를 진행하면 다음의 중요한 패키지가 제거됩니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:597
+#: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "Unwanted removals"
 msgstr "의도하지 않은 제거"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:601
+#: usr/lib/linuxmint/mintupgrade/checks.py:612
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr "이는 어떠한 문제가 있다는 신호이며 더 진행하기 위해서는 이를 수정해야 합니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:603
+#: usr/lib/linuxmint/mintupgrade/checks.py:614
 msgid "Recommended solution"
 msgstr "권장하는 해결방법"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:604
+#: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr "터미널에서 apt-get을 실행하여 문제를 해결하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:605
+#: usr/lib/linuxmint/mintupgrade/checks.py:616
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr "포럼과 채팅방에서 도움을 구하는 것을 주저하지 마십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:607
+#: usr/lib/linuxmint/mintupgrade/checks.py:618
 msgid "Additional information"
 msgstr "더 많은 정보"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:608
+#: usr/lib/linuxmint/mintupgrade/checks.py:619
 msgid "The information below might help solve the issue."
 msgstr "아래의 내용이 문제를 해결하는 데 도움이 될 수 있습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:609
-#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:620
+#: usr/lib/linuxmint/mintupgrade/checks.py:632
 msgid "Kept packages"
 msgstr "패키지 유지됨"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:610
-#: usr/lib/linuxmint/mintupgrade/checks.py:626
+#: usr/lib/linuxmint/mintupgrade/checks.py:621
+#: usr/lib/linuxmint/mintupgrade/checks.py:636
 msgid "Removed packages"
 msgstr "패키지 제거됨"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:611
-#: usr/lib/linuxmint/mintupgrade/checks.py:625
+#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:635
 msgid "Added packages"
 msgstr "패키지 추가됨"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:612
-#: usr/lib/linuxmint/mintupgrade/checks.py:621
+#: usr/lib/linuxmint/mintupgrade/checks.py:623
+#: usr/lib/linuxmint/mintupgrade/checks.py:631
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr "업데이트된 패키지: %d, 추가된 패키지 %d, 유지된 패키지: %d, 삭제된 패키지: %d"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:615
+#: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Upgrading will perform the following changes."
 msgstr "업그레이드가 다음 변경을 수행합니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:624
+#: usr/lib/linuxmint/mintupgrade/checks.py:634
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr "참고: 이상적인 경우 어떠한 패키지도 유지 되지 않습니다. 이는 문제가 있음을 가리킵니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:628
+#: usr/lib/linuxmint/mintupgrade/checks.py:638
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr "업그레이드를 더 진행하기 이전에 위의 항목들이 제거되어도 괜찮은지 확인하십시오."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:725
+#: usr/lib/linuxmint/mintupgrade/checks.py:735
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr "%s에 %s가 필요하지만, %s의 빈공간이 있습니다.. %s의 빈 공간이 추가로 필요합니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:729
+#: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
 msgstr "다운로드 크기: %s 추가로 필요한 빈 공간: %s"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Package download"
 msgstr "패키지 다운로드"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Downloading packages..."
 msgstr "패키지 다운로드중..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:741
+#: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "An error occurred while downloading the packages."
 msgstr "패키지를 다운로드하는 도중 문제가 발생했습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Session inhibition"
 msgstr "세션 중단"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Inhibiting session..."
 msgstr "세션 중단중..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Upgrade preparation"
 msgstr "업그레이드 준비"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Preparing the upgrade..."
 msgstr "업그레이드 준비중..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrade phase"
 msgstr "업그레이드 단계"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrading the system..."
 msgstr "시스템 업그레이드중..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:784
-#: usr/lib/linuxmint/mintupgrade/checks.py:790
+#: usr/lib/linuxmint/mintupgrade/checks.py:819
+#: usr/lib/linuxmint/mintupgrade/checks.py:825
 msgid "An issue was detected during the upgrade."
 msgstr "업그레이드 과정에서 문제가 발견되었습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:809
+#: usr/lib/linuxmint/mintupgrade/checks.py:844
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr "아직 %d개의 패키지가 업데이트되어야 합니다(%d개 유지, %d 제거됨)."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Final phase"
 msgstr "완료 단계"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Finalizing the upgrade..."
 msgstr "업그레이드를 마무리 하는중...."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:827
+#: usr/lib/linuxmint/mintupgrade/checks.py:869
 #, python-format
 msgid "%s could not be installed."
 msgstr "%s를 설치할 수 없습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:834
+#: usr/lib/linuxmint/mintupgrade/checks.py:876
 msgid "mint-meta-codecs could not be installed."
 msgstr "mint-meta-codecs를 설치할 수 없습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:842
+#: usr/lib/linuxmint/mintupgrade/checks.py:884
+#: usr/lib/linuxmint/mintupgrade/checks.py:907
 msgid "The following packages could not be installed:"
 msgstr "다음 패키지를 설치할 수 없습니다:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:887
+#: usr/lib/linuxmint/mintupgrade/checks.py:966
 msgid "/etc/fstab was modified during the upgrade."
 msgstr "업그레이드 과정에서 /etc/fstab이 수정되었습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:888
+#: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr "성공적인 부팅을 위해 업그레이드 도구가 /etc/fstab을 복구했습니다."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:889
+#: usr/lib/linuxmint/mintupgrade/checks.py:968
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr "수정된 파일의 사본이 /etc/fstab.upgraded로 저장되었습니다."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:66
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
 msgstr "업그레이드 도구"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:77
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
 msgstr "%s로 업그레이드"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:108
 msgid "Preferences"
 msgstr "설정"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
 msgid "About"
 msgstr "정보"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
 msgid "Quit"
 msgstr "나가기"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:151
 msgid "Please specify the name of the package to keep:"
 msgstr "유지할 패키지의 이름을 정해주십시오:"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:152
 msgid "Orphan package"
 msgstr "유리된 패키지"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
 msgid "Phase 1: Preparation"
 msgstr "1단계: 준비"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr "업그레이드를 준비하기 위해 일련의 테스트가 수행됩니다."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
 msgid "Phase 2: Simulation and download"
 msgstr "2단계: 시뮬레이션 및 다운로드"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
 msgid "Your package repositories will now point towards the new release."
 msgstr "패키지 저장소가 새 릴리즈를 가리킬 것입니다."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:212
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr "몇몇 테스트가 더 진행되고, 패키지 업데이트가 다운로드될 것입니다."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
 msgid "Phase 3: Upgrade"
 msgstr "3단계: 업그레이드"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
 msgid "The packages will now be upgraded."
 msgstr "패키지가 업그레이드될 것입니다."
 
@@ -531,5 +550,5 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"유리된 패키지들은 저장소에 더이상 존재하지 않는 패키지입니다.그것들은 업그레이드 과정에서 제거됩니다. 이것들(혹은 일부)유지하기 바라는 "
-"경우아래 목록에 추가하십시오:"
+"Orphan Package는 저장소에 없는 패키지입니다. 업그레이드 중에 삭제됩니다. 그중에 유지하고자 하는 것이 있다면 아래 목록에 "
+"추가하시면 됩니다:"

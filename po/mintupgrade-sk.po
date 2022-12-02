@@ -7,66 +7,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-07-18 19:17+0000\n"
+"POT-Creation-Date: 2022-08-11 13:55+0200\n"
+"PO-Revision-Date: 2022-08-25 22:39+0000\n"
 "Last-Translator: menom <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-07-24 09:43+0000\n"
-"X-Generator: Launchpad (build 025a39fd866a641b6ae33074cda0d02a2c712d38)\n"
+"X-Launchpad-Export-Date: 2022-12-02 13:40+0000\n"
+"X-Generator: Launchpad (build 51cef3d08dff1e227b5ada709bd67280c567d4be)\n"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:34
+#, python-format
+msgid ""
+"The package repositories need to point towards the new release (%s/%s)."
+msgstr "Repozitáre balíkov musia ukazovať na nové vydanie (%s/%s)."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:36
+msgid "This should have be done by the Upgrade Tool already."
+msgstr "Toto by už mal vykonať nástroj na povýšenie verzie systému."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:37
+msgid "Were the repositories modified since?"
+msgstr "Boli odvtedy repozitáre upravené?"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:38
+msgid "Re-run the Upgrade tool so that it migrates the repositories again."
+msgstr ""
+"Opäť spustite nástroj na povýšenie verzie systému, aby migroval na nové "
+"repozitáre."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
 msgstr "Verzia Linux Mint"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Checking your version of Linux Mint..."
 msgstr "Kontrola vašej verzie Linux Mint..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:142
+#: usr/lib/linuxmint/mintupgrade/checks.py:154
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr "Nie je známa verzia vášho Linux Mint. Chýba /etc/linuxmint/info."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:159
+#: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr "Vaša verzia Linux Mint je '%s'. Len %s môže byť povýšená na %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:165
+#: usr/lib/linuxmint/mintupgrade/checks.py:177
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
 msgstr "Vaša edícia Linux Mint je '%s'. Nemôže byť povýšená na %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Power source"
 msgstr "Napájací zdroj"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Checking the power source..."
 msgstr "Kontroluje sa napájací zdroj..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:177
+#: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid "Connect the computer to a power source before attempting to upgrade."
 msgstr "Pripojte počítač k napájaciemu zdroju pred pokračovaním."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "System snapshots"
 msgstr "Zálohy systému"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "Checking system snapshots..."
 msgstr "Kontrolujú sa snapshoty systému..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:188
+#: usr/lib/linuxmint/mintupgrade/checks.py:200
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
 msgstr ""
 "Urobte snapshot systému pomocou aplikácie Timeshift, predtým ako sa pokúsite "
 "o povýšenie verzie."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:189
+#: usr/lib/linuxmint/mintupgrade/checks.py:201
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
@@ -74,15 +94,15 @@ msgstr ""
 "Ak povýšenie verzie nie je úspešné, snapshot systému vám umožní vrátiť späť "
 "všetky zmeny."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "APT cache"
 msgstr "Vyrovnávacia pamäť APT"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "Checking the APT cache..."
-msgstr "Kontroluje sa vyrovnávacia pamäť APT..."
+msgstr "Používa sa vyrovnávacia pamäť APT..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:222
+#: usr/lib/linuxmint/mintupgrade/checks.py:234
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
@@ -90,13 +110,13 @@ msgstr ""
 "Vyrovnávacia pamäť balíkov nemôže byť správne obnovená. Spustite príkaz 'apt "
 "update' a opravte zobrazené chyby."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:231
+#: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
 "Niektoré z balíkov sú poškodené. Spustite príkaz 'apt install -f' pre opravu."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:250
+#: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
@@ -104,232 +124,232 @@ msgstr ""
 "Váš operačný systém nie je aktuálny. Nainštalujte dostupné aktualizácie pred "
 "tým, ako sa pokúsite o povýšenie verzie."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:271
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "The following operations need to be performed:"
 msgstr "Musia byť vykonané nasledujúce operácie:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Package"
 msgstr "Balík"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "Operation"
 msgstr "Operácia"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:275
+#: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be installed"
 msgstr "Je nutné nainštalovať"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:281
 msgid "needs to be removed"
 msgstr "Je nutné odstrániť"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Package repositories"
 msgstr "Zdroje balíkov"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
 msgid "Checking package repositories..."
 msgstr "Kontrolujú sa zdroje balíkov..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:334
+#: usr/lib/linuxmint/mintupgrade/checks.py:338
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
 "Nasledujúce zdroje softvéru nepodporujú presne vašu verziu Linux Mint."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:342
+#: usr/lib/linuxmint/mintupgrade/checks.py:346
 msgid "These repositories need to be disabled."
 msgstr "Tieto zdroje softvéru musia byť vypnuté."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:355
+#: usr/lib/linuxmint/mintupgrade/checks.py:359
 msgid "Your APT policy is incorrect."
 msgstr "Vaša stratégia pri použití APT je nevhodná."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:356
+#: usr/lib/linuxmint/mintupgrade/checks.py:360
 msgid "Reboot your computer."
 msgstr "Reštartujte váš počítač."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:374
+#: usr/lib/linuxmint/mintupgrade/checks.py:378
 #, python-format
 msgid "%s is unreachable"
 msgstr "%s je nedosiahnuteľný"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:379
+#: usr/lib/linuxmint/mintupgrade/checks.py:383
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
 msgstr "%s nie je aktuálny. Prepnite na iné zrkadlo."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:391
+#: usr/lib/linuxmint/mintupgrade/checks.py:395
 #, python-format
 msgid "%s does not support %s"
 msgstr "%s nepodporuje %s"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:395
+#: usr/lib/linuxmint/mintupgrade/checks.py:399
 msgid "The following problems were found:"
 msgstr "Boli nájdené nasledujúce problémy:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Held packages"
 msgstr "Podržané balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Looking for held packages..."
 msgstr "Hľadanie podržaných balíkov..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:440
+#: usr/lib/linuxmint/mintupgrade/checks.py:444
 msgid "The following packages are held:"
 msgstr "Nasledujúce balíky sú podržané:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:447
+#: usr/lib/linuxmint/mintupgrade/checks.py:451
 msgid "Held packages can break the upgrade."
 msgstr ""
 "Podržané balíky môžu byť príčinou prerušenia zmeny systému na novšiu verziu."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Foreign packages"
 msgstr "Cudzie balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Looking for foreign packages..."
 msgstr "Hľadanie cudzích balíkov..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:467
+#: usr/lib/linuxmint/mintupgrade/checks.py:471
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr ""
 "Verzie nasledujúcich balíkov musia byť znížené späť na oficiálne verzie:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Installed Version"
 msgstr "Nainštalovaná verzia"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Official version"
 msgstr "Oficiálna verzia"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Archive"
 msgstr "Archív"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:474
+#: usr/lib/linuxmint/mintupgrade/checks.py:478
 msgid "Otherwise these packages can create conflicts."
 msgstr "Tieto balíky môžu byť konfliktné."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
 msgstr "Osirelé balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 msgid "Looking for orphan packages..."
 msgstr "Hľadanie osirelých balíkov..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:507
+#: usr/lib/linuxmint/mintupgrade/checks.py:511
 msgid "The following packages do not exist in the repositories:"
 msgstr "V zdrojoch softvéru neexistujú nasledujúce balíky:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:514
+#: usr/lib/linuxmint/mintupgrade/checks.py:518
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
-"Pridajte balíky, ktorým chcete zachovať preferencie, potom stlačte 'Opäť "
+"Kliknite na balíky, ktorým chcete zachovať preferencie a stlačte 'Opäť "
 "skontrolovať'."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:515
+#: usr/lib/linuxmint/mintupgrade/checks.py:519
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr "Pre odstránenie vyššie uvedených balíkov stlačte 'Opraviť'."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Pointing to the new release..."
 msgstr "Cielenie k novému vydaniu..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Upgrade simulation"
 msgstr "Simulácia povýšenia"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
 "Simulácia povýšenia kontroluje priestor na disku a potenciálne problémy..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:595
+#: usr/lib/linuxmint/mintupgrade/checks.py:606
 msgid "The simulation was not successful."
 msgstr "Simulácia nebola úspešná."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:596
+#: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Upgrading would remove the following important packages:"
 msgstr "Povýšenie verzie systému odstráni nasledujúce dôležité balíky:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:597
+#: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "Unwanted removals"
 msgstr "Nechcené odstránenie"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:601
+#: usr/lib/linuxmint/mintupgrade/checks.py:612
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
 "Toto signalizuje, že niečo je zle a musí to byť opravené, než sa pôjde ďalej."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:603
+#: usr/lib/linuxmint/mintupgrade/checks.py:614
 msgid "Recommended solution"
 msgstr "Odporúčané riešenie"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:604
+#: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
 "Použite príkaz apt v termináli pre vyhľadanie poruchy a riešenie problému."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:605
+#: usr/lib/linuxmint/mintupgrade/checks.py:616
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr ""
 "Neváhajte vyhľadať pomoc na fórach a miestnostiach pre chat na to určených."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:607
+#: usr/lib/linuxmint/mintupgrade/checks.py:618
 msgid "Additional information"
 msgstr "Ďalšie informácie"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:608
+#: usr/lib/linuxmint/mintupgrade/checks.py:619
 msgid "The information below might help solve the issue."
 msgstr "Informácia nižšie môže pomôcť vyriešiť problém."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:609
-#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:620
+#: usr/lib/linuxmint/mintupgrade/checks.py:632
 msgid "Kept packages"
 msgstr "Zachované balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:610
-#: usr/lib/linuxmint/mintupgrade/checks.py:626
+#: usr/lib/linuxmint/mintupgrade/checks.py:621
+#: usr/lib/linuxmint/mintupgrade/checks.py:636
 msgid "Removed packages"
 msgstr "Odstránené balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:611
-#: usr/lib/linuxmint/mintupgrade/checks.py:625
+#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:635
 msgid "Added packages"
 msgstr "Pridané balíky"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:612
-#: usr/lib/linuxmint/mintupgrade/checks.py:621
+#: usr/lib/linuxmint/mintupgrade/checks.py:623
+#: usr/lib/linuxmint/mintupgrade/checks.py:631
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr "Aktualizované balíky: %d, Pridané: %d , Zachované: %d, Vymazané: %d"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:615
+#: usr/lib/linuxmint/mintupgrade/checks.py:626
 msgid "Upgrading will perform the following changes."
 msgstr "Povýšenie verzie urobí nasledujúce zmeny."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:624
+#: usr/lib/linuxmint/mintupgrade/checks.py:634
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
 "Poznámka: Ideálne bez zachovaných balíkov. Toto môže indikovať problém."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:628
+#: usr/lib/linuxmint/mintupgrade/checks.py:638
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
@@ -337,89 +357,90 @@ msgstr ""
 "Prejdite zoznam vyššie a uistite sa, že vám vyhovuje, ktoré balíky budú "
 "odstránené, než sa pôjde ďalej na povýšenie."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:725
+#: usr/lib/linuxmint/mintupgrade/checks.py:735
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr "Potrebujete %s na '%s', ale máte len %s. Musíte uvolniť ďalších %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:729
+#: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
 msgstr "Veľkosť sťahovania: %s. Je potrebný ďalší priestor: %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Package download"
 msgstr "Sťahovanie balíka"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Downloading packages..."
 msgstr "Sťahovanie balíkov..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:741
+#: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "An error occurred while downloading the packages."
 msgstr "Pri sťahovaní balíkov sa stala chyba."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Session inhibition"
 msgstr "Potlačenie sedenia"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Inhibiting session..."
 msgstr "Potláčanie sedenia..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Upgrade preparation"
 msgstr "Príprava na povýšenie verzie"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Preparing the upgrade..."
 msgstr "Pripravuje sa povýšenie verzie..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrade phase"
 msgstr "Fáza povýšenia verzie"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrading the system..."
 msgstr "Povyšuje sa verzia systému..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:784
-#: usr/lib/linuxmint/mintupgrade/checks.py:790
+#: usr/lib/linuxmint/mintupgrade/checks.py:819
+#: usr/lib/linuxmint/mintupgrade/checks.py:825
 msgid "An issue was detected during the upgrade."
 msgstr "Počas povýšenia verzie bol detegovaný problém."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:809
+#: usr/lib/linuxmint/mintupgrade/checks.py:844
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr ""
 "%d balíkov ešte musí byť aktualizovaných (%d zachovaných, %d vymazaných)"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Final phase"
 msgstr "Finálna fáza"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Finalizing the upgrade..."
 msgstr "Finalizuje sa povýšenie verzie systému..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:827
+#: usr/lib/linuxmint/mintupgrade/checks.py:869
 #, python-format
 msgid "%s could not be installed."
 msgstr "%s nemohlo byť nainštalované."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:834
+#: usr/lib/linuxmint/mintupgrade/checks.py:876
 msgid "mint-meta-codecs could not be installed."
 msgstr "mint-meta-codecs nemohlo byť nainštalované."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:842
+#: usr/lib/linuxmint/mintupgrade/checks.py:884
+#: usr/lib/linuxmint/mintupgrade/checks.py:907
 msgid "The following packages could not be installed:"
 msgstr "Nasledujúce balíky nemohli byť nainštalované:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:887
+#: usr/lib/linuxmint/mintupgrade/checks.py:966
 msgid "/etc/fstab was modified during the upgrade."
 msgstr "Počas povýšenia verzie systému bol upravený súbor /etc/fstab."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:888
+#: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
@@ -427,70 +448,70 @@ msgstr ""
 "Pre zaistenie úspešného zavedenia systému, nástroj pre povýšenie obnovil váš "
 "pôvodný /etc/fstab"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:889
+#: usr/lib/linuxmint/mintupgrade/checks.py:968
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr "Kópia upraveného súboru bola uložená ako /etc/fstab.upgraded"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:66
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
 msgstr "Nástroj na povýšenie verzie systému"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:77
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
 msgstr "Povýšiť verziu na %s"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:108
 msgid "Preferences"
 msgstr "Predvoľby"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
 msgid "About"
 msgstr "O programe"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:151
 msgid "Please specify the name of the package to keep:"
 msgstr "Špecifikujte názov balíka, ktorý má byť zachovaný:"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:152
 msgid "Orphan package"
 msgstr "Osirotený balík"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
 msgid "Phase 1: Preparation"
 msgstr "Fáza 1: Príprava"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr "Pre prípravu počítača na povýšenie teraz prebehne séria testov."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
 msgid "Phase 2: Simulation and download"
 msgstr "Fáza 2: Simulácia a stiahnutie"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
 msgid "Your package repositories will now point towards the new release."
 msgstr "Vaše zdroje softvéru teraz cielia k novému vydaniu."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:212
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr "Budú stiahnuté aktualizácie balíkov a spustených niekoľko testov."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
 msgid "Phase 3: Upgrade"
 msgstr "Fáza 3: Povýšenie systému"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
 msgid "The packages will now be upgraded."
 msgstr "Verzie balíkov budú teraz povýšené."
 
@@ -559,6 +580,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Osirotené balíky sú balíky, ktoré chýbajú v zdrojoch softvéru. Sú odstránené "
-"počas povýšenia verzie systému. Ak chcete niektoré z nich zachovať, pridajte "
-"ich na zoznam nižšie:"
+"Osirelé balíky sú balíky, ktoré sa nenachádzajú v zdrojoch softvéru. Budú "
+"odstránené počas inovácie. Ak chcete niektoré z nich ponechať, pridajte ich "
+"do zoznamu nižšie:"

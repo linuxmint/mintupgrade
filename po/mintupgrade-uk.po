@@ -7,523 +7,574 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2022-04-15 16:31+0100\n"
-"PO-Revision-Date: 2022-04-22 18:25+0000\n"
-"Last-Translator: Артем Тутов <Unknown>\n"
+"POT-Creation-Date: 2022-08-11 13:55+0200\n"
+"PO-Revision-Date: 2022-11-01 12:39+0000\n"
+"Last-Translator: Rostyslav Haitkulov <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-07-24 09:43+0000\n"
-"X-Generator: Launchpad (build 025a39fd866a641b6ae33074cda0d02a2c712d38)\n"
+"X-Launchpad-Export-Date: 2022-12-02 13:40+0000\n"
+"X-Generator: Launchpad (build 51cef3d08dff1e227b5ada709bd67280c567d4be)\n"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:34
+#, python-format
+msgid ""
+"The package repositories need to point towards the new release (%s/%s)."
+msgstr "Репозиторії пакетів повинні вказувати на нову версію (%s/%s)."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:36
+msgid "This should have be done by the Upgrade Tool already."
+msgstr "Це вже повинно було бути зроблено засобом оновлення."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:37
+msgid "Were the repositories modified since?"
+msgstr "Чи змінювались сховища після цього?"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:38
+msgid "Re-run the Upgrade tool so that it migrates the repositories again."
+msgstr ""
+"Повторно запустіть засіб оновлення, за для того, щоб він знову мігрував "
+"репозиторії."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
 msgstr "Версія Linux Mint"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:134
+#: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Checking your version of Linux Mint..."
 msgstr "Перевірка вашої версії Linux Mint..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:142
+#: usr/lib/linuxmint/mintupgrade/checks.py:154
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr "Ваша версія Linux Mint невідома. Відсутній /etc/linuxmint/info."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:159
+#: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:165
-#, python-format
-msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
-msgid "Power source"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:172
-msgid "Checking the power source..."
-msgstr ""
+msgstr "Ваша версія Linux Mint - '%s'. Тільки %s може бути оновлено до %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
-msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr ""
+#, python-format
+msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
+msgstr "Ваша редакція Linux Mint - '%s'. Її неможливо оновити до %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
+msgid "Power source"
+msgstr "Джерело живлення"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:184
+msgid "Checking the power source..."
+msgstr "Перевірка джерела живлення..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:189
+msgid "Connect the computer to a power source before attempting to upgrade."
+msgstr "Підключіть до джерела живлення, перед спробою оновлення."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "System snapshots"
 msgstr "Системні знімки"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:183
+#: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "Checking system snapshots..."
 msgstr "Перевірка на наявність системних знімків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:188
+#: usr/lib/linuxmint/mintupgrade/checks.py:200
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
 msgstr ""
+"Зробіть знімок системи, за допомогою Timeshift перед спробою оновлення."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:189
+#: usr/lib/linuxmint/mintupgrade/checks.py:201
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
+"Якщо оновлення не буде вдалим, знімок системи дозволить вам повернутися в "
+"минуле та скасувати всі зміни."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "APT cache"
-msgstr ""
+msgstr "Кеш APT"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:204
+#: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "Checking the APT cache..."
-msgstr ""
+msgstr "Перевірка кешу APT..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:222
+#: usr/lib/linuxmint/mintupgrade/checks.py:234
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
+"Ваш кеш пакетів не може оновитись належним чином. Виконайте команду 'apt "
+"update' та виправте помилки, які вона відобразить."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:231
+#: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
+"Деякі з пакетів пошкоджені. Виконайте 'apt install -f', для того, щоб "
+"виправити проблему."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:250
+#: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:271
-msgid "The following operations need to be performed:"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
-msgid "Package"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:273
-msgid "Operation"
-msgstr ""
+"Ваша операційна система не оновлена. Застосуйте доступні оновлення перед "
+"спробою оновлення системи."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
-msgid "needs to be installed"
-msgstr ""
+msgid "The following operations need to be performed:"
+msgstr "Необхідно виконати наступні дії:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
+msgid "Package"
+msgstr "Пакунок"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
+msgid "Operation"
+msgstr "Операція"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:279
+msgid "needs to be installed"
+msgstr "необхідно встановити"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:281
 msgid "needs to be removed"
-msgstr ""
+msgstr "необхідно видалити"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Package repositories"
-msgstr ""
+msgstr "Репозитарії пакунків"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:306
+#: usr/lib/linuxmint/mintupgrade/checks.py:310
 msgid "Checking package repositories..."
-msgstr ""
+msgstr "Перевірка репозитаріїв пакунків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:334
+#: usr/lib/linuxmint/mintupgrade/checks.py:338
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr ""
+msgstr "Наступні репозитарії явно не підтримуються вашу версію Linux Mint."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:342
+#: usr/lib/linuxmint/mintupgrade/checks.py:346
 msgid "These repositories need to be disabled."
-msgstr ""
+msgstr "Ці репозитарії належить вимкнути"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:355
+#: usr/lib/linuxmint/mintupgrade/checks.py:359
 msgid "Your APT policy is incorrect."
-msgstr ""
+msgstr "Ваша політика APT невірна."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:356
+#: usr/lib/linuxmint/mintupgrade/checks.py:360
 msgid "Reboot your computer."
-msgstr ""
+msgstr "Перезавантажте ваш комп`ютер"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:374
+#: usr/lib/linuxmint/mintupgrade/checks.py:378
 #, python-format
 msgid "%s is unreachable"
-msgstr ""
+msgstr "%s недосяжний"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:379
+#: usr/lib/linuxmint/mintupgrade/checks.py:383
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:391
-#, python-format
-msgid "%s does not support %s"
-msgstr ""
+msgstr "%s застарілий. Перемкніться на інше дзеркало."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:395
+#, python-format
+msgid "%s does not support %s"
+msgstr "%s не підтримує %s"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:399
 msgid "The following problems were found:"
-msgstr ""
+msgstr "Знайдено наступні проблеми:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Held packages"
-msgstr ""
+msgstr "Зафіксовані пакунки"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:434
+#: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Looking for held packages..."
-msgstr ""
+msgstr "Пошук зафіксованих пакунків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:440
+#: usr/lib/linuxmint/mintupgrade/checks.py:444
 msgid "The following packages are held:"
-msgstr ""
+msgstr "Наступні пакунки є зафіксованими:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:447
+#: usr/lib/linuxmint/mintupgrade/checks.py:451
 msgid "Held packages can break the upgrade."
-msgstr ""
+msgstr "Зафіксовані пакунки можуть завадити оновленню."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Foreign packages"
-msgstr ""
+msgstr "Сторонні пакунки"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:461
+#: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Looking for foreign packages..."
-msgstr ""
+msgstr "Пошук сторонніх пакунків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:467
+#: usr/lib/linuxmint/mintupgrade/checks.py:471
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr ""
+msgstr "Наступні пакунки повинні бути відкочені до офіційних версій:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Installed Version"
-msgstr ""
+msgstr "Встановлена версія"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Official version"
-msgstr ""
+msgstr "Офіційна версія"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:469
+#: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Archive"
-msgstr ""
+msgstr "Архів"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:474
+#: usr/lib/linuxmint/mintupgrade/checks.py:478
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "В іншому випадку ці пакунки можуть викликати конфлікти."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Orphan packages"
-msgstr ""
+msgstr "Невикористовувані пакунки"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:489
+#: usr/lib/linuxmint/mintupgrade/checks.py:493
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Пошук невикористовуваних пакунків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:507
+#: usr/lib/linuxmint/mintupgrade/checks.py:511
 msgid "The following packages do not exist in the repositories:"
-msgstr ""
+msgstr "Наступні пакунки відсутні в репозитаріях:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:514
+#: usr/lib/linuxmint/mintupgrade/checks.py:518
 msgid ""
 "Add the packages you want to keep using the preferences, then press 'Check "
 "again'."
 msgstr ""
+"Додайте пакунки, котрі ви бажаєте зафіксувати за допомогою налаштувань, "
+"після чого натисніть \"Перевірити знову\"."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:515
+#: usr/lib/linuxmint/mintupgrade/checks.py:519
 msgid "Then press 'Fix' to remove the packages listed above."
 msgstr ""
+"Після чого натисніть \"Виправити\", щоб видалити перераховані нижче пакунки."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:527
+#: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Pointing to the new release..."
-msgstr ""
+msgstr "Вказує на новий реліз..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Upgrade simulation"
-msgstr ""
+msgstr "СимуляціяС оновлення"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:563
+#: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
+"Симуляція оновлення задля перевірки вільного місця на жорсткому диску та "
+"можливих проблем..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:595
+#: usr/lib/linuxmint/mintupgrade/checks.py:606
 msgid "The simulation was not successful."
-msgstr ""
+msgstr "Симуляція завершилась невдало."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:596
+#: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
+msgstr "При оновленні було б видалено наступні важливі пакунки:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:597
+#: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "Unwanted removals"
-msgstr ""
+msgstr "Небажані видалення"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:601
+#: usr/lib/linuxmint/mintupgrade/checks.py:612
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
+"Це ознака того, що щось пішло не так і це потрібно виправити, перш ніж "
+"рухатись далі."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:603
+#: usr/lib/linuxmint/mintupgrade/checks.py:614
 msgid "Recommended solution"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:604
-msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:605
-msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:607
-msgid "Additional information"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:608
-msgid "The information below might help solve the issue."
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:609
-#: usr/lib/linuxmint/mintupgrade/checks.py:622
-msgid "Kept packages"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:610
-#: usr/lib/linuxmint/mintupgrade/checks.py:626
-msgid "Removed packages"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:611
-#: usr/lib/linuxmint/mintupgrade/checks.py:625
-msgid "Added packages"
-msgstr ""
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:612
-#: usr/lib/linuxmint/mintupgrade/checks.py:621
-#, python-format
-msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr ""
+msgstr "Рекомендовані вирішення"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
-msgid "Upgrading will perform the following changes."
+msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
+"Використайте apt-get в терміналі задля усунення неполадок та вирішення "
+"проблеми."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:624
+#: usr/lib/linuxmint/mintupgrade/checks.py:616
+msgid "Don't hesitate to seek help on the forums and the chat room."
+msgstr "Не соромтеся шукати допомоги на форумах і в чаті."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:618
+msgid "Additional information"
+msgstr "Додаткова інформація"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:619
+msgid "The information below might help solve the issue."
+msgstr "Інформація нижче, може допомогти у вирішенні проблеми."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:620
+#: usr/lib/linuxmint/mintupgrade/checks.py:632
+msgid "Kept packages"
+msgstr "Зафіксовані пакунки"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:621
+#: usr/lib/linuxmint/mintupgrade/checks.py:636
+msgid "Removed packages"
+msgstr "Вилучені пакунки"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:622
+#: usr/lib/linuxmint/mintupgrade/checks.py:635
+msgid "Added packages"
+msgstr "Додані пакунки"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:623
+#: usr/lib/linuxmint/mintupgrade/checks.py:631
+#, python-format
+msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
+msgstr "Пакети оновлено: %d, додано: %d , зафіксовано: %d, видалено: %d"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:626
+msgid "Upgrading will perform the following changes."
+msgstr "В ході оновлення буде проведено наступні зміни."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:634
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
+"Примітка. В ідеалі не повинно бути зафіксованих пакунків. Це може свідчити "
+"про проблему."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:628
+#: usr/lib/linuxmint/mintupgrade/checks.py:638
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"Перегляньте список вище та переконайтеся, що вас задовільняють пакунки, що "
+"буде видалено, перш ніж продовжувати оновлення."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:725
+#: usr/lib/linuxmint/mintupgrade/checks.py:735
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
+"Необхідно %s на '%s' але є тільки %s. Ви повинні звільнити додатково %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:729
+#: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr ""
+msgstr "Розмір завантаження: %s. Необхідно додаткового простору: %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Package download"
-msgstr ""
+msgstr "Завантаження пакунків"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Downloading packages..."
-msgstr ""
+msgstr "Завантаження пакунків..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:741
+#: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "An error occurred while downloading the packages."
-msgstr ""
+msgstr "При завантаженні пакунків виникла помилка."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Session inhibition"
-msgstr ""
+msgstr "Блокування сесії"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:748
+#: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "Блокування сесії..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Upgrade preparation"
-msgstr ""
+msgstr "Приготування до оновлення"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:773
 msgid "Preparing the upgrade..."
-msgstr ""
+msgstr "Підготовка оновлення..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrade phase"
-msgstr ""
+msgstr "Фаза оновлення"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:775
+#: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrading the system..."
-msgstr ""
+msgstr "Оновлення системи..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:784
-#: usr/lib/linuxmint/mintupgrade/checks.py:790
+#: usr/lib/linuxmint/mintupgrade/checks.py:819
+#: usr/lib/linuxmint/mintupgrade/checks.py:825
 msgid "An issue was detected during the upgrade."
-msgstr ""
+msgstr "Під час оновлення знайдено проблему."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:809
+#: usr/lib/linuxmint/mintupgrade/checks.py:844
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr ""
+"%d пакунків все ще потребують оновлення (%d зафіксовано, %d видалено)"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Final phase"
-msgstr ""
+msgstr "Фінальна фаза"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:815
+#: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Finalizing the upgrade..."
-msgstr ""
+msgstr "Завершення оновлення..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:827
+#: usr/lib/linuxmint/mintupgrade/checks.py:869
 #, python-format
 msgid "%s could not be installed."
-msgstr ""
+msgstr "%s не вдалося встановити."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:834
+#: usr/lib/linuxmint/mintupgrade/checks.py:876
 msgid "mint-meta-codecs could not be installed."
-msgstr ""
+msgstr "mint-meta-codecs не вдалось встановити."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:842
+#: usr/lib/linuxmint/mintupgrade/checks.py:884
+#: usr/lib/linuxmint/mintupgrade/checks.py:907
 msgid "The following packages could not be installed:"
-msgstr ""
+msgstr "Наступні пакунки не вдалось встановити:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:887
+#: usr/lib/linuxmint/mintupgrade/checks.py:966
 msgid "/etc/fstab was modified during the upgrade."
-msgstr ""
+msgstr "/etc/fstab був змінений протягом оновлення."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:888
+#: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
+"Щоб забезпечити успішне завантаження, інструмент оновлення відновив ваш "
+"оригінальний /etc/fstab"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:889
+#: usr/lib/linuxmint/mintupgrade/checks.py:968
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
+msgstr "Копію зміненого файлу збережено як /etc/fstab.upgraded"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:64
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:331 generate_desktop_files:26
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:66
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr ""
+msgstr "Засіб оновлення"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:75
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:77
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr ""
+msgstr "Оновити до %s"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:106
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:108
 msgid "Preferences"
-msgstr ""
+msgstr "Налаштування"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:111
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:330
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
 msgid "About"
-msgstr ""
+msgstr "Про програму"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:116
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
 msgid "Quit"
-msgstr ""
+msgstr "Вийти"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:149
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:151
 msgid "Please specify the name of the package to keep:"
-msgstr ""
+msgstr "Будь ласка, вкажіть ім'я пакунку для фіксації:"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:150
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:152
 msgid "Orphan package"
-msgstr ""
+msgstr "Пакунок сирітка"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:192
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
 msgid "Phase 1: Preparation"
-msgstr ""
+msgstr "Фаза 1: Підготування"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:194
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
+"Зараз буде виконано серію тестів, щоб підготувати комп'ютер до оновлення."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:204
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
 msgid "Phase 2: Simulation and download"
-msgstr ""
+msgstr "Фаза 2: Симуляція та завантаження пакунків"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:206
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
+msgstr "Ваші репозиторії пакунків будуть вказувати на новий реліз."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:207
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:212
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr ""
+msgstr "Буде виконано ще кілька тестів і завантажено оновлення пакунків."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:213
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
 msgid "Phase 3: Upgrade"
-msgstr ""
+msgstr "Фаза 3: Оновлення"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:215
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
 msgid "The packages will now be upgraded."
-msgstr ""
+msgstr "Зараз буде оновлено пакунки."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
+"Ця програма задасть вам кілька запитань та оновить вашу операційну систему."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
-msgstr ""
+msgstr "А ну гайда!"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr ""
+msgstr "Гаразд"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr ""
+msgstr "Виправити"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr ""
+msgstr "Перевірити знову"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
-msgstr ""
+msgstr "Виникла наступна помилка:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr ""
+msgstr "Оновлення виконано успішно."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr ""
+msgstr "Перезавантажте комп'ютер, щоб усі зміни вступили в силу."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "Останній знімок Timeshift"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr ""
+msgstr "Застосовані оновлення"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"Ці вимоги існують для того, щоб гарантувати безпечне оновлення. Вимикайте "
+"їх, лише якщо знаєте, що робите."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr ""
+msgstr "Підтримувана версія Linux Mint"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr ""
+msgstr "Вимоги"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
@@ -531,3 +582,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
+"Пакунки-сирітки - це пакунки, яких немає в сховищах. Вони видаляються під "
+"час оновлення. Якщо ви хочете зберегти деякі з них, додайте їх до списку "
+"нижче:"
