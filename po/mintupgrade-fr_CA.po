@@ -39,7 +39,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
-msgstr "Version de Linux MInt"
+msgstr "Version de Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Checking your version of Linux Mint..."
