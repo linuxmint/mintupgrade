@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-import gi
-import threading
-from gi.repository import GObject, Gio, GLib
+from gi.repository import Gio, GLib
 import time
 import os
 import datetime
