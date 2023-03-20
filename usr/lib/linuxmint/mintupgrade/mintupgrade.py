@@ -4,10 +4,7 @@ import gi
 import locale
 import os
 import setproctitle
-import subprocess
 import warnings
-import sys
-import traceback
 
 # Suppress GTK deprecation warnings
 warnings.filterwarnings("ignore")
