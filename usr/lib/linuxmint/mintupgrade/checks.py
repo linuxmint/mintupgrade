@@ -67,6 +67,7 @@ class TableList():
         self.columns = columns
         self.values = []
         self.show_column_names = True
+        self.has_checkboxes = False
 
 class Check():
     def __init__(self, title, description, callback=None):
@@ -501,33 +502,98 @@ class APTOrphanCheck(Check):
     def do_run(self):
         if self.get_setting("check-orphans"):
             self.orphans_to_remove = []
-            orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
-            if len(orphans) > 0:
+            self.orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+            if len(self.orphans) > 0:
                 settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
                 to_keep = settings.get_strv("orphans-to-keep")
-                for orphan in orphans:
+                self.result = RESULT_ERROR
+                self.message = _("The following packages do not exist in the repositories:")
+                self.fix = self.selected_packages_action
+                table_list = TableList(["Package name"])
+                table_list.show_column_names = True
+                table_list.has_checkboxes = True
+                for orphan in self.orphans:
                     pkg, version = orphan
                     if pkg.name == "mintupgrade":
                         continue
-                    if pkg.name not in to_keep:
-                        self.orphans_to_remove.append(pkg.name)
+                    table_list.values.append([pkg.name in to_keep, pkg.name])
+                self.info.append(table_list)
+                self.info.append(_("Check the packages you want to keep, then press Fix to remove the unchecked packages."))
+                return
 
-                if len(self.orphans_to_remove) > 0:
-                    self.result = RESULT_ERROR
-                    self.message = _("The following packages do not exist in the repositories:")
-                    self.fix = self.remove_orphans
-                    table_list = TableList([""])
-                    table_list.show_column_names = False
-                    for orphan in self.orphans_to_remove:
-                        table_list.values.append([orphan])
-                    self.info.append(table_list)
-                    self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
-                    self.info.append(_("Then press 'Fix' to remove the packages listed above."))
-                    return
+    def selected_packages_action (self):
+        foreign_packages = []
+        iter = self.model.get_iter_first()
+        while (iter != None):
+            if (self.model.get_value(iter, 0)):
+                foreign_packages.append(self.model.get_value(iter, 1))
+            iter = self.model.iter_next(iter)
+        settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
+        settings.set_strv("orphans-to-keep", foreign_packages)
+        self.orphans_to_remove = []
+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        if len(orphans) > 0:
+            settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
+            to_keep = settings.get_strv("orphans-to-keep")
+            for orphan in orphans:
+                pkg, version = orphan
+                if pkg.name == "mintupgrade":
+                    continue
+                if pkg.name not in to_keep:
+                    self.orphans_to_remove.append(pkg.name)
+            self.remove_orphans()
 
     def remove_orphans(self):
         if len(self.orphans_to_remove) > 0:
-            run_command('%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove)))
+            if run_command('%s remove %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove))):
+                self.do_run = self.success
+            return
+        self.do_run = self.success
+        
+    def success(self):
+        self.result = RESULT_SUCCESS
+
+    def toggled(self, renderer, path):
+        iter = self.model.get_iter(path)
+        if (iter != None):
+            checked = self.model.get_value(iter, 0)
+            self.model.set_value(iter, 0, not(checked))
+
+        iter = self.model.get_iter_first()
+        num_selected = 0
+        while (iter != None):
+            checked = self.model.get_value(iter, 0)
+            if (checked):
+                num_selected = num_selected + 1
+            iter = self.model.iter_next(iter)
+        if num_selected < len(self.orphans):
+            self.select_button_selects_all = True
+            self.select_button.set_label(_("Select All"))
+        else:
+            self.select_button_selects_all = False
+            self.select_button.set_label(_("Clear"))
+
+    def datafunction_checkbox(self, column, cell, model, iter, data):
+        cell.set_property("activatable", True)
+        checked = model.get_value(iter, 0)
+        if (checked):
+            cell.set_property("active", True)
+        else:
+            cell.set_property("active", False)
+
+    def treeview_row_activated(self, treeview, path, view_column):
+        self.toggled(None, path)
+
+    def select_all (self, button):
+        iter = self.model.get_iter_first()
+        while (iter != None):
+            pkg = self.model.set_value(iter, 0, self.select_button_selects_all)
+            iter = self.model.iter_next(iter)
+        self.select_button_selects_all = not (self.select_button_selects_all)
+        if self.select_button_selects_all:
+            self.select_button.set_label(_("Select All"))
+        else:
+            self.select_button.set_label(_("Clear"))
 
 
 # Switch to the target repositories

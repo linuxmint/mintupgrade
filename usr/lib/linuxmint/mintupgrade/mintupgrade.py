@@ -183,7 +183,9 @@ class MainWindow():
             self.last_check.run_fix()
 
     def check_ok(self, button):
-        if self.last_check != None:
+        if isinstance(self.last_check, APTOrphanCheck):
+            self.last_check.select_all(None)
+        elif self.last_check != None:
             self.run_next_check()
 
     def letsgo(self, button):
@@ -253,6 +255,11 @@ class MainWindow():
             self.builder.get_object("error_ok_button").set_visible(False)
             if check.result == RESULT_ERROR:
                 self.builder.get_object("image_error").set_from_icon_name("dialog-error", Gtk.IconSize.DIALOG)
+                if isinstance(check, APTOrphanCheck):
+                    self.builder.get_object("error_ok_button").set_visible(True)
+                    self.builder.get_object("error_ok_button").set_label(_("Select all"))
+                    check.select_button_selects_all = True
+                    check.select_button = self.builder.get_object("error_ok_button")
             elif check.result == RESULT_WARNING:
                 self.builder.get_object("image_error").set_from_icon_name("dialog-warning", Gtk.IconSize.DIALOG)
             elif check.result == RESULT_INFO:
@@ -283,6 +290,15 @@ class MainWindow():
                     widget.add(treeview)
                     index = 0
                     types = []
+                    if info.has_checkboxes:
+                        cr = Gtk.CellRendererToggle()
+                        cr.connect("toggled", check.toggled)
+                        column = Gtk.TreeViewColumn("", cr)
+                        column.set_sort_column_id(index) # index = 0
+                        column.set_cell_data_func(cr, check.datafunction_checkbox)
+                        treeview.append_column(column)
+                        index += 1
+                        types.append(bool)
                     for name in info.columns:
                         column = Gtk.TreeViewColumn(name, Gtk.CellRendererText(), text=index)
                         treeview.append_column(column)
@@ -290,7 +306,7 @@ class MainWindow():
                         types.append(str)
                     model = Gtk.ListStore()
                     model.set_column_types(types)
-                    model.set_sort_column_id(0, Gtk.SortType.ASCENDING)
+                    model.set_sort_column_id(1, Gtk.SortType.ASCENDING)
                     for value in info.values:
                         iter = model.insert_before(None, None)
                         index = 0
@@ -298,6 +314,23 @@ class MainWindow():
                             model.set_value(iter, index, subval)
                             index += 1
                     treeview.set_model(model)
+                    if info.has_checkboxes:
+                        treeview.connect("row-activated", check.treeview_row_activated)
+                        check.model = model
+                        check.action_button = self.builder.get_object("error_fix_button")
+                        iter = check.model.get_iter_first()
+                        num_selected = 0
+                        while (iter != None):
+                            checked = check.model.get_value(iter, 0)
+                            if (checked):
+                                num_selected = num_selected + 1
+                            iter = check.model.iter_next(iter)
+                        if num_selected < len(check.orphans):
+                            check.select_button_selects_all = True
+                            check.select_button.set_label(_("Select All"))
+                        else:
+                            check.select_button_selects_all = False
+                            check.select_button.set_label(_("Clear"))
                 box_info.pack_start(widget, False, False, 0)
                 box_info.show_all()
             if len(check.info) > 0:
