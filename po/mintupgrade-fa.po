@@ -1,44 +1,43 @@
-# Latin translation for linuxmint
-# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
+# Persian translation for linuxmint
+# Copyright (c) 2023 Rosetta Contributors and Canonical Ltd 2023
 # This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-04-13 13:07+0000\n"
-"Last-Translator: Davide Novemila <Unknown>\n"
-"Language-Team: Latin <la@li.org>\n"
+"PO-Revision-Date: 2023-03-19 13:37+0000\n"
+"Last-Translator: Mr.Ravi <Unknown>\n"
+"Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2023-06-08 10:23+0000\n"
 "X-Generator: Launchpad (build 620cd5280e3a973662e263ebf9346837ed657a46)\n"
-"Language: la\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr ""
+msgstr "مخازن بسته ها باید به طرف نسخه جدید تنظیم شوند(%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "این باید تاحالا توسط ابزار ارتقا انجام شده باشد."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:37
 msgid "Were the repositories modified since?"
-msgstr ""
+msgstr "آیا مخازن از آن موقع دستکاری شده اند؟"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:38
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr ""
+msgstr "ابزار ارتقا را دوباره اجرا کنید تا دوباره مخازن را جا‌به‌جا کند."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
-msgstr "Versio Linucis Mint"
+msgstr "نسخه Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Checking your version of Linux Mint..."
@@ -47,7 +46,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:154
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr ""
+msgstr "نسخه Linux Mint شما ناشناخته است. /etc/linuxmint/info گم شده."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
@@ -61,52 +60,57 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Power source"
-msgstr "Fons alimoniae"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Checking the power source..."
-msgstr "Fons alimoniae inspicitur ..."
+msgstr "بررسی منبع انرژی..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:189
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr ""
+msgstr "قبل از تلاش برای ارتقا، رایانه را به منبع انرژی وصل کنید."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "System snapshots"
-msgstr "Photographia systematis"
+msgstr "اسنپ‌شات های سیستم(نسخه های پشتیبان)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "Checking system snapshots..."
-msgstr ""
+msgstr "بررسی اسنپ‌شات(نسخه های پشتیبان) های سیستم..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:200
 msgid "Perform a Timeshift system snapshot before attempting to upgrade."
-msgstr ""
+msgstr "قبل از تلاش برای ارتقا، از سیستم اسنپ‌شات(پشتیبان) تهیه کنید."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:201
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
+"اگر ارتقا ناموفق باشد، یک اسنپ‌شات به شما این اجازه را میدهد که در زمان به "
+"عقب برگردید و تمام تغییرات را بازگردانی کنید."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "APT cache"
-msgstr "APT cache"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "Checking the APT cache..."
-msgstr "APT cache inspicitur ..."
+msgstr "بررسی کش APT"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:234
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
+"کش بسته های شما به درستی تازه‌سازی نمیشود.«apt update» را اجرا کنید و خطا "
+"های نشان داده شده را درست کنید."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
+"برخی بسته های نصب شده خراب اند. برای حل مشکل «apt install -f» را اجرا کنید."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
@@ -121,11 +125,11 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 #: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Package"
-msgstr "Fasciculus"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "Operation"
-msgstr "Operatio"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be installed"
@@ -160,12 +164,12 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:360
 msgid "Reboot your computer."
-msgstr "Computatorem iterum accende."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:378
 #, python-format
 msgid "%s is unreachable"
-msgstr "%s invium est"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:383
 #, python-format
@@ -199,7 +203,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Foreign packages"
-msgstr "Fasciculi externi"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Looking for foreign packages..."
@@ -220,7 +224,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:473
 msgid "Archive"
-msgstr "Tabularium"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:478
 msgid "Otherwise these packages can create conflicts."
@@ -437,20 +441,20 @@ msgstr ""
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 #, python-format
 msgid "Upgrade to %s"
-msgstr "Ad %s renova"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:108
 msgid "Preferences"
-msgstr "Praepositiones"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
 msgid "About"
-msgstr "Circa"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
 msgid "Quit"
-msgstr "Relinque"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:151
 msgid "Please specify the name of the package to keep:"
@@ -497,19 +501,19 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
-msgstr "Eamus!"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "OK"
-msgstr "Bene"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Fix"
-msgstr "Repara"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Iterum inspice"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
@@ -539,11 +543,11 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Supported Linux Mint version"
-msgstr "Versiones Linuce Mint toleratae"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
 msgid "Requirements"
-msgstr "Necessaria"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
 msgid ""
