@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-09-18 11:26+0000\n"
-"Last-Translator: Aleksey Kabanov <Unknown>\n"
+"PO-Revision-Date: 2023-04-25 17:51+0000\n"
+"Last-Translator: Темак <artemkotlubai@yandex.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-12-16 11:35+0000\n"
-"X-Generator: Launchpad (build 31c78762a8046acf7ab47372e5d588ebb3759d2e)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 #, python-format
@@ -34,7 +34,7 @@ msgstr "Изменялись ли репозитории впоследстви�
 #: usr/lib/linuxmint/mintupgrade/checks.py:38
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
-"Повторно запустите инструмент обновления, чтобы он снова перенес репозитории."
+"Повторно запустите инструмент обновления, чтобы он снова перенёс репозитории."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
@@ -52,12 +52,12 @@ msgstr "Ваша версия Linux Mint неизвестна. Отсутств�
 #: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "Ваша версия Linux Mint — '%s'. Только %s можно обновить до %s."
+msgstr "Ваша версия Linux Mint — «%s». Только %s можно обновить до %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Ваша редакция Linux Mint — '%s'. Её невозможно обновить до %s."
+msgstr "Ваша редакция Linux Mint — «%s». Её невозможно обновить до %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Power source"
@@ -105,14 +105,14 @@ msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Не удалось правильно обновить ваш кэш пакетов. Выполните 'apt update' и "
+"Не удалось правильно обновить ваш кэш пакетов. Выполните «apt update» и "
 "исправьте ошибки, которые покажет эта команда."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Некоторые из пакетов повреждены. Выполните 'apt install -f', чтобы исправить "
+"Некоторые из пакетов повреждены. Выполните «apt install -f», чтобы исправить "
 "ошибки."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:254
@@ -165,7 +165,7 @@ msgstr "Эти репозитории следует отключить."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:359
 msgid "Your APT policy is incorrect."
-msgstr "Используемая политика APT некорректна."
+msgstr "Используемая политика APT недействительна."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:360
 msgid "Reboot your computer."
@@ -255,7 +255,7 @@ msgid ""
 "again'."
 msgstr ""
 "Добавьте пакеты, которые хотите зафиксировать с помощью настроек, затем "
-"нажмите \"Проверить снова\""
+"нажмите «Проверить снова»"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:519
 msgid "Then press 'Fix' to remove the packages listed above."
@@ -272,12 +272,12 @@ msgstr "Имитация обновления"
 #: usr/lib/linuxmint/mintupgrade/checks.py:567
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Имитация обновления для проверки свободного места на диске и возможных "
-"проблем..."
+"Воспроизведение обновления для проверки свободного места на накопителе и "
+"возможных неполадок..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:606
 msgid "The simulation was not successful."
-msgstr "Имитация прошла неудачно."
+msgstr "Воспроизведение прошло неудачно."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Upgrading would remove the following important packages:"
@@ -292,12 +292,12 @@ msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
-"Это признак наличия проблемы, требующей исправления перед выполнением "
+"Это признак наличия неполадки, требующей исправления перед выполнением "
 "дальнейших действий."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:614
 msgid "Recommended solution"
-msgstr "Рекомендуемые решения"
+msgstr "Желательные решения"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:615
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
@@ -305,8 +305,7 @@ msgstr "Используйте apt-get в терминале для выявле
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:616
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
-"Не стесняйтесь обращаться за помощью на форумы и в дискуссионные группы."
+msgstr "Не стесняйтесь обращаться за помощью на форумы и в беседы."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:618
 msgid "Additional information"
@@ -345,8 +344,8 @@ msgstr "В ходе обновления будут сделаны следую�
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Примечание: В идеале зафиксированных пакетов не должно быть. Их наличие "
-"может указывать на проблему."
+"Примечание: в совершенстве зафиксированных пакетов не должно быть. Их "
+"наличие может свидетельствовать о неполадке."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:638
 msgid ""
@@ -360,12 +359,12 @@ msgstr ""
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Необходимо %s на '%s', но у вас только %s. Нужно освободить дополнительно %s."
+"Необходимо %s на «%s», но у вас только %s. Нужно освободить дополнительно %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Объем загрузки: %s. Потребуется дополнительного места: %s."
+msgstr "Объём загрузки: %s. Потребуется дополнительного места: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Package download"
@@ -377,7 +376,7 @@ msgstr "Загрузка пакетов..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "An error occurred while downloading the packages."
-msgstr "Возникла ошибка в процессе загрузки пакетов."
+msgstr "Возникла ошибка во время загрузки пакетов."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Session inhibition"
@@ -397,7 +396,7 @@ msgstr "Выполнение обновления..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrade phase"
-msgstr "Этап обновления"
+msgstr "Шаг обновления"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:802
 msgid "Upgrading the system..."
@@ -416,7 +415,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Final phase"
-msgstr "Финальный этап"
+msgstr "Последний шаг"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Finalizing the upgrade..."
@@ -438,7 +437,7 @@ msgstr "Следующие пакеты не удалось установить
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:966
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab был изменён в процессе обновления."
+msgstr "/etc/fstab был изменён во время обновления."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid ""
@@ -471,7 +470,7 @@ msgstr "Настройки"
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
 msgid "About"
-msgstr "О программе"
+msgstr "О приложении"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
 msgid "Quit"
@@ -487,7 +486,7 @@ msgstr "Неиспользуемый пакет"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
 msgid "Phase 1: Preparation"
-msgstr "Этап 1: Подготовка"
+msgstr "Шаг 1: Подготовка"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
 msgid ""
@@ -499,7 +498,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
 msgid "Phase 2: Simulation and download"
-msgstr "Этап 2: Имитация и загрузка пакетов"
+msgstr "Шаг 2: Воспроизведение и загрузка пакетов"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
 msgid "Your package repositories will now point towards the new release."
@@ -512,7 +511,7 @@ msgstr "Будут выполнены ещё несколько тестов и 
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
 msgid "Phase 3: Upgrade"
-msgstr "Этап 3: Обновление"
+msgstr "Шаг 3: Обновление"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
 msgid "The packages will now be upgraded."
@@ -522,7 +521,7 @@ msgstr "Сейчас будут обновлены пакеты."
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
-"Эта программа задаст вам несколько вопросов и обновит операционную систему."
+"Это приложение задаст вам несколько вопросов и обновит операционную систему."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "Let's go!"
@@ -558,14 +557,14 @@ msgstr "Недавний снимок Timeshift"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr "Примененные обновления"
+msgstr "Применённые обновления"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
-"Эти требования должны гарантировать безопасное обновление. Отключайте их, "
+"Эти требования должны обеспечить безопасное обновление. Отключайте их, "
 "только если вы действительно знаете, что делаете."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
@@ -582,6 +581,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"Пакеты-сироты — это пакеты, которых нет в репозиториях. Они будут удалены во "
-"время обновления. Если необходимо сохранить какие-то из них, добавьте их в "
-"список ниже:"
+"Неиспользуемые пакеты — это пакеты, которых нет в репозиториях. Они будут "
+"удалены во время обновления. Если необходимо сохранить какие-то из них, "
+"добавьте их в список ниже:"

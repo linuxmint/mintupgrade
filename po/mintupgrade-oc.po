@@ -8,32 +8,32 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-05-12 06:42+0000\n"
+"PO-Revision-Date: 2023-03-11 13:01+0000\n"
 "Last-Translator: Quentin PAGÈS <Unknown>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-12-16 11:35+0000\n"
-"X-Generator: Launchpad (build 31c78762a8046acf7ab47372e5d588ebb3759d2e)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr ""
+msgstr "Los depauses de paquets devon menar a la version novèla (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "Aquò deuriá ja èsser fach per l’aisina de mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:37
 msgid "Were the repositories modified since?"
-msgstr ""
+msgstr "Los depauses son estats modificats dempuèi ?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:38
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr ""
+msgstr "Reaviatz l’aisina de mesa a nivèl per migrar als depauses novèls."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
 msgid "Linux Mint version"
@@ -93,6 +93,8 @@ msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
+"Se la mesa a nivèl capita pas, un instantanèu sistèma vos permetrà de tornar "
+"en arrièra e d’anullar los cambiaments."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:216
 msgid "APT cache"
@@ -107,17 +109,23 @@ msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
+"Vòstre cache de paquets s’actualiza pas coma cal. Lançatz la comanda « apt "
+"update » e reparatz las errors qu’aficha."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
+"D’unes de vòstres paquets son copats. Lançatz « apt install -f » per reparar "
+"lo problèma."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
+"Vòstre sistèma operatiu es pas a jorn. Aplicatz las mesas a jorn abans "
+"d’ensajar de metre a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "The following operations need to be performed:"
@@ -143,11 +151,11 @@ msgstr "deu èsser levat"
 #: usr/lib/linuxmint/mintupgrade/checks.py:310
 #: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Package repositories"
-msgstr ""
+msgstr "Depauses de paquets"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:310
 msgid "Checking package repositories..."
-msgstr ""
+msgstr "Verificacion dels depauses de paquets..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:338
 msgid ""
@@ -157,7 +165,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:346
 msgid "These repositories need to be disabled."
-msgstr ""
+msgstr "Aquestes depauses devon èsser desactivats."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:359
 msgid "Your APT policy is incorrect."
@@ -188,27 +196,27 @@ msgstr "Los problèmas seguentas son estats trobats :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Held packages"
-msgstr ""
+msgstr "Paquets mantenguts"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:438
 msgid "Looking for held packages..."
-msgstr ""
+msgstr "Verificacion dels paquets mantenguts"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:444
 msgid "The following packages are held:"
-msgstr ""
+msgstr "Los paquets seguents son mantenguts :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:451
 msgid "Held packages can break the upgrade."
-msgstr ""
+msgstr "Los paquets mantenguts pòdon copar la mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Foreign packages"
-msgstr ""
+msgstr "Paquets estrangièrs"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:465
 msgid "Looking for foreign packages..."
-msgstr ""
+msgstr "Verificacion dels paquets estrangièrs..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:471
 msgid ""
@@ -229,7 +237,7 @@ msgstr "Archiu"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:478
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "Autrament aquestes paquets pòdon crear de conflictes."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:493
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
@@ -268,7 +276,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:606
 msgid "The simulation was not successful."
-msgstr ""
+msgstr "La simulacion a fracassat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:607
 msgid "Upgrading would remove the following important packages:"
@@ -276,7 +284,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:608
 msgid "Unwanted removals"
-msgstr ""
+msgstr "Supression pas volguda"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:612
 msgid ""
@@ -302,7 +310,7 @@ msgstr "Informacions addicionalas"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:619
 msgid "The information below might help solve the issue."
-msgstr ""
+msgstr "Las informacions çai jos pòdon ajudar a trobar de solucions."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:620
 #: usr/lib/linuxmint/mintupgrade/checks.py:632
@@ -343,16 +351,16 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:735
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr ""
+msgstr "Vos cal %s de « %s » mas avètz sonque %s. Devètz liberar %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr ""
+msgstr "Talha del telecargament : %s. Espaci disc addicional necessari : %s"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Package download"
-msgstr ""
+msgstr "Telecargament de paquets"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:745
 msgid "Downloading packages..."
@@ -360,7 +368,7 @@ msgstr "Telecargaments dels paquets..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:757
 msgid "An error occurred while downloading the packages."
-msgstr ""
+msgstr "Una error s’es producha pendent lo telecargament dels paquets."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:764
 msgid "Session inhibition"
@@ -402,12 +410,12 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Finalizing the upgrade..."
-msgstr ""
+msgstr "Finalizacion de la mesa a nivèl..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:869
 #, python-format
 msgid "%s could not be installed."
-msgstr ""
+msgstr "%s a pas pogut èsser installat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:876
 msgid "mint-meta-codecs could not be installed."
@@ -467,7 +475,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
 msgid "Phase 1: Preparation"
-msgstr ""
+msgstr "Fasa 1 : preparacion"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
 msgid ""
@@ -477,7 +485,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
 msgid "Phase 2: Simulation and download"
-msgstr ""
+msgstr "Fasa 2 : simulacion e telecargament"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
 msgid "Your package repositories will now point towards the new release."
@@ -489,7 +497,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
 msgid "Phase 3: Upgrade"
-msgstr ""
+msgstr "Fasa 3 : mesa a nivèl"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
 msgid "The packages will now be upgraded."
@@ -522,11 +530,11 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "The upgrade was successful."
-msgstr ""
+msgstr "La mesa a nivèl a capitat."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Reboot the computer for all the changes to take effect."
-msgstr ""
+msgstr "Reaviatz l’ordenador per aplicar totes los cambiaments."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
@@ -534,7 +542,7 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"
-msgstr ""
+msgstr "Mesas a jorn aplicadas"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid ""

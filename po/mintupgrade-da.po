@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-08-13 12:53+0000\n"
+"PO-Revision-Date: 2023-02-22 16:35+0000\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-12-16 11:35+0000\n"
-"X-Generator: Launchpad (build 31c78762a8046acf7ab47372e5d588ebb3759d2e)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 "Language: da\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
@@ -52,12 +52,12 @@ msgstr "Din version af Linux Mint er ukendt. /etc/linuxmint/info mangler."
 #: usr/lib/linuxmint/mintupgrade/checks.py:171
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "Din version af Linux Mint er \"%s\". Kun %s kan opgraderes til %s."
+msgstr "Din version af Linux Mint er “%s”. Kun %s kan opgraderes til %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:177
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Din udgave af Linux Mint er \"%s\". Den kan ikke opgraderes til %s."
+msgstr "Din udgave af Linux Mint er “%s”. Den kan ikke opgraderes til %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:184
 msgid "Power source"
@@ -105,15 +105,14 @@ msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Pakkecachen kan ikke opdateres korrekt. Kør \"apt update\" og ret de fejl, "
-"der vises."
+"Pakkecachen kan ikke opdateres korrekt. Kør “apt update” og ret de fejl, der "
+"vises."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:243
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Nogle af dine pakker er ødelagte. Kør \"apt install -f\" for at løse "
-"problemet."
+"Nogle af dine pakker er ødelagte. Kør “apt install -f” for at løse problemet."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:254
 msgid ""
@@ -255,11 +254,11 @@ msgid ""
 "again'."
 msgstr ""
 "Brug indstillingerne til at tilføje de pakker, du vil beholde, og tryk så "
-"\"Tjek igen\"."
+"“Tjek igen”."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:519
 msgid "Then press 'Fix' to remove the packages listed above."
-msgstr "Tryk derefter \"Ret\" for at fjerne pakkerne nedenfor."
+msgstr "Tryk derefter “Ret” for at fjerne pakkerne nedenfor."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:531
 msgid "Pointing to the new release..."
@@ -357,7 +356,7 @@ msgstr ""
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Du skal have %s på \"%s\", men du har kun %s. Du skal frigøre yderligere %s."
+"Du skal have %s på “%s”, men du har kun %s. Du skal frigøre yderligere %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:739
 #, python-format

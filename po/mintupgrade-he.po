@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-08-18 08:18+0000\n"
+"PO-Revision-Date: 2023-01-22 12:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-12-16 11:35+0000\n"
-"X-Generator: Launchpad (build 31c78762a8046acf7ab47372e5d588ebb3759d2e)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 #, python-format
@@ -29,7 +29,7 @@ msgstr "פעולה זו אמורה היתה להתבצע כבר על ידי כל
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:37
 msgid "Were the repositories modified since?"
-msgstr "האם המאגרים הוסגלו מאז?"
+msgstr "האם המאגרים שונו מאז?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:38
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
@@ -72,7 +72,7 @@ msgstr "נא לחבר את המחשב למקור מתח לפני ניסיון ש
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "System snapshots"
-msgstr "תמונת־חטף  מערכת"
+msgstr "תמונות־חטף מערכת"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:195
 msgid "Checking system snapshots..."
@@ -433,7 +433,7 @@ msgstr "לאבטחת אתחול מוצלח, כלי השדרוג שחזר את /e
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:968
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr "עותק של הקובץ המוסגל נשמר בשם /etc/fstab.upgraded"
+msgstr "עותק מהקובץ שהוסגל נשמר בשם /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:66
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
@@ -533,7 +533,7 @@ msgstr "נא לאתחל את המחשב להחלת כול השינויים."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Recent Timeshift snapshot"
-msgstr "תמונת־חטף אחרונה של טיימשיפט"
+msgstr "תמונת־חטף טיימשיפט אחרונה"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid "Applied software updates"

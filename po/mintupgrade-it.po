@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-09-01 11:23+0000\n"
+"PO-Revision-Date: 2023-06-12 16:32+0000\n"
 "Last-Translator: Fs00 <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2022-12-16 11:35+0000\n"
-"X-Generator: Launchpad (build 31c78762a8046acf7ab47372e5d588ebb3759d2e)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 #, python-format
@@ -27,7 +27,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "This should have be done by the Upgrade Tool already."
 msgstr ""
-"Questo dovrebbe essere già stato fatto dallo Strumento di Aggiornamento."
+"Questo dovrebbe essere già stato fatto dallo Strumento di aggiornamento."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:37
 msgid "Were the repositories modified since?"
@@ -36,7 +36,7 @@ msgstr "I repository sono stati modificati da allora?"
 #: usr/lib/linuxmint/mintupgrade/checks.py:38
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
-"Eseguire nuovamente lo Strumento di Aggiornamento in modo da migrare "
+"Eseguire nuovamente lo Strumento di aggiornamento in modo da migrare "
 "nuovamente i repository."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:146
@@ -469,7 +469,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
 msgid "Upgrade Tool"
-msgstr "Strumento di Aggiornamento"
+msgstr "Strumento di aggiornamento"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:77
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
@@ -553,7 +553,7 @@ msgstr "Correggi"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "Check again"
-msgstr "Ricontrolla"
+msgstr "Controlla di nuovo"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The following error occurred:"
@@ -597,6 +597,6 @@ msgid ""
 "get removed during the upgrade. If you want to keep some of them, add them "
 "to the list below:"
 msgstr ""
-"I pacchetti orfani sono pacchetti che non sono presenti nei repository. "
-"Vengono rimossi durante l'aggiornamento. Se vuoi conservarne alcuni, "
+"I pacchetti orfani sono pacchetti che non sono presenti nei repository e che "
+"vengono rimossi durante l'aggiornamento. Se vuoi conservarne alcuni, "
 "aggiungili all'elenco seguente:"
