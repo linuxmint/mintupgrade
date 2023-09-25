@@ -128,7 +128,6 @@ class ShowInfoCheck(Check):
         super().__init__(title, "", callback)
         self.result = RESULT_INFO
         self.allow_recheck = False
-        self.allow_continue = True
 
     def do_run(self):
         print("=================")
