@@ -519,43 +519,33 @@ class APTOrphanCheck(Check):
         super().__init__(_("Orphan packages"), _("Looking for orphan packages..."), callback)
 
     def do_run(self):
-        if self.get_setting("check-orphans"):
-            self.orphans_to_remove = []
-            orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
-            if len(orphans) > 0:
-                settings = Gio.Settings(schema_id="com.linuxmint.mintupgrade")
-                to_keep = settings.get_strv("orphans-to-keep")
-                for orphan in orphans:
-                    pkg, version = orphan
-                    if pkg.name == "mintupgrade":
-                        continue
-                    if pkg.name.startswith("linux-image-"):
-                        continue
-                    if pkg.name.startswith("linux-headers-"):
-                        continue
-                    if pkg.name not in to_keep:
-                        self.orphans_to_remove.append(pkg.name)
+        orphan_pkgs = []
+        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        if len(orphans) > 0:
+            for orphan in orphans:
+                pkg, version = orphan
+                if pkg.name == "mintupgrade":
+                    continue
+                if pkg.name.startswith("linux-image-"):
+                    continue
+                if pkg.name.startswith("linux-headers-"):
+                    continue
+                orphan_pkgs.append(pkg.name)
 
-                if len(self.orphans_to_remove) > 0:
-                    self.result = RESULT_INFO
-                    self.info = []
-                    self.allow_recheck = True
-                    self.message = _("The following packages do not exist in the repositories:")
-                    #self.fix = self.remove_orphans
-                    table_list = TableList([""])
-                    table_list.show_column_names = False
-                    for orphan in self.orphans_to_remove:
-                        table_list.values.append([orphan])
-                    self.info.append(table_list)
-                    self.info.append(_("In some rare cases orphan packages can interfere with the upgrade."))
-                    self.info.append(_("If you decide to uninstall some of these packages press 'Check again' after their removal."))
-                    self.info.append(_("Press 'OK' to continue with the upgrade."))
-                    return
-
-    def remove_orphans(self):
-        if len(self.orphans_to_remove) > 0:
-            run_command('%s remove --purge %s %s' % (APT_GET, APT_QUIET, " ".join(self.orphans_to_remove)))
-
+        if len(orphan_pkgs) > 0:
+            self.result = RESULT_INFO
+            self.info = []
+            self.allow_recheck = True
+            self.message = _("The following packages do not exist in the repositories:")
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            for orphan in orphan_pkgs:
+                table_list.values.append([orphan])
+            self.info.append(table_list)
+            self.info.append(_("In some rare cases orphan packages can interfere with the upgrade."))
+            self.info.append(_("If you decide to uninstall some of these packages press 'Check again' after their removal."))
+            self.info.append(_("Press 'OK' to continue with the upgrade."))
+            return
 
 # Switch to the target repositories
 class UpdateReposCheck(Check):
