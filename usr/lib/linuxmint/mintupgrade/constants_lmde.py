@@ -1,17 +1,17 @@
-ORIGIN = "LMDE 4 'Debbie'"
-ORIGIN_CODENAME = "debbie"
-ORIGIN_BASE_CODENAME = "buster"
+ORIGIN = "LMDE 5 'Elsie'"
+ORIGIN_CODENAME = "elsie"
+ORIGIN_BASE_CODENAME = "bullseye"
 
-DESTINATION = "LMDE 5 'Elsie'"
-DESTINATION_CODENAME = "elsie"
-DESTINATION_BASE_CODENAME = "bullseye"
+DESTINATION = "LMDE 6 'Faye'"
+DESTINATION_CODENAME = "faye"
+DESTINATION_BASE_CODENAME = "bookworm"
 
 SUPPORTED_EDITIONS = ["cinnamon"]
 
-CHECK_ABSENT = ["ippusbxd"]
+CHECK_ABSENT = []
 
 CHECK_PRESENT = ["os-prober"]
-CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-keyring", "mintsystem"]
+CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "debian-keyring", "debian-archive-keyring", "mintsystem"]
 
 KERNEL_META_32 = ["linux-image-686", "linux-headers-686"]
 KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
@@ -19,44 +19,22 @@ KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
-    "brltty",
-    "desktop-base",
-    "gnote",
-    "ipp-usb",
-    "usrmerge"
+    "gnome-font-viewer"
 ]
 
 PACKAGES_ADDITIONS = [
-    "alsa-topology-conf",
-    "alsa-ucm-conf",
-    "bulky",
-    "cryptsetup-initramfs",
-    "cryptsetup-run",
-    "fuse3",
-    "gamemode",
-    "gvfs-fuse",
-    "hypnotix",
-    "libgdk-pixbuf2.0-bin",
-    "libreoffice-gtk3",
-    "mesa-vdpau-drivers",
-    "mesa-vulkan-drivers",
-    "mintreport",
-    "neofetch",
-    "network-manager-config-connectivity-debian",
-    "pipewire",
-    "plymouth-label",
-    "seahorse",
-    "sticky",
-    "system-config-printer",
-    "thingy",
-    "usrmerge",
-    "warpinator",
-    "webapp-manager",
-    "xapp-appimage-thumbnailer",
-    "xapp-epub-thumbnailer",
-    "xapp-mp3-thumbnailer",
-    "xapp-raw-thumbnailer",
-    "youtube-dl"
+    "wmctrl",
+    "mint-l-theme",
+    "mint-l-icons",
+    "heif-gdk-pixbuf",
+    "xdg-desktop-portal-xapp",
+    "switcheroo-control",
+    "mint-backgrounds-victoria",
+    "systemd-timesyncd",
+    "pipewire-audio",
+    "touchegg",
+    "zstd",
+    "yt-dlp"
 ]
 
 IMPORTANT_PACKAGES = [
