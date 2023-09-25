@@ -194,9 +194,10 @@ class TimeshiftCheck(Check):
 
     def do_run(self):
         if self.get_setting("check-timeshift"):
-            self.result = RESULT_ERROR
-            self.message = _("Perform a Timeshift system snapshot before attempting to upgrade.")
-            self.info.append(_("If the upgrade isn't successful, a system snapshot will allow you to go back in time and revert all the changes."))
+            self.result = RESULT_WARNING
+            self.message = _("If the upgrade isn't successful, a system snapshot will allow you to go back in time and revert all the changes.")
+            self.info.append(_("Press 'Fix' to perform a system snapshot."))
+
             if os.path.exists("/usr/bin/timeshift"):
                 today = datetime.datetime.today().strftime('%Y-%m-%d')
                 if today in subprocess.getoutput("timeshift --list"):
