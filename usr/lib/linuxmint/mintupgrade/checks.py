@@ -537,16 +537,19 @@ class APTOrphanCheck(Check):
                         self.orphans_to_remove.append(pkg.name)
 
                 if len(self.orphans_to_remove) > 0:
-                    self.result = RESULT_ERROR
+                    self.result = RESULT_INFO
+                    self.info = []
+                    self.allow_recheck = True
                     self.message = _("The following packages do not exist in the repositories:")
-                    self.fix = self.remove_orphans
+                    #self.fix = self.remove_orphans
                     table_list = TableList([""])
                     table_list.show_column_names = False
                     for orphan in self.orphans_to_remove:
                         table_list.values.append([orphan])
                     self.info.append(table_list)
-                    self.info.append(_("Add the packages you want to keep using the preferences, then press 'Check again'."))
-                    self.info.append(_("Then press 'Fix' to remove the packages listed above."))
+                    self.info.append(_("In some rare cases orphan packages can interfere with the upgrade."))
+                    self.info.append(_("If you decide to uninstall some of these packages press 'Check again' after their removal."))
+                    self.info.append(_("Press 'OK' to continue with the upgrade."))
                     return
 
     def remove_orphans(self):
