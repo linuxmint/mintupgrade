@@ -308,6 +308,26 @@ class APTRepoCheck(Check):
         super().__init__(_("Package repositories"), _("Checking package repositories..."), callback)
 
     def do_run(self):
+
+        # Error out if any deb822 repositories are present. We do not yet support them.
+        # python3-apt in bookworm has deb822 support, but the version in bullseye doesn't.
+        deb822_sources = []
+        sources_dir = "/etc/apt/sources.list.d/"
+        if os.path.exists(sources_dir):
+            for f in os.listdir(sources_dir):
+                if f.endswith(".sources"):
+                    deb822_sources.append(os.path.join(sources_dir, f))
+        if len(deb822_sources) > 0:
+            self.result = RESULT_ERROR
+            self.message = _("The following sources are defined in DEB822 format. This format isn't supported yet.")
+            table_list = TableList([""])
+            table_list.show_column_names = False
+            for repo in deb822_sources:
+                table_list.values.append([repo])
+            self.info.append(table_list)
+            self.info.append(_("Backup and then delete these files to continue."))
+            return
+
         apt_pkg.init_config()
         self.sources = aptsources.sourceslist.SourcesList(withMatcher=False)
         self.mint_repos = []
@@ -375,8 +395,8 @@ class APTRepoCheck(Check):
             if timestamp == None:
                 # Retry with standard repo layout (for repos which use the mint codenames)
                 new_dist = repo.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
-                url = "%s/dists/%s/Release" % (repo.uri, new_dist)                
-                timestamp = self.get_url_last_modified(url)           
+                url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+                timestamp = self.get_url_last_modified(url)
             if timestamp == None:
                 problems.append(_("%s is unreachable") % repo.uri)
             elif mint_age > 2:
