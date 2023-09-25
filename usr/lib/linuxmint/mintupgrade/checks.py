@@ -530,6 +530,10 @@ class APTOrphanCheck(Check):
                     pkg, version = orphan
                     if pkg.name == "mintupgrade":
                         continue
+                    if pkg.name.startswith("linux-image-"):
+                        continue
+                    if pkg.name.startswith("linux-headers-"):
+                        continue
                     if pkg.name not in to_keep:
                         self.orphans_to_remove.append(pkg.name)
 
