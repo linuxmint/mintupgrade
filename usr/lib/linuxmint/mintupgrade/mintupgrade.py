@@ -137,6 +137,7 @@ class MainWindow():
 
     def letsgo(self, button):
         self.checks = []
+        pre_upgrade_orphans = []
         skip = apt_points_to_destination()
         if skip:
             print("Note: The APT repositories point towards the destination.")
@@ -152,7 +153,7 @@ class MainWindow():
         self.checks.append(APTRepoCheck(callback=self.process_check_result))
         if not skip:
             self.checks.append(APTForeignCheck(callback=self.process_check_result))
-            self.checks.append(APTOrphanCheck(callback=self.process_check_result))
+            self.checks.append(APTOrphanCheck(pre_upgrade_orphans, self.process_check_result))
         info = ShowInfoCheck(_("Phase 2: Simulation and download"), callback=self.process_check_result)
         info.message = _("Your package repositories will now point towards the new release.")
         info.message = _("A few more tests will be run and package updates will be downloaded.")
@@ -168,7 +169,10 @@ class MainWindow():
         self.checks.append(PreUpgradeCheck(callback=self.process_check_result))
         self.checks.append(DistUpgradeCheck(callback=self.process_check_result))
         self.checks.append(APTForeignCheck(callback=self.process_check_result))
-        self.checks.append(APTOrphanCheck(callback=self.process_check_result))
+        if not skip:
+            # Only remove orphans if we started the upgrade pointing at the origin repos
+            # otherwise pre_upgrade_orphans would be empty and we could remove wanted orphan pkgs.
+            self.checks.append(APTRemoveOrphansCheck(pre_upgrade_orphans, self.process_check_result))
         self.checks.append(PostUpgradeCheck(callback=self.process_check_result))
         self.run_next_check()
 
