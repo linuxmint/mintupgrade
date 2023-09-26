@@ -1,3 +1,35 @@
+mintupgrade (2023.09.26) faye; urgency=medium
+
+  [ kinglike1337 ]
+  * Fix for external apt repos with mint codenames (#40)
+  * Rewrite https keyword used by apt-cacher-ng (#41)
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+  * l10n: Update files
+  * l10n: Update POT
+
+  [ rilysh ]
+  * clean: remove all unused deps (#66)
+
+  [ Benjamin Loison ]
+  * Correct a typo in `po/mintupgrade-fr{, _CA}.po` (#64)
+
+  [ Clement Lefebvre ]
+  * LMDE: Update info for LMDE 6
+  * Refuse deb822 sources
+  * timeshift: Rephrase check page
+  * orphans: Don't list kernel pkgs
+  * Remove unused variable
+  * orphans: Turn check into an INFO check
+  * Remove now unused orphan management code
+  * Fix orphan management
+  * Remove obsolete special case
+  * LMDE: Add non-free-firmware component to APT sources
+  * Remove desktop-base and malcontent
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Sep 2023 14:11:40 +0100
+
 mintupgrade (2022.08.13) vanessa; urgency=medium
 
   [ Corey Wetherington ]
