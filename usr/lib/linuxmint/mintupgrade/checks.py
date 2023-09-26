@@ -607,7 +607,14 @@ class UpdateReposCheck(Check):
             elif ORIGIN_BASE_CODENAME in source.dist:
                 # Base repo
                 source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
-                print_output("Switching %s to %s" % (source.uri, source.dist))
+                print_output(f"Switching {source.uri} to {source.dist}")
+                # In Debian Bookworm (LMDE 6), a new component called "non-free-firmware" is introduced.
+                if "main" in source.comps and \
+                   "contrib" in source.comps and \
+                   "non-free" in source.comps and \
+                   "non-free-firmware" not in source.comps:
+                   source.comps.append("non-free-firmware")
+                   print_output(f"Adding non-free-firmware component to {source.uri}")
             if DESTINATION_BASE_CODENAME in source.dist and "partner" in source.comps:
                 print_output("Disabling partner repo (discontinued).")
                 source.set_enabled(False)
