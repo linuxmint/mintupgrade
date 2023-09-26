@@ -606,11 +606,7 @@ class UpdateReposCheck(Check):
                 print_output("Switching %s to %s" % (source.uri, source.dist))
             elif ORIGIN_BASE_CODENAME in source.dist:
                 # Base repo
-                if source.dist == "buster/updates":
-                    # special case, the repo syntax changed between LMDE 4 and LMDE 5
-                    source.dist = "bullseye-security"
-                else:
-                    source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
+                source.dist = source.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
                 print_output("Switching %s to %s" % (source.uri, source.dist))
             if DESTINATION_BASE_CODENAME in source.dist and "partner" in source.comps:
                 print_output("Disabling partner repo (discontinued).")
