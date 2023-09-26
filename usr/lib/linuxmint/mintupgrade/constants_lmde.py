@@ -19,7 +19,10 @@ KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
-    "gnome-font-viewer"
+    "gnome-font-viewer",
+    "gnone-control-center",
+    "desktop-base",
+    "malcontent"
 ]
 
 PACKAGES_ADDITIONS = [

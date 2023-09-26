@@ -992,6 +992,10 @@ class PostUpgradeCheck(Check):
         print_output("Running apt-get clean")
         run_command("%s clean" % APT_GET)
 
+        # Update initramfs
+        print_output("Running update-initramfs -u")
+        run_command("update-initramfs -u")
+
         # Adjust Grub title
         if os.path.exists("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title"):
             os.system("/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title")
