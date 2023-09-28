@@ -194,7 +194,7 @@ class MainWindow():
             print("Check succeeded: ", check.title)
             if check in self.checks:
                 self.checks.remove(check)
-                self.run_next_check()
+            self.run_next_check()
         elif check.result == RESULT_EXCEPTION:
             self.builder.get_object("upgrade_stack").set_visible_child_name("page_exception")
             self.builder.get_object("label_stacktrace").set_text(check.message)
