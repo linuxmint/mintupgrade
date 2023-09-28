@@ -521,6 +521,8 @@ class APTOrphanCheck(Check):
         self.pre_upgrade_orphans = pre_upgrade_orphans
 
     def do_run(self):
+        self.pre_upgrade_orphans.clear()
+
         orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
         if len(orphans) > 0:
             for orphan in orphans:
@@ -532,6 +534,8 @@ class APTOrphanCheck(Check):
                 if pkg.name.startswith("linux-headers-"):
                     continue
                 self.pre_upgrade_orphans.append(pkg.name)
+
+        self.info = []
 
         if len(self.pre_upgrade_orphans) > 0:
             self.result = RESULT_INFO
@@ -547,6 +551,8 @@ class APTOrphanCheck(Check):
             self.info.append(_("If you decide to uninstall some of these packages press 'Check again' after their removal."))
             self.info.append(_("Press 'OK' to continue with the upgrade."))
             return
+
+        self.result = RESULT_SUCCESS
 
 # Remove newly orphaned pkgs (post upgrade)
 class APTRemoveOrphansCheck(Check):
