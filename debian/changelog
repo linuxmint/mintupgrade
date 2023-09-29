@@ -1,3 +1,17 @@
+mintupgrade (2023.09.29) faye; urgency=medium
+
+  [ Michael Webster ]
+  * Fix pre-upgrade orphan re-check.
+
+  [ Butterfly ]
+  * constants_lmde.py: fix typo (#75)
+
+  [ Clement Lefebvre ]
+  * LMDE: Remove /etc/lsb-release
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 29 Sep 2023 15:32:52 +0100
+
 mintupgrade (2023.09.26) faye; urgency=medium
 
   [ kinglike1337 ]
