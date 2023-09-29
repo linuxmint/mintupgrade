@@ -998,6 +998,10 @@ class PostUpgradeCheck(Check):
         print_output("Running apt-get clean")
         run_command("%s clean" % APT_GET)
 
+        # Remove /etc/lsb-release (LMDE only, only /etc/os-release is present in Debian 12+)
+        if IS_LMDE and os.path.exists("/etc/lsb-release"):
+            run_command("rm -f /etc/lsb-release")
+
         # Update initramfs
         print_output("Running update-initramfs -u")
         run_command("update-initramfs -u")
