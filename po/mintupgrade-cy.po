@@ -7,89 +7,85 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2022-08-11 13:55+0200\n"
-"PO-Revision-Date: 2022-08-15 07:35+0000\n"
+"POT-Creation-Date: 2023-09-26 14:10+0100\n"
+"PO-Revision-Date: 2023-09-28 09:07+0000\n"
 "Last-Translator: Rhoslyn Prys <rprys@posteo.net>\n"
 "Language-Team: Welsh <cy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-07-07 12:58+0000\n"
-"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
+"X-Launchpad-Export-Date: 2023-09-29 12:45+0000\n"
+"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
 "Language: cy\n"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:34
+#: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
 msgstr ""
 "Mae angen i'r storfeydd pecynnau gyfeirio at y rhyddhad newydd (%s/%s)."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:36
+#: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
 msgstr "Dylai hyn fod wedi ei wneud gan y Teclyn Diweddaru eisoes."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:37
+#: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
 msgstr "A gafodd y storfeydd eu newid ers hynny?"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:38
+#: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr "Ail redwch y teclyn Diweddaru fel ei bod yn mudo'r storfeydd eto."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:146
+#: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
 msgstr "Y Fersiwn o Linux Mint"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:146
+#: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
 msgstr "Wrthi'n gwirio'ch fersiwn chi o Linux Mint..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:154
+#: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr ""
 "Nid yw eich fersiwn chi o Linux Mint yn hysbys. Mae /etc/linuxmint/info ar "
 "goll."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:171
+#: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
 "'%s' yw eich fersiwn chi o Linux Mint. Dim ond %s y mae modd ei uwchraddio i "
 "%s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:177
+#: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
 msgstr ""
 "'%s' yw eich rhifyn chi o Linux Mint. Nid oes modd ei uwchraddio i %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:184
+#: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Power source"
 msgstr "Ffynhonnell pŵer"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:184
+#: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Checking the power source..."
 msgstr "Wrthi'n gwirio'r ffynhonnell pŵer..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:189
+#: usr/lib/linuxmint/mintupgrade/checks.py:186
 msgid "Connect the computer to a power source before attempting to upgrade."
 msgstr "Cysylltwch y cyfrifiadur â ffynhonnell pŵer cyn ceisio uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:195
+#: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "System snapshots"
 msgstr "Cipluniau'r system"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:195
+#: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Checking system snapshots..."
 msgstr "Wrthi'n gwirio cipluniau'r system..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:200
-msgid "Perform a Timeshift system snapshot before attempting to upgrade."
-msgstr "Gwnewch giplun system Timeshift cyn ceisio uwchraddio."
-
-#: usr/lib/linuxmint/mintupgrade/checks.py:201
+#: usr/lib/linuxmint/mintupgrade/checks.py:197
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
@@ -97,15 +93,19 @@ msgstr ""
 "Os nad yw'r uwchraddio'n llwyddiannus, bydd ciplun o'r system yn caniatáu i "
 "chi fynd yn ôl mewn amser ac ailosod yr holl newidiadau."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:216
+#: usr/lib/linuxmint/mintupgrade/checks.py:198
+msgid "Press 'Fix' to perform a system snapshot."
+msgstr "Pwyso 'Trwsio' i greu ciplun o'r system"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
 msgstr "Storfa APT"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:216
+#: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "Checking the APT cache..."
 msgstr "Wrthi'n gwirio'r storfa APT..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:234
+#: usr/lib/linuxmint/mintupgrade/checks.py:232
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
@@ -113,13 +113,13 @@ msgstr ""
 "Nid yw pecyn eich storfa yn adnewyddu'n iawn. Rhedwch 'apt update' a "
 "thrwsio'r gwallau y mae'n eu hamlygu."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:243
+#: usr/lib/linuxmint/mintupgrade/checks.py:241
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
 "Mae rhai o'ch pecynnau wedi torri. Rhedwch 'apt install -f' i ddatrys hyn."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:254
+#: usr/lib/linuxmint/mintupgrade/checks.py:252
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
@@ -127,37 +127,49 @@ msgstr ""
 "Nid yw eich system weithredu yn gyfredol. Gosodwch y diweddariadau sydd ar "
 "gael cyn ceisio uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:275
+#: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "The following operations need to be performed:"
 msgstr "Mae angen cyflawni'r gweithrediadau canlynol:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:277
-#: usr/lib/linuxmint/mintupgrade/checks.py:473
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Package"
 msgstr "Pecyn"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:277
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "Operation"
 msgstr "Gweithrediad"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:279
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be installed"
 msgstr "angen eu gosod"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:281
+#: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be removed"
 msgstr "angen eu dileu"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:310
-#: usr/lib/linuxmint/mintupgrade/checks.py:531
+#: usr/lib/linuxmint/mintupgrade/checks.py:308
+#: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Package repositories"
 msgstr "Storfeydd pecynnau"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:310
+#: usr/lib/linuxmint/mintupgrade/checks.py:308
 msgid "Checking package repositories..."
 msgstr "Wrthi'n gwirio'r storfeydd pecynnau..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:338
+#: usr/lib/linuxmint/mintupgrade/checks.py:322
+msgid ""
+"The following sources are defined in DEB822 format. This format isn't "
+"supported yet."
+msgstr ""
+"Mae'r ffynonellau canlynol wedi'u diffinio mewn fformat DEB822. Nid yw'r "
+"fformat yna'n cael ei gynnal eto."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:328
+msgid "Backup and then delete these files to continue."
+msgstr "Gwnewch gopi wrth gefn ac yna dileu'r ffeiliau hyn i barhau."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
@@ -165,134 +177,142 @@ msgstr ""
 "Nid yw'r storfeydd canlynol yn cefnogi'ch fersiwn chi o Linux Mint yn "
 "benodol."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:346
+#: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
 msgstr "Mae angen analluogi'r storfeydd hyn."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:359
+#: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
 msgstr "Mae eich polisi APT yn anghywir."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:360
+#: usr/lib/linuxmint/mintupgrade/checks.py:378
 msgid "Reboot your computer."
 msgstr "Ailgychwynnwch eich cyfrifiadur."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:378
+#: usr/lib/linuxmint/mintupgrade/checks.py:401
 #, python-format
 msgid "%s is unreachable"
 msgstr "Nid oes modd cyrraedd %s"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:383
+#: usr/lib/linuxmint/mintupgrade/checks.py:406
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
 msgstr "Nid yw %s yn gyfoes. Ewch i ddrych gwahanol."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:395
+#: usr/lib/linuxmint/mintupgrade/checks.py:418
 #, python-format
 msgid "%s does not support %s"
 msgstr "Nid yw %s yn cefnogi %s"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:399
+#: usr/lib/linuxmint/mintupgrade/checks.py:422
 msgid "The following problems were found:"
 msgstr "Wedi canfod y problemau canlynol:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:438
+#: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Held packages"
 msgstr "Pecynnau sy'n cael eu dal"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:438
+#: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Looking for held packages..."
 msgstr "Chwilio am becynnau sy'n cael eu dal..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:444
+#: usr/lib/linuxmint/mintupgrade/checks.py:470
 msgid "The following packages are held:"
 msgstr "Mae'r pecynnau canlynol yn cael eu dal:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:451
+#: usr/lib/linuxmint/mintupgrade/checks.py:477
 msgid "Held packages can break the upgrade."
 msgstr "Gall pecynnau sy'n cael eu dal dorri'r uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:465
+#: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Foreign packages"
 msgstr "Pecynnau estron"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:465
+#: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Looking for foreign packages..."
 msgstr "Yn chwilio am becynnau tramor..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:471
+#: usr/lib/linuxmint/mintupgrade/checks.py:497
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr "Mae angen israddio'r pecynnau canlynol yn ôl i fersiynau swyddogol:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:473
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
 msgstr "Y Fersiwn Osodedig"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:473
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Official version"
 msgstr "Y fersiwn swyddogol"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:473
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Archive"
 msgstr "Archif"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:478
+#: usr/lib/linuxmint/mintupgrade/checks.py:504
 msgid "Otherwise these packages can create conflicts."
 msgstr "Fel arall, gall y pecynnau hyn greu gwrthdaro."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:493
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
+#: usr/lib/linuxmint/mintupgrade/checks.py:520
+#: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
 msgstr "Pecynnau amddifad"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:493
+#: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
 msgstr "Wrthi'n chwilio am becynnau amddifad..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:511
+#: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
 msgstr "Nid yw'r pecynnau canlynol yn bodoli yn y storfeydd:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:518
+#: usr/lib/linuxmint/mintupgrade/checks.py:546
+msgid "In some rare cases orphan packages can interfere with the upgrade."
+msgstr ""
+"Maen achosion prin mae pecynnau amddifad yn gallu ymyrryd â'r diweddaru."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
-"Add the packages you want to keep using the preferences, then press 'Check "
-"again'."
+"If you decide to uninstall some of these packages press 'Check again' after "
+"their removal."
 msgstr ""
-"Ychwanegwch y pecynnau rydych am barhau i'w cadw gan ddefnyddio'r "
-"dewisiadau, yna pwyswch 'Gwirio eto'."
+"Os ydych yn penderfynu dadosod rhai o'r pecynnau hyn, pwyswch 'Gwirio eto' "
+"ar ôl eu tynnu."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:519
-msgid "Then press 'Fix' to remove the packages listed above."
-msgstr ""
-"Yna pwyswch 'Trwsio' i gael gwared ar y pecynnau sy'n cael eu rhestru uchod."
+#: usr/lib/linuxmint/mintupgrade/checks.py:548
+msgid "Press 'OK' to continue with the upgrade."
+msgstr "Pwyswch 'Iawn' i barhau gyda'r diweddariad."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:531
+#: usr/lib/linuxmint/mintupgrade/checks.py:556
+msgid "Removing newly orphaned packages..."
+msgstr "Yn tynnu'r pecynnau amddifad newydd..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
 msgstr "Yn cyfeirio at y ryddhad newydd..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:567
+#: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
 msgstr "Efelychiad o'r diweddariad"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:567
+#: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
 "Wrthi'n efelychu uwchraddiad i wirio gofod disg caled a phroblemau posibl..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:606
+#: usr/lib/linuxmint/mintupgrade/checks.py:666
 msgid "The simulation was not successful."
 msgstr "Nid oedd yr efelychiad yn llwyddiannus."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:607
+#: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
 msgstr "Bydd uwchraddio yn dileu'r pecynnau pwysig canlynol:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:608
+#: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
 msgstr "Eitemau diangen"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:612
+#: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
@@ -300,63 +320,63 @@ msgstr ""
 "Mae hyn yn arwydd bod rhywbeth o'i le a bod angen ei drwsio cyn mynd "
 "ymhellach."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:614
+#: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
 msgstr "Y datrysiad sy'n cael ei argymhell"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:615
+#: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
 "Defnyddiwch apt-get mewn terfynell i ddatrys problemau a datrys y mater."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:616
+#: usr/lib/linuxmint/mintupgrade/checks.py:676
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr ""
 "Peidiwch ag oedi cyn ceisio cymorth ar y fforymau a'r ystafell sgwrsio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:618
+#: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
 msgstr "Gwybodaeth ychwanegol"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:619
+#: usr/lib/linuxmint/mintupgrade/checks.py:679
 msgid "The information below might help solve the issue."
 msgstr "Efallai y bydd y wybodaeth isod yn helpu i ddatrys y mater."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:620
-#: usr/lib/linuxmint/mintupgrade/checks.py:632
+#: usr/lib/linuxmint/mintupgrade/checks.py:680
+#: usr/lib/linuxmint/mintupgrade/checks.py:692
 msgid "Kept packages"
 msgstr "Pecynnau wedi'u cadw"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:621
-#: usr/lib/linuxmint/mintupgrade/checks.py:636
+#: usr/lib/linuxmint/mintupgrade/checks.py:681
+#: usr/lib/linuxmint/mintupgrade/checks.py:696
 msgid "Removed packages"
 msgstr "Pecynnau wedi'u tynnu"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:622
-#: usr/lib/linuxmint/mintupgrade/checks.py:635
+#: usr/lib/linuxmint/mintupgrade/checks.py:682
+#: usr/lib/linuxmint/mintupgrade/checks.py:695
 msgid "Added packages"
 msgstr "Pecynnau wedi'u hychwanegu"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:623
-#: usr/lib/linuxmint/mintupgrade/checks.py:631
+#: usr/lib/linuxmint/mintupgrade/checks.py:683
+#: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr ""
 "Pecynnau wedi'u diweddaru: %d, wedi'u hychwanegu: %d , wedi'u cadw: %d, "
 "wedi'u dileu: %d"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:626
+#: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
 msgstr "Bydd uwchraddio yn cyflawni'r newidiadau canlynol."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:634
+#: usr/lib/linuxmint/mintupgrade/checks.py:694
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
 "Nodyn: Yn ddelfrydol, peidiwch cadw unrhyw becynnau. Gall hyn fod yn arwydd "
 "o broblem."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:638
+#: usr/lib/linuxmint/mintupgrade/checks.py:698
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
@@ -364,91 +384,91 @@ msgstr ""
 "Ewch drwy'r rhestr uchod a gwnewch yn siŵr eich bod yn hapus gyda'r rhai "
 "sy'n cael eu tynnu cyn mynd ymlaen gyda'r uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:735
+#: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
 "Mae angen %s ar '%s' ond dim ond %s sydd gennych. Rhaid i chi ryddhau %s yn "
 "ychwanegol."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:739
+#: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
 msgstr "Maint llwytho: %s. Angen lle ychwanegol: %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:745
+#: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
 msgstr "Llwytho pecyn i lawr"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:745
+#: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Downloading packages..."
 msgstr "Wrthi'n llwytho pecynnau i lawr..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:757
+#: usr/lib/linuxmint/mintupgrade/checks.py:817
 msgid "An error occurred while downloading the packages."
 msgstr "Bu gwall wrth llwytho'r pecynnau i lawr."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:764
+#: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
 msgstr "Ataliad sesiwn"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:764
+#: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
 msgstr "Wrthi'n atal y sesiwn..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:773
+#: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
 msgstr "Paratoi'r uwchraddio"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:773
+#: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Preparing the upgrade..."
 msgstr "Wrthi'n paratoi'r uwchraddio..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:802
+#: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrade phase"
 msgstr "Cyfnod uwchraddio"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:802
+#: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrading the system..."
 msgstr "Wrthi'n uwchraddio'r system..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:819
-#: usr/lib/linuxmint/mintupgrade/checks.py:825
+#: usr/lib/linuxmint/mintupgrade/checks.py:879
+#: usr/lib/linuxmint/mintupgrade/checks.py:885
 msgid "An issue was detected during the upgrade."
 msgstr "Canfuwyd problem yn ystod yr uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:844
+#: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr "Mae dal angen diweddaru %d pecyn (%d eu cadw, %d eu dileu)"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:850
+#: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
 msgstr "Cyfnod olaf"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:850
+#: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Finalizing the upgrade..."
 msgstr "Wrthi'n cwblhau'r uwchraddio..."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:869
+#: usr/lib/linuxmint/mintupgrade/checks.py:929
 #, python-format
 msgid "%s could not be installed."
 msgstr "Nid oedd modd gosod %s."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:876
+#: usr/lib/linuxmint/mintupgrade/checks.py:936
 msgid "mint-meta-codecs could not be installed."
 msgstr "Nid oedd modd gosod mint-meta-codecs."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:884
-#: usr/lib/linuxmint/mintupgrade/checks.py:907
+#: usr/lib/linuxmint/mintupgrade/checks.py:944
+#: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid "The following packages could not be installed:"
 msgstr "Nid oedd modd gosod y pecynnau canlynol:"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:966
+#: usr/lib/linuxmint/mintupgrade/checks.py:1030
 msgid "/etc/fstab was modified during the upgrade."
 msgstr "Cafodd /etc/fstab ei addasu yn ystod yr uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:967
+#: usr/lib/linuxmint/mintupgrade/checks.py:1031
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
@@ -456,48 +476,40 @@ msgstr ""
 "Er mwyn sicrhau cychwyn llwyddiannus, adferodd y teclyn uwchraddio eich "
 "/etc/fstab gwreiddiol"
 
-#: usr/lib/linuxmint/mintupgrade/checks.py:968
+#: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr "Cadwyd copi o'r ffeil wedi'i haddasu fel /etc/fstab.upgraded"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:66
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:335 generate_desktop_files:26
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:1
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Upgrade Tool"
 msgstr "Teclyn Diweddaru"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:77
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:74
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:2
 #, python-format
 msgid "Upgrade to %s"
 msgstr "Uwchraddiwch i %s"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:108
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:90
 msgid "Preferences"
 msgstr "Dewisiadau"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:113
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:334
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:95
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:284
 msgid "About"
 msgstr "Ynghylch"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:118
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:100
 msgid "Quit"
 msgstr "Gadael"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:151
-msgid "Please specify the name of the package to keep:"
-msgstr "Nodwch enw'r pecyn i'w gadw:"
-
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:152
-msgid "Orphan package"
-msgstr "Pecyn amddifad"
-
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:197
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
 msgstr "Cam 1: Paratoi"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:198
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
@@ -505,72 +517,72 @@ msgstr ""
 "Bydd cyfres o brofion nawr yn cael eu cynnal i baratoi'r cyfrifiadur ar "
 "gyfer yr uwchraddio."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:210
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
 msgstr "Cam 2: Efelychu a llwytho i lawr"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:211
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
 msgstr "Bydd eich storfeydd pecyn nawr yn pwyntio at y ryddhad newydd."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:212
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
 "Bydd ychydig mwy o brofion yn cael eu rhedeg a bydd uwchraddiadau pecyn yn "
 "cael eu llwytho i lawr."
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:218
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
 msgstr "Cam 3: Uwchraddio"
 
-#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:219
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
 msgstr "Bydd y pecynnau nawr yn cael eu huwchraddio."
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
 "Bydd y rhaglen hon yn gofyn rhai cwestiynau i chi ac yn uwchraddio'ch system "
 "weithredu."
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
 msgstr "Iawn, ffwrdd a ni"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "OK"
 msgstr "Iawn"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "Fix"
 msgstr "Trwsio"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Check again"
 msgstr "Gwirio eto"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "The following error occurred:"
 msgstr "Digwyddodd y gwall canlynol:"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The upgrade was successful."
 msgstr "Roedd yr uwchraddio'n llwyddiannus."
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "Reboot the computer for all the changes to take effect."
 msgstr "Ailgychwynnwch y cyfrifiadur er mwyn i'r holl newidiadau ddod i rym."
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
 msgstr "Ciplun Timeshift diweddar"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
 msgstr "Y diweddariadau meddalwedd gosodwyd"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
@@ -578,20 +590,10 @@ msgstr ""
 "Mae'r gofynion hyn yno i warantu uwchraddio diogel. Dim ond os ydych chi'n "
 "gwybod beth rydych chi'n ei wneud y dylech chi eu hanalluogi."
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid "Supported Linux Mint version"
 msgstr "Y fersiwn o Linux Mint sy'n cael ei gefnogi"
 
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:17
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Requirements"
 msgstr "Gofynion"
-
-#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:18
-msgid ""
-"Orphan packages are packages that are not present in the repositories. They "
-"get removed during the upgrade. If you want to keep some of them, add them "
-"to the list below:"
-msgstr ""
-"Pecynnau amddifad yw pecynnau nad ydynt ar gael yn y storfeydd. Maen nhw'n "
-"cael eu tynnu yn ystod y diweddariad. Os hoffech chi gadw rhai ohonyn nhw, "
-"ychwanegwch nhw i'r rhestr isod:"
