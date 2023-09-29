@@ -20,7 +20,7 @@ PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
     "gnome-font-viewer",
-    "gnone-control-center",
+    "gnome-control-center",
     "desktop-base",
     "malcontent"
 ]
