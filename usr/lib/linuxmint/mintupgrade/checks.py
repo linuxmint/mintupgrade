@@ -382,28 +382,30 @@ class APTRepoCheck(Check):
         # Check up-to-date-ness on Mint mirror
         problems = []
         mint_timestamp = self.get_url_last_modified("http://packages.linuxmint.com/db/version")
-        mint_age = None
-        if mint_timestamp != None:
+        if mint_timestamp is None:
+            problems.append(_("%s is unreachable") % "http://packages.linuxmint.com")
+        else:
             mint_date = datetime.datetime.fromtimestamp(mint_timestamp)
             now = datetime.datetime.now()
             mint_age = (now - mint_date).days
             print_output(f"Mint repository last modified on {mint_date}")
-        for repo in self.mint_repos:
-            if "packages.linuxmint.com" in repo.uri:
-                continue
-            timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
-            if timestamp == None:
-                # Retry with standard repo layout (for repos which use the mint codenames)
-                new_dist = repo.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
-                url = "%s/dists/%s/Release" % (repo.uri, new_dist)
-                timestamp = self.get_url_last_modified(url)
-            if timestamp == None:
-                problems.append(_("%s is unreachable") % repo.uri)
-            elif mint_age > 2:
-                date = datetime.datetime.fromtimestamp(timestamp)
-                offset = (mint_date - date).days
-                if mint_age > 2 and offset > 2:
-                    problems.append(_("%s is not up to date. Switch to a different mirror.") % repo.uri)
+
+            for repo in self.mint_repos:
+                if "packages.linuxmint.com" in repo.uri:
+                    continue
+                timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
+                if timestamp == None:
+                    # Retry with standard repo layout (for repos which use the mint codenames)
+                    new_dist = repo.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
+                    url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+                    timestamp = self.get_url_last_modified(url)
+                if timestamp == None:
+                    problems.append(_("%s is unreachable") % repo.uri)
+                elif mint_age > 2:
+                    date = datetime.datetime.fromtimestamp(timestamp)
+                    offset = (mint_date - date).days
+                    if mint_age > 2 and offset > 2:
+                        problems.append(_("%s is not up to date. Switch to a different mirror.") % repo.uri)
 
         # Check the base repos can handle destination codename
         for repo in self.base_repos:
