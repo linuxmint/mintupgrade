@@ -76,3 +76,7 @@ IMPORTANT_PACKAGES = [
     "slick-greeter",
     "plymouth"
 ]
+
+NEW_ORPHANS_TO_KEEP = [
+    "dnscrypt-proxy"
+]
