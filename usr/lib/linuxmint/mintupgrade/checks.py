@@ -576,6 +576,8 @@ class APTRemoveOrphansCheck(Check):
                     continue
                 if pkg.name.startswith("linux-headers-"):
                     continue
+                if pkg.name in NEW_ORPHANS_TO_KEEP:
+                    continue
                 if pkg.name in self.pre_upgrade_orphans:
                     print(f"Orphan {pkg.name} was already an orphan pre-upgrade, skipping it.")
                     continue
