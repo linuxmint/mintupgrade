@@ -1,21 +1,29 @@
-# Estonian translation for linuxmint
-# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
-# This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Pix eesti keele tõlge.
+# Estonian translation of Pix.
+#
+# Copyright (C) 2000, 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Pix package.
+#
+# Olle Niit <olle@teknet.ee>, 2005-2007
+# Rene Pärts <rene87@hot.ee>, 2010-2011
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: linuxmint\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: Pix\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
+"ent=general\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2022-10-31 16:04+0000\n"
-"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
-"Language-Team: Estonian <et@li.org>\n"
+"PO-Revision-Date: 2023-11-07 13:33+0000\n"
+"Last-Translator: Väino Orav <Unknown>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-09-29 12:45+0000\n"
-"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
+"X-Launchpad-Export-Date: 2023-12-03 13:35+0000\n"
+"X-Generator: Launchpad (build 886068b1e1d10de444fbd53b0c7d3f6d4fb3e658)\n"
+"Language: et\n"
+"X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,624,-1\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2022-11-25 04:35+0000\n"
-"Last-Translator: Arief Setiadi Wibowo <q_thrynx@yahoo.com>\n"
+"PO-Revision-Date: 2023-11-07 13:33+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-09-29 12:45+0000\n"
-"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
+"X-Launchpad-Export-Date: 2023-12-03 13:35+0000\n"
+"X-Generator: Launchpad (build 886068b1e1d10de444fbd53b0c7d3f6d4fb3e658)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -90,7 +90,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr ""
+msgstr "Tekan 'Perbaiki' untuk melakukan sistem snapshot."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
@@ -158,10 +158,11 @@ msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
+"Sumber berikut didefinisikan dalam format DEB822. Format ini belum didukung."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr ""
+msgstr "Cadangkan lalu hapus file-file ini untuk melanjutkan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
@@ -249,11 +250,11 @@ msgstr "Kalau tidak, paket-paket ini dapat menimbulkan konflik."
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr ""
+msgstr "Paket Orphan"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Mencari paket Orphan..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
@@ -262,16 +263,20 @@ msgstr "Paket-paket berikut tidak ada di repositori:"
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
 msgstr ""
+"Dalam beberapa kasus yang jarang terjadi, paket Orphan dapat mengganggu "
+"proses upgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
 msgstr ""
+"Jika Anda memutuskan untuk menghapus beberapa paket ini, tekan 'Periksa "
+"lagi' setelah penghapusannya."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "Tekan 'OK' untuk melanjutkan peningkatan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."

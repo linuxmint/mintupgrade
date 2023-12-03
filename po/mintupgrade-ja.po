@@ -8,55 +8,56 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2022-04-21 19:19+0000\n"
-"Last-Translator: vega m57 <Unknown>\n"
+"PO-Revision-Date: 2023-12-02 11:02+0000\n"
+"Last-Translator: kmyyfz8q <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-09-29 12:45+0000\n"
-"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
+"X-Launchpad-Export-Date: 2023-12-03 13:35+0000\n"
+"X-Generator: Launchpad (build 886068b1e1d10de444fbd53b0c7d3f6d4fb3e658)\n"
+"Language: ja\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr ""
+msgstr "パッケージのリポジトリは新しいリリース (%s/%s) を指している必要があります。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "アップグレードツールによって、すでに適切なリポジトリが選択されているはずです。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr ""
+msgstr "おそらくその後、何らかのタイミングでリポジトリが変更されたのかもしれません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr ""
+msgstr "アップグレードツールを再実行し、もう一度リポジトリを移行させてください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
-msgstr "Linux Mint version"
+msgstr "Linux Mint のバージョン"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr "Linux Mintのバージョンを確認しています..."
+msgstr "現在の Linux Mint のバージョンを確認しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr "Linux Mintのバージョンは不明です。 /etc/linuxmint/info がありません。"
+msgstr "現在の Linux Mint のバージョンが分かりません。/etc/linuxmint/info がありません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
-msgstr "Linux Mintのバージョンは､'%s' です。%s のみが､%s にアップグレードできます。"
+msgstr "現在の Linux Mint のバージョンは '%s' です。%s のみが %s にアップグレードできます。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Linux Mintのエディションは､ '%s' です。%s にはアップグレードできません。"
+msgstr "現在の Linux Mint のエディションは '%s' です。%s にはアップグレードできません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Power source"
@@ -68,54 +69,54 @@ msgstr "電源を確認しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:186
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "アップグレードを試みる前にコンピューターを電源に接続してください。"
+msgstr "アップグレードを始める前に、コンピューターを電源に接続してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "System snapshots"
-msgstr "システムのスナップショット"
+msgstr "システムスナップショット"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Checking system snapshots..."
-msgstr "システムのスナップショットを確認しています..."
+msgstr "システムスナップショットを確認しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:197
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
-msgstr "アップグレードが成功しなかった場合、システムスナップショットを使用すると、過去にさかのぼってすべての変更を元に戻すことができます。"
+msgstr "アップグレードが成功しなかったとしても、システムスナップショットがあれば、過去に遡ってすべての変更を取り消すことができます。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr ""
+msgstr "'修正' を押すと、システムスナップショットを作成します。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
-msgstr "APT cache"
+msgstr "APT キャッシュ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "Checking the APT cache..."
-msgstr "APT cache を確認しています..."
+msgstr "APT キャッシュを確認しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:232
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
-msgstr "パッケージのキャッシュを正しく更新できません。 'apt update' を実行し表示されるエラーを修正します。"
+msgstr "パッケージのキャッシュを正しく更新できません。'apt update' を実行し、表示されているエラーを修正してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:241
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
-msgstr "一部のパッケージが壊れています。'apt install -f' を実行して問題を修正します。"
+msgstr "一部のパッケージが壊れています。'apt install -f' を実行し、問題を修正してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:252
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
-msgstr "お使いのオペレーティングシステムは最新ではありません。 アップグレードを試みる前に利用可能な更新を適用してください。"
+msgstr "お使いのオペレーティングシステムが最新の状態ではありません。アップグレードを始める前に、利用可能なアップデートをすべて適用してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "The following operations need to be performed:"
-msgstr "次の操作を実行する必要があります:"
+msgstr "これらの操作を実行する必要があります:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
@@ -128,11 +129,11 @@ msgstr "操作"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be installed"
-msgstr "インストールする必要があります"
+msgstr "インストールが必要"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be removed"
-msgstr "削除する必要があります"
+msgstr "削除が必要"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
@@ -147,17 +148,17 @@ msgstr "パッケージリポジトリを確認しています..."
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
-msgstr ""
+msgstr "これらのソースが DEB822 形式で定義されています。この形式は、まだサポートされていません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr ""
+msgstr "先へ進む前に、これらのファイルをバックアップ・削除してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr "次のリポジトリは、Linux Mintのあなたのバージョンをサポートしていません。"
+msgstr "これらのリポジトリは、お使いの Linux Mint のバージョンを明確にサポートしていません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
@@ -165,30 +166,30 @@ msgstr "これらのリポジトリは無効にする必要があります。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
-msgstr "APTポリシーが正しくありません。"
+msgstr "APT ポリシーが正しくありません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:378
 msgid "Reboot your computer."
-msgstr "コンピュータを再起動します。"
+msgstr "コンピューターを再起動してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:401
 #, python-format
 msgid "%s is unreachable"
-msgstr "%s is unreachable"
+msgstr "%s には到達できません"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:406
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s は最新ではありません。別のミラーに切り替えます。"
+msgstr "%s は最新ではありません。別のミラーに切り替えてください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:418
 #, python-format
 msgid "%s does not support %s"
-msgstr "%s は %s をサポートしません"
+msgstr "%s は %s をサポートしていません"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:422
 msgid "The following problems were found:"
-msgstr "次の問題が見つかりました:"
+msgstr "これらの問題が見つかりました:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Held packages"
@@ -200,11 +201,11 @@ msgstr "保留中のパッケージを探しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:470
 msgid "The following packages are held:"
-msgstr "次のパッケージが保留されます:"
+msgstr "これらのパッケージが保留されています:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:477
 msgid "Held packages can break the upgrade."
-msgstr "保留されているパッケージはアップグレードを中断する可能性があります。"
+msgstr "保留中のパッケージがあると、アップグレードが失敗するかもしれません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Foreign packages"
@@ -217,15 +218,15 @@ msgstr "外部パッケージを探しています..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:497
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "次のパッケージは公式バージョンにダウングレードする必要があります:"
+msgstr "これらのパッケージは、公式版にダウングレードする必要があります:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
-msgstr "インストール済バージョン"
+msgstr "インストール済みのバージョン"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Official version"
-msgstr "公式バージョン"
+msgstr "公式版のバージョン"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Archive"
@@ -246,29 +247,29 @@ msgstr "孤立したパッケージを探しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
-msgstr "次のパッケージはリポジトリに存在しません:"
+msgstr "これらのパッケージは、リポジトリに存在しません:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
-msgstr ""
+msgstr "まれに孤立したパッケージが、アップグレードを妨げてしまうことがあります。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
-msgstr ""
+msgstr "どれかパッケージをアンインストールするつもりであれば、それらの削除を済ませてから '再確認' を押してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "'OK' を押すと、アップグレードを続行します。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr ""
+msgstr "新しく孤立したパッケージを削除しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
-msgstr "新しいリリースに指向しています..."
+msgstr "新しいリリースを指すようにしています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
@@ -276,45 +277,45 @@ msgstr "アップグレードシミュレーション"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Simulating upgrade to check hard disk space and potential issues..."
-msgstr "アップグレードをシミュレートして、ハードディスクの空き容量と潜在的な問題を確認します..."
+msgstr "ハードディスクの空き容量や、潜在的な問題を確認するため、アップグレードをシミュレートしています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:666
 msgid "The simulation was not successful."
-msgstr "シミュレーションは成功しませんでした。"
+msgstr "シミュレーションが失敗しました。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
-msgstr "アップグレードすると次の重要なパッケージが削除されます:"
+msgstr "アップグレードすると、これらの重要なパッケージが削除されます:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
-msgstr "不要な削除"
+msgstr "望ましくない削除"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
-msgstr "これは何かが間違っていることを示しており、先に進む前に修正する必要があります。"
+msgstr "これは何らかの問題を示している可能性があり、先へ進む前に、まず問題の修正が必要です。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
-msgstr "推奨解決策"
+msgstr "推奨される解決策"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr "端末でapt-getを使用して、問題のトラブルシューティングと解決を行います。"
+msgstr "端末で apt-get を使用し、問題のトラブルシューティングと解決を行います。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:676
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "フォーラムやチャットルームで助けを求めることを躊躇しないでください。"
+msgstr "フォーラムやチャットルームで、遠慮なく助けを求めてください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
-msgstr "補足情報"
+msgstr "補足の情報"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:679
 msgid "The information below might help solve the issue."
-msgstr "以下の情報は問題の解決に役立つ場合があります。"
+msgstr "下の情報は、問題を解決する手がかりになるかもしれません。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:680
 #: usr/lib/linuxmint/mintupgrade/checks.py:692
@@ -335,32 +336,32 @@ msgstr "追加されるパッケージ"
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "パッケージ アップデート: %d, 追加: %d , 保持: %d, 削除: %d"
+msgstr "パッケージの更新: %d、追加: %d、保持: %d、削除: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
-msgstr "アップグレードすると次の変更が実行されます。"
+msgstr "アップグレードすると、これらの変更が行われます。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:694
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
-msgstr "注: できればパッケージを保持しないでください。これは問題を示唆している可能性があります｡"
+msgstr "注: できればパッケージを保持させないでください。これは問題を示している可能性があります。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:698
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
-msgstr "上記のリストに目を通し、アップグレードを続行する前に、削除に納得していることを確認してください。"
+msgstr "アップグレードを進める前に、上の一覧に目を通し、本当に削除してしまってもいいのか確認してください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr "'%s' に%s が必要ですが､%s だけしかありません｡ 追加で %s 開放する必要があります｡"
+msgstr "%s が '%s' に必要ですが、%s しかありません。あと %s の空きを作ってください。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "ダウンロードサイズ: %s､必要な追加スペース: %s."
+msgstr "ダウンロードするサイズ: %s。追加で必要な領域: %s。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
@@ -376,11 +377,11 @@ msgstr "パッケージのダウンロード中にエラーが発生しました
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
-msgstr "セッション制止"
+msgstr "セッションの抑制"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
-msgstr "セッションを制止しています..."
+msgstr "セッションを抑制しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
@@ -388,11 +389,11 @@ msgstr "アップグレードの準備"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Preparing the upgrade..."
-msgstr "アップグレードの準備をしています..."
+msgstr "アップグレードを準備しています..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrade phase"
-msgstr "アップグレードフェーズ"
+msgstr "アップグレード段階"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrading the system..."
@@ -406,11 +407,11 @@ msgstr "アップグレード中に問題が検出されました。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "%d パッケージはまだ更新する必要があります（%d は保持され、%dは削除されます）"
+msgstr "まだ %d 個のパッケージを更新する必要があります (%d 個を保持、%d 個を削除済み)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
-msgstr "ファイナルフェーズ"
+msgstr "最終段階"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Finalizing the upgrade..."
@@ -419,30 +420,30 @@ msgstr "アップグレードを完了させています..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:929
 #, python-format
 msgid "%s could not be installed."
-msgstr "%s はインストールできませんでした。"
+msgstr "%s をインストールできませんでした。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:936
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-codecsをインストールできませんでした。"
+msgstr "mint-meta-codecs をインストールできませんでした。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:944
 #: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid "The following packages could not be installed:"
-msgstr "次のパッケージをインストールできませんでした:"
+msgstr "これらのパッケージをインストールできませんでした:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1030
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab はアップグレード中に変更されました。"
+msgstr "アップグレード中に /etc/fstab が変更されました。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1031
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
-msgstr "正常に起動するために、アップグレードツールは元の /etc/fstabを復元しました"
+msgstr "正常に起動できるようにするため、このシステムで元々使用されていた /etc/fstab を復元させました"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr "変更されたファイルのコピーは/etc/fstab.upgradedとして保存されました"
+msgstr "変更されたファイルのコピーは /etc/fstab.upgraded として保存されました"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
@@ -471,29 +472,29 @@ msgstr "終了"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
-msgstr "フェーズ1：準備"
+msgstr "第 1 段階: 準備"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
-msgstr "コンピュータをアップグレードする準備のために一連のテストが実行されます。"
+msgstr "コンピューターをアップグレードする準備のため、これから一連のテストが実行されます。"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
-msgstr "フェーズ2：シミュレーションとダウンロード"
+msgstr "第 2 段階: シミュレーションとダウンロード"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
-msgstr "これでパッケージリポジトリは新しいリリースを使うようになります。"
+msgstr "パッケージリポジトリが新しいリリースを指すようになります。"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr "更にいくつかのテストが実行され、パッケージの更新がダウンロードされます。"
+msgstr "さらにいくつかのテストが実行され、パッケージのアップデートがダウンロードされます。"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
-msgstr "フェーズ3：アップグレード"
+msgstr "第 3 段階: アップグレード"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
@@ -502,11 +503,11 @@ msgstr "パッケージがアップグレードされます。"
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
-msgstr "このプログラムはあなたにいくつか質問し、あなたのオペレーティングシステムをアップグレードします。"
+msgstr "このプログラムは、お使いのオペレーティングシステムをアップグレードするために、いくつかの質問を行います。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
-msgstr "Let's go!"
+msgstr "始めましょう！"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "OK"
@@ -514,15 +515,15 @@ msgstr "OK"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "Fix"
-msgstr "修正実行"
+msgstr "修正"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Check again"
-msgstr "再度確認"
+msgstr "再確認"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "The following error occurred:"
-msgstr "以下のエラーが発生しました:"
+msgstr "これらのエラーが発生しました:"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The upgrade was successful."
@@ -530,25 +531,25 @@ msgstr "アップグレードに成功しました。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "すべての変更を有効にするためにコンピューターを再起動してください。"
+msgstr "すべての変更を有効にするには、コンピューターを再起動してください。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr "タイムシフトでの最近のスナップショット"
+msgstr "最近の Timeshift スナップショット"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
-msgstr "適用されたソフトウェアアップデート"
+msgstr "ソフトウェアアップデートの適用"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
-msgstr "これらの要件は安全なアップグレードをするためのものです。 何が起きるかがわかっている場合にのみ、それらを無効にしてください。"
+msgstr "これらの要件は、安全なアップグレードを保証するために存在します。その意味が理解できる場合にのみ、無効にしてください。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid "Supported Linux Mint version"
-msgstr "サポートされているLinux Mint のバージョン"
+msgstr "サポートされている Linux Mint のバージョン"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Requirements"

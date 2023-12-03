@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-09-27 10:41+0000\n"
+"PO-Revision-Date: 2023-11-09 08:54+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-09-29 12:45+0000\n"
-"X-Generator: Launchpad (build bd6cfd0cfc024dbe1dcd7d5d91165fb4f6a6c596)\n"
+"X-Launchpad-Export-Date: 2023-12-03 13:35+0000\n"
+"X-Generator: Launchpad (build 886068b1e1d10de444fbd53b0c7d3f6d4fb3e658)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr "מאגר החבילות צריך להצביע לעבר השחרור החדש (%s/%s)."
+msgstr "מאגרי החבילות צריכות להצביע על ההשחרור החדש (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
@@ -29,11 +29,11 @@ msgstr "פעולה זו אמורה היתה להתבצע כבר על ידי כל
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr "האם המאגרים שונו מאז?"
+msgstr "האם המאגרים הוסגלו מאז?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr "נא להריץ מחדש את כלי העדכון להגירת המאגרים שוב."
+msgstr "נא להריץ שוב את כלי העדכון להגירת מאגרים חוזרת."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
@@ -46,7 +46,8 @@ msgstr "מתבצעת בדיקת גרסת לינוקס מינט..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr "גרסת לינוקס מינט המותקנת אינה ידועה. חסר מידע  /etc/linuxmint/info."
+msgstr ""
+"גרסת לינוקס מינט שמותקנת אינה מוכרת. קובץ ' /etc/linuxmint/info' חסר."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
