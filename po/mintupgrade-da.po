@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-11-07 13:33+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2023-12-07 10:31+0000\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2023-12-03 13:35+0000\n"
-"X-Generator: Launchpad (build 886068b1e1d10de444fbd53b0c7d3f6d4fb3e658)\n"
+"X-Launchpad-Export-Date: 2024-01-04 14:59+0000\n"
+"X-Generator: Launchpad (build e1eeab5b20e19239bd7d5f36676f7a52988db88b)\n"
 "Language: da\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
@@ -380,19 +380,19 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Hentet størrelse: %s. Yderligere pladsbehov: %s."
+msgstr "Downloadet størrelse: %s. Yderligere pladsbehov: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
-msgstr "Hentning af pakker"
+msgstr "Download af pakker"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Downloading packages..."
-msgstr "Henter pakker …"
+msgstr "Downloader pakker …"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:817
 msgid "An error occurred while downloading the packages."
-msgstr "Der opstod en fejl under hentning af pakkerne."
+msgstr "Der opstod en fejl under download af pakkerne."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
@@ -505,7 +505,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
-msgstr "Fase 2: simulering og hentning"
+msgstr "Fase 2: simulering og download"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
@@ -513,7 +513,7 @@ msgstr "Dine pakkearkiver vil nu pege på den nye udgivelse."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr "Lidt flere tests vil blive udført og pakkeopdateringer hentet."
+msgstr "Lidt flere tests vil blive udført og pakkeopdateringer downloadet."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
