@@ -106,9 +106,6 @@
                             </child>
                           </object>
                         </child>
-                        <style>
-                          <class name="live-installer-welcome"/>
-                        </style>
                       </object>
                       <packing>
                         <property name="name">page_welcome</property>
