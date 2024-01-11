@@ -727,6 +727,8 @@ class SimulateUpgradeCheck(Check):
         download_size = fetcher.fetch_needed
         # additional space needed when all finished
         additional_space_needed = cache._depcache.usr_size
+        if additional_space_needed < 0:
+            additional_space_needed = 0.0
 
         # gather mount info so we calculate free space correctly.
         mounted = []
