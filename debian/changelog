@@ -1,3 +1,17 @@
+mintupgrade (2024.01.11) virginia; urgency=medium
+
+  [ carlosmintfan ]
+  * Minor fixes (#77)
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+  * l10n: Update files
+  * ui: Remove copied leftover
+  * checks: Remove obsolete special case
+  * checks: Fix exception when additional size is negative
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 11 Jan 2024 14:17:34 +0000
+
 mintupgrade (2023.10.24) faye; urgency=medium
 
   * New orphans: Don't remove dnscrypt-proxy
