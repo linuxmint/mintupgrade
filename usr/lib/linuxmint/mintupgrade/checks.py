@@ -525,8 +525,6 @@ class APTOrphanCheck(Check):
         if len(orphans) > 0:
             for orphan in orphans:
                 pkg, version = orphan
-                if pkg.name == "mintupgrade":
-                    continue
                 if pkg.name.startswith("linux-image-"):
                     continue
                 if pkg.name.startswith("linux-headers-"):
@@ -566,8 +564,6 @@ class APTRemoveOrphansCheck(Check):
         if len(orphans) > 0:
             for orphan in orphans:
                 pkg, version = orphan
-                if pkg.name == "mintupgrade":
-                    continue
                 if pkg.name.startswith("linux-image-"):
                     continue
                 if pkg.name.startswith("linux-headers-"):

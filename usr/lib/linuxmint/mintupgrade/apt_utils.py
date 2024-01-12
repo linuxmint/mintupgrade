@@ -20,6 +20,9 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
     cache = apt.Cache()
 
     for key in cache.keys():
+        if key == "mintupgrade":
+            # Ignore mintupgrade, so we can test foreign versions of it.
+            continue
         pkg = cache[key]
         if (pkg.is_installed):
             installed_version = pkg.installed.version
