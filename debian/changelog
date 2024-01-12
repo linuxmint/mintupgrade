@@ -1,3 +1,9 @@
+mintupgrade (2024.01.12) virginia; urgency=medium
+
+  * Foreign/orphans: Ignore mintupgrade
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 12 Jan 2024 16:27:20 +0000
+
 mintupgrade (2024.01.11) virginia; urgency=medium
 
   [ carlosmintfan ]
