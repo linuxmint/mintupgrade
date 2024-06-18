@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-11-22 17:03+0000\n"
+"PO-Revision-Date: 2024-03-02 19:06+0000\n"
 "Last-Translator: Anton Hryb <Unknown>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2024-01-04 14:59+0000\n"
-"X-Generator: Launchpad (build e1eeab5b20e19239bd7d5f36676f7a52988db88b)\n"
+"X-Launchpad-Export-Date: 2024-06-18 17:57+0000\n"
+"X-Generator: Launchpad (build bbfa2351d9d6a9ddfe262109428f7bf5516e65d1)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -267,7 +267,7 @@ msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
 msgstr ""
-"Калі вырашыце дэінсталяваць некаторыя з гэтых пакетаў, націсніце \"Праверць "
+"Калі вырашыце дэінсталяваць некаторыя з гэтых пакетаў, націсніце \"Праверыць "
 "зноў\" пасля іх выдалення."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
@@ -280,7 +280,7 @@ msgstr "Выдаленне нядаўніх сіроцкіх пакетаў..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
-msgstr "Указаць новы рэліз..."
+msgstr "Указанне новага рэлізу..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
@@ -477,7 +477,7 @@ msgstr "Абнавіцца да %s"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:90
 msgid "Preferences"
-msgstr "Налады"
+msgstr "Параметры"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:95
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:284
