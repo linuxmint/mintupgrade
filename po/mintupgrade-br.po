@@ -1,16 +1,16 @@
-# Finnish translation for linuxmint
-# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
+# Breton translation for linuxmint
+# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
 # This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-11-07 13:33+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
-"Language-Team: Finnish <fi@li.org>\n"
+"PO-Revision-Date: 2024-06-24 14:12+0000\n"
+"Last-Translator: Anthony Guechoum <a.guechoum@gmail.com>\n"
+"Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,567 +21,535 @@ msgstr ""
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr "Pakettivarastojen tulee osoittaa kohti uutta julkaisua (%s/%s)."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr "Päivitystyökalun olisi täytynyt jo toteuttaa tämä."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr "Muokattiinko ohjelmavarastoja sittemmin?"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
-"Aja Päivitystyökalu uudelleen jotta se ajantasaistaa ohjelmavarastot."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
-msgstr "Linux Mint versio"
+msgstr "Handelv Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr "Tarkistetaan versiota Linux Mint..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr ""
-"Linux Mint-versiosi on tuntematon. Polku /etc/linuxmint/info puuttuu."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
-"Sinun Linux Mint versio on '%s'. Vain %s voidaan päivittää versioon %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Sinun Linux Mint versio on '%s'. Sitä ei voi päivittää versioon %s."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Power source"
-msgstr "Virtalähde"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Checking the power source..."
-msgstr "Virtalähdettä tarkistetaan..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:186
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "Liitä tietokone sähköverkkoon ennen kuin yrität päivittää."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "System snapshots"
-msgstr "Palautuspisteet"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Checking system snapshots..."
-msgstr "Tarkistetaan järjestelmän palautuspisteitä..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:197
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
-"Jos päivitys ei onnistu, järjestelmän palautuspisteen avulla voit palata "
-"ajassa taaksepäin ja palauttaa kaikki muutokset."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr "Paina \"Korjaa\" ja suorita järjestelmän palautustiste."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
-msgstr "APT-välimuisti"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "Checking the APT cache..."
-msgstr "Tarkistetaan APT-välimuistia..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:232
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Pakettien välimuistia ei voi päivittää oikein. Suorita \"apt update\" ja "
-"korjaa sen näyttämät virheet."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:241
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
-"Osa paketeista on rikki. Korjaa ongelma suorittamalla komento \"apt install -"
-"f\"."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:252
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-"Käyttöjärjestelmä ei ole ajan tasalla. Asenna kaikki saatavilla olevat "
-"päivitykset ennen version päivitystä."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "The following operations need to be performed:"
-msgstr "Seuraavat toimenpiteet on suoritettava:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Package"
-msgstr "Paketti"
+msgstr "Pakad"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "Operation"
-msgstr "Toiminta"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be installed"
-msgstr "on asennettava"
+msgstr "a zo ret staliañ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be removed"
-msgstr "on poistettava"
+msgstr "a zo ret dilemel"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Package repositories"
-msgstr "Pakettivarastot"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 msgid "Checking package repositories..."
-msgstr "Tarkistetaan pakettivarastoja..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:322
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
-"Seuraavat lähteet on määritelty DEB822 formaatissa. Tätä ei vielä tueta."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr "Jatka varmuuskopioimalla ja poistamalla nämä tiedostot."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
-msgstr "Seuraavat pakettivarastot eivät tue sinun Linux Mint versiota."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
-msgstr "Nämä pakettivarastot on poistettava käytöstä."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
-msgstr "APT-käytäntö on virheellinen."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:378
 msgid "Reboot your computer."
-msgstr "Käynnistä tietokone uudelleen."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:401
 #, python-format
 msgid "%s is unreachable"
-msgstr "%s on tavoittamaton"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:406
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s ei ole ajan tasalla. Vaihda toiseen peiliin."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:418
 #, python-format
 msgid "%s does not support %s"
-msgstr "%s ei tue %s"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:422
 msgid "The following problems were found:"
-msgstr "Seuraavat ongelmat havaittiin:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Held packages"
-msgstr "Paketit pidossa"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Looking for held packages..."
-msgstr "Etsitään pidossa olevia paketteja..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:470
 msgid "The following packages are held:"
-msgstr "Seuraavat paketit ovat pidossa:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:477
 msgid "Held packages can break the upgrade."
-msgstr "Pidossa olevat paketit voivat rikkoa päivityksen."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Foreign packages"
-msgstr "Ulkopuoliset paketit"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Looking for foreign packages..."
-msgstr "Etsitään ulkopuolisia paketteja..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:497
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "Seuraavat paketit on päivitettävä takaisin virallisiin versioihin:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
-msgstr "Asennettu versio"
+msgstr "Handelv staliet"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Official version"
-msgstr "Virallinen versio"
+msgstr "Handelv ofisiel"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Archive"
-msgstr "Arkisto"
+msgstr "Diell"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:504
 msgid "Otherwise these packages can create conflicts."
-msgstr "Muuten nämä paketit voivat aiheuttaa ristiriitoja."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr "Orvot paketit"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr "Etsitään orpoja paketteja..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
-msgstr "Seuraavia paketteja ei ole pakettivarastoissa:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
 msgstr ""
-"Joissain harvoissa tapauksissa orvot paketit voivat häiritä päivitystä."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
 msgstr ""
-"Jos päätät poistaa osan näistä paketeista, paina \"Tarkista uudelleen\" "
-"niiden poistamisen jälkeen."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr "Jatka päivitystä painamalla \"OK\"."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr "Poistetaan uusia orvoksi jääneitä paketteja..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
-msgstr "Osoittaa uuteen julkaisuun..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
-msgstr "Päivityksen simulointi"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simuloidaan päivitystä levytilan ja mahdollisten ongelmien tarkistamiseksi..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:666
 msgid "The simulation was not successful."
-msgstr "Simulaatio ei onnistunut."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
-msgstr "Päivitys poistaisi seuraavat tärkeät paketit:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
-msgstr "Haitalliset poistot"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
-"Tämä on merkki siitä, että jokin on vialla ja se on korjattava ennen kuin "
-"jatkat eteenpäin."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
-msgstr "Suositeltava ratkaisu"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
-"Käytä apt-get päätteessä vianmääritykseen ja ongelman ratkaisemiseen."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:676
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr "Älä epäröi pyytää apua foorumeilta ja chatissa."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
-msgstr "Lisätietoja"
+msgstr "Titouroù ouzhpenn"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:679
 msgid "The information below might help solve the issue."
-msgstr "Alla olevat tiedot voivat auttaa ratkaisemaan ongelman."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:680
 #: usr/lib/linuxmint/mintupgrade/checks.py:692
 msgid "Kept packages"
-msgstr "Säilytetyt paketit"
+msgstr "Pakadoù miret"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
 #: usr/lib/linuxmint/mintupgrade/checks.py:696
 msgid "Removed packages"
-msgstr "Poistetut paketit"
+msgstr "Pakadoù dilamet"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:682
 #: usr/lib/linuxmint/mintupgrade/checks.py:695
 msgid "Added packages"
-msgstr "Lisätyt paketit"
+msgstr "Pakadoù ouzhpennet"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:683
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "Paketteja päivitetty: %d, lisätty: %d, säilytetty: %d, poistettu: %d"
+msgstr "Pakadoù hizivaet: %d, ouzhpennet: %d, miret: %d, dilamet: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
-msgstr "Päivitys suorittaa seuraavat muutokset."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:694
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
-"Huomaa: Parhaassa tapauksessa paketteja ei tulisi säilyttää. Tämä saattaa "
-"viitata ongelmaan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:698
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
-"Käy läpi yllä oleva luettelo ja varmista, että olet tyytyväinen poistoihin "
-"ennen kuin jatkat päivitystä."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"Tarvitset %s \"%s\", mutta sinulla on vain %s. Sinun on vapautettava %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Latauskoko: %s. Tarvitaan lisätilaa: %s."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
-msgstr "Paketin lataus"
+msgstr "Pellgargañ ar pakad"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Downloading packages..."
-msgstr "Ladataan paketteja..."
+msgstr "O pellgargañ pakadoù..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:817
 msgid "An error occurred while downloading the packages."
-msgstr "Pakettien latauksessa tapahtui virhe."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
-msgstr "Istunnon esto"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
-msgstr "Estetään istunto..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
-msgstr "Versiopäivityksen valmistelu"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Preparing the upgrade..."
-msgstr "Valmistellaan päivitystä..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrade phase"
-msgstr "Päivitysvaihe"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrading the system..."
-msgstr "Päivitetään järjestelmää..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:879
 #: usr/lib/linuxmint/mintupgrade/checks.py:885
 msgid "An issue was detected during the upgrade."
-msgstr "Päivityksen aikana havaittiin ongelma."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "%d pakettia pitää vielä päivittää (%d pidossa, %d poistettu)"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
-msgstr "Viimeinen vaihe"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Finalizing the upgrade..."
-msgstr "Päivitystä viimeistellään..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:929
 #, python-format
 msgid "%s could not be installed."
-msgstr "%s ei voitu asentaa."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:936
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-codecs ei voitu asentaa."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:944
 #: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid "The following packages could not be installed:"
-msgstr "Seuraavia paketteja ei voitu asentaa:"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1030
 msgid "/etc/fstab was modified during the upgrade."
-msgstr "/etc/fstab muutettiin päivityksen aikana."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1031
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
-"Onnistuneen käynnistyksen varmistamiseksi päivitystyökalu palautti "
-"alkuperäisen /etc/fstab -tiedoston"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr ""
-"Kopio muokatusta tiedostosta tallennettiin nimellä /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Upgrade Tool"
-msgstr "Versiopäivitys työkalu"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:74
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:2
 #, python-format
 msgid "Upgrade to %s"
-msgstr "Päivitä versioon %s"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:90
 msgid "Preferences"
-msgstr "Asetukset"
+msgstr "Gwellvezioù"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:95
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:284
 msgid "About"
-msgstr "Tietoja"
+msgstr "Diwar-benn"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:100
 msgid "Quit"
-msgstr "Sulje"
+msgstr "Kuitaat"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
-msgstr "Vaihe 1: Valmistelu"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
-"Suoritetaan sarja testejä tietokoneen valmistelemiseksi päivitystä varten."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
-msgstr "Vaihe 2: Simulointi ja lataus"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
-msgstr "Pakettivarastot osoittavat nyt kohti uutta julkaisua."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr "Muutama testi lisää ja pakettien päivitykset ladataan."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
-msgstr "Vaihe 3: Päivitys"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
-msgstr "Paketit päivitetään nyt."
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
-"Tämä ohjelma kysyy sinulta kysymyksiä ja päivittää käyttöjärjestelmäsi."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
-msgstr "Aloitetaan!"
+msgstr "Deomp dezhi!"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
 msgid "Fix"
-msgstr "Korjaa"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
 msgid "Check again"
-msgstr "Tarkista uudelleen"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "The following error occurred:"
-msgstr "Tapahtui seuraava virhe:"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The upgrade was successful."
-msgstr "Päivitys onnistui."
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "Reboot the computer for all the changes to take effect."
 msgstr ""
-"Käynnistä tietokone uudelleen, jotta kaikki muutokset tulevat voimaan."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr "Viimeisin Timeshift palautuspiste"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
-msgstr "Lisätyt ohjelmistopäivitykset"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
-"Nämä vaatimukset takaavat turvallisen päivityksen. Poista ne käytöstä vain, "
-"jos tiedät mitä olet tekemässä."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid "Supported Linux Mint version"
-msgstr "Linux Mint tuettu versio"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Requirements"
-msgstr "Vaatimukset"
+msgstr ""
