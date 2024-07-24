@@ -18,6 +18,21 @@ KERNEL_META_64 = ["linux-generic"]
 
 PACKAGES_PRE_REMOVALS = []
 
+PACKAGES_ADDITIONS = [
+    "fonts-noto-core",
+    "gnome-online-accounts-gtk",
+    "pipewire-alsa",
+    "pipewire-audio",
+    "pipewire-pulse",
+    "systemd-timesyncd",
+    "touchegg",
+    "wireplumber",
+    "xapp-jxl-thumbnailer",
+    "xcvt",
+    "yt-dlp",
+    "zstd"
+]
+
 PACKAGES_REMOVALS = [
     "gnome-font-viewer",
     "gnome-logs",
@@ -32,21 +47,6 @@ PACKAGES_REMOVALS = [
     "xfce4-statusnotifier-plugin",
     "xfce4-volumed",
     "youtube-dl"
-]
-
-PACKAGES_ADDITIONS = [
-    "fonts-noto-core",
-    "gnome-online-accounts-gtk",
-    "pipewire-alsa",
-    "pipewire-audio",
-    "pipewire-pulse",
-    "systemd-timesyncd",
-    "touchegg",
-    "wireplumber",
-    "xapp-jxl-thumbnailer",
-    "xcvt",
-    "yt-dlp",
-    "zstd"
 ]
 
 IMPORTANT_PACKAGES = [

@@ -18,13 +18,6 @@ KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
 
 PACKAGES_PRE_REMOVALS = []
 
-PACKAGES_REMOVALS = [
-    "gnome-font-viewer",
-    "gnome-control-center",
-    "desktop-base",
-    "malcontent"
-]
-
 PACKAGES_ADDITIONS = [
     "wmctrl",
     "mint-l-theme",
@@ -38,6 +31,13 @@ PACKAGES_ADDITIONS = [
     "touchegg",
     "zstd",
     "yt-dlp"
+]
+
+PACKAGES_REMOVALS = [
+    "gnome-font-viewer",
+    "gnome-control-center",
+    "desktop-base",
+    "malcontent"
 ]
 
 IMPORTANT_PACKAGES = [
