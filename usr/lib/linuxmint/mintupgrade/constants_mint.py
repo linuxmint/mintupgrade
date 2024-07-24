@@ -1,10 +1,10 @@
-ORIGIN = "Linux Mint 20.3 'Una'"
-ORIGIN_CODENAME = "una"
-ORIGIN_BASE_CODENAME = "focal"
+ORIGIN = "Linux Mint 21.3 'Vanessa'"
+ORIGIN_CODENAME = "vanessa"
+ORIGIN_BASE_CODENAME = "jammy"
 
-DESTINATION = "Linux Mint 21 'Vanessa'"
-DESTINATION_CODENAME = "vanessa"
-DESTINATION_BASE_CODENAME = "jammy"
+DESTINATION = "Linux Mint 22 'Wilma'"
+DESTINATION_CODENAME = "wilma"
+DESTINATION_BASE_CODENAME = "noble"
 
 SUPPORTED_EDITIONS = ["cinnamon", "mate", "xfce"]
 
@@ -19,48 +19,34 @@ KERNEL_META_64 = ["linux-generic"]
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_REMOVALS = [
-    "tomboy",
-    "libxplayer-plparser18",
-    "xplayer-common",
-    "gksu",
-    "gnote",
-    "memtest86+",
-    "python3-tinycss",
-    "indicator-application",
-    "blueberry",
-    "gnome-bluetooth",
-    "gnome-bluetooth-common",
-    "libgnome-bluetooth13",
-    "gnome-session-bin",
-    "gnome-settings-daemon"
+    "gnome-font-viewer",
+    "gnome-logs",
+    "gstreamer1.0-pulseaudio",
+    "ntp",
+    "ntpdate",
+    "pipewire-audio",
+    "pulseaudio",
+    "pulseaudio-module-bluetooth",
+    "qt5ct",
+    "redshift-gtk",
+    "xfce4-statusnotifier-plugin",
+    "xfce4-volumed",
+    "youtube-dl"
 ]
 
 PACKAGES_ADDITIONS = [
-    "neofetch",
-    "ffmpegthumbnailer",
-    "amd64-microcode",
-    "intel-microcode",
-    "celluloid",
-    "drawing",
-    "adwaita-icon-theme-full", # 19.3->20
-    "warpinator", #
-    "alsa-topology-conf", #
-    "alsa-ucm-conf", #
-    "mesa-vdpau-drivers", #
-    "mesa-vulkan-drivers", #
-    "cryptsetup-initramfs",
-    "cryptsetup-run",
-    "libreoffice-gtk3",
-    "gamemode",
-    "gstreamer1.0-gtk3",
-    "gstreamer1.0-pipewire",
-    "blueman",
-    "sticky",
-    "webp-pixbuf-loader",
-    "xapp-appimage-thumbnailer",
-    "xapp-epub-thumbnailer",
-    "xapp-mp3-thumbnailer",
-    "xapp-raw-thumbnailer"
+    "fonts-noto-core",
+    "gnome-online-accounts-gtk",
+    "pipewire-alsa",
+    "pipewire-audio",
+    "pipewire-pulse",
+    "systemd-timesyncd",
+    "touchegg",
+    "wireplumber",
+    "xapp-jxl-thumbnailer",
+    "xcvt",
+    "yt-dlp",
+    "zstd"
 ]
 
 IMPORTANT_PACKAGES = [
