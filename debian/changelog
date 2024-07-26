@@ -1,3 +1,13 @@
+mintupgrade (2024.07.26) wilma; urgency=medium
+
+  * l10n: Update files
+  * l10n: Update translations
+  * constants: Update info for Mint 22
+  * constants: Move definition blocks
+  * Don't remove pipewire-audio
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 26 Jul 2024 10:10:22 +0100
+
 mintupgrade (2024.01.12) virginia; urgency=medium
 
   * Foreign/orphans: Ignore mintupgrade
