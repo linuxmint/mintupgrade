@@ -1,0 +1,5 @@
+debian/mintupgrade
+debian/*substvars*
+debian/*debhelper*
+debian/files
+usr/share/locale
