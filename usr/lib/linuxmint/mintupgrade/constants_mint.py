@@ -1,5 +1,5 @@
-ORIGIN = "Linux Mint 21.3 'Vanessa'"
-ORIGIN_CODENAME = "vanessa"
+ORIGIN = "Linux Mint 21.3 'Virginia'"
+ORIGIN_CODENAME = "virginia"
 ORIGIN_BASE_CODENAME = "jammy"
 
 DESTINATION = "Linux Mint 22 'Wilma'"
