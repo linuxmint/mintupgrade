@@ -46,6 +46,14 @@ class MyApplication(Gtk.Application):
             self.add_window(window.window)
             window.window.show()
 
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_path("/usr/share/linuxmint/mintupgrade/style.css")
+        Gtk.StyleContext.add_provider_for_screen(
+            Gdk.Screen.get_default(),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
 class MainWindow():
 
     def __init__(self, application):
