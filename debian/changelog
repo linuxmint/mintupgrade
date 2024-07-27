@@ -1,3 +1,9 @@
+mintupgrade (2024.07.27.3) wilma; urgency=medium
+
+  * new orphans: Check if we're dealing with a t64 migration
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 27 Jul 2024 21:17:43 +0100
+
 mintupgrade (2024.07.27.2) wilma; urgency=medium
 
   * Add hplip
