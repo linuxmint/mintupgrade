@@ -1,3 +1,10 @@
+mintupgrade (2024.07.27.2) wilma; urgency=medium
+
+  * Add hplip
+  * Add nemo-preview (Cinnamon only)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 27 Jul 2024 17:36:29 +0100
+
 mintupgrade (2024.07.27.1) wilma; urgency=medium
 
   * Add celluloid, simple-scan, hypnotix
