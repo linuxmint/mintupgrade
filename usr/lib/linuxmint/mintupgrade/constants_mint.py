@@ -22,6 +22,7 @@ PACKAGES_ADDITIONS = [
     "celluloid",
     "fonts-noto-core",
     "gnome-online-accounts-gtk",
+    "hplip",
     "hypnotix",
     "pipewire-alsa",
     "pipewire-audio",
