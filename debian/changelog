@@ -1,3 +1,10 @@
+mintupgrade (2024.07.27) wilma; urgency=medium
+
+  * constants: Don't add touchegg
+  * constants: Remove postfix
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 27 Jul 2024 09:50:29 +0100
+
 mintupgrade (2024.07.26.2) wilma; urgency=medium
 
   * Set the application font to Sans.
