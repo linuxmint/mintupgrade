@@ -25,7 +25,6 @@ PACKAGES_ADDITIONS = [
     "pipewire-audio",
     "pipewire-pulse",
     "systemd-timesyncd",
-    "touchegg",
     "wireplumber",
     "xapp-jxl-thumbnailer",
     "xcvt",
