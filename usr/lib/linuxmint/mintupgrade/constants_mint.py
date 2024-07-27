@@ -38,6 +38,7 @@ PACKAGES_REMOVALS = [
     "gstreamer1.0-pulseaudio",
     "ntp",
     "ntpdate",
+    "postfix",
     "pulseaudio",
     "pulseaudio-module-bluetooth",
     "qt5ct",
