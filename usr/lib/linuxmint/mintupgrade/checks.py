@@ -489,7 +489,7 @@ class APTForeignCheck(Check):
         super().__init__(_("Foreign packages"), _("Looking for foreign packages..."), callback)
 
     def do_run(self):
-        orphans, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
+        orphans, orphan_t64_names, self.foreigns = get_foreign_packages(find_orphans=False, find_downgradable_packages=True)
         if len(self.foreigns) > 0:
             self.result = RESULT_ERROR
             self.message = _("The following packages need to be downgraded back to official versions:")
@@ -521,7 +521,7 @@ class APTOrphanCheck(Check):
     def do_run(self):
         self.pre_upgrade_orphans.clear()
 
-        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        orphans, orphan_t64_names, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
         if len(orphans) > 0:
             for orphan in orphans:
                 pkg, version = orphan
@@ -560,7 +560,7 @@ class APTRemoveOrphansCheck(Check):
 
     def do_run(self):
         orphan_pkgs = []
-        orphans, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
+        orphans, orphan_t64_names, foreigns = get_foreign_packages(find_orphans=True, find_downgradable_packages=False)
         if len(orphans) > 0:
             for orphan in orphans:
                 pkg, version = orphan
@@ -582,6 +582,13 @@ class APTRemoveOrphansCheck(Check):
             for removal in orphan_pkgs:
                 # The return code indicates a failure if some packages were not found, so ignore it.
                 run_command('%s purge --yes %s' % (APT_GET, removal))
+
+        if len(orphan_t64_names) > 0:
+            # Upgrade t64 orphans to t64 versions
+            print_output("Migrating t64 orphans")
+            for name in orphan_t64_names:
+                # The return code indicates a failure if some packages were not found, so ignore it.
+                run_command('%s install --yes %s' % (APT_GET, name))
 
 # Switch to the target repositories
 class UpdateReposCheck(Check):

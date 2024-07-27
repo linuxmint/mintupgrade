@@ -15,6 +15,7 @@ APT_QUIET = '-fyq -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--for
 # include packages which simply aren't up to date)
 def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
     orphan_packages = []
+    orphan_t64_names = []
     downgradable_packages = []
 
     cache = apt.Cache()
@@ -35,7 +36,11 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
                         if version.downloadable:
                             downloadable = True
                     if not downloadable:
-                        orphan_packages.append([pkg, installed_version])
+                        t64_name = f"{pkg.name}t64"
+                        if t64_name in cache:
+                            orphan_t64_names.append(t64_name)
+                        else:
+                            orphan_packages.append([pkg, installed_version])
             if (pkg.candidate != None):
                 if find_downgradable_packages:
                     best_version = None
@@ -62,7 +67,7 @@ def get_foreign_packages(find_orphans=True, find_downgradable_packages=True):
                     if best_version != None and installed_version != best_version and pkg.candidate.version != best_version.version:
                         downgradable_packages.append([pkg, installed_version, best_version, archive])
 
-    return (orphan_packages, downgradable_packages)
+    return (orphan_packages, orphan_t64_names, downgradable_packages)
 
 # Returns a list of held packages
 def get_held_packages():
