@@ -942,14 +942,26 @@ class PostUpgradeCheck(Check):
 
         # Install new packages
         print_output("Installing new packages")
-        if len(PACKAGES_ADDITIONS) > 0:
-            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(PACKAGES_ADDITIONS))):
+        additions = PACKAGES_ADDITIONS
+        if os.getenv("XDG_CURRENT_DESKTOP") != None:
+            desktop = os.getenv("XDG_CURRENT_DESKTOP").upper().replace("X-", "")
+            if desktop == "CINNAMON":
+                print_output("Installing new packages for Cinnamon as well")
+                additions += PACKAGES_ADDITIONS_CINNAMON
+            elif desktop == "MATE":
+                print_output("Installing new packages for MATE as well")
+                additions += PACKAGES_ADDITIONS_MATE
+            elif desktop == "XFCE":
+                print_output("Installing new packages for Xfce as well")
+                additions += PACKAGES_ADDITIONS_XFCE
+        if len(additions) > 0:
+            if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(additions))):
                 self.result = RESULT_ERROR
                 self.message = _("The following packages could not be installed:")
                 table_list = TableList([""])
                 table_list.show_column_names = False
                 cache = apt.Cache()
-                for name in PACKAGES_ADDITIONS:
+                for name in additions:
                     if name in cache:
                         pkg = cache[name]
                         if not pkg.is_installed:

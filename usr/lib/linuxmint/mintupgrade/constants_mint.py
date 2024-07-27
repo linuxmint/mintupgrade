@@ -36,6 +36,14 @@ PACKAGES_ADDITIONS = [
     "zstd"
 ]
 
+PACKAGES_ADDITIONS_CINNAMON = [
+    "nemo-preview"
+]
+
+PACKAGES_ADDITIONS_MATE = []
+
+PACKAGES_ADDITIONS_XFCE = []
+
 PACKAGES_REMOVALS = [
     "gnome-font-viewer",
     "gnome-logs",
