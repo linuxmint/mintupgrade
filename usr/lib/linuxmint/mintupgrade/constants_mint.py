@@ -19,11 +19,14 @@ KERNEL_META_64 = ["linux-generic"]
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_ADDITIONS = [
+    "celluloid",
     "fonts-noto-core",
     "gnome-online-accounts-gtk",
+    "hypnotix",
     "pipewire-alsa",
     "pipewire-audio",
     "pipewire-pulse",
+    "simple-scan",
     "systemd-timesyncd",
     "wireplumber",
     "xapp-jxl-thumbnailer",
