@@ -16,7 +16,7 @@ from pathlib import Path
 import apt
 import apt_pkg
 import aptsources.sourceslist
-import mintcommon.aptdaemon
+import aptkit.simpleclient
 
 import pycurl
 
@@ -283,7 +283,7 @@ class APTCacheCheck(Check):
                 return
 
     def install_remove_pkgs(self):
-        apt = mintcommon.aptdaemon.APT(self.window)
+        apt = aptkit.simpleclient.SimpleAPTClient(self.window)
         apt.set_finished_callback(self.on_transaction_finished)
         apt.set_cancelled_callback(self.on_transaction_finished)
         if len(self.pkgs_to_remove) > 0:
