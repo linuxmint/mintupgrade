@@ -1,3 +1,9 @@
+mintupgrade (2024.11.26) xia; urgency=medium
+
+  * Switch to aptkit
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Nov 2024 10:19:41 +0000
+
 mintupgrade (2024.07.27.3) wilma; urgency=medium
 
   * new orphans: Check if we're dealing with a t64 migration
