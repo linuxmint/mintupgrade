@@ -1,3 +1,10 @@
+mintupgrade (2024.12.05) xia; urgency=medium
+
+  * l10n: Update translations
+  * l10n: Update files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Dec 2024 10:49:01 +0000
+
 mintupgrade (2024.11.26) xia; urgency=medium
 
   * Switch to aptkit
