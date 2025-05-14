@@ -93,7 +93,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr "Pulse 'Reparar' para realizar una instantánea del sistema."
+msgstr "Pulse 'Corregir' para realizar una instantánea del sistema."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
