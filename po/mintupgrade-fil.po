@@ -1,16 +1,16 @@
-# Breton translation for linuxmint
-# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
+# Filipino translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2024-06-24 14:12+0000\n"
-"Last-Translator: Anthony Guechoum <a.guechoum@proton.me>\n"
-"Language-Team: Breton <br@li.org>\n"
+"PO-Revision-Date: 2025-07-12 09:31+0000\n"
+"Last-Translator: Jonel A. Agutaya <Unknown>\n"
+"Language-Team: Filipino <fil@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,53 +22,59 @@ msgstr ""
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
 msgstr ""
+"Ang ekipahe ng repositoryo ay kailangan ituro sa bagong labas (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "Ito ay dapat nagawa na ng Upgrade Tool."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr ""
+msgstr "Nagbago ba ang repositoryo kamakailan?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
+"Patakbuhin ulit ang Upgrade Tool para muling makapagmigrate ang repositoryo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
-msgstr "Handelv Linux Mint"
+msgstr "Bersyon ng Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr ""
+msgstr "Sinisiyasat ang bersyon ng iyong Linux Mint..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr ""
+"Hindi makilala ang bersiyon ng Linux Mint. Nawawala ang /etc/linuxmint/info."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
+"Ang bersyon ng iyong Linux Mint ay '%s'. Tanging %s lamang ang puedeng "
+"maupgrade sa %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
 msgstr ""
+"Ang edisyon ng iyong Linux Mint ay '%s'. Hindi na ito maaupgrade sa %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Power source"
-msgstr ""
+msgstr "Suplay ng enerhiya"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Checking the power source..."
-msgstr ""
+msgstr "Sinusuri ang suplay ng enerhiya..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:186
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr ""
+msgstr "Ikabit ang computer sa suplay ng enerhiya bago subukang iupgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "System snapshots"
@@ -112,27 +118,29 @@ msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
+"Hindi up to date ang iyong operating system. Kailangan muna i update bago "
+"subukang mag upgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "The following operations need to be performed:"
-msgstr ""
+msgstr "Kailangang gawin ang mga sumusunod na operasyon:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Package"
-msgstr "Pakad"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 msgid "Operation"
-msgstr ""
+msgstr "Operasyon"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:277
 msgid "needs to be installed"
-msgstr "a zo ret staliañ"
+msgstr "kailangang mainstall"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:279
 msgid "needs to be removed"
-msgstr "a zo ret dilemel"
+msgstr "kailangang tanggalin"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
@@ -141,31 +149,35 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 msgid "Checking package repositories..."
-msgstr ""
+msgstr "Sinusuri ang package repositories..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:322
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
+"Ang mga sumusunod na pinagkukunan ay nakaporma sa DEB822. Ito ay hindi pa "
+"suportado sa kasalukuyan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr ""
+msgstr "Back-apan at tanggalin itong files para makapagpatuloy."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"Hindi suportado sa bersyon ng iyong Linux Mint ang mga sumusunod na "
+"repositoryo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
-msgstr ""
+msgstr "Kailangang i disable itong mga repositoryo."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
-msgstr ""
+msgstr "Mali ang iyong APT."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:378
 msgid "Reboot your computer."
@@ -174,7 +186,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:401
 #, python-format
 msgid "%s is unreachable"
-msgstr ""
+msgstr "%s ay hindi maabot"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:406
 #, python-format
@@ -200,57 +212,61 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:470
 msgid "The following packages are held:"
-msgstr ""
+msgstr "Ang sumusunod na packages ay pinigilan:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:477
 msgid "Held packages can break the upgrade."
-msgstr ""
+msgstr "Ang mga pinigilang packages ay makakasira ng upgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Foreign packages"
-msgstr ""
+msgstr "Estrangherong packages"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Looking for foreign packages..."
-msgstr ""
+msgstr "Naghahanap ng estrangherong packages..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:497
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr ""
+"Ang sumusunod na packages ay kailangang idowngrade pabalik sa opisyal na mga "
+"bersyon:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
-msgstr "Handelv staliet"
+msgstr "Instaladong bersyon"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Official version"
-msgstr "Handelv ofisiel"
+msgstr "Opisyal na bersyon"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Archive"
-msgstr "Diell"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:504
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "Kaya itong mga packages ay nakaklikha ng katunggali."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr ""
+msgstr "Ampon na packages"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Naghahanap ng mga ampon na packages..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
-msgstr ""
+msgstr "Ang mga sumusunod na package ay hindi kasama sa repositoryo:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
 msgstr ""
+"Sa balang pambihirang kaso ang ampon na packages ay makasabagal sa pag "
+"upgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
@@ -260,11 +276,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "Pindutin ang 'OK' upang matuloy na ang upgrade."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr ""
+msgstr "Nagtatanggal ng bagong ampon na packages..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
@@ -284,21 +300,22 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
+msgstr "May tatanggaling importanteng packages sa pag upgrade:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
-msgstr ""
+msgstr "Hindi kailangan na tanggalin"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
+"Ito ay senyales na may mali at kailangang ayosin muna bago magpatuloy."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
-msgstr ""
+msgstr "Rekomendadong lunas"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
@@ -310,7 +327,7 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
-msgstr "Titouroù ouzhpenn"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:679
 msgid "The information below might help solve the issue."
@@ -319,23 +336,23 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:680
 #: usr/lib/linuxmint/mintupgrade/checks.py:692
 msgid "Kept packages"
-msgstr "Pakadoù miret"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
 #: usr/lib/linuxmint/mintupgrade/checks.py:696
 msgid "Removed packages"
-msgstr "Pakadoù dilamet"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:682
 #: usr/lib/linuxmint/mintupgrade/checks.py:695
 msgid "Added packages"
-msgstr "Pakadoù ouzhpennet"
+msgstr "Dinagdag na packages"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:683
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "Pakadoù hizivaet: %d, ouzhpennet: %d, miret: %d, dilamet: %d"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
@@ -364,11 +381,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
-msgstr "Pellgargañ ar pakad"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Downloading packages..."
-msgstr "O pellgargañ pakadoù..."
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:817
 msgid "An error occurred while downloading the packages."
@@ -458,16 +475,16 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:90
 msgid "Preferences"
-msgstr "Gwellvezioù"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:95
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:284
 msgid "About"
-msgstr "Diwar-benn"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:100
 msgid "Quit"
-msgstr "Kuitaat"
+msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
@@ -506,7 +523,7 @@ msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
-msgstr "Deomp dezhi!"
+msgstr ""
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
 msgid "OK"

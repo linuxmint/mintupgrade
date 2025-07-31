@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-11-07 13:33+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2025-06-07 22:48+0000\n"
+"Last-Translator: Abdualrahman Hasan <Unknown>\n"
 "Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-01-06 12:01+0000\n"
-"X-Generator: Launchpad (build 6394e03793719e8d73f5a60b5439440e693c92f1)\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:25+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr ""
+msgstr "يتوجب على مستودعات الحزم أن توجه إلى الإصدار الجديد (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "كان يجب أن يتم هذا مسبقا بواسطة أداة الترقية."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
@@ -33,7 +33,7 @@ msgstr "منذ متى تم تعديل المستودعات؟"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr ""
+msgstr "أعد تشغيل أداة الترقية حتى تنقل المستودعات مجددا."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
@@ -76,7 +76,7 @@ msgstr "لقطات النظام"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Checking system snapshots..."
-msgstr ""
+msgstr "التحقق من لقطات النظام..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:197
 msgid ""
@@ -88,15 +88,15 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr ""
+msgstr "اضغط 'إصلاح' للقيام بأخذ بلقطة نظام."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
-msgstr ""
+msgstr "ذاكرة APT المخبئية"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "Checking the APT cache..."
-msgstr ""
+msgstr "التحقق من ذاكرة APT المخبئية..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:232
 msgid ""
@@ -153,11 +153,11 @@ msgstr "جار فحص مستودعات الحزمة..."
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
-msgstr ""
+msgstr "المصادر التالية معرفة في تنسيق DEB822. هذا التنسيق غير مدعوم الآن."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr ""
+msgstr "قم نسخ احتياطي لهذه الملفات وحذفها لتكملة."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
@@ -171,7 +171,7 @@ msgstr "هذه المستودعات تحتاج لان تكون معطلة"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
-msgstr ""
+msgstr "صلاحية APT الخاصة بك غير صحيحة."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:378
 msgid "Reboot your computer."
@@ -239,16 +239,16 @@ msgstr "الأرشيف"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:504
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "عدا عن ذلك هذه الحزم قد تسبب تعارضات."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr ""
+msgstr "حزم يتيمة"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "البحث عن حزم يتيمة..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
@@ -256,21 +256,21 @@ msgstr "الحزم التالية لا توجد في المستودعات:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
-msgstr ""
+msgstr "في بعض الحالات الحزم اليتيمة قد تتدخل بالترقية."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
-msgstr ""
+msgstr "إذا قررت أن تزيل تثبيت إحدى هذه الحزم اضخط 'تحقق مجددا' بعد الإزالة."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "اضغط 'حسنا' لتكملة الترقية."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr ""
+msgstr "إزالة الحزم اليتيمة الجديدة"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
@@ -295,7 +295,7 @@ msgstr "الترقية تتطلب ازالة الحزم المهمة التال�
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
-msgstr ""
+msgstr "إزالة الغير مرغوب فيه"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
@@ -342,7 +342,7 @@ msgstr "الحزم المضافة"
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr ""
+msgstr "الحزم المحدثة: %d, مضاف: %d , مابقى: %d, محذوف: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
@@ -366,7 +366,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr ""
+msgstr "تحتاج إلى %s على %s لكن ليس لديك سوى %s. يجب تفريغ مساحة %s إضافية."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
@@ -387,11 +387,11 @@ msgstr "حدث خطأ اثناء تحميل الحزم."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
-msgstr ""
+msgstr "كبح الجلسة"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "إنشاء جلسة..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
@@ -417,7 +417,7 @@ msgstr "تم اكتشاف خطأ اثناء الترقية."
 #: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
+msgstr "%d حزم تحتاج إلى تحديث (%d متبقى، %d محذوف)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
@@ -449,11 +449,11 @@ msgstr "تم تعديل etc/fstab/ اثناء الترقية."
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
-msgstr ""
+msgstr "للتأكد من تشغيل ناجح، أداة الترقية استعادت مجلد /etc/fstab الأصلي"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
+msgstr "نسخة من الملف المعدل قد تم حفظها ك /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
@@ -482,7 +482,7 @@ msgstr "غادر"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
-msgstr ""
+msgstr "المرحلة 1: تحضير"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
 msgid ""
@@ -492,7 +492,7 @@ msgstr "سيتم تنفيذ سلسلة من الفحوصات لتجهيز الح
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
-msgstr ""
+msgstr "المرحلة 2: محاكاة وتنزيل"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
@@ -504,7 +504,7 @@ msgstr "سيتم تشغيل بعض الفحوصات الاضافية ثم سيت
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
-msgstr ""
+msgstr "المرحلة 3: ترقية"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
@@ -547,7 +547,7 @@ msgstr "أعد تشغيل الحاسوب من أجل ان تأخذ جميع ال
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "لقطة Timeshift المؤخرة"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"

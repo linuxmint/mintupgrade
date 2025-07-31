@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2023-11-07 13:33+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"PO-Revision-Date: 2025-06-16 03:15+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-01-06 12:02+0000\n"
-"X-Generator: Launchpad (build 6394e03793719e8d73f5a60b5439440e693c92f1)\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:25+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
 "Language: ka\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
@@ -23,41 +23,45 @@ msgstr ""
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
 msgstr ""
+"საჭიროა, რომ პაკეტის რეპოზიტორიები ახალ რელიზზე მიუთითებდნენ (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr ""
+msgstr "ეს განახლების ხელსაწყოს უკვე უნდა ექნა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr ""
+msgstr "მას შემდეგ რეპოზიტორიები ვინმემ შეცვალა?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
+"გაუშვით თავიდან განახლების პროგრამა და ის რეპოზიტორიებს თავიდან განაახლებს."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
-msgstr ""
+msgstr "Linux Mint-ის ვერსია"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr ""
+msgstr "მოწმდება Linux Mint-ის თქვენი ვერსია..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
 msgstr ""
+"თქვენი Linux Mint-ის ვერსია უცნობია, რადგან /etc/linuxmint/info არ არსებობს."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format
 msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
 msgstr ""
+"თქვენი Linux Mint-ის ვერსიაა '%s'. მხოლოდ %s შეიძლება, %s-მდე განახლდეს."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr ""
+msgstr "თქვენი Linux Mint-ის ვერსიაა '%s'. მას %s-მდე ვერ განაახლებთ."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Power source"
@@ -65,11 +69,11 @@ msgstr "კვების წყარო"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:181
 msgid "Checking the power source..."
-msgstr ""
+msgstr "მოწმდება კვების წყარო..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:186
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr ""
+msgstr "განახლებამდე მიაერთეთ კომპიუტერი კვების წყაროზე."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "System snapshots"
@@ -84,10 +88,12 @@ msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
+"თუ განახლება წარმატებული არაა, სისტემის სწრაფი ასლი საშუალებას მოგცემთ, "
+"დაბრუნდეთ და გააუქმოთ ყველა ცვლილება."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr ""
+msgstr "დააჭირეთ 'გასწორებას' სისტემის სწრაფი ასლის ასაღებად."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "APT cache"
@@ -95,28 +101,34 @@ msgstr "APT -ის კეში"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:214
 msgid "Checking the APT cache..."
-msgstr ""
+msgstr "მოწმდება APT-ის კეში..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:232
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
+"თქვენი პაკეტების კეშის სწორად განახლება შეუძლებელია. გაუშვით 'apt update' და "
+"გაასწორეთ შეცდომები, რომლებსაც ის გამოყრის."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:241
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
 msgstr ""
+"ზოგიერთი თქვენი პაკეტი გაფუჭებულია. გაუშვით 'apt install -f' ამ პრობლემის "
+"გადასაჭრელად."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:252
 msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
+"თქვენი ოპერაციული სისტემა განახლებული არაა. ვერსიის აწევამდე განაახლეთ "
+"არსებული პაკეტები."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:273
 msgid "The following operations need to be performed:"
-msgstr ""
+msgstr "საჭიროა შემდეგი ოპერაციების ჩატარება:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:275
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
@@ -142,27 +154,29 @@ msgstr "პაკეტის რეპოზიტორიები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:308
 msgid "Checking package repositories..."
-msgstr ""
+msgstr "მოწმდება პაკეტის რეპოზიტორიები..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:322
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
+"შემდეგი წყაროები აღწერილია DEB822 ფორმატში. ეს ფორმატი ჯერ მხარდაჭერილი არაა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
-msgstr ""
+msgstr "აიღეთ მარქაფი და შემდეგ წაშალეთ შემდეგი ფაილები, გასაგრძელებლად."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"შემდეგ რეპოზიტორიებს არ აქვთ Linux Mint-ის თქვენი ვერსიის აშკარა მხარდაჭერა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
-msgstr ""
+msgstr "საჭიროა ამ რეპოზიტორიების გამორთვა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:377
 msgid "Your APT policy is incorrect."
@@ -180,7 +194,7 @@ msgstr "%s მიუწვდომელია"
 #: usr/lib/linuxmint/mintupgrade/checks.py:406
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr ""
+msgstr "%s განახლებული არა. გადაერთეთ სხვა სარკეზე."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:418
 #, python-format
@@ -189,36 +203,36 @@ msgstr "%s -ს %s-ის მხარდაჭერა არ გააჩნ�
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:422
 msgid "The following problems were found:"
-msgstr ""
+msgstr "აღმოჩენილია შემდეგი პრობლემები:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Held packages"
-msgstr ""
+msgstr "არ განახლდება პაკეტები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:464
 msgid "Looking for held packages..."
-msgstr ""
+msgstr "შეუცვლელი პაკეტების ძებნა..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:470
 msgid "The following packages are held:"
-msgstr ""
+msgstr "არ შეიცვლება შემდეგი პაკეტები:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:477
 msgid "Held packages can break the upgrade."
-msgstr ""
+msgstr "შეუცვლელ პაკეტებს შეუძლიათ სისტემის ვერსიის აწევის გაფუჭება."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Foreign packages"
-msgstr ""
+msgstr "გარე პაკეტები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:491
 msgid "Looking for foreign packages..."
-msgstr ""
+msgstr "იძებნება გარე პაკეტები..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:497
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr ""
+msgstr "საჭიროა შემდეგი პაკეტების ვერსიის ჩამოწევა ოფიციალურ ვერსიაზე:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
@@ -226,7 +240,7 @@ msgstr "დაყენებული ვერსია"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Official version"
-msgstr ""
+msgstr "ოფიციალური ვერსია"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Archive"
@@ -234,93 +248,100 @@ msgstr "არქივი"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:504
 msgid "Otherwise these packages can create conflicts."
-msgstr ""
+msgstr "სხვა შემთხვევაში ამ პაკეტებს კონფლიქტების შექმნა შეუძლიათ."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr ""
+msgstr "მიტოვებული პაკეტები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "იძებნება მიტოვებული პაკეტები..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
-msgstr ""
+msgstr "შემდეგი პაკეტები არ არსებობს რეპოზიტორიებში:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
 msgstr ""
+"ზოგიერთ შემთხვევაში მიტოვებულ პაკეტს შეუძლია, ხელი შეუშალოს ვერსიის აწევას."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
 msgstr ""
+"თუ გადაწყვეტთ, წაშალოთ ზოგიერთი ამ პაკეტებიდან, დააჭირეთ 'თავიდან "
+"შემოწმებას' მათი წაშლის შემდეგ."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "დააჭირეთ ღილაკს 'დიახ', რომ გააგრძელოთ ვერსიის აწევა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr ""
+msgstr "იშლება ახლახან მიტოვებული პაკეტები..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
-msgstr ""
+msgstr "მითითება ახალი რელიზისკენ..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
-msgstr ""
+msgstr "ვერსიის აწევის სიმულაცია"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
+"ვერსიის აწევის სიმულაცია დისკზე ადგილისა და პოტენციური პრობლემების "
+"გადასამოწმებლად..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:666
 msgid "The simulation was not successful."
-msgstr ""
+msgstr "სიმულაცია წარუმატებელია."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
+msgstr "ვერსიის აწევა წაშლიდა შემდეგ საჭირო პაკეტებს:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
-msgstr ""
+msgstr "არასასურველი წაშლები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:672
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
 msgstr ""
+"ეს ნიშანია, რომ რაღაც არასწორია და საჭიროებს მიხედვას, სანამ შემდეგ ნაბიჯზე "
+"გადახვალთ."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
-msgstr ""
+msgstr "რეკომენდებული გადაწყვეტილება"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
-msgstr ""
+msgstr "გამოიყენეთ apt-get ტერმინალში, რომ აღმოაჩინოთ და გადაჭრათ პრობლემა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:676
 msgid "Don't hesitate to seek help on the forums and the chat room."
-msgstr ""
+msgstr "ნუ დაიხევთ უკან და ითხოვეთ დახმარება ფორუმებზე და ჩატის ოთახებში."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
-msgstr ""
+msgstr "დამატებითი ინფორმაცია"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:679
 msgid "The information below might help solve the issue."
-msgstr ""
+msgstr "ინფორმაციას ქვემოთ შეუძლია, დაგეხმაროთ პრობლემის გადაწყვეტაში."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:680
 #: usr/lib/linuxmint/mintupgrade/checks.py:692
 msgid "Kept packages"
-msgstr ""
+msgstr "შენარჩუნებული პაკეტები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
 #: usr/lib/linuxmint/mintupgrade/checks.py:696
@@ -330,126 +351,132 @@ msgstr "წაშლილი პაკეტები"
 #: usr/lib/linuxmint/mintupgrade/checks.py:682
 #: usr/lib/linuxmint/mintupgrade/checks.py:695
 msgid "Added packages"
-msgstr ""
+msgstr "დამატებული პაკეტები"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:683
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr ""
+msgstr "პაკეტები განახლდა: %d, დაემატა: %d , შენარჩუნდა: %d, წაიშალა: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
-msgstr ""
+msgstr "ვერსიის აწევა შეიტანს შემდეგ ცვლილებებს."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:694
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
+"შენიშვნა: იდეალურ შემთხვევაში პაკეტების შენარჩუნება არ უნდა მოხდეს. ეს, "
+"შეიძლება, პრობლემაზე მიუთითებდეს."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:698
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"გაიარეთ ზემორე სია და დარწმუნდით, რომ მოგწონთ, რაც იშლება, სანამ ვერსიის "
+"აწევას გააგრძელებთ."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
-msgstr ""
+msgstr "გჭირდებათ %s '%s'-ზე, მაგრამ გაქვთ მხოლოდ %s. გჭირდებათ კიდევ %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:799
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr ""
+msgstr "გადმოსაწერი ზომა %s. საჭირო დამატებითი ადგილი: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Package download"
-msgstr ""
+msgstr "პაკეტის გადმოწერა"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:805
 msgid "Downloading packages..."
-msgstr ""
+msgstr "მიმდინარეობს პაკეტების გადმოწერა..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:817
 msgid "An error occurred while downloading the packages."
-msgstr ""
+msgstr "შეცდომა პაკეტების გადმოწერისას."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
-msgstr ""
+msgstr "სესიის შეკავება"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "მიმდინარეობს სესიის შეკავება..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
-msgstr ""
+msgstr "ვერსიის აწევის მომზადება"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Preparing the upgrade..."
-msgstr ""
+msgstr "მიმდინარეობს ვერსიის აწევის მომზადება.."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrade phase"
-msgstr ""
+msgstr "ვერსიის აწევის ფაზა"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrading the system..."
-msgstr ""
+msgstr "მიმდინარეობს სისტემის ვერსიის აწევა..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:879
 #: usr/lib/linuxmint/mintupgrade/checks.py:885
 msgid "An issue was detected during the upgrade."
-msgstr ""
+msgstr "ვერსიის აწევისას აღმოჩენილია პრობლემა."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr ""
+msgstr "ჯერ კიდე საჭიროა %d პაკეტის განახლება (%d შენარჩუნდა, %d წაიშალა)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
-msgstr ""
+msgstr "საბოლოო ფაზა"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Finalizing the upgrade..."
-msgstr ""
+msgstr "ვერსიის აწევის დასრულება..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:929
 #, python-format
 msgid "%s could not be installed."
-msgstr ""
+msgstr "%s-ის დაყენება შეუძლებელია."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:936
 msgid "mint-meta-codecs could not be installed."
-msgstr ""
+msgstr "mint-meta-codecs-ის დაყენება შეუძლებელია.."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:944
 #: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid "The following packages could not be installed:"
-msgstr ""
+msgstr "შეუძლებელია შემდეგი პაკეტების დაყენება:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1030
 msgid "/etc/fstab was modified during the upgrade."
-msgstr ""
+msgstr "/etc/fstab შეიცვალა ვერსიის აწევის მიმდინარეობისას."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1031
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
+"იმისათვის, რომ დარწმუნდეთ, რომ სისტემა წარმატებთ ჩაიტვირთება, ვერსიის აწევის "
+"პროგრამამ თქვენი საწყისი /etc/fstab აღადგინა"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
-msgstr ""
+msgstr "შეცვლილი ფაილის ასლი შენახულია სახელით /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
 msgid "Upgrade Tool"
-msgstr ""
+msgstr "ვერსიის აწევის პროგრამა"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:74
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:2
@@ -472,38 +499,41 @@ msgstr "გასვლა"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
 msgid "Phase 1: Preparation"
-msgstr ""
+msgstr "ფაზა 1: მომზადება"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
 msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
-msgstr ""
+msgstr "ჩატარდება ტესტის სერიები, რომ კომპიუტერი ვერსიის ასაწევად მომზადდეს."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
-msgstr ""
+msgstr "ფაზა 2: სიმულაცია და გადმოწერა"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
+msgstr "თქვენი პაკეტის რეპოზიტორიები ახლა ახალ რელიზზე მიუთითებენ."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
+"გაეშვება კიდევ რამდენიმე ტესტი და დაიწყება პაკეტის განახლებების გადმოწერა."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
-msgstr ""
+msgstr "ფაზა 3: ვერსიის აწევა"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
-msgstr ""
+msgstr "მოხდება პაკეტის ვერსიების აწევა."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
+"ეს პროგრამა რამდენიმე კითხვას დაგისვამთ და ასწევს თქვენი ოპერაციული სისტემის "
+"ვერსიას."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
@@ -531,25 +561,27 @@ msgstr "განახლება წარმატებულია."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "Reboot the computer for all the changes to take effect."
-msgstr ""
+msgstr "გადატვირთეთ კომპიუტერი ცვლილებების ძალაში შესასვლელად."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "უახლესი სწრაფი ასლი"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
-msgstr ""
+msgstr "გადატარებული პროგრამის განახლებები"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"ეს მოთხოვნები ვერსიის აწევის უსაფრთხოდ ჩატარების გარანტიაა. გამორთეთ ისინი, "
+"მხოლოდ, მაშინ, თუ იცით, რას აკეთებთ."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid "Supported Linux Mint version"
-msgstr ""
+msgstr "მხარდაჭერილი Linux Mint-ის ვერსია"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Requirements"

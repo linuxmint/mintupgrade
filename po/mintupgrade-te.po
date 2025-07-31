@@ -1,0 +1,597 @@
+# Telugu translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-09-26 14:10+0100\n"
+"PO-Revision-Date: 2025-06-27 08:24+0000\n"
+"Last-Translator: Honey Pallakonda <Unknown>\n"
+"Language-Team: Telugu <te@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:25+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:32
+#, python-format
+msgid ""
+"The package repositories need to point towards the new release (%s/%s)."
+msgstr "ప్యాకేజీ రిపోజిటరీలు కొత్త విడుదల (%s/%s) వైపు చూపించాలి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:34
+msgid "This should have be done by the Upgrade Tool already."
+msgstr "ఇది ఇప్పటికే అప్‌గ్రేడ్ టూల్ ద్వారా చేయబడి ఉండాలి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:35
+msgid "Were the repositories modified since?"
+msgstr "అప్పటి నుండి రిపోజిటరీలు సవరించబడ్డాయా?"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:36
+msgid "Re-run the Upgrade tool so that it migrates the repositories again."
+msgstr ""
+"అప్‌గ్రేడ్ సాధనాన్ని తిరిగి అమలు చేయండి, తద్వారా అది రిపోజిటరీలను మళ్ళీ "
+"మైగ్రేట్ చేస్తుంది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:143
+msgid "Linux Mint version"
+msgstr "Linux Mint వెర్షన్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:143
+msgid "Checking your version of Linux Mint..."
+msgstr "మీ Linux Mint వెర్షన్‌ను తనిఖీ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:151
+msgid ""
+"Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
+msgstr "మీ Linux Mint వెర్షన్ తెలియదు. /etc/linuxmint/info లేదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:168
+#, python-format
+msgid "Your version of Linux Mint is '%s'. Only %s can be upgraded to %s."
+msgstr "మీ Linux Mint వెర్షన్ '%s'. %s ను మాత్రమే %s కు అప్‌గ్రేడ్ చేయవచ్చు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:174
+#, python-format
+msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
+msgstr ""
+"మీ Linux Mint ఎడిషన్ '%s'. దీనిని %s కి అప్‌గ్రేడ్ చేయడం సాధ్యం కాదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:181
+msgid "Power source"
+msgstr "శక్తి మూలం"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:181
+msgid "Checking the power source..."
+msgstr "పవర్ సోర్స్‌ను తనిఖీ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:186
+msgid "Connect the computer to a power source before attempting to upgrade."
+msgstr ""
+"అప్‌గ్రేడ్ చేయడానికి ప్రయత్నించే ముందు కంప్యూటర్‌ను పవర్ సోర్స్‌కి కనెక్ట్ "
+"చేయండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:192
+msgid "System snapshots"
+msgstr "సిస్టమ్ స్నాప్‌షాట్‌లు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:192
+msgid "Checking system snapshots..."
+msgstr "సిస్టమ్ స్నాప్‌షాట్‌లను తనిఖీ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:197
+msgid ""
+"If the upgrade isn't successful, a system snapshot will allow you to go back "
+"in time and revert all the changes."
+msgstr ""
+"అప్‌గ్రేడ్ విజయవంతం కాకపోతే, సిస్టమ్ స్నాప్‌షాట్ మీరు సమయానికి తిరిగి వెళ్లి "
+"అన్ని మార్పులను తిరిగి మార్చడానికి అనుమతిస్తుంది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:198
+msgid "Press 'Fix' to perform a system snapshot."
+msgstr "సిస్టమ్ స్నాప్‌షాట్‌ను నిర్వహించడానికి 'ఫిక్స్' నొక్కండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:214
+msgid "APT cache"
+msgstr "APT కాష్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:214
+msgid "Checking the APT cache..."
+msgstr "APT కాష్‌ను తనిఖీ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:232
+msgid ""
+"Your package cache can't refresh correctly. Run 'apt update' and fix the "
+"errors it displays."
+msgstr ""
+"మీ ప్యాకేజీ కాష్ సరిగ్గా రిఫ్రెష్ కాలేదు. 'apt update' ని అమలు చేసి, అది "
+"ప్రదర్శించే లోపాలను పరిష్కరించండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:241
+msgid ""
+"Some of your packages are broken. Run 'apt install -f' to fix the issue."
+msgstr ""
+"మీ ప్యాకేజీలలో కొన్ని పాడైపోయాయి. సమస్యను పరిష్కరించడానికి 'apt install -f' "
+"ని అమలు చేయండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:252
+msgid ""
+"Your operating system is not up to date. Apply available updates before "
+"attempting the upgrade."
+msgstr ""
+"మీ ఆపరేటింగ్ సిస్టమ్ తాజాగా లేదు. అప్‌గ్రేడ్ చేయడానికి ముందు అందుబాటులో ఉన్న "
+"అప్‌డేట్‌లను వర్తింపజేయండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:273
+msgid "The following operations need to be performed:"
+msgstr "కింది ఆపరేషన్లు చేయవలసి ఉంటుంది:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
+msgid "Package"
+msgstr "ప్యాకేజీ"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:275
+msgid "Operation"
+msgstr "ఆపరేషన్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:277
+msgid "needs to be installed"
+msgstr "ఇన్స్టాల్ చేయాలి"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:279
+msgid "needs to be removed"
+msgstr "తొలగించాల్సిన అవసరం ఉంది"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:308
+#: usr/lib/linuxmint/mintupgrade/checks.py:588
+msgid "Package repositories"
+msgstr "ప్యాకేజీ రిపోజిటరీలు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:308
+msgid "Checking package repositories..."
+msgstr "ప్యాకేజీ రిపోజిటరీలను తనిఖీ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:322
+msgid ""
+"The following sources are defined in DEB822 format. This format isn't "
+"supported yet."
+msgstr ""
+"కింది మూలాలు DEB822 ఫార్మాట్‌లో నిర్వచించబడ్డాయి. ఈ ఫార్మాట్‌కు ఇంకా మద్దతు "
+"లేదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:328
+msgid "Backup and then delete these files to continue."
+msgstr "కొనసాగించడానికి ఈ ఫైళ్లను బ్యాకప్ చేసి, తొలగించండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:356
+msgid ""
+"The following repositories do not explicitly support your version of Linux "
+"Mint."
+msgstr "కింది రిపోజిటరీలు మీ Linux Mint వెర్షన్‌కు స్పష్టంగా మద్దతు ఇవ్వవు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:364
+msgid "These repositories need to be disabled."
+msgstr "ఈ రిపోజిటరీలను నిలిపివేయాలి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:377
+msgid "Your APT policy is incorrect."
+msgstr "మీ APT విధానం తప్పు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:378
+msgid "Reboot your computer."
+msgstr "మీ కంప్యూటర్‌ను రీబూట్ చేయండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:401
+#, python-format
+msgid "%s is unreachable"
+msgstr "%s అందుబాటులో లేదు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:406
+#, python-format
+msgid "%s is not up to date. Switch to a different mirror."
+msgstr "%s తాజాగా లేదు. వేరే మిర్రర్‌కు మారండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:418
+#, python-format
+msgid "%s does not support %s"
+msgstr "%s కు %s మద్దతు ఇవ్వదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:422
+msgid "The following problems were found:"
+msgstr "ఈ క్రింది సమస్యలు కనుగొనబడ్డాయి:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:464
+msgid "Held packages"
+msgstr "ప్యాకేజీలు నిర్వహించారు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:464
+msgid "Looking for held packages..."
+msgstr "హోల్డ్ ప్యాకేజీల కోసం చూస్తున్నాను..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:470
+msgid "The following packages are held:"
+msgstr ""
+"ప్యాకేజీ రిపోజిటరీలను తనిఖీ చేస్తోంది... కింది ప్యాకేజీలు ఉంచబడ్డాయి:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:477
+msgid "Held packages can break the upgrade."
+msgstr "హోల్డ్ ప్యాకేజీలు అప్‌గ్రేడ్‌ను విచ్ఛిన్నం చేయవచ్చు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:491
+msgid "Foreign packages"
+msgstr "విదేశీ ప్యాకేజీలు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:491
+msgid "Looking for foreign packages..."
+msgstr "విదేశీ ప్యాకేజీల కోసం చూస్తున్నాను..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:497
+msgid ""
+"The following packages need to be downgraded back to official versions:"
+msgstr "కింది ప్యాకేజీలను అధికారిక సంస్కరణలకు తిరిగి డౌన్‌గ్రేడ్ చేయాలి:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
+msgid "Installed Version"
+msgstr "ఇన్‌స్టాల్ చేసిన వెర్షన్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
+msgid "Official version"
+msgstr "అధికారిక వెర్షన్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:499
+msgid "Archive"
+msgstr "ఆర్కైవ్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:504
+msgid "Otherwise these packages can create conflicts."
+msgstr "లేకపోతే ఈ ప్యాకేజీలు వైరుధ్యాలను సృష్టించవచ్చు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:520
+#: usr/lib/linuxmint/mintupgrade/checks.py:556
+msgid "Orphan packages"
+msgstr "అనాథ ప్యాకేజీలు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:520
+msgid "Looking for orphan packages..."
+msgstr "అనాథ ప్యాకేజీల కోసం చూస్తున్నాను..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:540
+msgid "The following packages do not exist in the repositories:"
+msgstr "కింది ప్యాకేజీలు రిపోజిటరీలలో లేవు:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:546
+msgid "In some rare cases orphan packages can interfere with the upgrade."
+msgstr ""
+"కొన్ని అరుదైన సందర్భాల్లో ఆర్ఫన్ ప్యాకేజీలు అప్‌గ్రేడ్‌కు ఆటంకం కలిగిస్తాయి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:547
+msgid ""
+"If you decide to uninstall some of these packages press 'Check again' after "
+"their removal."
+msgstr ""
+"మీరు ఈ ప్యాకేజీలలో కొన్నింటిని అన్‌ఇన్‌స్టాల్ చేయాలని నిర్ణయించుకుంటే, "
+"వాటిని తొలగించిన తర్వాత 'మళ్ళీ తనిఖీ చేయండి' నొక్కండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:548
+msgid "Press 'OK' to continue with the upgrade."
+msgstr "అప్‌గ్రేడ్‌ను కొనసాగించడానికి 'సరే' నొక్కండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:556
+msgid "Removing newly orphaned packages..."
+msgstr "కొత్తగా అనాథ ప్యాకేజీలను తొలగిస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:588
+msgid "Pointing to the new release..."
+msgstr "కొత్త విడుదలను సూచిస్తూ.."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:627
+msgid "Upgrade simulation"
+msgstr "అనుకరణను అప్‌గ్రేడ్ చేయండి"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:627
+msgid "Simulating upgrade to check hard disk space and potential issues..."
+msgstr ""
+"హార్డ్ డిస్క్ స్థలం మరియు సంభావ్య సమస్యలను తనిఖీ చేయడానికి అప్‌గ్రేడ్‌ను "
+"అనుకరిస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:666
+msgid "The simulation was not successful."
+msgstr "ఆ అనుకరణ విజయవంతం కాలేదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:667
+msgid "Upgrading would remove the following important packages:"
+msgstr "అప్‌గ్రేడ్ చేయడం వలన ఈ క్రింది ముఖ్యమైన ప్యాకేజీలు తొలగిపోతాయి:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:668
+msgid "Unwanted removals"
+msgstr "అవాంఛిత తొలగింపులు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:672
+msgid ""
+"This is a sign that something is wrong and needs to be fixed before going "
+"further."
+msgstr ""
+"ఇది ఏదో తప్పు జరిగిందని మరియు ముందుకు వెళ్ళే ముందు దాన్ని పరిష్కరించాల్సిన "
+"అవసరం ఉందని సూచిస్తుంది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:674
+msgid "Recommended solution"
+msgstr "సిఫార్సు చేసిన పరిష్కారం"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:675
+msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
+msgstr ""
+"సమస్యను పరిష్కరించడానికి మరియు పరిష్కరించడానికి టెర్మినల్‌లో apt-get ని "
+"ఉపయోగించండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:676
+msgid "Don't hesitate to seek help on the forums and the chat room."
+msgstr "ఫోరమ్‌లు మరియు చాట్ రూమ్‌లలో సహాయం కోరడానికి వెనుకాడకండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:678
+msgid "Additional information"
+msgstr "అదనపు సమాచారం"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:679
+msgid "The information below might help solve the issue."
+msgstr "దిగువ సమాచారం సమస్యను పరిష్కరించడంలో సహాయపడవచ్చు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:680
+#: usr/lib/linuxmint/mintupgrade/checks.py:692
+msgid "Kept packages"
+msgstr "ప్యాకేజీలను ఉంచారు"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:681
+#: usr/lib/linuxmint/mintupgrade/checks.py:696
+msgid "Removed packages"
+msgstr "ప్యాకేజీలు తీసివేయబడ్డాయి"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:682
+#: usr/lib/linuxmint/mintupgrade/checks.py:695
+msgid "Added packages"
+msgstr "ప్యాకేజీలు జోడించబడ్డాయి"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:683
+#: usr/lib/linuxmint/mintupgrade/checks.py:691
+#, python-format
+msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
+msgstr ""
+"ప్యాకేజీలు నవీకరించబడ్డాయి: %d, జోడించబడ్డాయి: %d , ఉంచబడ్డాయి: %d, "
+"తొలగించబడ్డాయి: %d"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:686
+msgid "Upgrading will perform the following changes."
+msgstr "అప్‌గ్రేడ్ చేయడం వలన కింది మార్పులు జరుగుతాయి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:694
+msgid ""
+"Note: Ideally, no packages should be kept. This might indicate an issue."
+msgstr ""
+"గమనిక: ఆదర్శంగా, ఎటువంటి ప్యాకేజీలను ఉంచకూడదు. ఇది సమస్యను సూచిస్తుంది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:698
+msgid ""
+"Go through the list above and make sure you are happy with the removals "
+"before going further with the upgrade."
+msgstr ""
+"పైన ఉన్న జాబితాను పరిశీలించి, అప్‌గ్రేడ్‌తో ముందుకు వెళ్లే ముందు మీరు "
+"తొలగింపులతో సంతోషంగా ఉన్నారని నిర్ధారించుకోండి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:795
+#, python-format
+msgid "You need %s on '%s' but only have %s. You must free an additional %s."
+msgstr ""
+"మీకు '%s' లో %s అవసరం కానీ %s మాత్రమే ఉంది. మీరు అదనంగా %s ని ఖాళీ చేయాలి."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:799
+#, python-format
+msgid "Download size: %s. Additional space needed: %s."
+msgstr "డౌన్‌లోడ్ పరిమాణం: %s. అదనపు స్థలం అవసరం: %s."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:805
+msgid "Package download"
+msgstr "ప్యాకేజీ డౌన్‌లోడ్"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:805
+msgid "Downloading packages..."
+msgstr "ప్యాకేజీలను డౌన్‌లోడ్ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:817
+msgid "An error occurred while downloading the packages."
+msgstr "ప్యాకేజీలను డౌన్‌లోడ్ చేస్తున్నప్పుడు లోపం సంభవించింది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:824
+msgid "Session inhibition"
+msgstr "సెషన్ నిరోధం"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:824
+msgid "Inhibiting session..."
+msgstr "సెషన్‌ను నిరోధిస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:833
+msgid "Upgrade preparation"
+msgstr "అప్‌గ్రేడ్ తయారీ"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:833
+msgid "Preparing the upgrade..."
+msgstr "అప్‌గ్రేడ్‌ని సిద్ధం చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:862
+msgid "Upgrade phase"
+msgstr "అప్‌గ్రేడ్ దశ"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:862
+msgid "Upgrading the system..."
+msgstr "వ్యవస్థను అప్‌గ్రేడ్ చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:879
+#: usr/lib/linuxmint/mintupgrade/checks.py:885
+msgid "An issue was detected during the upgrade."
+msgstr "అప్‌గ్రేడ్ సమయంలో ఒక సమస్య గుర్తించబడింది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:904
+#, python-format
+msgid "%d packages still need to be updated (%d kept, %d deleted)"
+msgstr ""
+"%d ప్యాకేజీలను ఇంకా నవీకరించాల్సి ఉంది (%d ఉంచబడ్డాయి, %d తొలగించబడ్డాయి)"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:910
+msgid "Final phase"
+msgstr "చివరి దశ"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:910
+msgid "Finalizing the upgrade..."
+msgstr "అప్‌గ్రేడ్‌ను పూర్తి చేస్తోంది..."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:929
+#, python-format
+msgid "%s could not be installed."
+msgstr "%s ను ఇన్‌స్టాల్ చేయడం సాధ్యం కాలేదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:936
+msgid "mint-meta-codecs could not be installed."
+msgstr "mint-meta-codecs ఇన్‌స్టాల్ చేయడం సాధ్యం కాలేదు."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:944
+#: usr/lib/linuxmint/mintupgrade/checks.py:967
+msgid "The following packages could not be installed:"
+msgstr "కింది ప్యాకేజీలను ఇన్‌స్టాల్ చేయడం సాధ్యం కాలేదు:"
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:1030
+msgid "/etc/fstab was modified during the upgrade."
+msgstr "అప్‌గ్రేడ్ సమయంలో /etc/fstab సవరించబడింది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:1031
+msgid ""
+"To ensure a successful boot, the upgrade tool restored your original "
+"/etc/fstab"
+msgstr ""
+"విజయవంతమైన బూట్‌ను నిర్ధారించడానికి, అప్‌గ్రేడ్ సాధనం మీ అసలు /etc/fstabను "
+"పునరుద్ధరించింది."
+
+#: usr/lib/linuxmint/mintupgrade/checks.py:1032
+msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
+msgstr "సవరించిన ఫైల్ యొక్క కాపీ /etc/fstab.upgraded గా సేవ్ చేయబడింది."
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:16
+msgid "Upgrade Tool"
+msgstr "అప్‌గ్రేడ్ సాధనం"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:74
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:2
+#, python-format
+msgid "Upgrade to %s"
+msgstr "%s కి అప్‌గ్రేడ్ చేయండి"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:90
+msgid "Preferences"
+msgstr "ప్రాధాన్యతలు"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:95
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:284
+msgid "About"
+msgstr "గురించి"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:100
+msgid "Quit"
+msgstr "నిష్క్రమించు"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:144
+msgid "Phase 1: Preparation"
+msgstr "దశ 1: తయారీ"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:145
+msgid ""
+"A series of tests will now be performed to prepare the computer for the "
+"upgrade."
+msgstr ""
+"అప్‌గ్రేడ్ కోసం కంప్యూటర్‌ను సిద్ధం చేయడానికి ఇప్పుడు వరుస పరీక్షలు "
+"నిర్వహించబడతాయి."
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
+msgid "Phase 2: Simulation and download"
+msgstr "దశ 2: అనుకరణ మరియు డౌన్‌లోడ్"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
+msgid "Your package repositories will now point towards the new release."
+msgstr "మీ ప్యాకేజీ రిపోజిటరీలు ఇప్పుడు కొత్త విడుదల వైపు చూపుతాయి."
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
+msgid "A few more tests will be run and package updates will be downloaded."
+msgstr ""
+"మరికొన్ని పరీక్షలు అమలు చేయబడతాయి మరియు ప్యాకేజీ నవీకరణలు డౌన్‌లోడ్ "
+"చేయబడతాయి."
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
+msgid "Phase 3: Upgrade"
+msgstr "దశ 3: అప్‌గ్రేడ్"
+
+#: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
+msgid "The packages will now be upgraded."
+msgstr "ప్యాకేజీలు ఇప్పుడు అప్‌గ్రేడ్ చేయబడతాయి."
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
+msgid ""
+"This program will ask you some questions and upgrade your operating system."
+msgstr ""
+"ఈ ప్రోగ్రామ్ మిమ్మల్ని కొన్ని ప్రశ్నలు అడుగుతుంది మరియు మీ ఆపరేటింగ్ "
+"సిస్టమ్‌ను అప్‌గ్రేడ్ చేస్తుంది."
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
+msgid "Let's go!"
+msgstr "వెళ్దాం!"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:5
+msgid "OK"
+msgstr "సరే"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:6
+msgid "Fix"
+msgstr "పరిష్కరించండి"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:7
+msgid "Check again"
+msgstr "మళ్లీ తనిఖీ చేయండి"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
+msgid "The following error occurred:"
+msgstr "కింది లోపం సంభవించింది:"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
+msgid "The upgrade was successful."
+msgstr "అప్‌గ్రేడ్ విజయవంతమైంది."
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
+msgid "Reboot the computer for all the changes to take effect."
+msgstr "అన్ని మార్పులు అమలులోకి రావడానికి కంప్యూటర్‌ను రీబూట్ చేయండి."
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
+msgid "Recent Timeshift snapshot"
+msgstr "ఇటీవలి టైమ్‌షిఫ్ట్ స్నాప్‌షాట్"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
+msgid "Applied software updates"
+msgstr "అప్లైడ్ సాఫ్ట్‌వేర్ అప్‌డేట్‌లు"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
+msgid ""
+"These requirements are there to guarantee a safe upgrade. Only disable them "
+"if you know what you are doing."
+msgstr ""
+"సురక్షితమైన అప్‌గ్రేడ్‌కు హామీ ఇవ్వడానికి ఈ అవసరాలు ఉన్నాయి. మీరు ఏమి "
+"చేస్తున్నారో మీకు తెలిస్తేనే వాటిని నిలిపివేయండి."
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
+msgid "Supported Linux Mint version"
+msgstr "మద్దతు ఉన్న Linux Mint వెర్షన్"
+
+#: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
+msgid "Requirements"
+msgstr "అవసరాలు"
