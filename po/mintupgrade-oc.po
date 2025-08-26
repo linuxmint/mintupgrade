@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-09-26 14:10+0100\n"
-"PO-Revision-Date: 2024-09-27 14:15+0000\n"
+"PO-Revision-Date: 2025-08-20 14:08+0000\n"
 "Last-Translator: Quentin PAGÈS <Unknown>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-07-31 09:25+0000\n"
-"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
+"X-Launchpad-Export-Date: 2025-08-26 15:25+0000\n"
+"X-Generator: Launchpad (build 919009172d854f2b8e4e8262db447f12f11d25eb)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -162,16 +162,22 @@ msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
+"Las fonts seguentas son definidas en format DEB822. Aqueste format es pas "
+"encara pres en carga."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid "Backup and then delete these files to continue."
 msgstr ""
+"Fasètz una  salvagarda d'aquestes fichièrs, puèi suprimissètz-los per "
+"contunhar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:356
 msgid ""
 "The following repositories do not explicitly support your version of Linux "
 "Mint."
 msgstr ""
+"Los depauses seguents prenon pas explicitament en carga vòstra version de "
+"Linux Mint."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:364
 msgid "These repositories need to be disabled."
@@ -232,6 +238,7 @@ msgstr "Verificacion dels paquets estrangièrs..."
 msgid ""
 "The following packages need to be downgraded back to official versions:"
 msgstr ""
+"La version anteriora oficiala dels paquets seguents deu èsser installada :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:499
 msgid "Installed Version"
@@ -252,37 +259,40 @@ msgstr "Autrament aquestes paquets pòdon crear de conflictes."
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Orphan packages"
-msgstr ""
+msgstr "Paquets orfanèls"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:520
 msgid "Looking for orphan packages..."
-msgstr ""
+msgstr "Recèrca de paquets orfanèls…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:540
 msgid "The following packages do not exist in the repositories:"
-msgstr ""
+msgstr "Los paquets seguents existisson pas dins los depauses :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "In some rare cases orphan packages can interfere with the upgrade."
 msgstr ""
+"Dins de cases rares, los paquets orfanèls pòdon comprometre la mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:547
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
 msgstr ""
+"Se decidissètz de desinstallar d’unes d’aquestes paquets, clicatz « Tornar "
+"verificar » aprèp lor supression."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:548
 msgid "Press 'OK' to continue with the upgrade."
-msgstr ""
+msgstr "Clicatz « D’acòrdi » per contunhar la mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:556
 msgid "Removing newly orphaned packages..."
-msgstr ""
+msgstr "Supression dels paquets novèlament orfanèls…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:588
 msgid "Pointing to the new release..."
-msgstr ""
+msgstr "Configuracion dels depauses cap a la version novèla…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Upgrade simulation"
@@ -291,6 +301,8 @@ msgstr "Simulacion de mesa a nivèl"
 #: usr/lib/linuxmint/mintupgrade/checks.py:627
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
+"Simulacion de la mesa a nivèl per verificar l'espaci disc e los problèmas "
+"potencials…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:666
 msgid "The simulation was not successful."
@@ -298,7 +310,7 @@ msgstr "La simulacion a fracassat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:667
 msgid "Upgrading would remove the following important packages:"
-msgstr ""
+msgstr "La mesa a nivèl suprimirà los paquets importants seguents :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:668
 msgid "Unwanted removals"
@@ -308,7 +320,7 @@ msgstr "Supression pas volguda"
 msgid ""
 "This is a sign that something is wrong and needs to be fixed before going "
 "further."
-msgstr ""
+msgstr "Aquò implica un problèma que deu èsser corregit abans de contunhar."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:674
 msgid "Recommended solution"
@@ -317,10 +329,13 @@ msgstr "Solucion recomandada"
 #: usr/lib/linuxmint/mintupgrade/checks.py:675
 msgid "Use apt-get in a terminal to troubleshoot and solve the issue."
 msgstr ""
+"Utilizatz la comanda « apt-get » dins un terminal per identificar e corregir "
+"los problèmas."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:676
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr ""
+"Esitetz pas a demandar d'ajuda suls fòrums e dins la sala de discussion."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:678
 msgid "Additional information"
@@ -350,21 +365,26 @@ msgstr "Paquets aponduts"
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr ""
+"Paquets meses a nivèl : %d, installats novèlament : %d, non meses a nivèl : "
+"%d, suprimits : %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:686
 msgid "Upgrading will perform the following changes."
-msgstr ""
+msgstr "La mesa a nivèl entraïnarà los cambiaments seguents."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:694
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
 msgstr ""
+"Nòta : lo fach que de paquets sián pas meses a nivèl pòt indicar un problèma."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:698
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
 msgstr ""
+"Abans de contunhar la mesa a nivèl, consultatz la lista çai-sus e asseguratz-"
+"vos que las supressions prepausadas vos convengan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:795
 #, python-format
@@ -390,11 +410,11 @@ msgstr "Una error s’es producha pendent lo telecargament dels paquets."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Session inhibition"
-msgstr ""
+msgstr "Verrolhatge de la session"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:824
 msgid "Inhibiting session..."
-msgstr ""
+msgstr "Verrolhatge de la session…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:833
 msgid "Upgrade preparation"
@@ -406,7 +426,7 @@ msgstr "Preparacion de la mesa a nivèl..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrade phase"
-msgstr ""
+msgstr "Fasa de mesa a nivèl"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:862
 msgid "Upgrading the system..."
@@ -415,16 +435,18 @@ msgstr "Mesa a nivèl del sistèma..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:879
 #: usr/lib/linuxmint/mintupgrade/checks.py:885
 msgid "An issue was detected during the upgrade."
-msgstr ""
+msgstr "Una error es estada detectada pendent la mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:904
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
 msgstr ""
+"%d paquets devon encara èsser meses a nivèl (%d non meses a nivèl, %d "
+"suprimits)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Final phase"
-msgstr ""
+msgstr "Fasa finala"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:910
 msgid "Finalizing the upgrade..."
@@ -437,26 +459,29 @@ msgstr "%s a pas pogut èsser installat."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:936
 msgid "mint-meta-codecs could not be installed."
-msgstr ""
+msgstr "se podiá pas installar mint-meta-codecs."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:944
 #: usr/lib/linuxmint/mintupgrade/checks.py:967
 msgid "The following packages could not be installed:"
-msgstr ""
+msgstr "Los paquets seguents an pas pogut èsser installats :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1030
 msgid "/etc/fstab was modified during the upgrade."
-msgstr ""
+msgstr "/etc/fstab es estat modificat pendent la mesa a nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1031
 msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
+"Per assegurar l'amorsatge, l'esplech de mesa a nivèl a restaurat vòstre "
+"fichièr /etc/fstab d'origina."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1032
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
 msgstr ""
+"Una còpia del fichièr modificat es estat enregistrat dins /etc/fstab.upgraded"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:63
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:285 generate_desktop_files:26
@@ -492,6 +517,8 @@ msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
+"Una seria d’ensages serà realizada per preparar l’ordenador a la mesa a "
+"nivèl."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:157
 msgid "Phase 2: Simulation and download"
@@ -499,11 +526,13 @@ msgstr "Fasa 2 : simulacion e telecargament"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:158
 msgid "Your package repositories will now point towards the new release."
-msgstr ""
+msgstr "Vòstres depauses de paquets correspondon ara a la version novèla."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:159
 msgid "A few more tests will be run and package updates will be downloaded."
 msgstr ""
+"Qualques ensages suplementaris seràn efectuats e los paquets meses a nivèl "
+"seràn telecargats."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
 msgid "Phase 3: Upgrade"
@@ -511,12 +540,14 @@ msgstr "Fasa 3 : mesa a nivèl"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "The packages will now be upgraded."
-msgstr ""
+msgstr "Los paquets seràn ara meses a nivèl."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
+"Aqueste programa vos pausarà de questions e metrà a nivèl vòstre sistèma "
+"d'espleitacion."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
@@ -536,7 +567,7 @@ msgstr "Tornar verificar"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "The following error occurred:"
-msgstr ""
+msgstr "I a agut l'error seguenta :"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The upgrade was successful."
@@ -548,7 +579,7 @@ msgstr "Reaviatz l’ordenador per aplicar totes los cambiaments."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr ""
+msgstr "Instantanèu Timeshift recent"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
@@ -559,10 +590,12 @@ msgid ""
 "These requirements are there to guarantee a safe upgrade. Only disable them "
 "if you know what you are doing."
 msgstr ""
+"Aquestas exigéncias garantisson una mesa a nivèl sens problèmas. Desactivatz-"
+"las sonque se sabètz çò que fasètz."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:14
 msgid "Supported Linux Mint version"
-msgstr ""
+msgstr "Version de Linux Mint presa en carga"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:15
 msgid "Requirements"
