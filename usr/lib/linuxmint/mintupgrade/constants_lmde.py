@@ -13,8 +13,7 @@ CHECK_ABSENT = []
 CHECK_PRESENT = ["os-prober"]
 CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "debian-keyring", "debian-archive-keyring", "mintsystem"]
 
-KERNEL_META_32 = ["linux-image-686", "linux-headers-686"]
-KERNEL_META_64 = ["linux-image-amd64", "linux-headers-amd64"]
+KERNEL_META = ["linux-image-amd64", "linux-headers-amd64"]
 
 PACKAGES_PRE_REMOVALS = []
 

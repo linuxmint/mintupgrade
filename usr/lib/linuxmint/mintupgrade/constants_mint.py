@@ -13,8 +13,7 @@ CHECK_ABSENT = ["ippusbxd"]
 CHECK_PRESENT = ["os-prober"]
 CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "ubuntu-keyring", "mintsystem"]
 
-KERNEL_META_32 = ["linux-generic"]
-KERNEL_META_64 = ["linux-generic"]
+KERNEL_META = ["linux-generic"]
 
 PACKAGES_PRE_REMOVALS = []
 

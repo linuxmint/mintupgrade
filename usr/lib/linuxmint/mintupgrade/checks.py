@@ -174,6 +174,12 @@ class VersionCheck(Check):
                 self.message = _("Your edition of Linux Mint is '%s'. It cannot be upgraded to %s.") % (edition, DESTINATION)
                 return
 
+            # Check architecture
+            if platform.machine() != "x86_64":
+                self.result = RESULT_ERROR
+                self.message = _("Your architecture of Linux Mint is '%s'. It cannot be upgraded.") % platform.machine()
+                return
+
 # Check that the computer is plugged in to AC Power
 class PowerCheck(Check):
 
@@ -980,10 +986,6 @@ class PostUpgradeCheck(Check):
 
         # Install kernel meta
         print_output("Installing kernel meta")
-        if platform.machine() == "x86_64":
-            KERNEL_META = KERNEL_META_64
-        else:
-            KERNEL_META = KERNEL_META_32
         if len(KERNEL_META) > 0:
             if not run_command('%s install --yes --no-install-recommends %s' % (APT_GET, " ".join(KERNEL_META))):
                 self.result = RESULT_ERROR
