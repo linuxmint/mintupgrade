@@ -18,7 +18,6 @@ KERNEL_META = ["linux-image-amd64", "linux-headers-amd64"]
 PACKAGES_PRE_REMOVALS = [
     "redshift",
     "redshift-gtk",
-    "gpg-wks-server",
 ]
 
 PACKAGES_ADDITIONS = [
