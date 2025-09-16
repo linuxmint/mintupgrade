@@ -15,16 +15,49 @@ CHECK_UP_TO_DATE = ["mintupgrade", "apt", "dpkg", "linuxmint-keyring", "debian-k
 
 KERNEL_META = ["linux-image-amd64", "linux-headers-amd64"]
 
-PACKAGES_PRE_REMOVALS = []
+PACKAGES_PRE_REMOVALS = [
+    "redshift",
+    "redshift-gtk",
+    "gpg-wks-server",
+]
 
 PACKAGES_ADDITIONS = [
-    "fingwit",
     "aptkit",
     "captain",
-    "gnome-online-accounts-gtk",
-    "hypnotix",
     "celluloid",
+    "dhcpcd-base",
+    "ethtool",
+    "fingwit",
+    "firmware-ast",
+    "firmware-ath9k-htc",
+    "firmware-carl9170",
+    "firmware-cavium",
+    "firmware-cirrus",
+    "firmware-intel-graphics",
+    "firmware-intel-misc",
+    "firmware-intel-sound",
+    "firmware-marvell-prestera",
+    "firmware-mediatek",
+    "firmware-myricom",
+    "firmware-netronome",
+    "firmware-netxen",
+    "firmware-nvidia-graphics",
+    "firmware-siano",
+    "fonts-noto-core",
+    "fwupd-amd64-signed",
+    "gnome-font-viewer",
+    "gnome-online-accounts-gtk",
+    "heif-thumbnailer",
+    "hypnotix",
+    "iio-sensor-proxy",
+    "libgtk-4-bin",
+    "libgtk-4-media-gstreamer",
+    "mdadm",
     "simple-scan",
+    "sysstat",
+    "thin-provisioning-tools",
+    "tree",
+    "xcvt",
 ]
 
 PACKAGES_ADDITIONS_CINNAMON = [
@@ -36,10 +69,12 @@ PACKAGES_ADDITIONS_MATE = []
 PACKAGES_ADDITIONS_XFCE = []
 
 PACKAGES_REMOVALS = [
-    "synaptic",
-    "gdebi",
     "aptdaemon",
+    "gdebi",
+    "gdebi-core",
+    "gstreamer1.0-pulseaudio",
     "postfix",
+    "synaptic",
 ]
 
 IMPORTANT_PACKAGES = [
