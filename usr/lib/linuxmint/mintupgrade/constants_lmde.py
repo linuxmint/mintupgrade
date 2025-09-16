@@ -1,10 +1,10 @@
-ORIGIN = "LMDE 5 'Elsie'"
-ORIGIN_CODENAME = "elsie"
-ORIGIN_BASE_CODENAME = "bullseye"
+ORIGIN = "LMDE 6 'Faye'"
+ORIGIN_CODENAME = "faye"
+ORIGIN_BASE_CODENAME = "bookworm"
 
-DESTINATION = "LMDE 6 'Faye'"
-DESTINATION_CODENAME = "faye"
-DESTINATION_BASE_CODENAME = "bookworm"
+DESTINATION = "LMDE 7 'Gigi'"
+DESTINATION_CODENAME = "gigi"
+DESTINATION_BASE_CODENAME = "trixie"
 
 SUPPORTED_EDITIONS = ["cinnamon"]
 
@@ -18,25 +18,28 @@ KERNEL_META = ["linux-image-amd64", "linux-headers-amd64"]
 PACKAGES_PRE_REMOVALS = []
 
 PACKAGES_ADDITIONS = [
-    "wmctrl",
-    "mint-l-theme",
-    "mint-l-icons",
-    "heif-gdk-pixbuf",
-    "xdg-desktop-portal-xapp",
-    "switcheroo-control",
-    "mint-backgrounds-victoria",
-    "systemd-timesyncd",
-    "pipewire-audio",
-    "touchegg",
-    "zstd",
-    "yt-dlp"
+    "fingwit",
+    "aptkit",
+    "captain",
+    "gnome-online-account",
+    "hypnotix",
+    "celluloid",
+    "simple-scan",
 ]
 
+PACKAGES_ADDITIONS_CINNAMON = [
+    "nemo-preview"
+]
+
+PACKAGES_ADDITIONS_MATE = []
+
+PACKAGES_ADDITIONS_XFCE = []
+
 PACKAGES_REMOVALS = [
-    "gnome-font-viewer",
-    "gnome-control-center",
-    "desktop-base",
-    "malcontent"
+    "synaptic",
+    "gdebi",
+    "aptdaemon",
+    "postfix",
 ]
 
 IMPORTANT_PACKAGES = [
@@ -77,5 +80,5 @@ IMPORTANT_PACKAGES = [
 ]
 
 NEW_ORPHANS_TO_KEEP = [
-    "dnscrypt-proxy"
+
 ]
