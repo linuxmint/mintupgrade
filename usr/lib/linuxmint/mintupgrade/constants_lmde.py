@@ -21,7 +21,7 @@ PACKAGES_ADDITIONS = [
     "fingwit",
     "aptkit",
     "captain",
-    "gnome-online-account",
+    "gnome-online-accounts-gtk",
     "hypnotix",
     "celluloid",
     "simple-scan",
