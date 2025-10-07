@@ -1,3 +1,9 @@
+mintupgrade (2025.10.07) gigi; urgency=medium
+
+  * Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 07 Oct 2025 16:14:31 +0100
+
 mintupgrade (2025.09.16.2) gigi; urgency=medium
 
   * lmde: Update constants
