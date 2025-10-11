@@ -1021,6 +1021,12 @@ class PostUpgradeCheck(Check):
         if IS_LMDE and os.path.exists("/etc/lsb-release"):
             run_command("rm -f /etc/lsb-release")
 
+        # Run postinstall script
+        if IS_LMDE:
+            run_command("/usr/lib/linuxmint/mintupgrade/lmde.postinstall")
+        else:
+            run_command("/usr/lib/linuxmint/mintupgrade/mint.postinstall")
+
         # Update initramfs
         print_output("Running update-initramfs -u")
         run_command("update-initramfs -u")

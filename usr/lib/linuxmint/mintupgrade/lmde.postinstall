@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Fixing Libreoffice"
+
+apt-get remove --purge --yes libreoffice*
+
+apt-get install --yes libreoffice-calc libreoffice-writer libreoffice-impress libreoffice-draw libreoffice-style-colibre libreoffice-gtk3 libreoffice-gnome
