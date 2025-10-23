@@ -320,7 +320,7 @@
                           <object class="GtkImage">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="icon-name">xapp-face-sad-symbolic</property>
+                            <property name="icon-name">xsi-face-sad-symbolic</property>
                             <property name="icon_size">6</property>
                           </object>
                           <packing>
@@ -377,7 +377,7 @@
                           <object class="GtkImage" id="image_error1">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="icon-name">xapp-face-smile-symbolic</property>
+                            <property name="icon-name">xsi-face-smile-symbolic</property>
                             <property name="icon_size">6</property>
                           </object>
                           <packing>
@@ -584,7 +584,7 @@
                                   <packing>
                                     <property name="name">page_requirements</property>
                                     <property name="title" translatable="yes">Requirements</property>
-                                    <property name="icon-name">xapp-dialog-warning-symbolic</property>
+                                    <property name="icon-name">xsi-dialog-warning-symbolic</property>
                                   </packing>
                                 </child>
                               </object>
@@ -634,7 +634,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="icon-name">xapp-go-previous-symbolic</property>
+                <property name="icon-name">xsi-go-previous-symbolic</property>
               </object>
             </child>
           </object>
@@ -654,7 +654,7 @@
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="icon-name">xapp-open-menu-symbolic</property>
+                    <property name="icon-name">xsi-open-menu-symbolic</property>
                   </object>
                 </child>
               </object>
