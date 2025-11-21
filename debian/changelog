@@ -1,3 +1,10 @@
+mintupgrade (2025.11.21) zena; urgency=medium
+
+  * Switch to XApp symbolic icons
+  * Switch to XSI
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 21 Nov 2025 13:30:47 +0000
+
 mintupgrade (2025.10.11) gigi; urgency=medium
 
   * Run postinst scripts
