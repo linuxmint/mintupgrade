@@ -35,6 +35,9 @@ ERROR_APT_DESTINATION.append(_("This should have be done by the Upgrade Tool alr
 ERROR_APT_DESTINATION.append(_("Were the repositories modified since?"))
 ERROR_APT_DESTINATION.append(_("Re-run the Upgrade tool so that it migrates the repositories again."))
 
+# User agent used by pycurl requests
+USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
 class bcolors:
     MAGENTA = '\033[95m' # Magenta
     BLUE = '\033[94m' # Light Blue
@@ -444,6 +447,7 @@ class APTRepoCheck(Check):
             c.setopt(pycurl.FOLLOWLOCATION, 1)
             c.setopt(pycurl.NOBODY, 1)
             c.setopt(pycurl.OPT_FILETIME, 1)
+            c.setopt(pycurl.USERAGENT, USER_AGENT)
             c.perform()
             filetime = c.getinfo(pycurl.INFO_FILETIME)
             if filetime < 0:
