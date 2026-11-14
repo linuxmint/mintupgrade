@@ -318,27 +318,8 @@ class APTRepoCheck(Check):
 
     def do_run(self):
 
-        # Error out if any deb822 repositories are present. We do not yet support them.
-        # python3-apt in bookworm has deb822 support, but the version in bullseye doesn't.
-        deb822_sources = []
-        sources_dir = "/etc/apt/sources.list.d/"
-        if os.path.exists(sources_dir):
-            for f in os.listdir(sources_dir):
-                if f.endswith(".sources"):
-                    deb822_sources.append(os.path.join(sources_dir, f))
-        if len(deb822_sources) > 0:
-            self.result = RESULT_ERROR
-            self.message = _("The following sources are defined in DEB822 format. This format isn't supported yet.")
-            table_list = TableList([""])
-            table_list.show_column_names = False
-            for repo in deb822_sources:
-                table_list.values.append([repo])
-            self.info.append(table_list)
-            self.info.append(_("Backup and then delete these files to continue."))
-            return
-
         apt_pkg.init_config()
-        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False)
+        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False, deb822=True)
         self.mint_repos = []
         self.base_repos = []
         self.foreign_repos = []
@@ -346,7 +327,7 @@ class APTRepoCheck(Check):
             if source.disabled:
                 # commented out repos
                 continue
-            if source.uri == "":
+            if not source.uri:
                 # repos file entries themselves
                 continue
             if source.dist == "stable":
@@ -405,9 +386,12 @@ class APTRepoCheck(Check):
                 timestamp = self.get_url_last_modified("%s/db/version" % repo.uri)
                 if timestamp == None:
                     # Retry with standard repo layout (for repos which use the mint codenames)
-                    new_dist = repo.dist.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
-                    url = "%s/dists/%s/Release" % (repo.uri, new_dist)
-                    timestamp = self.get_url_last_modified(url)
+                    for suite in repo.dist.split():
+                        new_dist = suite.replace(ORIGIN_CODENAME, DESTINATION_CODENAME)
+                        url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+                        timestamp = self.get_url_last_modified(url)
+                        if timestamp == None:
+                            break
                 if timestamp == None:
                     problems.append(_("%s is unreachable") % repo.uri)
                 elif mint_age > 2:
@@ -418,11 +402,12 @@ class APTRepoCheck(Check):
 
         # Check the base repos can handle destination codename
         for repo in self.base_repos:
-            new_dist = repo.dist.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
-            url = "%s/dists/%s/Release" % (repo.uri, new_dist)
-            timestamp = self.get_url_last_modified(url)
-            if timestamp == None:
-                problems.append(_("%s does not support %s") % (repo.uri, new_dist))
+            for suite in repo.dist.split():
+                new_dist = suite.replace(ORIGIN_BASE_CODENAME, DESTINATION_BASE_CODENAME)
+                url = "%s/dists/%s/Release" % (repo.uri, new_dist)
+                timestamp = self.get_url_last_modified(url)
+                if timestamp == None:
+                    problems.append(_("%s does not support %s") % (repo.uri, new_dist))
 
         if len(problems) > 0:
             self.result = RESULT_ERROR
@@ -608,12 +593,12 @@ class UpdateReposCheck(Check):
 
     def do_run(self):
         apt_pkg.init_config()
-        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False)
+        self.sources = aptsources.sourceslist.SourcesList(withMatcher=False, deb822=True)
         for source in self.sources:
             if source.disabled:
                 # commented out repos
                 continue
-            if source.uri == "":
+            if not source.uri:
                 # repos file entries themselves
                 continue
             if DESTINATION_CODENAME in source.dist or DESTINATION_BASE_CODENAME in source.dist:

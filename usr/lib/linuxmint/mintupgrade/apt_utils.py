@@ -83,14 +83,14 @@ def get_held_packages():
 # APT points to the Mint and base destination codenames
 def apt_points_to_destination():
     apt_pkg.init_config()
-    sources = aptsources.sourceslist.SourcesList(withMatcher=False)
+    sources = aptsources.sourceslist.SourcesList(withMatcher=False, deb822=True)
     mint_points_to_dest = False
     base_points_to_dest = False
     for source in sources:
         if source.disabled:
             # commented out repos
             continue
-        if source.uri == "":
+        if not source.uri:
             # repos file entries themselves
             continue
         if DESTINATION_CODENAME in source.dist:
