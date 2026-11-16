@@ -1,3 +1,12 @@
+mintupgrade (2026.11.16) adrien; urgency=medium
+
+  * Don't refuse sources in DEB822 format
+  * Convert the official repositories to DEB822 format
+  * l10n: Update translations
+  * l10n: Update files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 16 Nov 2026 13:43:58 +0000
+
 mintupgrade (2026.08.19) alfa; urgency=medium
 
   * l10n: Update translations
