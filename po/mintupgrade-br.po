@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-12-08 12:53+0000\n"
+"PO-Revision-Date: 2026-01-31 10:35+0000\n"
 "Last-Translator: Anthony Guechoum <a.guechoum@proton.me>\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -46,7 +46,7 @@ msgstr "O wiriañ ho handelv Linux Mint..."
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
 "Your version of Linux Mint is unknown. /etc/linuxmint/info is missing."
-msgstr ""
+msgstr "Dianav eo ho handelv eus Linux Mint. /etc/linuxmint/info a vank."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:168
 #, python-format

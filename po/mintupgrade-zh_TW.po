@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-10-05 02:43+0000\n"
-"Last-Translator: 爽自由 <coby2023t@gmail.com>\n"
+"PO-Revision-Date: 2026-09-28 12:17+0000\n"
+"Last-Translator: taijuin lee <Unknown>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr "套件儲存場需指向新發行版 (%s/%s)."
+msgstr "軟體庫需要指向新版本 (%s/%s）。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
@@ -29,7 +29,7 @@ msgstr "升級工具應已完成工作"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr "是被更改的套件倉庫嗎?"
+msgstr "這些軟體庫之後是否被修改過？"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
@@ -105,12 +105,12 @@ msgstr "檢查 APT 快取..."
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
-msgstr "套件快取無法正確更新，執行 apt update 並修正它列出的問題"
+msgstr "您的軟體包快取無法正確更新。請執行「apt update」，並修正其顯示的錯誤。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:247
 msgid ""
 "Some of your packages are broken. Run 'apt install -f' to fix the issue."
-msgstr "有些套件有破損，執行 apt install -f 修復它"
+msgstr "您的一些軟體包已損壞。請執行「apt install -f」來解決此問題。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:258
 msgid ""
@@ -198,32 +198,32 @@ msgstr "找到下列問題："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:468
 msgid "Held packages"
-msgstr "靜止的軟體套件"
+msgstr "暫留的軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:468
 msgid "Looking for held packages..."
-msgstr "尋找靜止的套件..."
+msgstr "尋找暫留的軟體包..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "The following packages are held:"
-msgstr "下列套件是靜止的"
+msgstr "以下軟體包已被暫留："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:481
 msgid "Held packages can break the upgrade."
-msgstr "靜止的套件可能會中斷升級的進行"
+msgstr "暫留的軟體包可能會中斷升級的進行"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:495
 msgid "Foreign packages"
-msgstr "外部套件"
+msgstr "外部軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:495
 msgid "Looking for foreign packages..."
-msgstr "尋找外部套件..."
+msgstr "尋找外部軟體包..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:501
 msgid ""
 "The following packages need to be downgraded back to official versions:"
-msgstr "下列套件需退回到原本的版本:"
+msgstr "以下軟體包需降級回官方版本："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:503
 msgid "Installed Version"
@@ -239,30 +239,30 @@ msgstr "封存"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:508
 msgid "Otherwise these packages can create conflicts."
-msgstr "否則這些套件會造成混亂。"
+msgstr "否則這些軟體包可能會產生衝突。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:524
 #: usr/lib/linuxmint/mintupgrade/checks.py:564
 msgid "Orphan packages"
-msgstr "孤獨套件"
+msgstr "孤立軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:524
 msgid "Looking for orphan packages..."
-msgstr "尋找孤獨套件..."
+msgstr "尋找孤立軟體包..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "The following packages do not exist in the repositories:"
-msgstr "下列套件並在倉庫內:"
+msgstr "以下軟體包在軟體庫中不存在："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:552
 msgid "In some rare cases orphan packages can interfere with the upgrade."
-msgstr "有少數情況下孤獨套件會影響升級的進行。"
+msgstr "在極少數情況下，孤立軟體包可能會干擾升級過程。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:553
 msgid ""
 "If you decide to uninstall some of these packages press 'Check again' after "
 "their removal."
-msgstr "如果決定要反安裝部份這些套件，在移除後再按「再次檢查」"
+msgstr "如果您決定卸載其中一些軟體包，請在卸載後按「再次檢查」。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:554
 msgid "Press 'OK' to continue with the upgrade."
@@ -270,7 +270,7 @@ msgstr "按「確認」繼續升級"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:564
 msgid "Removing newly orphaned packages..."
-msgstr "移除最新的孤獨套件..."
+msgstr "移除新產生的孤立軟體包…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Pointing to the new release..."
@@ -290,7 +290,7 @@ msgstr "模擬不成功。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:682
 msgid "Upgrading would remove the following important packages:"
-msgstr "升級會移除下列重要套件:"
+msgstr "升級將會移除以下重要軟體包："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:683
 msgid "Unwanted removals"
@@ -325,23 +325,23 @@ msgstr "下列資訊也許有助於解決問題。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:695
 #: usr/lib/linuxmint/mintupgrade/checks.py:707
 msgid "Kept packages"
-msgstr "保留的套件"
+msgstr "保留的軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:696
 #: usr/lib/linuxmint/mintupgrade/checks.py:711
 msgid "Removed packages"
-msgstr "移除的套件"
+msgstr "已移除的軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:697
 #: usr/lib/linuxmint/mintupgrade/checks.py:710
 msgid "Added packages"
-msgstr "新加入的套件"
+msgstr "新增的軟體包"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:698
 #: usr/lib/linuxmint/mintupgrade/checks.py:706
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "套件 %d 更新,  %d 加入 ,  %d 保留, %d 刪除"
+msgstr "軟體包 %d 更新,  %d 加入 ,  %d 保留, %d 刪除"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:701
 msgid "Upgrading will perform the following changes."
@@ -350,13 +350,13 @@ msgstr "升級會有下列改變。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:709
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
-msgstr "註：理想上，沒有套件會被保留，也許是有什麼問題"
+msgstr "注意：理想情況下，不應保留任何軟體包。這可能表示存在問題。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:713
 msgid ""
 "Go through the list above and make sure you are happy with the removals "
 "before going further with the upgrade."
-msgstr "在升級前請仔細檢查上方要移除的套件列表，同意再進行"
+msgstr "請仔細查看以上清單，確保您對移除的項目感到滿意，然後再繼續進行升級。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:812
 #, python-format
@@ -370,15 +370,15 @@ msgstr "下載: %s 還需要 %s 的空間"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Package download"
-msgstr "下載的套件"
+msgstr "軟體包下載"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Downloading packages..."
-msgstr "下載套件..."
+msgstr "正在下載軟體包..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "An error occurred while downloading the packages."
-msgstr "下載套件時出錯。"
+msgstr "下載軟體包時發生錯誤。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:841
 msgid "Session inhibition"
@@ -412,7 +412,7 @@ msgstr "升級期間偵測到問題"
 #: usr/lib/linuxmint/mintupgrade/checks.py:921
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "%d 個套件需更新  (%d 保留, %d 刪除)"
+msgstr "%d 個軟體包需更新  (%d 保留, %d 刪除)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:927
 msgid "Final phase"
@@ -434,7 +434,7 @@ msgstr "無法安裝 mint-meta-codecs"
 #: usr/lib/linuxmint/mintupgrade/checks.py:973
 #: usr/lib/linuxmint/mintupgrade/checks.py:992
 msgid "The following packages could not be installed:"
-msgstr "無法安裝下列套件:"
+msgstr "以下軟體包無法安裝："
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1059
 msgid "/etc/fstab was modified during the upgrade."
@@ -491,11 +491,11 @@ msgstr "階段 2: 模擬和下載"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "Your package repositories will now point towards the new release."
-msgstr "套件倉庫將指向新版本。"
+msgstr "您的軟體庫現在將指向新版本。"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr "會進行一些測試後將下載升級套件"
+msgstr "接下來將執行幾項測試，並下載軟體包更新。"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:172
 msgid "Phase 3: Upgrade"
@@ -503,7 +503,7 @@ msgstr "階段 3: 升級"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:173
 msgid "The packages will now be upgraded."
-msgstr "將進行套件升級"
+msgstr "軟體包即將升級。"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:3
 msgid ""

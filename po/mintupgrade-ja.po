@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-12-13 08:46+0000\n"
+"PO-Revision-Date: 2026-10-31 21:09+0000\n"
 "Last-Translator: kmyyfz8q <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: ja\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
@@ -326,7 +326,7 @@ msgstr "下記の情報は、問題を解決する手がかりになるかもし
 #: usr/lib/linuxmint/mintupgrade/checks.py:695
 #: usr/lib/linuxmint/mintupgrade/checks.py:707
 msgid "Kept packages"
-msgstr "保持されるパッケージ"
+msgstr "維持されるパッケージ"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:696
 #: usr/lib/linuxmint/mintupgrade/checks.py:711
@@ -342,7 +342,7 @@ msgstr "追加されるパッケージ"
 #: usr/lib/linuxmint/mintupgrade/checks.py:706
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
-msgstr "パッケージの更新: %d、追加: %d、保持: %d、削除: %d"
+msgstr "パッケージの更新: %d、追加: %d、維持: %d、削除: %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:701
 msgid "Upgrading will perform the following changes."
@@ -351,7 +351,7 @@ msgstr "アップグレードすると、これらの変更が行われます。
 #: usr/lib/linuxmint/mintupgrade/checks.py:709
 msgid ""
 "Note: Ideally, no packages should be kept. This might indicate an issue."
-msgstr "注: できればパッケージを保持させないでください。これは問題を示している可能性があります。"
+msgstr "注: できればパッケージを維持させないでください。これは問題を示している可能性があります。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:713
 msgid ""
@@ -413,7 +413,7 @@ msgstr "アップグレード中に問題が検出されました。"
 #: usr/lib/linuxmint/mintupgrade/checks.py:921
 #, python-format
 msgid "%d packages still need to be updated (%d kept, %d deleted)"
-msgstr "まだ %d 個のパッケージを更新する必要があります (%d 個を保持、%d 個を削除済み)"
+msgstr "まだ %d 個のパッケージを更新する必要があります (%d 個を維持、%d 個を削除済み)"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:927
 msgid "Final phase"

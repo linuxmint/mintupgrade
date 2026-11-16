@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-09-15 19:02+0000\n"
+"PO-Revision-Date: 2026-11-13 13:46+0000\n"
 "Last-Translator: AO <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: fr\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
@@ -23,20 +23,20 @@ msgstr ""
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
 msgstr ""
-"Les dépôts de paquets doivent correspondre à la nouvelle version (%s/%s)."
+"Les dépôts de paquets doivent pointer vers la nouvelle version (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr "L'outil de mise à niveau devrait déjà s’en être assuré."
+msgstr "L’outil de mise à niveau devrait déjà s’en être assuré."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr "Les dépôts ont-ils été modifiés depuis ?"
+msgstr "Les dépôts ont-ils été modifiés depuis ?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
-"Relancez l'outil de mise à niveau afin qu’il migre les dépôts de nouveau."
+"Relancez l’outil de mise à niveau afin qu’il migre les dépôts de nouveau."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
@@ -76,11 +76,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Power source"
-msgstr "Source d'alimentation"
+msgstr "Source d’alimentation"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Checking the power source..."
-msgstr "Vérification de la source d'alimentation…"
+msgstr "Vérification de la source d’alimentation…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Connect the computer to a power source before attempting to upgrade."
@@ -102,7 +102,7 @@ msgid ""
 "in time and revert all the changes."
 msgstr ""
 "Si la mise à niveau échoue, un instantané système vous permettra de revenir "
-"en arrière et d'annuler les changements."
+"en arrière et d’annuler les changements."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Press 'Fix' to perform a system snapshot."
@@ -121,8 +121,8 @@ msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Votre cache de paquets ne s'actualise pas correctement. Lancez la commande "
-"« apt update » et corrigez les erreurs qu'elle affiche."
+"Votre cache de paquets ne s’actualise pas correctement. Lancez la commande "
+"« apt update » et corrigez les erreurs qu’elle affiche."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:247
 msgid ""
@@ -136,7 +136,7 @@ msgid ""
 "Your operating system is not up to date. Apply available updates before "
 "attempting the upgrade."
 msgstr ""
-"Votre système d'exploitation n'est pas à jour. Appliquez les mises à jour "
+"Votre système d’exploitation n’est pas à jour. Appliquez les mises à jour "
 "proposées avant de tenter la mise à niveau."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:279
@@ -174,7 +174,7 @@ msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
-"Les sources suivantes sont définies en format DEB822. Ce format n'est pas "
+"Les sources suivantes sont définies en format DEB822. Ce format n’est pas "
 "encore pris en charge."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
@@ -211,7 +211,7 @@ msgstr "%s est inaccessible"
 #: usr/lib/linuxmint/mintupgrade/checks.py:414
 #, python-format
 msgid "%s is not up to date. Switch to a different mirror."
-msgstr "%s n'est pas à jour. Choisissez un miroir différent."
+msgstr "%s n’est pas à jour. Choisissez un miroir différent."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:422
 #, python-format
@@ -224,11 +224,11 @@ msgstr "Les problèmes suivants ont été trouvés :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:468
 msgid "Held packages"
-msgstr "Paquets gardés en l'état"
+msgstr "Paquets gardés en l’état"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:468
 msgid "Looking for held packages..."
-msgstr "Recherche de paquets gardés en l'état…"
+msgstr "Recherche de paquets gardés en l’état…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "The following packages are held:"
@@ -236,7 +236,7 @@ msgstr "Les paquets suivants sont gardés en l’état :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:481
 msgid "Held packages can break the upgrade."
-msgstr "Les paquets gardés en l'état peuvent compromettre la mise à niveau."
+msgstr "Les paquets gardés en l’état peuvent compromettre la mise à niveau."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:495
 msgid "Foreign packages"
@@ -280,7 +280,7 @@ msgstr "Recherche de paquets orphelins…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "The following packages do not exist in the repositories:"
-msgstr "Les paquets suivants n'existent pas dans les dépôts :"
+msgstr "Les paquets suivants n’existent pas dans les dépôts :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:552
 msgid "In some rare cases orphan packages can interfere with the upgrade."
@@ -315,7 +315,7 @@ msgstr "Simulation de mise à niveau"
 #: usr/lib/linuxmint/mintupgrade/checks.py:642
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simulation de la mise à niveau pour vérifier l'espace disque et les "
+"Simulation de la mise à niveau pour vérifier l’espace disque et les "
 "problèmes potentiels…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
@@ -350,7 +350,7 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:691
 msgid "Don't hesitate to seek help on the forums and the chat room."
 msgstr ""
-"N'hésitez pas à demander de l'aide sur les forums et dans le salon de "
+"N’hésitez pas à demander de l’aide sur les forums et dans le salon de "
 "discussion."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:693
@@ -382,8 +382,7 @@ msgstr "Paquets nouvellement installés"
 #, python-format
 msgid "Packages updated: %d, added: %d , kept: %d, deleted: %d"
 msgstr ""
-"Paquets mis à niveau : %d, nouvellement installés : %d , conservés : %d, "
-"supprimés : %d"
+"Paquets mis à jour : %d, ajoutés : %d, conservés : %d, supprimés : %d"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:701
 msgid "Upgrading will perform the following changes."
@@ -407,7 +406,7 @@ msgstr ""
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"%s sont nécessaires sur « %s », mais vous n'avez que %s. Vous devez libérer "
+"%s sont nécessaires sur « %s », mais vous n’avez que %s. Vous devez libérer "
 "%s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:816
@@ -475,16 +474,16 @@ msgstr "Finalisation de la mise à niveau…"
 #: usr/lib/linuxmint/mintupgrade/checks.py:946
 #, python-format
 msgid "%s could not be installed."
-msgstr "%s n'a pas pu être installé."
+msgstr "%s n’a pas pu être installé."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:953
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-codecs n'a pas pu être installé."
+msgstr "mint-meta-codecs n’a pas pu être installé."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:973
 #: usr/lib/linuxmint/mintupgrade/checks.py:992
 msgid "The following packages could not be installed:"
-msgstr "Les paquets suivants n'ont pas pu être installés :"
+msgstr "Les paquets suivants n’ont pas pu être installés :"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1059
 msgid "/etc/fstab was modified during the upgrade."
@@ -495,8 +494,8 @@ msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
-"Pour assurer l’amorçage, l'outil de mise à niveau a restauré votre fichier "
-"/etc/fstab d'origine."
+"Pour assurer l’amorçage, l’outil de mise à niveau a restauré votre fichier "
+"/etc/fstab d’origine."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1061
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
@@ -537,7 +536,7 @@ msgid ""
 "A series of tests will now be performed to prepare the computer for the "
 "upgrade."
 msgstr ""
-"Une batterie de tests sera effectuée afin de préparer l'ordinateur à la mise "
+"Une batterie de tests sera effectuée afin de préparer l’ordinateur à la mise "
 "à niveau."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:165
@@ -568,7 +567,7 @@ msgid ""
 "This program will ask you some questions and upgrade your operating system."
 msgstr ""
 "Ce programme vous posera des questions et mettra à niveau votre système "
-"d'exploitation."
+"d’exploitation."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:4
 msgid "Let's go!"
@@ -588,7 +587,7 @@ msgstr "Revérifier"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:8
 msgid "The following error occurred:"
-msgstr "L'erreur suivante est survenue :"
+msgstr "L’erreur suivante est survenue :"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:9
 msgid "The upgrade was successful."
@@ -596,7 +595,7 @@ msgstr "Votre système a été mis à niveau."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:10
 msgid "Reboot the computer for all the changes to take effect."
-msgstr "Redémarrez l'ordinateur pour appliquer tous les changements."
+msgstr "Redémarrez l’ordinateur pour appliquer tous les changements."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
@@ -604,7 +603,7 @@ msgstr "Instantané Timeshift récent"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
-msgstr "Mises à niveau appliquées"
+msgstr "Mises à jour logicielles appliquées"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""

@@ -8,34 +8,34 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-12-23 19:27+0000\n"
-"Last-Translator: Klavs Petersons <Unknown>\n"
+"PO-Revision-Date: 2026-04-15 17:13+0000\n"
+"Last-Translator: K9 <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: lv\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr "Pakotņu repozitorijiem ir jānorāda uz jaunāko versiju (%s/%s)."
+msgstr "Pakotņu repozitorijiem ir jānorāda uz jauno laidienu (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
-msgstr "Tas jau būtu jādara jaunināšanas rīkam."
+msgstr "Tam jau būtu jābūt izdarītam ar jaunināšanas rīku."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:35
 msgid "Were the repositories modified since?"
-msgstr "Vai kopš tā laika repozitoriji tika modificēti?"
+msgstr "Vai kopš tā laika repozitoriji tika mainīti?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
 msgstr ""
-"Atkārtoti palaid atjaunināšanas rīku, lai tas atkal migrētu repozitorijus."
+"Palaid jaunināšanas rīku vēlreiz, lai tas vēlreiz migrētu repozitorijus."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
@@ -43,7 +43,7 @@ msgstr "Linux Mint versija"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr "Notiek tava Linux Mint versijas pārbaude..."
+msgstr "Pārbauda tava Linux Mint versiju..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
@@ -73,11 +73,11 @@ msgstr "Enerģijas avots"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Checking the power source..."
-msgstr "Pārbauda strāvas avotu..."
+msgstr "Pārbauda enerģijas avotu..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Connect the computer to a power source before attempting to upgrade."
-msgstr "Pirms mēģini veikt atjaunināšanu, pieslēdz datoru strāvas avotam."
+msgstr "Pirms jaunināšanas mēģinājuma pievieno datoru enerģijas avotam."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "System snapshots"
@@ -105,14 +105,14 @@ msgstr "APT kešatmiņa"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:220
 msgid "Checking the APT cache..."
-msgstr "APT kešatmiņas pārbaude..."
+msgstr "Pārbauda APT kešatmiņu..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:238
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"Tavas pakotnes kešatmiņu nevar atjaunināt. Izpildi 'apt update' un izlabo "
+"Tavas pakotnes kešatmiņu nevar atjaunināt. Izpildi 'apt update' un novērs "
 "parādītās kļūdas."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:247

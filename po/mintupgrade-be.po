@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2024-03-02 19:06+0000\n"
-"Last-Translator: Anton Hryb <Unknown>\n"
+"PO-Revision-Date: 2026-05-23 06:39+0000\n"
+"Last-Translator: Alexandr Primak <primak.aa@gmail.com>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -62,7 +62,7 @@ msgstr "Ваша выданне Linux Mint '%s', немагчыма абнаві
 #: usr/lib/linuxmint/mintupgrade/checks.py:180
 #, python-format
 msgid "Your architecture of Linux Mint is '%s'. It cannot be upgraded."
-msgstr ""
+msgstr "Ваша архітэктура Linux Mint — '%s'. Яе нельга абнавіць."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Power source"

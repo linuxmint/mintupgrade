@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-09-14 02:41+0000\n"
-"Last-Translator: Isaac Liu <Unknown>\n"
+"PO-Revision-Date: 2026-11-11 01:52+0000\n"
+"Last-Translator: 张鹏 <scbeta@qq.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -65,11 +65,11 @@ msgstr "当前 Linux Mint 架构为“%s”，无法升级。"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Power source"
-msgstr "电源适配器"
+msgstr "电源"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Checking the power source..."
-msgstr "正在检测电源适配器..."
+msgstr "正在检测电源..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Connect the computer to a power source before attempting to upgrade."

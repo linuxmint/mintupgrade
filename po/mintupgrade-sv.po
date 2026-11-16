@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-09-13 22:48+0000\n"
+"PO-Revision-Date: 2026-09-25 10:59+0000\n"
 "Last-Translator: Jan-Olof Svensson <jan-olof.svensson@abc.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+"Language: sv\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
 msgid ""
 "The package repositories need to point towards the new release (%s/%s)."
-msgstr "Paketförråden måste hänvisa till den nya versionen (%s/%s)."
+msgstr "Paketförråden måste peka på den nya utgåvan (%s/%s)."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:34
 msgid "This should have be done by the Upgrade Tool already."
@@ -33,7 +34,8 @@ msgstr "Har förråden ändrats sedan dess?"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:36
 msgid "Re-run the Upgrade tool so that it migrates the repositories again."
-msgstr "Kör Uppgraderingsverktyget igen för att bytas till de nya förråden."
+msgstr ""
+"Kör Uppgraderingsverktyget igen så att paketförråden migreras på nytt."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Linux Mint version"
@@ -41,7 +43,7 @@ msgstr "Version av Linux Mint"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:143
 msgid "Checking your version of Linux Mint..."
-msgstr "Kontrollerar din version av Linux Mint..."
+msgstr "Kontrollerar din version av Linux Mint…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:151
 msgid ""
@@ -58,12 +60,12 @@ msgstr ""
 #: usr/lib/linuxmint/mintupgrade/checks.py:174
 #, python-format
 msgid "Your edition of Linux Mint is '%s'. It cannot be upgraded to %s."
-msgstr "Din version av Linux Mint är '%s'. Den kan inte uppgraderas till %s."
+msgstr "Din Linux Mint-utgåva är '%s'. Den kan inte uppgraderas till %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:180
 #, python-format
 msgid "Your architecture of Linux Mint is '%s'. It cannot be upgraded."
-msgstr "Din Linux Mint är av typen '%s'. Den kan inte uppgraderas."
+msgstr "Arkitekturen för Linux Mint är '%s'. Den kan inte uppgraderas."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Power source"
@@ -71,7 +73,7 @@ msgstr "Strömkälla"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Checking the power source..."
-msgstr "Kontrollerar strömkällan..."
+msgstr "Kontrollerar strömkällan…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Connect the computer to a power source before attempting to upgrade."
@@ -79,23 +81,23 @@ msgstr "Anslut datorn till ett eluttag innan du försöker uppgradera."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "System snapshots"
-msgstr "Ögonblicksbilder av systemet"
+msgstr "Systemavbilder"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:198
 msgid "Checking system snapshots..."
-msgstr "Kontollerar ögonblicksbilder..."
+msgstr "Kontrollerar systemavbilder…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:203
 msgid ""
 "If the upgrade isn't successful, a system snapshot will allow you to go back "
 "in time and revert all the changes."
 msgstr ""
-"Om uppgraderingen skulle misslyckas kan en systemkopia användas för att "
+"Om uppgraderingen skulle misslyckas kan en systemavbild användas för att "
 "återställa systemet till fungerande tillstånd."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:204
 msgid "Press 'Fix' to perform a system snapshot."
-msgstr "Klicka på 'Åtgärda' för att skapa en systemkopia."
+msgstr "Klicka på ”Åtgärda” för att skapa en systemavbild."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:220
 msgid "APT cache"
@@ -103,14 +105,14 @@ msgstr "APT-minne"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:220
 msgid "Checking the APT cache..."
-msgstr "Kontrollerar APT-minnet..."
+msgstr "Kontrollerar APT-cachen…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:238
 msgid ""
 "Your package cache can't refresh correctly. Run 'apt update' and fix the "
 "errors it displays."
 msgstr ""
-"APT-minnet kunde inte uppdateras. Kör 'apt update' och åtgärda de fel som "
+"APT-cachen kunde inte uppdateras. Kör 'apt update' och åtgärda de fel som "
 "visas."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:247
@@ -155,13 +157,13 @@ msgstr "Paketförråd"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:314
 msgid "Checking package repositories..."
-msgstr "Kontrollerar paketförråd..."
+msgstr "Kontrollerar paketförråd…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:328
 msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
-msgstr "Följande filer är i DEB822-format. Detta stöds ännu inte."
+msgstr "Följande källor har DEB822-format. Detta format stöds ännu inte."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid "Backup and then delete these files to continue."
@@ -211,7 +213,7 @@ msgstr "Återhållna paket"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:468
 msgid "Looking for held packages..."
-msgstr "Söker efter återhållna paket..."
+msgstr "Söker efter återhållna paket…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:474
 msgid "The following packages are held:"
@@ -219,7 +221,7 @@ msgstr "Följande paket är återhållna:"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:481
 msgid "Held packages can break the upgrade."
-msgstr "Återhållna paket kan omöjliggöra uppgraderingen."
+msgstr "Återhållna paket kan göra att uppgraderingen misslyckas."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:495
 msgid "Foreign packages"
@@ -227,7 +229,7 @@ msgstr "Främmande paket"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:495
 msgid "Looking for foreign packages..."
-msgstr "Söker efter främmande paket..."
+msgstr "Söker efter främmande paket…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:501
 msgid ""
@@ -257,7 +259,7 @@ msgstr "Föräldralösa paket"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:524
 msgid "Looking for orphan packages..."
-msgstr "Söker efter föräldralösa paket..."
+msgstr "Söker efter föräldralösa paket…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:546
 msgid "The following packages do not exist in the repositories:"
@@ -277,15 +279,15 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:554
 msgid "Press 'OK' to continue with the upgrade."
-msgstr "Klicka 'OK' för att fortsätta uppgraderingen."
+msgstr "Klicka på ”OK” för att fortsätta uppgraderingen."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:564
 msgid "Removing newly orphaned packages..."
-msgstr "Tar bort paket som nyligen blivit föräldralösa..."
+msgstr "Tar bort paket som nyligen blivit föräldralösa…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:603
 msgid "Pointing to the new release..."
-msgstr "Hänvisar till den nya versionen..."
+msgstr "Pekar mot den nya utgåvan…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:642
 msgid "Upgrade simulation"
@@ -294,8 +296,8 @@ msgstr "Simulerad uppgradering"
 #: usr/lib/linuxmint/mintupgrade/checks.py:642
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Simulerar uppgradering för att kontrollera hårddiskutrymme och hitta "
-"eventuella problem..."
+"Simulerar uppgraderingen för att kontrollera diskutrymme och hitta "
+"eventuella problem…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
 msgid "The simulation was not successful."
@@ -380,12 +382,12 @@ msgstr ""
 #, python-format
 msgid "You need %s on '%s' but only have %s. You must free an additional %s."
 msgstr ""
-"De behöver %s på '%s' men har bara %s. Du måste frigöra ytterligare %s."
+"Du behöver %s på '%s' men har bara %s. Du måste frigöra ytterligare %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:816
 #, python-format
 msgid "Download size: %s. Additional space needed: %s."
-msgstr "Att hämta: %s. Behöver ytterligare: %s utrymme."
+msgstr "Hämtningsstorlek: %s. Ytterligare utrymme behövs: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Package download"
@@ -393,7 +395,7 @@ msgstr "Hämtning av paket"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Downloading packages..."
-msgstr "Hämtar paket..."
+msgstr "Hämtar paket…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:834
 msgid "An error occurred while downloading the packages."
@@ -401,19 +403,19 @@ msgstr "Ett fel uppstod vid hämtning av paketen."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:841
 msgid "Session inhibition"
-msgstr "Stoppa sessionen"
+msgstr "Sessionshämning"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:841
 msgid "Inhibiting session..."
-msgstr "Stoppar sessionen..."
+msgstr "Hämmar sessionen…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Upgrade preparation"
-msgstr "Förbered uppgradering"
+msgstr "Förberedelse inför uppgradering"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:850
 msgid "Preparing the upgrade..."
-msgstr "Förbereder uppgraderingen..."
+msgstr "Förbereder uppgraderingen…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:879
 msgid "Upgrade phase"
@@ -421,12 +423,12 @@ msgstr "Uppgradering"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:879
 msgid "Upgrading the system..."
-msgstr "Uppgraderar systemet..."
+msgstr "Uppgraderar systemet…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:896
 #: usr/lib/linuxmint/mintupgrade/checks.py:902
 msgid "An issue was detected during the upgrade."
-msgstr "Ett fel inträffade under uppgraderingen."
+msgstr "Ett problem upptäcktes under uppgraderingen."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:921
 #, python-format
@@ -439,7 +441,7 @@ msgstr "Avslutning"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:927
 msgid "Finalizing the upgrade..."
-msgstr "Avslutar uppgraderingen..."
+msgstr "Avslutar uppgraderingen…"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:946
 #, python-format
@@ -448,7 +450,7 @@ msgstr "%s kunde inte installeras."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:953
 msgid "mint-meta-codecs could not be installed."
-msgstr "mint-meta-avkodare kunde inte installeras."
+msgstr "mint-meta-codecs kunde inte installeras."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:973
 #: usr/lib/linuxmint/mintupgrade/checks.py:992
@@ -464,8 +466,8 @@ msgid ""
 "To ensure a successful boot, the upgrade tool restored your original "
 "/etc/fstab"
 msgstr ""
-"För att säkerställa en lyckad omstart återställde uppgraderingsverktyget din "
-"ursprungliga /etc/fstab"
+"För att säkerställa en lyckad uppstart återställde uppgraderingsverktyget "
+"din ursprungliga /etc/fstab"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:1061
 msgid "A copy of the modified file was saved as /etc/fstab.upgraded"
@@ -514,12 +516,11 @@ msgstr "Steg 2: Simulering och hämtning"
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "Your package repositories will now point towards the new release."
-msgstr "Dina paketförråd kommer nu att hänvisas till den nya versionen."
+msgstr "Dina paketförråd kommer nu att peka på den nya utgåvan."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:166
 msgid "A few more tests will be run and package updates will be downloaded."
-msgstr ""
-"Ytterligare några tester kommer att göras och paketuppdateringar hämtas."
+msgstr "Ytterligare tester körs och paketuppdateringarna hämtas."
 
 #: usr/lib/linuxmint/mintupgrade/mintupgrade.py:172
 msgid "Phase 3: Upgrade"
@@ -565,11 +566,11 @@ msgstr "Starta om datorn för att aktivera ändringarna."
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:11
 msgid "Recent Timeshift snapshot"
-msgstr "Aktuell systemkopia från Timeshift"
+msgstr "Senaste Timeshift-systemavbilden"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:12
 msgid "Applied software updates"
-msgstr "Genomförde programuppdateringar"
+msgstr "Installerade programuppdateringar"
 
 #: usr/share/linuxmint/mintupgrade/mintupgrade.ui.h:13
 msgid ""
