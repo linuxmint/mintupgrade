@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-09-13 17:09+0100\n"
-"PO-Revision-Date: 2025-09-13 19:09+0000\n"
+"PO-Revision-Date: 2026-11-18 20:17+0000\n"
 "Last-Translator: Pjotr12345 <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
-"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+"X-Launchpad-Export-Date: 2026-11-24 12:01+0000\n"
+"X-Generator: Launchpad (build 012091084314157d19ae714f55ef4c582ff0feb5)\n"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:32
 #, python-format
@@ -71,11 +71,11 @@ msgstr ""
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Power source"
-msgstr "Electriciteitsbron"
+msgstr "Stroombron"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:187
 msgid "Checking the power source..."
-msgstr "Electriciteitsbron aan het nakijken..."
+msgstr "Stroombron aan het nakijken..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:192
 msgid "Connect the computer to a power source before attempting to upgrade."
@@ -168,14 +168,14 @@ msgid ""
 "The following sources are defined in DEB822 format. This format isn't "
 "supported yet."
 msgstr ""
-"De volgende bronnen worden gedefinieerd in DEB822-opmaak. Deze "
-"bestandsopmaak wordt nog niet ondersteund."
+"De volgende bronnen worden gedefinieerd in DEB822-opmaak. Deze opmaak wordt "
+"nog niet ondersteund."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:334
 msgid "Backup and then delete these files to continue."
 msgstr ""
 "Maak een reservekopie van deze bestanden en verwijder hen dan, om door te "
-"gaan."
+"kunnen gaan."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:362
 msgid ""
@@ -309,8 +309,8 @@ msgstr "Nabootsing van de opwaardering"
 #: usr/lib/linuxmint/mintupgrade/checks.py:642
 msgid "Simulating upgrade to check hard disk space and potential issues..."
 msgstr ""
-"Opwaardering aan het nabootsen om de hardeschijfruimte na te kijken en om "
-"mogelijke problemen te ontdekken..."
+"Opwaardering aan het nabootsen om de ruimte op de harde schijf na te kijken "
+"en om mogelijke problemen te ontdekken..."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:681
 msgid "The simulation was not successful."
@@ -408,7 +408,7 @@ msgstr "Grootte binnen te halen: %s. Extra benodigde ruimte: %s."
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Package download"
-msgstr "Pakket binnenhalen"
+msgstr "Pakketten binnenhalen"
 
 #: usr/lib/linuxmint/mintupgrade/checks.py:822
 msgid "Downloading packages..."
